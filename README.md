@@ -58,62 +58,10 @@
 
 ---
 
-## 🎮 **Live Pac-Man Animation**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Skuuill/Skuuill/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Skuuill/Skuuill/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Skuuill/Skuuill/output/pacman-contribution-graph.svg">
+</picture>
 
-<div align="center">
-
-![Pac-Man Animation](https://github.com/maurodesouza/profile-readme-generator/blob/master/docs/assets/pacman.svg)
-
-</div>
-
----
-
-## 🎭 **Interactive Pac-Man Game**
-
-<div align="center">
-
-```html
-<!-- Live Pac-Man Game - Copy this to your browser console -->
-<div style="background: #000; padding: 20px; border-radius: 15px; max-width: 400px; margin: 0 auto;">
-  <div style="color: #FFFF00; font-family: 'Courier New', monospace; font-size: 12px; text-align: center;">
-    <pre style="margin: 0; line-height: 1;">
-╔══════════════════════════════════════╗
-║  🟡 PAC-MAN GAME - SKUILL EDITION   ║
-╠══════════════════════════════════════╣
-║                                      ║
-║    ██████  ██████  ██████  ██████    ║
-║  ██      ██      ██      ██      ██  ║
-║  ██  ●  ██  ●  ██  ●  ██  ●  ██  ║
-║  ██      ██      ██      ██      ██  ║
-║    ██████  ██████  ██████  ██████    ║
-║                                      ║
-║  🟡 PAC-MAN: EATING DOTS SINCE 2024 ║
-║                                      ║
-╚══════════════════════════════════════╝
-    </pre>
-  </div>
-</div>
-
-</div>
-
----
-
-## 🌐 **Connect With Me**
-
-<div align="center">
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/skuuill)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SkuuIll)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/SkuuIll)
-
-</div>
-
----
-
-<div align="center">
-
-### **🌟 "Code is art, and every commit is a brushstroke"** 🌟
-
-*Crafted with ❤️ by SkuuIll*
-
-</div>
+###

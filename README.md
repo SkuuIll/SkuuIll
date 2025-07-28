@@ -69,7 +69,7 @@
   <img alt="Pacman eating my contributions" src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/pacman.svg">
 </picture>
 
-*🔄 Ejecuta la GitHub Action "Generate Pacman" para ver la animación*
+*💀*
 
 </div>
 

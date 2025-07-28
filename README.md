@@ -58,10 +58,19 @@
 
 ---
 
+## 🎮 **Pacman comiendo mis contribuciones**
+
+<div align="center">
+
+<!-- El Pacman se generará automáticamente después de ejecutar la GitHub Action -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/pacman-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/pacman.svg">
   <img alt="Pacman eating my contributions" src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/pacman.svg">
 </picture>
+
+*🔄 Ejecuta la GitHub Action "Generate Pacman" para ver la animación*
+
+</div>
 
 ###

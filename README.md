@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=SkuuIll&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=ffffff" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=F75C7E&center=true&vCenter=true&width=600&lines=🚀+Full+Stack+Developer;�+Code+Entehusiast;🎮+Tech+Explorer;☕+Coffee+Addict" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=F75C7E&center=true&vCenter=true&width=600&lines=🚀+Full+Stack+Developer;🧑‍💻+Code+Entehusiast;🎮+Tech+Explorer;🧉+Mate+Addict" />
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=40&section=footer" />
 

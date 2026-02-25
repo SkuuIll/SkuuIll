@@ -1,12 +1,12 @@
-name: Generate Pacman
+name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # Runs every 12 hours
+    - cron: "0 */6 * * *"  # Runs every 6 hours
   workflow_dispatch:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   generate:
@@ -14,23 +14,24 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        
-      - name: Generate pacman
+        uses: actions/checkout@v4
+
+      - name: Generate Snake - Dark Mode
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/pacman.svg
-            dist/pacman-dark.svg?palette=github-dark
-            dist/pacman.gif?color_snake=orange&color_dots=#bfd6f6
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.gif?color_snake=#58a6ff&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Push pacman to output branch
+
+      - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output

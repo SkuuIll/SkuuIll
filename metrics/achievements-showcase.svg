@@ -1,0 +1,39 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Achievements Showcase</title>
+  <desc id="desc">A polished local achievements panel for the GitHub profile README.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#161B22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="90" y1="90" x2="1110" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58A6FF"/>
+      <stop offset="1" stop-color="#1F6FEB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="372" rx="24" stroke="#30363D"/>
+  <text x="90" y="108" fill="#F0F6FC" font-size="38" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Achievements & Strengths</text>
+  <text x="90" y="146" fill="#8B949E" font-size="20" font-family="Segoe UI, Arial, sans-serif">A stable local showcase so your profile never depends on a failing external trophy service.</text>
+  <g>
+    <rect x="90" y="200" width="220" height="120" rx="20" fill="#0D1117" stroke="#21262D"/>
+    <text x="120" y="242" fill="#58A6FF" font-size="18" font-family="Segoe UI, Arial, sans-serif">Core Focus</text>
+    <text x="120" y="282" fill="#F0F6FC" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Full Stack</text>
+  </g>
+  <g>
+    <rect x="340" y="200" width="220" height="120" rx="20" fill="#0D1117" stroke="#21262D"/>
+    <text x="370" y="242" fill="#58A6FF" font-size="18" font-family="Segoe UI, Arial, sans-serif">Approach</text>
+    <text x="370" y="282" fill="#F0F6FC" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Clean Code</text>
+  </g>
+  <g>
+    <rect x="590" y="200" width="220" height="120" rx="20" fill="#0D1117" stroke="#21262D"/>
+    <text x="620" y="242" fill="#58A6FF" font-size="18" font-family="Segoe UI, Arial, sans-serif">Collaboration</text>
+    <text x="620" y="282" fill="#F0F6FC" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Open Source</text>
+  </g>
+  <g>
+    <rect x="840" y="200" width="270" height="120" rx="20" fill="#0D1117" stroke="#21262D"/>
+    <text x="870" y="242" fill="#58A6FF" font-size="18" font-family="Segoe UI, Arial, sans-serif">Growth</text>
+    <text x="870" y="282" fill="#F0F6FC" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">AI / Cloud / DevOps</text>
+  </g>
+  <path d="M90 356H1110" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+</svg>

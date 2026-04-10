@@ -4,13 +4,13 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,25:161b22,50:1f6feb,75:58a6ff,100:79c0ff&height=250&section=header&text=SkuuIll&fontSize=100&fontAlignY=30&animation=twinkling&fontColor=ffffff&desc=Full%20Stack%20Developer%20%E2%80%A2%20Argentina%20%E2%80%A2%20Open%20Source&descAlignY=55&descSize=16&descColor=8b949e" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,25:161b22,50:1f6feb,75:58a6ff,100:79c0ff&height=250&section=header&text=SkuuIll&fontSize=100&fontAlignY=30&animation=twinkling&fontColor=ffffff&desc=%ED%92%80%EC%8A%A4%ED%83%9D%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%E2%80%A2%20%EC%95%84%EB%A5%B4%ED%97%A8%ED%8B%B0%EB%82%98%20%E2%80%A2%20%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4&descAlignY=55&descSize=16&descColor=8b949e" width="100%" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=35&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=Hello%20World%21%20%F0%9F%8C%8E;Building%20scalable%20web%20experiences%20%F0%9F%9A%80;React%20%E2%80%A2%20Node.js%20%E2%80%A2%20TypeScript%20%E2%80%A2%20Python;Open%20Source%20%E2%80%A2%20Clean%20Architecture%20%E2%80%A2%20DevOps" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=35&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94%20%EC%84%B8%EA%B3%84%21%20%F0%9F%8C%8E;%ED%99%95%EC%9E%A5%20%EA%B0%80%EB%8A%A5%ED%95%9C%20%EC%9B%B9%20%EA%B2%BD%ED%97%98%EC%9D%84%20%EB%A7%8C%EB%93%A4%EA%B3%A0%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4%20%F0%9F%9A%80;React%20%E2%80%A2%20Node.js%20%E2%80%A2%20TypeScript%20%E2%80%A2%20Python;Open%20Source%20%E2%80%A2%20%ED%81%B4%EB%A6%B0%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%E2%80%A2%20DevOps" />
 
 <br>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=400&size=18&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&repeat=true&width=820&height=50&lines=%24%20ssh%20skuuill%40dev.universe%20--connect;%3E%20Connection%20established.%20Welcome%20to%20my%20profile%20%E2%9C%A8" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=400&size=18&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&repeat=true&width=820&height=50&lines=%24%20ssh%20skuuill%40dev.universe%20--connect;%3E%20%EC%97%B0%EA%B2%B0%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EC%A0%9C%20%ED%94%84%EB%A1%9C%ED%95%84%EC%97%90%20%EC%98%A4%EC%8B%A0%20%EA%B2%83%EC%9D%84%20%ED%99%98%EC%98%81%ED%95%A9%EB%8B%88%EB%8B%A4%20%E2%9C%A8" />
 
 <br><br>
 
@@ -26,7 +26,7 @@
 
 <div align="center">
 
-**English** · [Español](./README.es.md) · [Português](./README.pt-BR.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Italiano](./README.it.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
+[English](./README.md) · [Español](./README.es.md) · [Português](./README.pt-BR.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Italiano](./README.it.md) · [日本語](./README.ja.md) · **한국어** · [中文](./README.zh-CN.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
 
 </div>
 
@@ -34,7 +34,7 @@
 
 <div align="center">
 
-## 👨‍💻 About Me
+## 👨‍💻 소개
 
 </div>
 
@@ -49,17 +49,17 @@
   "name": "SkuuIll",
   "location": "Argentina 🇦🇷",
   "role": "Full Stack Developer",
-  "languages_spoken": ["Spanish 🇦🇷 (native)", "English 🇬🇧 (fluent)", "Portuguese 🇧🇷 (basic)"],
+  "languages_spoken": ["스페인어 🇦🇷 (원어민)", "영어 🇬🇧 (유창함)", "포르투갈어 🇧🇷 (기초)"],
   "code": ["JavaScript", "TypeScript", "Python", "Java"],
   "daily_tools": ["React", "Next.js", "Node.js", "Docker", "Git", "Linux"],
   "architecture": ["Microservices", "REST APIs", "Event-Driven", "Serverless"],
-  "currently_learning": "AI/ML, Cloud & System Design",
-  "fun_fact": "I definitely debug better with mate 🧉",
-  "available_for": "Open Source Collaboration & Freelance Work"
+  "currently_learning": "AI/ML, 클라우드, 시스템 설계",
+  "fun_fact": "mate 🧉 와 함께하면 디버깅이 더 잘 됩니다",
+  "available_for": "오픈소스 협업 및 프리랜스 작업"
 }
 ```
 
-Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creating modern digital products with strong UX, scalable architecture, and a professional finish.
+안녕하세요, 저는 **SkuuIll** 입니다. **아르헨티나 출신의 풀스택 개발자**로서 뛰어난 UX, 확장 가능한 구조, 전문적인 완성도를 갖춘 현대적인 디지털 제품을 만들고 있습니다.
 
 </td>
 <td width="45%" valign="top" align="center">
@@ -72,11 +72,11 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br><br>
 
-**🔭 Working on** — Scalable Web Apps  
-**🌱 Learning** — AI/ML, AWS & Architecture  
-**👯 Open to** — OSS, Freelance & Product Ideas  
-**💬 Ask me about** — React, Node, APIs & DevOps  
-**🧉 Powered by** — Mate, curiosity and consistency
+**🔭 현재 작업** — 확장 가능한 웹 앱  
+**🌱 학습 중** — AI/ML, AWS, 아키텍처  
+**👯 관심 분야** — OSS, 프리랜스, 제품 아이디어  
+**💬 물어보세요** — React, Node, API, DevOps  
+**🧉 원동력** — mate, 호기심, 꾸준함
 
 </td>
 </tr>
@@ -86,7 +86,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## ⚡ Tech Stack
+## ⚡ 기술 스택
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=39D353&center=true&vCenter=true&repeat=true&width=560&height=25&lines=%24%20./load_arsenal.sh%20--all%20--animated;Arsenal%20loaded%20successfully%20%E2%9C%85" />
 
@@ -104,7 +104,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 <tr>
 <td width="50%" valign="top" align="center">
 
-<h3>🧠 Languages</h3>
+<h3>🧠 언어</h3>
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
@@ -116,7 +116,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br><br>
 
-<h3>🎨 Frontend</h3>
+<h3>🎨 프론트엔드</h3>
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs&logoColor=white)
@@ -129,7 +129,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 </td>
 <td width="50%" valign="top" align="center">
 
-<h3>⚙️ Backend & Runtime</h3>
+<h3>⚙️ 백엔드 / 런타임</h3>
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000?style=flat-square&logo=express&logoColor=white)
@@ -141,7 +141,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br><br>
 
-<h3>🗄️ Data & Cloud</h3>
+<h3>🗄️ 데이터 / 클라우드</h3>
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
@@ -156,7 +156,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 <tr>
 <td colspan="2" align="center">
 
-<h3>🔧 DevOps & Tooling</h3>
+<h3>🔧 DevOps / 도구</h3>
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
@@ -177,7 +177,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 📊 GitHub Analytics
+## 📊 GitHub 분석
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=58A6FF&center=true&vCenter=true&repeat=true&width=540&height=25&lines=%24%20gh%20api%20users/SkuuIll%20--stats;Realtime%20data%20loaded%20successfully%20%F0%9F%93%8A" />
 
@@ -227,7 +227,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🧠 Developer Snapshot
+## 🧠 개발자 스냅샷
 
 <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/main/metrics/github-metrics.svg" alt="GitHub metrics overview" width="95%" />
 
@@ -241,7 +241,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🏆 Achievements
+## 🏆 성과
 
 <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/main/metrics/achievements-showcase.svg" width="95%" />
 
@@ -251,7 +251,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🐍 Contribution Snake
+## 🐍 기여 스네이크
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake-dark.svg">
@@ -265,7 +265,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🎯 Roadmap 2026
+## 🎯 2026 로드맵
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2400&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=620&height=25&lines=%24%20cat%20roadmap_2026.md%20%7C%20progress;Building%20the%20future%2C%20one%20commit%20at%20a%20time%20%F0%9F%9A%80" />
 
@@ -273,28 +273,28 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br>
 
-| Goal | Progress |
+| 목표 | 진행률 |
 |:---|:---:|
 | React & Next.js | `███████████░░ 90% 🔥` |
 | Cloud (AWS) | `████████░░░░░ 70% ☁️` |
 | DevOps & CI/CD | `███████░░░░░░ 60% 🔧` |
 | Open Source | `█████░░░░░░░░ 50% 🚀` |
 | AI / ML | `████░░░░░░░░░ 35% 🤖` |
-| System Design | `███░░░░░░░░░░ 25% 📐` |
+| 시스템 설계 | `███░░░░░░░░░░ 25% 📐` |
 | Rust | `██░░░░░░░░░░░ 15% 🦀` |
 
 <img loading="lazy" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="separator">
 
 <div align="center">
 
-## 📈 Coding Activity
+## 📈 코딩 활동
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=BC8CFF&center=true&vCenter=true&repeat=true&width=560&height=25&lines=%24%20tail%20-f%20/var/log/coding_activity.log;Analyzing%20weekly%20patterns...%20%F0%9F%93%8A" />
 
 </div>
 
 ```text
-  ⏰ Time Distribution                          💻 Language Breakdown
+  ⏰ 시간 분포                          💻 언어 비중
   ─────────────────────────────                     ─────────────────────────────
   🌅 Morning    ██████████░░░░░░░░░░░  40.25%       JavaScript  ███████████████░░░░░  65.2%
   🌆 Daytime    ████████░░░░░░░░░░░░░  30.50%       TypeScript  █████░░░░░░░░░░░░░░░  18.4%
@@ -305,13 +305,13 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-| Metric | Value |
+| 지표 | 값 |
 |:---|:---:|
-| Lines Written | `~150K+` |
-| Commits (2026) | `500+` |
-| Pull Requests | `100+` |
-| Repositories | `30+` |
-| Weekly Hours | `~40h` |
+| 작성한 코드 줄 수 | `~150K+` |
+| 커밋 수 (2026) | `500+` |
+| Pull Request | `100+` |
+| 리포지토리 | `30+` |
+| 주간 시간 | `~40h` |
 
 </div>
 
@@ -319,7 +319,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 💼 Featured Projects
+## 💼 주요 프로젝트
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=F78166&center=true&vCenter=true&repeat=true&width=520&height=25&lines=%24%20ls%20~/projects%20--sort%3Dstars%20-la;Loading%20latest%20work...%20%F0%9F%8F%97%EF%B8%8F" />
 
@@ -331,7 +331,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br><br>
 
-Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=repositories)
+모든 프로젝트는 제 [repositories →](https://github.com/SkuuIll?tab=repositories) 에서 볼 수 있습니다
 
 </div>
 
@@ -339,20 +339,20 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <div align="center">
 
-## ✨ Daily Inspiration
+## ✨ 오늘의 영감
 
 <table>
 <tr>
 <td width="60%" align="center">
 
-### 💡 Dev Quote of the Day
+### 💡 오늘의 개발자 명언
 <br>
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=github_dark&border=true" />
 
 </td>
 <td width="40%" align="center">
 
-### 😂 Random Dev Joke
+### 😂 랜덤 개발자 농담
 <br>
 <img src="https://readme-jokes.vercel.app/api?theme=github_dark&hideBorder&qColor=%2358a6ff&aColor=%2339d353" />
 
@@ -366,9 +366,9 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <div align="center">
 
-## 🌐 Connect With Me
+## 🌐 연락하기
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=Let%27s%20build%20something%20amazing%21%20%F0%9F%9A%80;Open%20to%20collaboration%2C%20freelance%20and%20cool%20ideas%20%E2%9C%A8" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=%ED%95%A8%EA%BB%98%20%EB%A9%8B%EC%A7%84%20%EA%B2%83%EC%9D%84%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B4%90%EC%9A%94%21%20%F0%9F%9A%80;%ED%98%91%EC%97%85%2C%20%ED%94%84%EB%A6%AC%EB%9E%9C%EC%8A%A4%2C%20%ED%9D%A5%EB%AF%B8%EB%A1%9C%EC%9A%B4%20%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%EC%97%90%20%EC%97%B4%EB%A0%A4%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4%20%E2%9C%A8" />
 
 <br>
 
@@ -387,7 +387,7 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <br><br>
 
-> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler
+> "컴퓨터가 이해할 수 있는 코드는 누구나 작성할 수 있습니다. 훌륭한 프로그래머는 사람이 이해할 수 있는 코드를 작성합니다." — Martin Fowler
 
 </div>
 
@@ -395,16 +395,16 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=60&lines=%E2%AD%90%20Star%20my%20repos%20if%20you%20enjoy%20them%21;Thanks%20for%20visiting%20my%20profile%21" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=60&lines=%E2%AD%90%20%EB%A7%88%EC%9D%8C%EC%97%90%20%EB%93%A4%EB%A9%B4%20%EC%A0%9C%20%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90%20%EC%8A%A4%ED%83%80%EB%A5%BC%20%EB%88%8C%EB%9F%AC%20%EC%A3%BC%EC%84%B8%EC%9A%94;%EC%A0%9C%20%ED%94%84%EB%A1%9C%ED%95%84%EC%9D%84%20%EB%B0%A9%EB%AC%B8%ED%95%B4%20%EC%A3%BC%EC%85%94%EC%84%9C%20%EA%B0%90%EC%82%AC%ED%95%A9%EB%8B%88%EB%8B%A4%21" />
 
 <br>
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════╗
 ║                                                                       ║
-║                    Thanks for visiting my profile!                    ║
-║                     Made with ❤️ from Argentina 🇦🇷                    ║
-║                    Powered by mate 🧉 and passion 🔥                    ║
+║                         제 프로필을 방문해 주셔서 감사합니다!                         ║
+║                           아르헨티나에서 ❤️ 를 담아 🇦🇷                          ║
+║                         mate 🧉 와 열정 🔥 으로 움직입니다                        ║
 ║                                                                       ║
 ╚═══════════════════════════════════════════════════════════════════════╝
 ```
@@ -412,7 +412,7 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <br>
 <div align="center">
-  <a href="#top"><b>⬆ Back to Top</b></a>
+  <a href="#top"><b>⬆ 맨 위로 가기</b></a>
 </div>
 <br>
 

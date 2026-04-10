@@ -1,0 +1,35 @@
+<svg width="1200" height="540" viewBox="0 0 1200 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub Metrics Overview</title>
+  <desc id="desc">Placeholder metrics card until GitHub Actions generates live profile metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#161B22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="120" y1="80" x2="1080" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F6FEB"/>
+      <stop offset="1" stop-color="#58A6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="540" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="492" rx="24" stroke="#30363D"/>
+  <circle cx="100" cy="90" r="10" fill="#58A6FF"/>
+  <circle cx="132" cy="90" r="10" fill="#39D353"/>
+  <circle cx="164" cy="90" r="10" fill="#F78166"/>
+  <text x="90" y="160" fill="#F0F6FC" font-size="42" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Developer Snapshot</text>
+  <text x="90" y="205" fill="#8B949E" font-size="22" font-family="Segoe UI, Arial, sans-serif">Live GitHub metrics will be rendered here automatically by Actions.</text>
+  <rect x="90" y="250" width="1020" height="2" fill="#21262D"/>
+  <rect x="90" y="290" width="320" height="150" rx="18" fill="#0D1117" stroke="#21262D"/>
+  <rect x="440" y="290" width="320" height="150" rx="18" fill="#0D1117" stroke="#21262D"/>
+  <rect x="790" y="290" width="320" height="150" rx="18" fill="#0D1117" stroke="#21262D"/>
+  <text x="120" y="335" fill="#58A6FF" font-size="18" font-family="Segoe UI, Arial, sans-serif">Automation</text>
+  <text x="120" y="377" fill="#F0F6FC" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Ready</text>
+  <text x="120" y="410" fill="#8B949E" font-size="18" font-family="Segoe UI, Arial, sans-serif">Workflow prepared for live data generation</text>
+  <text x="470" y="335" fill="#58A6FF" font-size="18" font-family="Segoe UI, Arial, sans-serif">Style</text>
+  <text x="470" y="377" fill="#F0F6FC" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Premium</text>
+  <text x="470" y="410" fill="#8B949E" font-size="18" font-family="Segoe UI, Arial, sans-serif">Matches the animated dark GitHub aesthetic</text>
+  <text x="820" y="335" fill="#58A6FF" font-size="18" font-family="Segoe UI, Arial, sans-serif">Next Run</text>
+  <text x="820" y="377" fill="#F0F6FC" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">On Push / Daily</text>
+  <text x="820" y="410" fill="#8B949E" font-size="18" font-family="Segoe UI, Arial, sans-serif">Assets will refresh automatically after publishing</text>
+  <path d="M90 474C190 420 255 504 345 474C435 444 515 420 605 474C695 528 770 420 860 452C950 484 1010 420 1110 474" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+</svg>

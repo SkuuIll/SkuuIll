@@ -1,26 +1,33 @@
-name: ci
-on: [pull_request]
+name: README Quality
+
+on:
+  pull_request:
+    paths:
+      - 'README*.md'
+      - '.markdownlint.json'
+      - '.github/workflows/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'README*.md'
+      - '.markdownlint.json'
+      - '.github/workflows/**'
+
+permissions:
+  contents: read
 
 jobs:
-  ci:
+  markdownlint:
+    name: Markdown lint
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      - name: Lint README files
+        uses: DavidAnson/markdownlint-cli2-action@v18
         with:
-          node-version: 20.x
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Linting
-        run: yarn lint
-
-      - name: Test
-        run: yarn test --coverage=false
-
-      - name: Build
-        run: yarn build
+          globs: |
+            README*.md

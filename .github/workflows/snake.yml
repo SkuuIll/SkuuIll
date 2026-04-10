@@ -2,24 +2,32 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # Runs every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
   push:
     branches:
       - main
+    paths:
+      - 'README*.md'
+      - '.github/workflows/snake.yml'
+
+concurrency:
+  group: snake-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions:
-      contents: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate Snake - Dark Mode
+      - name: Generate snake assets
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -27,11 +35,10 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
             dist/github-snake.gif?color_snake=#58a6ff&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push to output branch
+      - name: Publish snake assets to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output

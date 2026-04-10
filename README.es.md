@@ -4,13 +4,13 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,25:161b22,50:1f6feb,75:58a6ff,100:79c0ff&height=250&section=header&text=SkuuIll&fontSize=100&fontAlignY=30&animation=twinkling&fontColor=ffffff&desc=Full%20Stack%20Developer%20%E2%80%A2%20Argentina%20%E2%80%A2%20Open%20Source&descAlignY=55&descSize=16&descColor=8b949e" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,25:161b22,50:1f6feb,75:58a6ff,100:79c0ff&height=250&section=header&text=SkuuIll&fontSize=100&fontAlignY=30&animation=twinkling&fontColor=ffffff&desc=Desarrollador%20Full%20Stack%20%E2%80%A2%20Argentina%20%E2%80%A2%20Open%20Source&descAlignY=55&descSize=16&descColor=8b949e" width="100%" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=35&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=Hello%20World%21%20%F0%9F%8C%8E;Building%20scalable%20web%20experiences%20%F0%9F%9A%80;React%20%E2%80%A2%20Node.js%20%E2%80%A2%20TypeScript%20%E2%80%A2%20Python;Open%20Source%20%E2%80%A2%20Clean%20Architecture%20%E2%80%A2%20DevOps" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=35&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=%C2%A1Hola%20Mundo%21%20%F0%9F%8C%8E;Construyendo%20experiencias%20web%20escalables%20%F0%9F%9A%80;React%20%E2%80%A2%20Node.js%20%E2%80%A2%20TypeScript%20%E2%80%A2%20Python;Open%20Source%20%E2%80%A2%20Arquitectura%20limpia%20%E2%80%A2%20DevOps" />
 
 <br>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=400&size=18&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&repeat=true&width=820&height=50&lines=%24%20ssh%20skuuill%40dev.universe%20--connect;%3E%20Connection%20established.%20Welcome%20to%20my%20profile%20%E2%9C%A8" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=400&size=18&duration=3000&pause=1000&color=8B949E&center=true&vCenter=true&repeat=true&width=820&height=50&lines=%24%20ssh%20skuuill%40dev.universe%20--connect;%3E%20Conexi%C3%B3n%20establecida.%20Bienvenido%20a%20mi%20perfil%20%E2%9C%A8" />
 
 <br><br>
 
@@ -26,7 +26,7 @@
 
 <div align="center">
 
-**English** · [Español](./README.es.md) · [Português](./README.pt-BR.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Italiano](./README.it.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
+[English](./README.md) · **Español** · [Português](./README.pt-BR.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Italiano](./README.it.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
 
 </div>
 
@@ -34,7 +34,7 @@
 
 <div align="center">
 
-## 👨‍💻 About Me
+## 👨‍💻 Sobre mí
 
 </div>
 
@@ -49,17 +49,17 @@
   "name": "SkuuIll",
   "location": "Argentina 🇦🇷",
   "role": "Full Stack Developer",
-  "languages_spoken": ["Spanish 🇦🇷 (native)", "English 🇬🇧 (fluent)", "Portuguese 🇧🇷 (basic)"],
+  "languages_spoken": ["Español 🇦🇷 (nativo)", "English 🇬🇧 (fluido)", "Português 🇧🇷 (básico)"],
   "code": ["JavaScript", "TypeScript", "Python", "Java"],
   "daily_tools": ["React", "Next.js", "Node.js", "Docker", "Git", "Linux"],
   "architecture": ["Microservices", "REST APIs", "Event-Driven", "Serverless"],
-  "currently_learning": "AI/ML, Cloud & System Design",
-  "fun_fact": "I definitely debug better with mate 🧉",
-  "available_for": "Open Source Collaboration & Freelance Work"
+  "currently_learning": "IA/ML, Cloud y Diseño de Sistemas",
+  "fun_fact": "Definitivamente debuggeo mejor con mate 🧉",
+  "available_for": "Colaboraciones Open Source y trabajo freelance"
 }
 ```
 
-Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creating modern digital products with strong UX, scalable architecture, and a professional finish.
+Hola, soy **SkuuIll**, un **Desarrollador Full Stack de Argentina** enfocado en crear productos digitales modernos con buena UX, arquitectura escalable y un acabado profesional.
 
 </td>
 <td width="45%" valign="top" align="center">
@@ -72,11 +72,11 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br><br>
 
-**🔭 Working on** — Scalable Web Apps  
-**🌱 Learning** — AI/ML, AWS & Architecture  
-**👯 Open to** — OSS, Freelance & Product Ideas  
-**💬 Ask me about** — React, Node, APIs & DevOps  
-**🧉 Powered by** — Mate, curiosity and consistency
+**🔭 Trabajando en** — Apps Web Escalables  
+**🌱 Aprendiendo** — IA/ML, AWS y Arquitectura  
+**👯 Abierto a** — OSS, freelance e ideas de producto  
+**💬 Preguntame sobre** — React, Node, APIs y DevOps  
+**🧉 Impulsado por** — Mate, curiosidad y constancia
 
 </td>
 </tr>
@@ -86,7 +86,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## ⚡ Tech Stack
+## ⚡ Stack tecnológico
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=39D353&center=true&vCenter=true&repeat=true&width=560&height=25&lines=%24%20./load_arsenal.sh%20--all%20--animated;Arsenal%20loaded%20successfully%20%E2%9C%85" />
 
@@ -104,7 +104,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 <tr>
 <td width="50%" valign="top" align="center">
 
-<h3>🧠 Languages</h3>
+<h3>🧠 Lenguajes</h3>
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
@@ -129,7 +129,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 </td>
 <td width="50%" valign="top" align="center">
 
-<h3>⚙️ Backend & Runtime</h3>
+<h3>⚙️ Backend y Runtime</h3>
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000?style=flat-square&logo=express&logoColor=white)
@@ -141,7 +141,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br><br>
 
-<h3>🗄️ Data & Cloud</h3>
+<h3>🗄️ Datos y Cloud</h3>
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
@@ -156,7 +156,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 <tr>
 <td colspan="2" align="center">
 
-<h3>🔧 DevOps & Tooling</h3>
+<h3>🔧 DevOps y Herramientas</h3>
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
@@ -177,7 +177,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 📊 GitHub Analytics
+## 📊 Analíticas de GitHub
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=58A6FF&center=true&vCenter=true&repeat=true&width=540&height=25&lines=%24%20gh%20api%20users/SkuuIll%20--stats;Realtime%20data%20loaded%20successfully%20%F0%9F%93%8A" />
 
@@ -227,7 +227,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🧠 Developer Snapshot
+## 🧠 Resumen profesional
 
 <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/main/metrics/github-metrics.svg" alt="GitHub metrics overview" width="95%" />
 
@@ -241,7 +241,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🏆 Achievements
+## 🏆 Logros
 
 <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/main/metrics/achievements-showcase.svg" width="95%" />
 
@@ -251,7 +251,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🐍 Contribution Snake
+## 🐍 Snake de contribuciones
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake-dark.svg">
@@ -265,7 +265,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 🎯 Roadmap 2026
+## 🎯 Hoja de ruta 2026
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2400&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=620&height=25&lines=%24%20cat%20roadmap_2026.md%20%7C%20progress;Building%20the%20future%2C%20one%20commit%20at%20a%20time%20%F0%9F%9A%80" />
 
@@ -273,28 +273,28 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br>
 
-| Goal | Progress |
+| Meta | Progreso |
 |:---|:---:|
-| React & Next.js | `███████████░░ 90% 🔥` |
+| React y Next.js | `███████████░░ 90% 🔥` |
 | Cloud (AWS) | `████████░░░░░ 70% ☁️` |
-| DevOps & CI/CD | `███████░░░░░░ 60% 🔧` |
+| DevOps y CI/CD | `███████░░░░░░ 60% 🔧` |
 | Open Source | `█████░░░░░░░░ 50% 🚀` |
-| AI / ML | `████░░░░░░░░░ 35% 🤖` |
-| System Design | `███░░░░░░░░░░ 25% 📐` |
+| IA / ML | `████░░░░░░░░░ 35% 🤖` |
+| Diseño de Sistemas | `███░░░░░░░░░░ 25% 📐` |
 | Rust | `██░░░░░░░░░░░ 15% 🦀` |
 
 <img loading="lazy" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="separator">
 
 <div align="center">
 
-## 📈 Coding Activity
+## 📈 Actividad de código
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=BC8CFF&center=true&vCenter=true&repeat=true&width=560&height=25&lines=%24%20tail%20-f%20/var/log/coding_activity.log;Analyzing%20weekly%20patterns...%20%F0%9F%93%8A" />
 
 </div>
 
 ```text
-  ⏰ Time Distribution                          💻 Language Breakdown
+  ⏰ Distribución horaria                          💻 Distribución por lenguaje
   ─────────────────────────────                     ─────────────────────────────
   🌅 Morning    ██████████░░░░░░░░░░░  40.25%       JavaScript  ███████████████░░░░░  65.2%
   🌆 Daytime    ████████░░░░░░░░░░░░░  30.50%       TypeScript  █████░░░░░░░░░░░░░░░  18.4%
@@ -305,13 +305,13 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-| Metric | Value |
+| Métrica | Valor |
 |:---|:---:|
-| Lines Written | `~150K+` |
+| Líneas escritas | `~150K+` |
 | Commits (2026) | `500+` |
 | Pull Requests | `100+` |
-| Repositories | `30+` |
-| Weekly Hours | `~40h` |
+| Repositorios | `30+` |
+| Horas semanales | `~40h` |
 
 </div>
 
@@ -319,7 +319,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <div align="center">
 
-## 💼 Featured Projects
+## 💼 Proyectos destacados
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=14&duration=2200&pause=600&color=F78166&center=true&vCenter=true&repeat=true&width=520&height=25&lines=%24%20ls%20~/projects%20--sort%3Dstars%20-la;Loading%20latest%20work...%20%F0%9F%8F%97%EF%B8%8F" />
 
@@ -331,7 +331,7 @@ Hi, I'm **SkuuIll**, a **Full Stack Developer from Argentina** focused on creati
 
 <br><br>
 
-Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=repositories)
+Explorá todos los proyectos en mis [repositorios →](https://github.com/SkuuIll?tab=repositories)
 
 </div>
 
@@ -339,20 +339,20 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <div align="center">
 
-## ✨ Daily Inspiration
+## ✨ Inspiración diaria
 
 <table>
 <tr>
 <td width="60%" align="center">
 
-### 💡 Dev Quote of the Day
+### 💡 Frase dev del día
 <br>
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=github_dark&border=true" />
 
 </td>
 <td width="40%" align="center">
 
-### 😂 Random Dev Joke
+### 😂 Chiste dev aleatorio
 <br>
 <img src="https://readme-jokes.vercel.app/api?theme=github_dark&hideBorder&qColor=%2358a6ff&aColor=%2339d353" />
 
@@ -366,9 +366,9 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <div align="center">
 
-## 🌐 Connect With Me
+## 🌐 Conectá conmigo
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=Let%27s%20build%20something%20amazing%21%20%F0%9F%9A%80;Open%20to%20collaboration%2C%20freelance%20and%20cool%20ideas%20%E2%9C%A8" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&duration=2600&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=70&lines=%C2%A1Construyamos%20algo%20incre%C3%ADble%21%20%F0%9F%9A%80;Abierto%20a%20colaboraciones%2C%20freelance%20e%20ideas%20copadas%20%E2%9C%A8" />
 
 <br>
 
@@ -387,7 +387,7 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <br><br>
 
-> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler
+> "Cualquiera puede escribir código que una computadora entienda. Los buenos programadores escriben código que los humanos pueden entender." — Martin Fowler
 
 </div>
 
@@ -395,16 +395,16 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=60&lines=%E2%AD%90%20Star%20my%20repos%20if%20you%20enjoy%20them%21;Thanks%20for%20visiting%20my%20profile%21" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=28&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&repeat=true&width=820&height=60&lines=%E2%AD%90%20Dale%20estrella%20a%20mis%20repos%20si%20te%20gustan;%C2%A1Gracias%20por%20visitar%20mi%20perfil%21" />
 
 <br>
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════╗
 ║                                                                       ║
-║                    Thanks for visiting my profile!                    ║
-║                     Made with ❤️ from Argentina 🇦🇷                    ║
-║                    Powered by mate 🧉 and passion 🔥                    ║
+║                    ¡Gracias por visitar mi perfil!                    ║
+║                    Hecho con ❤️ desde Argentina 🇦🇷                    ║
+║                    Impulsado por mate 🧉 y pasión 🔥                    ║
 ║                                                                       ║
 ╚═══════════════════════════════════════════════════════════════════════╝
 ```
@@ -412,7 +412,7 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 <br>
 <div align="center">
-  <a href="#top"><b>⬆ Back to Top</b></a>
+  <a href="#top"><b>⬆ Volver arriba</b></a>
 </div>
 <br>
 

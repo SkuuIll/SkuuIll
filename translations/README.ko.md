@@ -26,7 +26,7 @@
 
 <div align="center">
 
-[English](./README.md) · [Español](./README.es.md) · [Português](./README.pt-BR.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Italiano](./README.it.md) · [日本語](./README.ja.md) · **한국어** · [中文](./README.zh-CN.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
+[English](../README.md) · [Español](./README.es.md) · [Português](./README.pt-BR.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Italiano](./README.it.md) · [日本語](./README.ja.md) · **한국어** · [中文](./README.zh-CN.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
 
 </div>
 
@@ -452,3 +452,5 @@
 
 </div>
 
+
+<!-- 🌍 -->

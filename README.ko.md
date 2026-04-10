@@ -49,10 +49,42 @@
   "name": "SkuuIll",
   "location": "Argentina 🇦🇷",
   "role": "Full Stack Developer",
-  "languages_spoken": ["스페인어 🇦🇷 (원어민)", "영어 🇬🇧 (유창함)", "포르투갈어 🇧🇷 (기초)"],
+  "languages_spoken": [
+
+    "스페인어 🇦🇷 (원어민)",
+
+    "영어 🇬🇧 (유창함)",
+
+    "포르투갈어 🇧🇷 (기초)"
+
+  ],
   "code": ["JavaScript", "TypeScript", "Python", "Java"],
-  "daily_tools": ["React", "Next.js", "Node.js", "Docker", "Git", "Linux"],
-  "architecture": ["Microservices", "REST APIs", "Event-Driven", "Serverless"],
+  "daily_tools": [
+
+    "React",
+
+    "Next.js",
+
+    "Node.js",
+
+    "Docker",
+
+    "Git",
+
+    "Linux"
+
+  ],
+  "architecture": [
+
+    "Microservices",
+
+    "REST APIs",
+
+    "Event-Driven",
+
+    "Serverless"
+
+  ],
   "currently_learning": "AI/ML, 클라우드, 시스템 설계",
   "fun_fact": "mate 🧉 와 함께하면 디버깅이 더 잘 됩니다",
   "available_for": "오픈소스 협업 및 프리랜스 작업"

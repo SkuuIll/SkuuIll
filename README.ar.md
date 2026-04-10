@@ -49,10 +49,42 @@
   "name": "SkuuIll",
   "location": "Argentina 🇦🇷",
   "role": "Full Stack Developer",
-  "languages_spoken": ["الإسبانية 🇦🇷 (اللغة الأم)", "الإنجليزية 🇬🇧 (بطلاقة)", "البرتغالية 🇧🇷 (أساسية)"],
+  "languages_spoken": [
+
+    "الإسبانية 🇦🇷 (اللغة الأم)",
+
+    "الإنجليزية 🇬🇧 (بطلاقة)",
+
+    "البرتغالية 🇧🇷 (أساسية)"
+
+  ],
   "code": ["JavaScript", "TypeScript", "Python", "Java"],
-  "daily_tools": ["React", "Next.js", "Node.js", "Docker", "Git", "Linux"],
-  "architecture": ["Microservices", "REST APIs", "Event-Driven", "Serverless"],
+  "daily_tools": [
+
+    "React",
+
+    "Next.js",
+
+    "Node.js",
+
+    "Docker",
+
+    "Git",
+
+    "Linux"
+
+  ],
+  "architecture": [
+
+    "Microservices",
+
+    "REST APIs",
+
+    "Event-Driven",
+
+    "Serverless"
+
+  ],
   "currently_learning": "AI/ML، السحابة، وتصميم الأنظمة",
   "fun_fact": "أقوم بعمل debug بشكل أفضل مع mate 🧉",
   "available_for": "التعاون في Open Source والعمل الحر"

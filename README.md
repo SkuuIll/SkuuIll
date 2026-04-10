@@ -26,7 +26,7 @@
 
 <div align="center">
 
-**English** · [Español](./README.es.md) · [Português](./README.pt-BR.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Italiano](./README.it.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [中文](./README.zh-CN.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
+**English** · [Español](./translations/README.es.md) · [Português](./translations/README.pt-BR.md) · [Français](./translations/README.fr.md) · [Deutsch](./translations/README.de.md) · [Italiano](./translations/README.it.md) · [日本語](./translations/README.ja.md) · [한국어](./translations/README.ko.md) · [中文](./translations/README.zh-CN.md) · [Русский](./translations/README.ru.md) · [العربية](./translations/README.ar.md)
 
 </div>
 
@@ -452,3 +452,5 @@ Explore all projects in my [repositories →](https://github.com/SkuuIll?tab=rep
 
 </div>
 
+
+<!-- 🌳 -->

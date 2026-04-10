@@ -31,3 +31,5 @@ jobs:
         with:
           globs: |
             README*.md
+            translations/README*.md
+

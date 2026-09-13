@@ -16,7 +16,7 @@ I build websites, applications and tools with a focus on clear user experiences 
   <img src="../assets/profile-terminal.svg" alt="Web, mobile, desktop and automation — animated terminal" width="100%">
 </picture>
 
-[Email me](mailto:skuuill@gmail.com) · [Explore my projects](https://github.com/SkuuIll?tab=repositories) · [Upcoming landing page](../site/)
+[Email me](mailto:moreappmix@gmail.com) · [Explore my projects](https://github.com/SkuuIll?tab=repositories) · [Upcoming landing page](../site/)
 
 [Español](../README.md) · **English**
 
@@ -55,11 +55,11 @@ I also build projects whose source code is not public. These descriptions summar
 | **Web-Catalogo** | Product catalog with filters, product administration and WhatsApp inquiries. | Next.js · TypeScript · Prisma · SQLite |
 | **BotCheck** | Telegram bot with an administration dashboard, service monitoring, diagnostics and log management. | Node.js · Telegram · Redis |
 
-**Source code: private.** [Ask me about these projects](mailto:skuuill@gmail.com?subject=Private%20projects).
+**Source code: private.** [Ask me about these projects](mailto:moreappmix@gmail.com?subject=Private%20projects).
 
 ## ✉️ Work with me
 
-Need a landing page, an application or improvements to your website? Email **[skuuill@gmail.com](mailto:skuuill@gmail.com)** with:
+Need a landing page, an application or improvements to your website? Email **[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** with:
 
 1. What you want to build or improve, and who it is for.
 2. The main features and any references you have.

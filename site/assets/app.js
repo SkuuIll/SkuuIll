@@ -5,7 +5,7 @@ const result = document.querySelector("#inquiry-result");
 const preview = document.querySelector("#inquiry-preview");
 const formStatus = document.querySelector("#form-status");
 const emailDraft = document.querySelector("#email-draft");
-const recipient = "skuuill@gmail.com";
+const recipient = "moreappmix@gmail.com";
 let inquiryText = "";
 
 function buildInquiry(data) {

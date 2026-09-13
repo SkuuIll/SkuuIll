@@ -22,7 +22,7 @@ Abrí <http://localhost:8000>. También podés abrir `site/index.html` directame
 
 Editá textos, servicios y tarjetas en `site/index.html`; los colores, tamaños y puntos de adaptación están en `site/assets/styles.css`.
 
-Los proyectos se seleccionaron de los repositorios públicos y privados de SkuuIll. Se revisaron los README y la estructura de los seis repositorios privados: FluxNet, CPaul, BattleFX, VidAutonomo, Web-Catalogo y BotCheck. Sus fichas muestran un resumen funcional, las tecnologías documentadas y un botón para consultar. Están marcados como código privado, sin enlaces de acceso público al repositorio ni datos internos de despliegue. No se inventaron clientes, testimonios, precios, resultados ni cifras de experiencia. El email se conserva del README anterior: `skuuill@gmail.com`.
+Los proyectos se seleccionaron de los repositorios públicos y privados de SkuuIll. Se revisaron los README y la estructura de los seis repositorios privados: FluxNet, CPaul, BattleFX, VidAutonomo, Web-Catalogo y BotCheck. Sus fichas muestran un resumen funcional, las tecnologías documentadas y un botón para consultar. Están marcados como código privado, sin enlaces de acceso público al repositorio ni datos internos de despliegue. No se inventaron clientes, testimonios, precios, resultados ni cifras de experiencia. El email de contacto confirmado por el propietario es: `moreappmix@gmail.com`.
 
 ## Cómo funciona la consulta
 

@@ -16,7 +16,7 @@ Creo sitios web, aplicaciones y herramientas con foco en una experiencia clara y
   <img src="./assets/profile-terminal.svg" alt="Web, móvil, escritorio y automatización — terminal animada" width="100%">
 </picture>
 
-[Contactame por email](mailto:skuuill@gmail.com) · [Explorá mis proyectos](https://github.com/SkuuIll?tab=repositories) · [Landing en preparación](./site/)
+[Contactame por email](mailto:moreappmix@gmail.com) · [Explorá mis proyectos](https://github.com/SkuuIll?tab=repositories) · [Landing en preparación](./site/)
 
 **Español** · [English](./translations/README.en.md)
 
@@ -55,11 +55,11 @@ También desarrollo proyectos cuyo código no es público. Estos resúmenes pres
 | **Web-Catalogo** | Catálogo comercial con filtros, administración de productos y consultas por WhatsApp. | Next.js · TypeScript · Prisma · SQLite |
 | **BotCheck** | Bot de Telegram con panel administrativo, monitoreo de servicios, diagnóstico y gestión de logs. | Node.js · Telegram · Redis |
 
-**Código fuente: privado.** [Consultame por estos proyectos](mailto:skuuill@gmail.com?subject=Proyectos%20privados).
+**Código fuente: privado.** [Consultame por estos proyectos](mailto:moreappmix@gmail.com?subject=Proyectos%20privados).
 
 ## ✉️ Trabajemos juntos
 
-¿Necesitás una landing, una aplicación o mejorar tu web? Escribime a **[skuuill@gmail.com](mailto:skuuill@gmail.com)** con:
+¿Necesitás una landing, una aplicación o mejorar tu web? Escribime a **[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** con:
 
 1. Qué querés crear o mejorar y para quién.
 2. Las funcionalidades principales y alguna referencia, si tenés.

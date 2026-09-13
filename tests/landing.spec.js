@@ -93,7 +93,7 @@ test("project CTA prepares a draft, encodes special characters and invalidates s
     await page.locator("#email-draft").getAttribute("href"),
   );
   expect(mailto.protocol).toBe("mailto:");
-  expect(mailto.pathname).toBe("skuuill@gmail.com");
+  expect(mailto.pathname).toBe("moreappmix@gmail.com");
   expect(mailto.searchParams.get("body")).toContain("ñ, & y signos");
   expect(mailto.searchParams.get("body")).toContain("<especial>");
   expect(mailto.searchParams.get("subject")).toBe(
@@ -231,7 +231,7 @@ test("content, navigation and direct email work without JavaScript", async ({
   await expect(page.getByText("Una vez conversado el proyecto")).toBeVisible();
   await expect(page.locator(".email-link")).toHaveAttribute(
     "href",
-    "mailto:skuuill@gmail.com",
+    "mailto:moreappmix@gmail.com",
   );
   await context.close();
 });

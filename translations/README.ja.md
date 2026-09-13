@@ -1,3 +1,5 @@
+> **Archived translation / Traducción archivada.** This version may be outdated. See the current [Español](../README.md) or [English](./README.en.md) profile.
+
 <!-- Multilingual GitHub Profile README generated for SkuuIll -->
 
 <span id="top"></span>
@@ -306,7 +308,7 @@
 <br>
 
 | 目標 | 進捗 |
-|:---|:---:|
+| :--- | :---: |
 | React と Next.js | `███████████░░ 90% 🔥` |
 | Cloud (AWS) | `████████░░░░░ 70% ☁️` |
 | DevOps と CI/CD | `███████░░░░░░ 60% 🔧` |
@@ -338,7 +340,7 @@
 <div align="center">
 
 | 指標 | 値 |
-|:---|:---:|
+| :--- | :---: |
 | 記述した行数 | `~150K+` |
 | コミット数 (2026) | `500+` |
 | Pull Request | `100+` |

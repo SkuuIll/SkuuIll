@@ -4,14 +4,18 @@ on:
   pull_request:
     paths:
       - 'README*.md'
-      - '.markdownlint.json'
+      - 'translations/README*.md'
+      - 'docs/**/*.md'
+      - '.markdownlint-cli2.jsonc'
       - '.github/workflows/**'
   push:
     branches:
       - main
     paths:
       - 'README*.md'
-      - '.markdownlint.json'
+      - 'translations/README*.md'
+      - 'docs/**/*.md'
+      - '.markdownlint-cli2.jsonc'
       - '.github/workflows/**'
 
 permissions:
@@ -32,4 +36,5 @@ jobs:
           globs: |
             README*.md
             translations/README*.md
+            docs/**/*.md
 

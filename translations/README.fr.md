@@ -1,3 +1,5 @@
+> **Archived translation / Traducción archivada.** This version may be outdated. See the current [Español](../README.md) or [English](./README.en.md) profile.
+
 <!-- Multilingual GitHub Profile README generated for SkuuIll -->
 
 <span id="top"></span>
@@ -306,7 +308,7 @@ Bonjour, je suis **SkuuIll**, un **développeur Full Stack argentin** qui aime c
 <br>
 
 | Objectif | Progression |
-|:---|:---:|
+| :--- | :---: |
 | React et Next.js | `███████████░░ 90% 🔥` |
 | Cloud (AWS) | `████████░░░░░ 70% ☁️` |
 | DevOps et CI/CD | `███████░░░░░░ 60% 🔧` |
@@ -338,7 +340,7 @@ Bonjour, je suis **SkuuIll**, un **développeur Full Stack argentin** qui aime c
 <div align="center">
 
 | Indicateur | Valeur |
-|:---|:---:|
+| :--- | :---: |
 | Lignes écrites | `~150K+` |
 | Commits (2026) | `500+` |
 | Pull Requests | `100+` |

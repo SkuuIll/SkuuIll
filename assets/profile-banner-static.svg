@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title description">
+  <title id="title">SkuuIll — Full Stack Developer, Argentina</title>
+  <desc id="description">Versión estática de la identidad visual de SkuuIll para visitantes que prefieren movimiento reducido.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#c7f284" stroke-opacity=".06"/></pattern>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="#101311"/>
+  <rect x="1" y="1" width="1198" height="298" rx="15" fill="url(#grid)" stroke="#30372e"/>
+  <circle class="status" cx="62" cy="58" r="5" fill="#c7f284"/>
+  <text x="80" y="63" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3" fill="#a6ad9f">FULL STACK DEVELOPER · ARGENTINA</text>
+  <text class="name" x="56" y="173" font-family="Arial,Helvetica,sans-serif" font-size="92" font-weight="700" letter-spacing="-5" fill="#f1f2e9">SkuuIll<tspan fill="#c7f284">.</tspan></text>
+  <text class="tagline" x="61" y="230" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="3" fill="#a6ad9f">WEB · CODE · OPEN SOURCE</text>
+  <g transform="translate(977 150)">
+    <ellipse rx="135" ry="83" transform="rotate(-35)" fill="none" stroke="#708455" stroke-opacity=".5"/>
+    <ellipse class="orbit" rx="115" ry="100" transform="rotate(30)" fill="none" stroke="#708455" stroke-opacity=".4" stroke-dasharray="4 6"/>
+    <g class="monogram">
+    <text x="-65" y="65" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="210" fill="#769746" transform="rotate(-12)">s</text>
+    <text x="-70" y="60" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="210" fill="#c7f284" transform="rotate(-12)">s</text>
+    <path d="M16-68H71V-13M68-65L14-11" fill="none" stroke="#c7f284" stroke-width="15"/>
+    </g>
+  </g>
+</svg>

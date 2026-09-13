@@ -1,0 +1,21 @@
+{
+  "name": "skuuill-profile-and-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Perfil de GitHub y futura landing de SkuuIll",
+  "scripts": {
+    "lint": "markdownlint-cli2 && node --check site/assets/app.js",
+    "test": "playwright test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "markdownlint-cli2": "0.23.2"
+  },
+  "overrides": {
+    "smol-toml": "1.8.0"
+  }
+}

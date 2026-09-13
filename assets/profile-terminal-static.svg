@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="150" viewBox="0 0 1000 150" role="img" aria-labelledby="title description">
+  <title id="title">SkuuIll — Web, Mobile, Desktop, Automation</title>
+  <desc id="description">Versión estática de la identidad visual de SkuuIll para visitantes que prefieren movimiento reducido.</desc>
+  <defs><clipPath id="typed"><rect class="reveal" x="74" y="63" width="820" height="38"/></clipPath></defs>
+  <rect x="1" y="1" width="998" height="148" rx="12" fill="#171c16" stroke="#30372e"/>
+  <g fill="#718363"><circle cx="26" cy="24" r="4"/><circle cx="42" cy="24" r="4"/><circle cx="58" cy="24" r="4"/></g>
+  <text x="86" y="29" font-family="monospace" font-size="13" fill="#a6ad9f">skuuill / creative workspace</text>
+  <path d="M1 44H999" stroke="#30372e"/>
+  <text x="27" y="88" font-family="monospace" font-size="25" fill="#c7f284">&gt;</text>
+  <text x="74" y="88" font-family="monospace" font-size="23" fill="#f1f2e9" clip-path="url(#typed)">Web · Mobile · Desktop · Automation</text>
+  <rect class="cursor" x="555" y="72" width="10" height="21" fill="#c7f284" opacity="0"/>
+  <path d="M28 119H970" stroke="#30372e" stroke-width="2"/>
+  <path class="progress" d="M28 119H868" stroke="#c7f284" stroke-width="2" stroke-dasharray="840"/>
+</svg>

@@ -1,3 +1,5 @@
+> **Archived translation / Traducción archivada.** This version may be outdated. See the current [Español](../README.md) or [English](./README.en.md) profile.
+
 <!-- Multilingual GitHub Profile README generated for SkuuIll -->
 
 <span id="top"></span>
@@ -306,7 +308,7 @@
 <br>
 
 | الهدف | التقدم |
-|:---|:---:|
+| :--- | :---: |
 | React و Next.js | `███████████░░ 90% 🔥` |
 | Cloud (AWS) | `████████░░░░░ 70% ☁️` |
 | DevOps و CI/CD | `███████░░░░░░ 60% 🔧` |
@@ -338,7 +340,7 @@
 <div align="center">
 
 | المؤشر | القيمة |
-|:---|:---:|
+| :--- | :---: |
 | الأسطر المكتوبة | `~150K+` |
 | عدد الـ Commits في 2026 | `500+` |
 | Pull Requests | `100+` |

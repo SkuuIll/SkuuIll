@@ -1,5 +1,69 @@
 "use strict";
 
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const header = document.querySelector(".header");
+
+function updatePageEffects() {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+  document.documentElement.style.setProperty(
+    "--scroll-progress",
+    `${Math.min(progress, 100)}%`,
+  );
+  header.classList.toggle("is-scrolled", window.scrollY > 24);
+}
+
+updatePageEffects();
+window.addEventListener("scroll", updatePageEffects, { passive: true });
+
+const revealGroups = document.querySelectorAll(
+  ".project-grid, .private-grid, .services-grid, .steps",
+);
+const revealItems = document.querySelectorAll(
+  ".section-heading, .private-heading, .process-section > div, .contact-copy, .contact-section form, .faq-section > div, .signature-section > div, .signature-section > details",
+);
+
+revealGroups.forEach((element) => element.classList.add("reveal-stagger"));
+revealItems.forEach((element) => element.classList.add("reveal"));
+
+if (!reduceMotion.matches && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("motion-ready");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -10%", threshold: 0.08 },
+  );
+  [...revealGroups, ...revealItems].forEach((element) => observer.observe(element));
+}
+
+const hoverPointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+function attachTilt(element, xName, yName, strength) {
+  if (!element) return;
+  element.addEventListener("pointermove", (event) => {
+    if (reduceMotion.matches || !hoverPointer.matches) return;
+    const rect = element.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    element.style.setProperty(xName, `${x * strength}deg`);
+    element.style.setProperty(yName, `${y * -strength}deg`);
+  });
+  element.addEventListener("pointerleave", () => {
+    element.style.removeProperty(xName);
+    element.style.removeProperty(yName);
+  });
+}
+
+attachTilt(document.querySelector(".hero-art"), "--tilt-x", "--tilt-y", 7);
+document
+  .querySelectorAll(".project-card")
+  .forEach((card) => attachTilt(card, "--card-rx", "--card-ry", 4));
+
 const form = document.querySelector("#inquiry-form");
 const result = document.querySelector("#inquiry-result");
 const preview = document.querySelector("#inquiry-preview");

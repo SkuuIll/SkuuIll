@@ -41,7 +41,9 @@ const { project, next } = Astro.props;
   <figure class="case-visual shell">
     <ProjectVisual project={project} hero />
     <figcaption class="image-caption">
-      {project.caption ||
+      {(project.id === "fluxnet"
+        ? "Interfaz Android 4.9.6 · Captura archivada del proyecto, sin conexión activa."
+        : project.caption) ||
         "Identidad visual del proyecto · Consultá el caso para conocer su alcance."}
     </figcaption>
   </figure>

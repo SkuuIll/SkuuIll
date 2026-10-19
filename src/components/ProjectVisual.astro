@@ -55,28 +55,16 @@ const { project, hero = false } = Astro.props;
       </p>
     </div>
   ) : project.id === "fluxnet" ? (
-    <div
-      class="network-visual"
-      aria-label="Identidad conceptual de FluxNet, plataforma Android y redes"
-    >
-      <svg viewBox="0 0 600 420" fill="none" aria-hidden="true">
-        <g stroke="currentColor" stroke-width="1">
-          <ellipse cx="300" cy="210" rx="220" ry="155" />
-          <ellipse cx="300" cy="210" rx="220" ry="70" />
-          <ellipse cx="300" cy="210" rx="110" ry="155" />
-          <path d="M80 210h440M300 55v310" />
-        </g>
-        <g fill="currentColor">
-          <circle cx="124" cy="117" r="6" />
-          <circle cx="468" cy="310" r="6" />
-          <circle cx="300" cy="55" r="6" />
-        </g>
-      </svg>
-      <strong>
-        FluxNet<span>↗</span>
-      </strong>
-      <p>ANDROID / API / LINUX</p>
-      <span class="visual-tag">Identidad conceptual del proyecto</span>
+    <div class="fluxnet-product">
+      <img
+        src={asset("media/fluxnet-android-4.9.6.png")}
+        alt="Interfaz Android de FluxNet 4.9.6: inicio en modo Lite, sin perfil ni servidor activo."
+        width="1080"
+        height="2400"
+        loading={hero ? "eager" : "lazy"}
+        decoding="async"
+      />
+      <span>ANDROID · CAPTURA ARCHIVADA 4.9.6</span>
     </div>
   ) : (
     <div class="type-visual">
@@ -87,3 +75,31 @@ const { project, hero = false } = Astro.props;
     </div>
   )}
 </div>
+
+<style>
+  .fluxnet-product {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: #dce7e8;
+  }
+  .fluxnet-product img {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: 76%;
+    object-fit: contain;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem #142b3433;
+  }
+  .fluxnet-product span {
+    writing-mode: vertical-rl;
+    font: 0.65rem var(--font-mono, monospace);
+    letter-spacing: 0.08em;
+    color: #243c43;
+  }
+</style>

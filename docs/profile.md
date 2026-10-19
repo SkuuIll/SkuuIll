@@ -37,3 +37,7 @@ Las capturas del perfil apuntan a `public/media/`. Las piezas SVG anteriores se 
 La actividad de GitHub representa código alojado en repositorios, no toda la experiencia profesional. La animación de contribuciones y las métricas se mantienen como información secundaria.
 
 [Desarrollo y publicación del portafolio](landing.md) · [Procedencia de medios](media.md)
+
+## Repositorios para fijar en el perfil
+
+Selección propuesta: SkuuIll (presentación y portafolio), PUBG-Mortar-Tactical-Map (aplicación visual), Repo-Setup-Kit (automatización), Project-Final-Informatorio-25 (Django), WebBanderasPUBG (herramienta web) y Vigia-Hotel-Descargas (distribución del producto). El repositorio de descargas permite acceder al producto; no representa código fuente público de Vigía. Los repositorios privados conservan su visibilidad.

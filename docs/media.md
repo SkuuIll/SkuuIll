@@ -11,10 +11,11 @@ Las imágenes del portafolio son archivos locales. Las capturas de Vigía usan s
 | `vigia-admin.webp` | Misma interfaz, compras. | Órdenes y proveedores de demostración. |
 | `tactical-map.webp` | PUBG-Mortar-Tactical-Map ejecutado localmente. | Mapa del videojuego y herramientas de la aplicación. PUBG y sus recursos pertenecen a sus titulares. |
 | `pipa-web.webp` | Portada pública de pipaa.store, vinculada a Pipa_arg. | Presentación de PIPAA y Panza Army. Las personas de la campaña no representan a Skull. |
+| `fluxnet-android-4.9.6.png` | Recurso archivado en FluxNet/master/panel/public/images/mockups/fluxnet-4.9.6-inicio-lite.png. | Interfaz Android 4.9.6 en modo Lite, sin perfil ni servidor activo. Se identifica la versión; no acredita una conexión VPN ni la validación del cliente nativo nuevo. |
 | `cpaul-campaign.webp`, `cpaul-craft.webp` | Recursos de cpaul-landing/assets/images del propietario. | Campaña de indumentaria e identidad de CPAUL; son material visual del proyecto, no capturas del Atelier 3D ni fotografías de Skull. |
 | `profile-cover-2026.svg`, `social-cover.png` | Generados por scripts/build-branding.mjs. | Identidad del perfil y vista previa social. |
 
-Las composiciones de Repo Setup Kit y FluxNet son gráficos de identidad, identificados como tales. La terminal presenta el comando; no acredita una ejecución en producción.
+La composición de Repo Setup Kit es un gráfico de identidad. La terminal presenta el comando; no acredita una ejecución en producción. FluxNet muestra una captura archivada de su interfaz Android, identificada con su versión.
 
 Las capturas documentan interfaces del código consultado. Los datos de demostración no certifican integración con un servidor productivo ni la validación completa de todos sus flujos.
 

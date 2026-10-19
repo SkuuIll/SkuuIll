@@ -1,0 +1,96 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { projects, projectUrl } from "../../data/projects";
+---
+
+<Layout
+  title="Archivo de proyectos — Skull"
+  description="Proyectos de Skull: gestión, comercio, Android, escritorio, cartografía, automatización y software abierto."
+>
+  <section class="page-heading shell">
+    <a class="breadcrumb" href={`${import.meta.env.BASE_URL}#trabajo`}>
+      ← Volver al trabajo seleccionado
+    </a>
+    <p class="eyebrow">ARCHIVO / PRODUCTOS, HERRAMIENTAS & EXPLORACIONES</p>
+    <h1>
+      Más formas
+      <br />
+      de <span class="muted">construir.</span>
+    </h1>
+    <div class="case-intro-row">
+      <p class="case-lead">
+        Una mirada más amplia a mi trabajo. Cada ficha cuenta el problema, la
+        solución y el estado del proyecto.
+      </p>
+      <p class="case-meta">
+        Incluye software propio y adaptaciones de código abierto con su
+        atribución. Los proyectos privados se presentan mediante una descripción
+        de su alcance.
+      </p>
+    </div>
+  </section>
+  <section class="catalog-section shell" aria-label="Catálogo de proyectos">
+    <div class="catalog-tools" hidden>
+      <div class="filter-group" role="group" aria-label="Filtrar proyectos">
+        {[
+          { id: "all", label: "Todos" },
+          { id: "gestion", label: "Gestión & comercio" },
+          { id: "web", label: "Web" },
+          { id: "mobile", label: "Android" },
+          { id: "infra", label: "Sistemas" },
+          { id: "automation", label: "Automatización & IA" },
+        ].map((filter) => (
+          <button
+            type="button"
+            data-filter={filter.id}
+            aria-pressed={filter.id === "all"}
+          >
+            {filter.label}
+          </button>
+        ))}
+      </div>
+      <label class="catalog-search">
+        Buscá por proyecto o tecnología
+        <input
+          id="project-search"
+          type="search"
+          placeholder="Ej. Django, Android, GPS"
+          autocomplete="off"
+        />
+      </label>
+    </div>
+    <p id="project-count" class="catalog-count" role="status">
+      {projects.length} proyectos
+    </p>
+    <div class="catalog-list">
+      {projects.map((project, index) => (
+        <a
+          id={project.id}
+          class="catalog-row"
+          data-category={project.categories.join(" ")}
+          href={projectUrl(project.id)}
+        >
+          <span class="mono">{String(index + 1).padStart(2, "0")}</span>
+          <div>
+            <h2>{project.title}</h2>
+            <p>{project.label}</p>
+          </div>
+          <p class="catalog-stack">{project.stack.join(" · ")}</p>
+          <span class="project-state">{project.status}</span>
+          <span class="row-arrow" aria-hidden="true">
+            ↗
+          </span>
+        </a>
+      ))}
+    </div>
+    <div id="empty-projects" class="empty-state" hidden>
+      <h2>No hay coincidencias.</h2>
+      <p>
+        Probá con otra tecnología o quitá los filtros para ver todo el archivo.
+      </p>
+      <button id="reset-projects" class="outline-button" type="button">
+        Mostrar todos los proyectos
+      </button>
+    </div>
+  </section>
+</Layout>

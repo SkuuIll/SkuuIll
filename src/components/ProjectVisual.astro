@@ -1,0 +1,89 @@
+---
+import { asset, type Project } from "../data/projects";
+interface Props {
+  project: Project;
+  hero?: boolean;
+}
+const { project, hero = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    "project-visual",
+    `tone-${project.tone}`,
+    { "project-visual-hero": hero },
+  ]}
+  style={`--project-name: '${project.id}'`}
+>
+  {project.image ? (
+    <img
+      src={asset(`media/${project.image}`)}
+      alt={project.alt}
+      width={project.id === "cpaul" ? 1122 : 1440}
+      height={project.id === "cpaul" ? 1402 : 1000}
+      loading={hero ? "eager" : "lazy"}
+      decoding="async"
+      fetchpriority={hero ? "high" : "auto"}
+      data-parallax
+    />
+  ) : project.id === "repo-setup" ? (
+    <div
+      class="terminal-visual"
+      aria-label="Repo Setup Kit, herramienta de línea de comandos para Windows y Linux"
+    >
+      <div class="terminal-top">
+        <span></span>
+        <span></span>
+        <span></span>
+        <p>repo-setup / terminal</p>
+      </div>
+      <div class="terminal-content">
+        <span class="terminal-comment"># Menos preparación. Más proyecto.</span>
+        <p>
+          <span class="prompt">→</span> repo-setup . --full
+        </p>
+        <hr />
+        <p class="terminal-brand">
+          Repo
+          <br />
+          Setup Kit<span>_</span>
+        </p>
+        <span class="terminal-comment">Python / PowerShell / Shell</span>
+      </div>
+      <p class="terminal-foot">
+        WINDOWS + LINUX <span>CLI TOOL</span>
+      </p>
+    </div>
+  ) : project.id === "fluxnet" ? (
+    <div
+      class="network-visual"
+      aria-label="Identidad conceptual de FluxNet, plataforma Android y redes"
+    >
+      <svg viewBox="0 0 600 420" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="1">
+          <ellipse cx="300" cy="210" rx="220" ry="155" />
+          <ellipse cx="300" cy="210" rx="220" ry="70" />
+          <ellipse cx="300" cy="210" rx="110" ry="155" />
+          <path d="M80 210h440M300 55v310" />
+        </g>
+        <g fill="currentColor">
+          <circle cx="124" cy="117" r="6" />
+          <circle cx="468" cy="310" r="6" />
+          <circle cx="300" cy="55" r="6" />
+        </g>
+      </svg>
+      <strong>
+        FluxNet<span>↗</span>
+      </strong>
+      <p>ANDROID / API / LINUX</p>
+      <span class="visual-tag">Identidad conceptual del proyecto</span>
+    </div>
+  ) : (
+    <div class="type-visual">
+      <span>{project.label}</span>
+      <strong>{project.title}</strong>
+      <p>{project.stack.slice(0, 3).join(" / ")}</p>
+      <span class="visual-tag">Identidad del proyecto</span>
+    </div>
+  )}
+</div>

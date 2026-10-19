@@ -1,0 +1,27 @@
+---
+import { projects, asset } from "../../data/projects";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://skuuill.github.io/SkuuIll/" />
+    <title>Skull — Portafolio</title>
+  </head>
+  <body>
+    <p>El portafolio de Skull tiene una nueva dirección.</p>
+    <a href={asset("")}>Abrir el portafolio →</a>
+    <script define:vars={{ base: asset(""), ids: projects.map((p) => p.id) }}>
+      const params = new URLSearchParams(location.search);
+      const id = params.get("caso");
+      const destination =
+        id && ids.includes(id)
+          ? base + "proyectos/" + id + "/"
+          : base + location.search + location.hash;
+      location.replace(destination);
+    </script>
+  </body>
+</html>

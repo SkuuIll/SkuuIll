@@ -1,0 +1,142 @@
+---
+import "@fontsource-variable/manrope";
+import "@fontsource-variable/geist-mono";
+import "../styles/global.css";
+import { asset } from "../data/projects";
+import { profile } from "../data/profile";
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "Skull — Desarrollo de software & productos digitales",
+  description = profile.summary,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f2ec" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={asset("favicon.svg")} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content="https://skuuill.github.io/SkuuIll/media/social-cover.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="color-scheme" content="light" />
+    <script is:inline>
+      try {
+        if (sessionStorage.getItem("skull-motion") === "paused")
+          document.documentElement.dataset.motion = "paused";
+        const colors = ["clay", "forest", "blue"];
+        const saved = sessionStorage.getItem("skull-palette");
+        const navigation = performance.getEntriesByType("navigation")[0];
+        const homeEntry =
+          /\/SkuuIll\/?$/.test(location.pathname) &&
+          (!document.referrer.startsWith(location.origin + "/SkuuIll/") ||
+            navigation?.type === "reload");
+        const palette = homeEntry
+          ? colors[(colors.indexOf(saved) + 1) % colors.length]
+          : saved;
+        if (colors.includes(palette)) {
+          document.documentElement.dataset.palette = palette;
+          sessionStorage.setItem("skull-palette", palette);
+        }
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div class="reading-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#contenido">
+      Saltar al contenido
+    </a>
+    <header class="site-header shell">
+      <a class="brand" href={asset("")} aria-label="Skull, inicio">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path
+            d="M24 6H11L5 13l21 6-6 7H7"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+          />
+          <path d="M20 2v8M16 6h8" stroke="currentColor" stroke-width="2" />
+        </svg>
+        <span>
+          Skull<span class="brand-period">.</span>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href={asset("#trabajo")}>Trabajo</a>
+        <a href={asset("#perfil")}>Sobre mí</a>
+        <a href={asset("cv/")}>
+          CV <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+      <a class="header-contact" href={asset("#contacto")}>
+        Conversemos <span aria-hidden="true">↗</span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Abrir menú"
+        hidden
+      >
+        <span></span>
+        <span></span>
+      </button>
+      <nav
+        id="mobile-nav"
+        class="mobile-nav"
+        aria-label="Navegación móvil"
+        hidden
+      >
+        <a href={asset("#trabajo")}>Trabajo</a>
+        <a href={asset("#perfil")}>Sobre mí</a>
+        <a href={asset("cv/")}>Currículum</a>
+        <a href={asset("#contacto")}>Contacto</a>
+      </nav>
+    </header>
+    <main id="contenido">
+      <slot />
+    </main>
+    <footer class="site-footer shell">
+      <a class="footer-name" href={asset("")}>
+        Skull<span>↗</span>
+      </a>
+      <div>
+        <p>Software desde Chaco, Argentina.</p>
+        <p class="mono">© {new Date().getUTCFullYear()} / SkuuIll</p>
+      </div>
+      <div class="footer-links">
+        <a href={profile.github}>GitHub ↗</a>
+        <a href={`mailto:${profile.email}`}>Email ↗</a>
+        <a href={asset("cv/")}>Currículum ↗</a>
+      </div>
+      <div class="preferences" hidden>
+        <button id="palette-toggle" type="button">
+          Color: <span>Arcilla</span>
+        </button>
+        <button id="motion-toggle" type="button" aria-pressed="false">
+          Pausar movimiento
+        </button>
+      </div>
+    </footer>
+    <script>
+      import "../scripts/site";
+    </script>
+  </body>
+</html>

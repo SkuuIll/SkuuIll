@@ -1,245 +1,79 @@
-[**↗ Explore my web portfolio**](https://skuuill.github.io/SkuuIll/) · Web, Android, Linux and software projects
+<img src="../assets/profile-cover-2026.svg" alt="Skull. Software development across web, Android, desktop and Linux, from Chaco, Argentina." width="100%">
 
-<div align="center">
+# Skull / SkuuIll
 
-<img src="../assets/profile-cover-en.svg" alt="Skull / SkuuIll. Software development: web, Android, desktop, Linux and automation." width="100%">
+Software developer · Full stack and multiplatform · Argentina
 
-# Skull · SkuuIll
+I build web, Android and desktop applications, connecting interfaces, APIs and data. I also work with Linux and automation to prepare the environments where these products run.
 
-Software Developer · Full Stack & Cross-Platform · Argentina
+**[Explore my portfolio →](https://skuuill.github.io/SkuuIll/)** · [Résumé](https://skuuill.github.io/SkuuIll/cv/) · [Contact](mailto:moreappmix@gmail.com) · [Español](../README.md)
 
-Web, Android and desktop applications. Backends, integrations and Linux environments.
+## Selected work
 
-[Let's discuss your project](mailto:moreappmix@gmail.com) · [Explore my code](https://github.com/SkuuIll?tab=repositories) · [Español](../README.md)
-
-</div>
-
----
-
-## Software built for the context in which it is used
-
-I'm Skull, a software developer from Argentina. I work across the layers of a product: the interface people use, the logic that processes their data and the environment where it runs. My work spans **web, Android applications, desktop tools, automation and Linux servers**.
-
-I use **Java, Kotlin, Dart, JavaScript, TypeScript, Python, Go, C# and C++**, depending on the project. I enjoy connecting these technologies into complete solutions: an app with its API, a store with its administration tools, a desktop utility with system integration or a workflow that reduces repetitive tasks.
-
-This profile brings together public projects, work with private source code and adaptations of open source software. Each shows a different part of my work.
-
-<p align="center">
-  <a href="#specialties">Specialties</a> ·
-  <a href="#technologies">Technologies</a> ·
-  <a href="#vigía--hospitality-security-and-workforce">Vigía &amp; GPS</a> ·
-  <a href="#public-projects">Projects</a> ·
-  <a href="#products-with-private-source-code">Other products</a> ·
-  <a href="#contact">Contact</a>
-</p>
-
-## Specialties
-
-| Area | What I build | What it includes |
+| Project | Purpose | Technologies and links |
 | :--- | :--- | :--- |
-| **01 · Web & Full Stack** | Web applications, stores, catalogs, landing pages and management dashboards. | Interfaces, business logic, authentication, data and integrations. |
-| **02 · Android & Mobile** | Android applications and mobile solutions with Flutter. | Navigation, files, media, permissions and service connections. |
-| **03 · Desktop & System** | Windows tools and utilities integrated with the operating system. | Desktop interfaces, audio processing and local automation. |
-| **04 · Backends & APIs** | Services connecting applications, users and processes. | APIs, databases, administration and communication between components. |
-| **05 · Linux & Infrastructure** | Development environments and server setup and operation. | Different Linux distributions, VPS, terminal tools, services and containers. |
-| **06 · Automation & AI** | Scripts, bots and tools for development and content production. | Project setup, model integration and assisted workflows. |
+| **Vigía** | Connect hotel operations, GPS patrols, staff and administration across web and Android. | React · NestJS · PostgreSQL · React Native / Expo · [Case study](https://skuuill.github.io/SkuuIll/proyectos/vigia/) |
+| **Apparel commerce and customization** | Product catalog, orders and an Atelier 3D customization experience. | Next.js · TypeScript · Prisma · [Case study](https://skuuill.github.io/SkuuIll/proyectos/cpaul/) |
+| **Tactical Map** | Interactive mapping, measurement and planning for the PUBG video game. | JavaScript · Leaflet · PWA · [Application](https://skuuill.github.io/PUBG-Mortar-Tactical-Map/) · [Source](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map) |
+| **Repo Setup Kit** | Reproducible repository setup and tooling for development with agents. | Python · PowerShell · Shell · [Source and installation](https://github.com/SkuuIll/Repo-Setup-Kit) |
 
-## Technologies
+## Vigía: four connected areas
 
-My work is not limited to a single language or operating system. I choose tools according to the platform, required integrations and the product's maintenance needs.
+<a href="https://skuuill.github.io/SkuuIll/proyectos/vigia/"><img src="../public/media/vigia-modules.webp" alt="The actual Vigía interface with demonstration data: Security, Staff, Hotel and Administration." width="760"></a>
 
-| Ecosystem | Languages and tools |
+- **Security:** patrols, checkpoints, reports, evidence and supervision of received GPS observations during a shift.
+- **Staff:** personnel records, attendance, clock-ins, identification and synchronization tools.
+- **Hotel:** rooms, reservations, guests, rates, cash operations, housekeeping and maintenance.
+- **Administration:** purchasing, inventory, users, permissions and site management, with licensing according to scope.
+
+The ecosystem includes a **web dashboard, API and Android app**, alongside licensing and distribution tools. GPS recording begins with an active shift and consent; history distinguishes received observations and gaps without data.
+
+Source code is private. Screenshots use demonstration data. The module catalog describes project scope; availability is validated by installation, permissions and license.
+
+[Explore the case →](https://skuuill.github.io/SkuuIll/proyectos/vigia/) · [Public distribution](https://github.com/SkuuIll/Vigia-Hotel-Descargas)
+
+## Areas of work
+
+| Area | Tools and applications |
 | :--- | :--- |
-| **Languages** | Java · Kotlin · Dart · JavaScript · TypeScript · Python · Go · C# · C++ |
-| **Web and interfaces** | React · Next.js · HTML · CSS · Leaflet |
-| **Backends** | Node.js · NestJS · Django · Go · APIs and integrations |
-| **Android** | Flutter · React Native · Expo · Dart · Kotlin · Java |
-| **Desktop** | .NET · WPF · C# · C++ |
-| **Data and persistence** | PostgreSQL · SQL · SQLite · Prisma · Redis |
-| **Systems and delivery** | Linux · Windows · Android · Git · GitHub Actions · Docker · VPS |
-| **Automation and content** | Python · Shell · PowerShell · Batch · Telegram · Remotion · AI integration |
+| **Web and product** | React, Next.js, Astro, TypeScript, HTML and CSS. Commerce, catalogs, dashboards and interfaces. |
+| **Android and desktop** | Flutter, Kotlin, React Native / Expo and .NET. Mobile applications and Windows tools. |
+| **Backend and data** | Node.js, NestJS, Django and Go. APIs, PostgreSQL, Prisma, SQLite and Redis. |
+| **Linux and automation** | VPS, Docker, GitHub Actions, Python, PowerShell and Shell. Environments, integration and development tools. |
 
-The projects below show how these technologies fit together. GitHub statistics describe code hosted in repositories; they do not represent my entire experience on their own.
+## More projects
 
-## Vigía · Hospitality, security and workforce
+The [project archive](https://skuuill.github.io/SkuuIll/proyectos/) includes FluxNet, an Android VPN platform under development; a commercial product catalog; a Django editorial platform; the PIPAA / Panza Army website; BattleFX for Windows audio; and automation and video tools.
 
-<img src="../assets/project-vigia.svg" alt="Vigía: hotel operations, GPS monitoring, patrols and workforce management." width="100%">
-
-A software ecosystem connecting a **web dashboard, API and Android application** for hotel operations and team supervision. It brings together four areas: Security, Workforce, Hotel and Administration.
-
-| Area | Project functionality |
-| :--- | :--- |
-| **Hotel operations** | Rooms and statuses, rates, reservations, guests, check-in/check-out, charges, payments and cash operations. |
-| **GPS tracking and monitoring** | Latest received location and accuracy, staff on duty, historical sessions and sample playback on a map. |
-| **Patrols and security** | Circuits, checkpoints, patrol records, incident reports and evidence from the guard's app. |
-| **Workforce management** | Employee records, clock-in/out, attendance calendar and PIN/NFC terminals with offline queues. |
-| **Operations and administration** | Housekeeping, maintenance, purchasing, inventory and site-scoped access. |
-| **Licensing and distribution** | Activation by installation and modules, licensing tools and distribution of compiled packages and APKs. |
-
-### GPS linked to the work shift
-
-The field workflow starts with opening a shift and GPS consent. The app records positions, patrol checkpoints and incident reports; the dashboard supports supervision of received data and history review. Older positions are distinguished from current locations, and gaps are not displayed as confirmed routes.
-
-### A solution across platforms
-
-- **Web dashboard:** React and Vite for administration and supervision.
-- **API and data:** NestJS, TypeScript, PostgreSQL and Prisma.
-- **Android:** React Native and Expo for guards, evidence and synchronization.
-- **Installation:** Linux/VPS and Docker, with update and recovery procedures.
-- **Companion tools:** a Windows licensing application with .NET and a commercial portal on Cloudflare Workers.
-
-Scope depends on the site, permissions and license. Features are validated for the contracted modules; catalog inclusion does not imply that all workflows are certified for production.
-
-**Private source code.** [Vigía public distribution](https://github.com/SkuuIll/Vigia-Hotel-Descargas) · [Discuss hospitality, GPS or workforce software](mailto:moreappmix@gmail.com?subject=Vigia%20Hotel%20inquiry)
-
-## Public projects
-
-### 01 / Repo Setup Kit
-
-<img src="../assets/project-tooling.svg" alt="Repo Setup Kit: project setup for Windows and Linux." width="100%">
-
-Development environment automation · Windows + Linux
-
-Setting up repositories involves repeated configuration, documentation and checks. Repo Setup Kit brings that preparation into a command-line tool for working with Codex and AI agents.
-
-- Windows and Linux installers, with setup, diagnostic and dry-run commands.
-- Project context generation, agent instructions and workflow templates.
-- RTK, GitNexus and Engram integrations, plus initial hooks and CI configuration where appropriate.
-- Preservation of existing configurations and warnings when setup is only partially complete.
-
-**Technologies:** Python · PowerShell · Shell · Git · GitHub Actions.
-
-[View code and installation guide →](https://github.com/SkuuIll/Repo-Setup-Kit)
-
-### 02 / PUBG Mortar Tactical Map
-
-<img src="../assets/project-map.svg" alt="PUBG Mortar Tactical Map: interactive maps, measurements and tactical tools for the PUBG video game." width="100%">
-
-Interactive web application · Maps + PWA
-
-A tool for PUBG players combining distance measurement, in-game mortar calculations and planning on interactive maps.
-
-- Maps with drawing and measurement tools.
-- Configurations shared through URLs and image export.
-- PWA installation, light/dark themes and keyboard shortcuts.
-- Modular JavaScript with separate services for sharing, exporting and theme management.
-
-**Technologies:** JavaScript · HTML · CSS · Leaflet · Service Worker.
-
-[Explore the application →](https://skuuill.github.io/PUBG-Mortar-Tactical-Map/) · [View code →](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map)
-
-### 03 / Blog · Informatorio Chaco
-
-<img src="../assets/project-web.svg" alt="Informatorio Blog: posts, users and AI integration with Django." width="100%">
-
-Content application · Backend + Administration + AI
-
-Final project for Informatorio Chaco 2025: a blog with post management, user accounts and Gemini integration to assist content creation.
-
-- Post CRUD and content organization.
-- Authentication, authorization and administration with Django.
-- Content and image generation tools integrated into the editorial workflow.
-- Template-based interface and frontend resources.
-
-**Technologies:** Python · Django · HTML · Tailwind CSS · Alpine.js · Gemini.
-
-[Explore the repository →](https://github.com/SkuuIll/Project-Final-Informatorio-25)
-
-### More projects and tools
-
-| Project | Focus | What you can explore |
-| :--- | :--- | :--- |
-| [**Pipa_arg**](https://github.com/SkuuIll/Pipa_arg) | Web and community identity | TypeScript landing page for PIPAA and Panza Army. |
-| [**WebBanderasPUBG**](https://github.com/SkuuIll/WebBanderasPUBG) | Web tool | JavaScript flag utility for PUBG. |
-| [**Djangoautomatic**](https://github.com/SkuuIll/Djangoautomatic) | Python automation | Django project creation, virtual environments, folder structure and environment-specific settings. |
-| [**ScriptOptimize**](https://github.com/SkuuIll/ScriptOptimize) | Windows scripting | Batch script with system optimization tasks. |
-| [**NFile-es**](https://github.com/SkuuIll/NFile-es) | Android and open source | Fork of [Senzme/NFile](https://github.com/Senzme/NFile): a Flutter/Dart file and media manager. |
-
-**About NFile-es:** the original project belongs to Senzme/NFile. I present it as a derived repository, with attribution to its original author and subject to its GPL v3 license.
-
-[Browse all my public repositories →](https://github.com/SkuuIll?tab=repositories&type=public)
-
-## Products with private source code
-
-Some of my work lives in private repositories. These are the descriptions I share publicly; source code is not available in this profile.
-
-### Android, services and desktop
-
-| Product | Functionality | Technologies |
-| :--- | :--- | :--- |
-| **FluxNet** | Android VPN platform with an API, administration dashboard and node management. | Flutter · Kotlin · Go · React |
-| **BattleFX** | Windows gaming control center with audio processing and a custom system audio effect. | C# · .NET · WPF · C++ |
-| **BotCheck** | Telegram bot with an administration dashboard, service monitoring, diagnostics and log management. | Node.js · Telegram · Redis |
-
-### Commerce and content production
-
-| Product | Functionality | Technologies |
-| :--- | :--- | :--- |
-| **CPaul** | Custom apparel store with a 3D atelier, catalog, orders and checkout. | Next.js · React · TypeScript · Prisma |
-| **Web-Catalogo** | Product catalog with filters, product administration and WhatsApp inquiries. | Next.js · TypeScript · Prisma · SQLite |
-| **VidAutonomo** | Vertical video generation with a script, voice, subtitle and rendering workflow managed from a web dashboard. | Remotion · Node.js |
-
-[Ask me about these projects →](mailto:moreappmix@gmail.com?subject=Project%20inquiry)
-
-## Working together
-
-I can work on a new product or an existing codebase. The scope can include a complete application, a module, an integration or improvements to a tool already in use.
-
-| Stage | What we define or review |
-| :--- | :--- |
-| **01 · Understand** | The problem, users, platform and existing constraints. |
-| **02 · Scope** | Features, priorities, deliverables, budget and agreed timelines. |
-| **03 · Build** | Implementation in reviewable parts and adjustments to the work. |
-| **04 · Validate** | Expected behavior, integrations and operation in agreed environments. |
-| **05 · Deliver** | Code, instructions and deployment or installation, according to scope. |
-
-Maintenance and subsequent improvements are agreed according to each project's needs.
+I also work with open-source software. [NFile-es](https://github.com/SkuuIll/NFile-es) is derived from [Senzme/NFile](https://github.com/Senzme/NFile), with attribution to its original author and GPL v3 licensing. Adaptations and prototypes are identified in their case studies.
 
 ## Contact
 
-**Have an idea, an application to improve or a process to automate?**
+Tell me about the problem, the platforms involved and what you have already built.
 
-Tell me what you need, which platform it should run on —web, Android, Windows or Linux— and what already exists. References, priority features and a target date also help define a proposal.
-
-**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [GitHub / SkuuIll](https://github.com/SkuuIll)
-
----
-
-## Activity and open source
+**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [Portfolio](https://skuuill.github.io/SkuuIll/) · [PDF résumé](https://skuuill.github.io/SkuuIll/cv/Facundo-Escobedo-CV.pdf)
 
 <details>
-<summary>View GitHub activity and repository languages</summary>
+<summary>GitHub activity</summary>
 
-These images are updated by GitHub Actions and reflect the latest workflow run.
+These metrics reflect code hosted on GitHub at their latest generation. They do not represent all professional experience.
 
-![SkuuIll's GitHub activity](../metrics/github-metrics.svg)
+![GitHub activity](../metrics/github-metrics.svg)
 
-![Languages used in SkuuIll's repositories](../metrics/github-metrics-languages.svg)
-
-</details>
-
-<details>
-<summary>View contribution animation</summary>
+![Repository languages](../metrics/github-metrics-languages.svg)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake-dark.svg">
-  <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake.svg" alt="Animation of SkuuIll's public contributions" width="100%">
+  <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake.svg" alt="Animated public contributions for SkuuIll" width="100%">
 </picture>
 
 </details>
 
 <details>
-<summary>About this profile and the web portfolio</summary>
+<summary>About this repository</summary>
 
-This repository contains my GitHub profile, visual assets and the published web portfolio.
+The GitHub profile and Skull's static portfolio, built with Astro, TypeScript and GSAP. Fonts, images and styles are served locally.
 
-- [Website source](../site/).
-- [Preview and configuration guide](../docs/landing.md).
-- [Spanish profile](../README.md).
-- Other translations are preserved as earlier versions and may be outdated.
+[Development and publishing](../docs/landing.md) · [Profile maintenance](../docs/profile.md) · [Media provenance](../docs/media.md)
 
 </details>
-
-<p align="center"><sub>Skull · SkuuIll — Software, systems and tools from Argentina. 🧉</sub></p>
-
-

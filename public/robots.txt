@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /SkuuIll/
+Sitemap: https://skuuill.github.io/SkuuIll/sitemap.xml

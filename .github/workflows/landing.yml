@@ -1,10 +1,15 @@
-name: Landing Quality
+name: Portfolio Quality and Pages
 
 on:
   pull_request:
     paths:
       - 'index.html'
       - 'site/**'
+      - 'src/**'
+      - 'public/**'
+      - 'scripts/**'
+      - 'astro.config.mjs'
+      - 'tsconfig.json'
       - 'tests/**'
       - 'package*.json'
       - 'playwright.config.js'
@@ -15,10 +20,16 @@ on:
     paths:
       - 'index.html'
       - 'site/**'
+      - 'src/**'
+      - 'public/**'
+      - 'scripts/**'
+      - 'astro.config.mjs'
+      - 'tsconfig.json'
       - 'tests/**'
       - 'package*.json'
       - 'playwright.config.js'
       - '.github/workflows/landing.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -31,11 +42,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run lint
+      - run: npm run check:cv
       - run: npm test
       - uses: actions/upload-artifact@v4
         if: always()
@@ -43,4 +55,23 @@ jobs:
           name: landing-test-results
           path: test-results/
           retention-days: 7
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: dist
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish portfolio
+        id: deployment
+        uses: actions/deploy-pages@v4
 

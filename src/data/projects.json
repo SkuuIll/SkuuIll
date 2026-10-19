@@ -1,0 +1,730 @@
+[
+  {
+    "id": "vigia",
+    "title": "Vigía · Gestión Hotelera",
+    "summary": "Operación hotelera, rondas GPS y control de personal conectados en un ecosistema web y Android.",
+    "stack": ["NestJS", "React", "React Native / Expo", "Prisma", "PostgreSQL"],
+    "status": "Código privado",
+    "categories": ["gestion", "mobile"],
+    "featured": true,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Conectar la operación del hotel con el trabajo del personal en campo y una supervisión centralizada."
+      },
+      {
+        "title": "La solución",
+        "body": "Panel administrativo, API y aplicación Android para rondas, ubicaciones recibidas, evidencias y sincronización. La organización por sede, roles y permisos delimita el acceso a la información."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Habitaciones, tarifas, reservas, huéspedes y operación de caja. Rondas, checkpoints, novedades e historial de muestras GPS durante el turno consentido. Legajos, fichajes y asistencia, con herramientas de operación y licencias."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "NestJS · React · React Native / Expo · Prisma · PostgreSQL"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "El alcance depende de los módulos contratados. La presencia de un módulo en el catálogo no certifica todos sus flujos en producción."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/Vigia-Hotel-Descargas",
+        "label": "Distribución pública"
+      }
+    ]
+  },
+  {
+    "id": "cpaul",
+    "title": "CPAUL · Comercio personalizado",
+    "summary": "Una tienda de indumentaria personalizada con catálogo, pedidos y configurador visual Atelier 3D.",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "status": "Código privado",
+    "categories": ["gestion", "web"],
+    "featured": true,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Reunir la personalización de productos y la gestión comercial en una misma experiencia."
+      },
+      {
+        "title": "La solución",
+        "body": "Interfaz de comercio con catálogo, carrito y pagos, conectada a herramientas administrativas para gestionar pedidos y productos."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Configuración visual mediante Atelier 3D. Flujo de catálogo, carrito y pedidos. Administración y persistencia de datos del comercio."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Next.js · React · TypeScript · Prisma · PostgreSQL · Redis"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Proyecto con código privado. El alcance de pagos e integraciones depende de la configuración del entorno."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "repo-setup",
+    "title": "Repo Setup Kit",
+    "summary": "Preparación reproducible de repositorios para trabajar con Git, Codex y agentes de IA.",
+    "stack": ["Python", "Shell", "PowerShell", "GitHub Actions"],
+    "status": "Código público",
+    "categories": ["infra", "automation"],
+    "featured": true,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Reducir los pasos repetidos al preparar un proyecto y darle a las herramientas de IA un contexto útil."
+      },
+      {
+        "title": "La solución",
+        "body": "Un kit para Windows y Linux que prepara instrucciones, contexto y comprobaciones, e integra herramientas de memoria y análisis del repositorio."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Instaladores para Windows y Linux. Modos de diagnóstico y previsualización. Integraciones RTK, GitNexus y Engram, hooks y CI según el entorno."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Python · Shell · PowerShell · GitHub Actions"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "No garantiza un porcentaje de ahorro de tokens. Informa cuando la configuración de un componente queda parcial."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/Repo-Setup-Kit",
+        "label": "Ver código"
+      }
+    ]
+  },
+  {
+    "id": "pubg-map",
+    "title": "PUBG Mortar Tactical Map",
+    "summary": "Mapas interactivos, mediciones y anotaciones para planificar partidas de PUBG.",
+    "stack": ["JavaScript", "Leaflet", "PWA", "HTML / CSS"],
+    "status": "Código público",
+    "categories": ["web"],
+    "featured": true,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Concentrar herramientas de medición y planificación del videojuego en una interfaz compartible."
+      },
+      {
+        "title": "La solución",
+        "body": "Aplicación web modular con mapas, cálculo de morteros dentro del juego, herramientas de dibujo y configuración por URL."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Medición de distancias y anotaciones sobre el mapa. Exportación de imagen y configuración compartible. Instalación PWA, tema claro/oscuro y atajos de teclado."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "JavaScript · Leaflet · PWA · HTML / CSS"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Herramienta para el videojuego PUBG. Los cálculos pertenecen a ese contexto de juego."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map",
+        "label": "Ver código"
+      },
+      {
+        "href": "https://skuuill.github.io/PUBG-Mortar-Tactical-Map/",
+        "label": "Abrir aplicación"
+      }
+    ]
+  },
+  {
+    "id": "fluxnet",
+    "title": "FluxNet",
+    "summary": "Cliente móvil, API, administración y nodos VPS para una plataforma VPN.",
+    "stack": ["Go", "React / Vite", "Flutter", "Kotlin", "Linux"],
+    "status": "En desarrollo",
+    "categories": ["mobile", "infra"],
+    "featured": true,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Coordinar clientes Android, administración y nodos de red distribuidos."
+      },
+      {
+        "title": "La solución",
+        "body": "Arquitectura de cliente móvil, API cloud, panel administrativo y un worker por VPS, con distintas variantes de cliente."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Cliente Android con tecnologías Flutter y Kotlin. API y gestión de nodos desde un panel. Componentes de servidor y operación sobre Linux."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Go · React / Vite · Flutter · Kotlin · Linux"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Código privado. Algunas variantes móviles requieren pruebas adicionales en dispositivos; no se presentan como validadas en todos los entornos."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "pipa",
+    "title": "Pipa_arg",
+    "summary": "Una presencia digital para PIPAA y su comunidad Panza Army.",
+    "stack": ["TypeScript", "Web"],
+    "status": "Código público",
+    "categories": ["web"],
+    "featured": true,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Presentar una identidad del gaming y reunir su comunidad en un espacio propio."
+      },
+      {
+        "title": "La solución",
+        "body": "Landing centrada en la marca y su comunidad, con una presentación visual pensada para la web."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Identidad visual orientada al gaming. Presentación de comunidad y contenido. Interfaz web adaptable."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "TypeScript · Web"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Proyecto público. Las marcas y contenidos de la comunidad pertenecen a sus respectivos titulares."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/Pipa_arg",
+        "label": "Ver código"
+      }
+    ]
+  },
+  {
+    "id": "mi-taller",
+    "title": "Mi Taller · Gestión textil",
+    "summary": "Presupuestos de prendas y bordados, clientes, producción, gastos e inventario.",
+    "stack": ["PWA", "Firebase", "JavaScript / TypeScript"],
+    "status": "Código privado",
+    "categories": ["gestion", "web"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Ordenar las tareas comerciales y operativas de un taller textil."
+      },
+      {
+        "title": "La solución",
+        "body": "Aplicación web responsive para cotizar, organizar clientes y catálogo, y acompañar la producción."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Presupuestos de prendas y bordados. Organización de producción, gastos y existencias. Emisión de documentos e instalación como PWA."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "PWA · Firebase · JavaScript / TypeScript"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Proyecto privado; las funcionalidades se describen según la documentación del proyecto."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "showroom",
+    "title": "Showroom JR",
+    "summary": "Catálogo comercial con filtros, variantes, stock y consultas por WhatsApp.",
+    "stack": ["Next.js", "React", "TypeScript", "Tailwind", "Prisma", "SQLite"],
+    "status": "Código privado",
+    "categories": ["gestion", "web"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Conectar la exhibición de productos con una administración práctica del catálogo."
+      },
+      {
+        "title": "La solución",
+        "body": "Catálogo con búsqueda y filtros, panel protegido y asistencia de IA para publicaciones comerciales."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Variantes, stock y filtros por categoría. Administración de productos y contenidos. Consultas desde WhatsApp y publicación asistida."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Next.js · React · TypeScript · Tailwind · Prisma · SQLite"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Código privado. Las integraciones externas dependen de su configuración."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "devblog",
+    "title": "DevBlog · Informatorio",
+    "summary": "Plataforma editorial con usuarios, roles, publicaciones e integración de IA.",
+    "stack": ["Python", "Django", "HTML / CSS", "JavaScript", "IA"],
+    "status": "Código público",
+    "categories": ["web", "automation"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Resolver un flujo editorial completo como proyecto de formación práctica."
+      },
+      {
+        "title": "La solución",
+        "body": "Blog con autenticación, administración y generación asistida de contenido, desarrollado como proyecto final de Informatorio Chaco."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Usuarios, roles, editor y comentarios. Panel de gestión de publicaciones. Integración de generación de contenido e imágenes."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Python · Django · HTML / CSS · JavaScript · IA"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Proyecto académico con repositorio público. La integración de IA requiere configuración propia."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/Project-Final-Informatorio-25",
+        "label": "Ver código"
+      }
+    ]
+  },
+  {
+    "id": "newsblog",
+    "title": "NewsBlog · Django + Nuxt",
+    "summary": "Aplicación de noticias con API, administración y frontend independiente.",
+    "stack": ["Django REST Framework", "Nuxt 3", "Vue", "JWT", "Tailwind"],
+    "status": "Código público",
+    "categories": ["web"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Separar la gestión del contenido de su presentación web."
+      },
+      {
+        "title": "La solución",
+        "body": "Backend editorial con API REST y autenticación JWT, acompañado por una interfaz responsive en Nuxt."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "CRUD editorial y moderación. Dashboard administrativo. Frontend desacoplado y autenticación JWT."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Django REST Framework · Nuxt 3 · Vue · JWT · Tailwind"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Descripción basada en el portafolio documentado del proyecto."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/Test-Nuxt_js-Info25",
+        "label": "Ver código"
+      }
+    ]
+  },
+  {
+    "id": "nfile",
+    "title": "NFile-es · Gestor Android",
+    "summary": "Repositorio derivado de NFile: archivos, galería, reproducción y edición de texto.",
+    "stack": ["Flutter", "Dart", "Android", "Multimedia"],
+    "status": "Fork · código abierto",
+    "categories": ["mobile"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Reunir la exploración de archivos y el consumo multimedia en una interfaz móvil."
+      },
+      {
+        "title": "La solución",
+        "body": "Trabajo sobre el gestor Android NFile, que integra navegación de archivos, categorización y visores."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Operaciones de copia, movimiento y organización. Visores y reproductores multimedia. Editor de texto integrado."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Flutter · Dart · Android · Multimedia"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Fork de Senzme/NFile. Se conserva la atribución al autor original y la licencia GPL v3; no se presenta como autoría exclusiva. Proyecto original: Senzme/NFile ↗ ."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/NFile-es",
+        "label": "Ver código"
+      }
+    ]
+  },
+  {
+    "id": "vigia-licencias",
+    "title": "Vigía · Licencias offline",
+    "summary": "Aplicación Windows para emitir y verificar licencias de instalaciones comerciales.",
+    "stack": ["C# / .NET", "Windows", "GitHub Actions"],
+    "status": "Código privado",
+    "categories": ["gestion", "infra"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Administrar activaciones comerciales sin distribuir las claves privadas del proveedor."
+      },
+      {
+        "title": "La solución",
+        "body": "Herramienta offline con emisión y verificación de licencias, respaldo cifrado y empaquetado de distribución."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Emisión y verificación de licencias. Separación de claves y respaldo cifrado. Distribución de aplicación para Windows."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "C# / .NET · Windows · GitHub Actions"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Componente privado del ecosistema Vigía. No se publican claves ni detalles de instalaciones."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "vigia-portal",
+    "title": "Vigía · Portal comercial",
+    "summary": "Organización de clientes, ventas, solicitudes y entrega de licencias.",
+    "stack": ["Cloudflare Workers", "D1", "KV", "TypeScript"],
+    "status": "Código privado",
+    "categories": ["gestion", "web", "infra"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Centralizar la operación comercial de las instalaciones de Vigía."
+      },
+      {
+        "title": "La solución",
+        "body": "Portal sobre servicios serverless y almacenamiento administrado para el ciclo de activación y renovación."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Clientes y solicitudes de activación. Registro comercial de ventas. Preparación y entrega de licencias."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Cloudflare Workers · D1 · KV · TypeScript"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Herramienta administrativa privada; no se enlazan sus accesos internos."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "capture",
+    "title": "Universal Capture",
+    "summary": "Documentación de flujos de diagnóstico web autorizado y reportes reproducibles.",
+    "stack": ["Chrome MV3", "JavaScript", "APIs de navegador"],
+    "status": "Código privado",
+    "categories": ["web", "automation"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Reunir la información necesaria para investigar un flujo web de forma reproducible."
+      },
+      {
+        "title": "La solución",
+        "body": "Extensión que organiza eventos y actividad de red en informes para diagnóstico autorizado."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Registro de eventos y red del flujo autorizado. Reportes JSON y HTML. Tratamiento de datos sensibles en la exportación."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Chrome MV3 · JavaScript · APIs de navegador"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Uso de diagnóstico autorizado. Código privado."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "video",
+    "title": "VidAutónomo / Video Factory",
+    "summary": "Un flujo de texto, guion, voz y subtítulos para producir videos verticales.",
+    "stack": ["Node.js", "Remotion", "IA", "Automatización"],
+    "status": "Código privado",
+    "categories": ["automation"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Coordinar las etapas repetitivas de producción de piezas de video."
+      },
+      {
+        "title": "La solución",
+        "body": "Pipeline de generación con administración web y comandos locales que coordinan contenido y render."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Guion, voz y subtítulos. Renderizado de videos verticales. Panel y utilidades locales de operación."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Node.js · Remotion · IA · Automatización"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "El resultado depende de los modelos, servicios y recursos configurados para cada producción."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "circulo",
+    "title": "Círculo",
+    "summary": "Análisis local de exportaciones oficiales de Instagram y Facebook.",
+    "stack": ["JavaScript", "JSON / ZIP", "Procesamiento local"],
+    "status": "Código privado",
+    "categories": ["web", "automation"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Explorar relaciones y cambios entre exportaciones sin subir esos archivos a un servidor."
+      },
+      {
+        "title": "La solución",
+        "body": "Herramienta web que procesa exportaciones oficiales en el navegador y genera reportes."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Lectura de exportaciones JSON/ZIP. Reportes de relaciones. Comparación entre exportaciones."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "JavaScript · JSON / ZIP · Procesamiento local"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Trabaja con archivos aportados por la persona usuaria; no implica acceso a cuentas ajenas."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "flagforge",
+    "title": "FlagForge Studio",
+    "summary": "Generador de banderas e iconos para el modo espectador de PUBG.",
+    "stack": ["HTML Canvas", "CSS", "JavaScript", "JSZip"],
+    "status": "Código público",
+    "categories": ["web"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Preparar y personalizar recursos visuales para una experiencia de espectador."
+      },
+      {
+        "title": "La solución",
+        "body": "Generador en navegador con vista previa y exportación de paquetes instalables."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Personalización de banderas e iconos. Vista previa en navegador. Exportación de paquete ZIP."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "HTML Canvas · CSS · JavaScript · JSZip"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Utilidad para el videojuego PUBG y sus recursos de espectador."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/WebBanderasPUBG",
+        "label": "Ver código"
+      }
+    ]
+  },
+  {
+    "id": "djangoautomatic",
+    "title": "Djangoautomatic",
+    "summary": "Arranque automatizado de proyectos Django y sus entornos de desarrollo.",
+    "stack": ["Python", "Django", "Automatización CLI"],
+    "status": "Código público",
+    "categories": ["automation", "infra"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Evitar la repetición de tareas al iniciar un proyecto Django."
+      },
+      {
+        "title": "La solución",
+        "body": "Script que prepara entorno virtual, dependencias, carpetas y configuración base."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Estructura de proyecto y entorno virtual. Configuración diferenciada por entorno. Dependencias y migraciones iniciales."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Python · Django · Automatización CLI"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Herramienta de preparación; la configuración final de cada aplicación requiere revisión."
+      }
+    ],
+    "links": [
+      {
+        "href": "https://github.com/SkuuIll/Djangoautomatic",
+        "label": "Ver código"
+      }
+    ]
+  },
+  {
+    "id": "mesa-unida",
+    "title": "Mesa Unida",
+    "summary": "Base modular para restaurantes y puntos de venta en etapa inicial.",
+    "stack": ["Node.js", "Prisma", "PWA", "Software abierto"],
+    "status": "Prototipo",
+    "categories": ["gestion", "web"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Explorar una base de gestión para operaciones gastronómicas."
+      },
+      {
+        "title": "La solución",
+        "body": "Prototipo sobre software abierto con módulos e ideas de autoservicio, comandas y QR."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Base modular de gestión. Exploración de flujos gastronómicos. Personalización de software abierto."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Node.js · Prisma · PWA · Software abierto"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Prototipo en desarrollo. Autoservicio, comandas y QR son parte del alcance explorado y no se presentan como producto final validado."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "battlefx",
+    "title": "BattleFX",
+    "summary": "Centro de control para gaming en Windows con procesamiento de audio.",
+    "stack": ["C#", ".NET", "WPF", "C++"],
+    "status": "Código privado",
+    "categories": ["infra"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Conectar controles de escritorio con componentes de audio del sistema."
+      },
+      {
+        "title": "La solución",
+        "body": "Aplicación Windows con interfaz WPF y un efecto de audio de sistema propio."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Interfaz de control en escritorio. Procesamiento de audio. Componentes C# y C++ integrados."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "C# · .NET · WPF · C++"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Código privado. La compatibilidad depende del entorno Windows y los dispositivos de audio."
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "botcheck",
+    "title": "BotCheck",
+    "summary": "Bot con panel administrativo, monitoreo de servicios y herramientas de diagnóstico.",
+    "stack": ["Node.js", "Telegram", "Redis"],
+    "status": "Código privado",
+    "categories": ["automation", "infra"],
+    "featured": false,
+    "sections": [
+      {
+        "title": "El desafío",
+        "body": "Reunir la consulta operativa de servicios y sus novedades."
+      },
+      {
+        "title": "La solución",
+        "body": "Bot de Telegram conectado a un panel de administración y funciones de diagnóstico."
+      },
+      {
+        "title": "Qué incluye",
+        "body": "Monitoreo de servicios. Diagnóstico y gestión de logs. Panel administrativo."
+      },
+      {
+        "title": "Tecnologías",
+        "body": "Node.js · Telegram · Redis"
+      },
+      {
+        "title": "Estado y alcance",
+        "body": "Código privado; las integraciones y servicios se configuran por entorno."
+      }
+    ],
+    "links": []
+  }
+]

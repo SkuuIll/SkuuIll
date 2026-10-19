@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.webp binary
+*.woff2 binary
+public/cv/*.html -text

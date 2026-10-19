@@ -1,38 +1,39 @@
 # Mantenimiento del perfil
 
-El perfil principal está en `README.md` y su versión en inglés en `translations/README.en.md`.
+El perfil principal está en `README.md`; su versión inglesa en `translations/README.en.md`. Ambos presentan el mismo alcance y enlazan al portafolio, el CV y el correo.
 
 ## Estructura editorial
 
-1. Identidad y presentación: desarrollo de software Full Stack y multiplataforma.
-2. Especialidades: web, Android, escritorio, backend, Linux y automatización.
-3. Tecnologías agrupadas por uso.
-4. Caso destacado de Vigía y tres casos públicos con propósito, funcionalidades, tecnologías y acceso a su distribución o repositorio.
-5. Otros repositorios, con atribución explícita para forks.
-6. Productos privados: únicamente descripciones ya compartidas públicamente.
-7. Propuesta de colaboración y contacto.
-8. Actividad y detalles del repositorio en secciones desplegables.
+1. Identidad de Skull y propuesta profesional breve.
+2. Cuatro trabajos seleccionados: Vigía, comercio e indumentaria 3D, Tactical Map y Repo Setup Kit.
+3. Caso Vigía con sus cuatro áreas y una captura real de demostración.
+4. Capacidades agrupadas por aplicación práctica.
+5. Otros proyectos, atribuciones y contacto.
+6. Actividad de GitHub y detalles de mantenimiento en secciones desplegables.
 
-## Recursos visuales
+La identidad principal es Skull; el usuario es SkuuIll. El CV utiliza Facundo Nahuel Escobedo. La formación secundaria se presenta como Técnico Electromecánico. El profesorado de TIC se indica como estudios incompletos, con inicio en 2019, sin atribuir un título obtenido.
 
-Los archivos `assets/profile-cover-*.svg` y `assets/project-*.svg` son vectores locales: no dependen de un generador de banners externo. Usan fondo oscuro, acento verde y tipografía del sistema. No contienen scripts ni fuentes remotas. Usan animaciones breves que respetan la preferencia de movimiento reducido; la web incorpora ambientes de color y un control para pausar el movimiento.
+## Recursos
 
-Las piezas de proyectos son ilustraciones de identidad, no capturas de sus interfaces. Los títulos, funcionalidades y enlaces también están presentes como texto en Markdown para no depender de la lectura de una imagen.
-
-Para regenerar los SVG desde la raíz del repositorio:
+La cabecera actual es `assets/profile-cover-2026.svg`. Se regenera, junto con la imagen social, mediante:
 
 ```bash
-python3 scripts/build_profile_visuals.py
+npm run branding
 ```
 
-## Actualizaciones
+Las capturas del perfil apuntan a `public/media/`. Las piezas SVG anteriores se conservan como recursos históricos; el generador Python anterior no produce la cabecera nueva.
+
+## Criterios para editar
 
 - Actualizar español e inglés juntos.
-- Mantener rutas de recursos relativas a cada README.
-- Describir funcionalidades concretas; no agregar cifras de clientes, rendimiento, años de experiencia o certificaciones sin respaldo.
-- Identificar los forks y preservar el crédito al proyecto original.
-- No incorporar código, URLs internas, credenciales ni información de clientes privados.
-- Agregar una demo pública solo cuando se haya confirmado su dirección.
-- Revisar el resultado de **README Quality** después de publicar cambios.
+- Mantener nombres, fechas, alcance y contacto coherentes con la web y el CV.
+- No agregar cifras de clientes, mejoras de rendimiento, experiencia o certificaciones sin respaldo.
+- Identificar forks y preservar la atribución y licencia originales.
+- Presentar los prototipos y productos en desarrollo con su estado real.
+- Usar datos de demostración en capturas de productos privados.
+- Verificar enlaces públicos antes de presentarlos como demos disponibles.
+- Ejecutar `npm run lint`; si cambia el CV, regenerar y revisar sus exportaciones.
 
-La web en `site/` tiene su propia documentación en [landing.md](./landing.md).
+La actividad de GitHub representa código alojado en repositorios, no toda la experiencia profesional. La animación de contribuciones y las métricas se mantienen como información secundaria.
+
+[Desarrollo y publicación del portafolio](landing.md) · [Procedencia de medios](media.md)

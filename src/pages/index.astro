@@ -1,0 +1,447 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectVisual from "../components/ProjectVisual.astro";
+import {
+  projects,
+  selectedProjects,
+  projectUrl,
+  asset,
+} from "../data/projects";
+import { profile } from "../data/profile";
+const vigia = projects.find((project) => project.id === "vigia")!;
+const scenes = [
+  {
+    name: "Seguridad",
+    image: "vigia-gps.webp",
+    alt: "Supervisión GPS con personas de demostración y últimas posiciones recibidas.",
+  },
+  {
+    name: "Personal",
+    image: "vigia-personal.webp",
+    alt: "Tablero real de Personal con asistencia y equipos de demostración.",
+  },
+  {
+    name: "Hotel",
+    image: "vigia-hotel.webp",
+    alt: "Estado de habitaciones de Vigía con unidades y estados de demostración.",
+  },
+  {
+    name: "Administración",
+    image: "vigia-admin.webp",
+    alt: "Compras y proveedores de Vigía con órdenes de demostración.",
+  },
+];
+---
+
+<Layout>
+  <section class="hero shell" aria-labelledby="hero-title">
+    <div class="hero-top">
+      <p class="eyebrow">
+        <span class="availability-dot"></span> SOFTWARE DEVELOPER / ARGENTINA
+      </p>
+      <p class="mono hero-coordinate">CHARATA, CHACO</p>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-title" data-hero-line>
+          Ideas claras.
+          <br />
+          <span class="hero-second">Software</span>
+          <br />
+          <span class="hero-last">
+            con intención<span class="accent">.</span>
+          </span>
+        </h1>
+        <div class="hero-summary">
+          <span class="hero-asterisk" aria-hidden="true">
+            ✳
+          </span>
+          <div>
+            <p>
+              Hola, soy <strong>Skull</strong>. Desarrollo productos digitales
+              que conectan personas, procesos y plataformas.
+            </p>
+            <a class="inline-link" href="#trabajo">
+              Conocé mi trabajo <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hero-composition"
+        aria-label="Una muestra del trabajo de Skull"
+      >
+        <div class="hero-photo">
+          <img
+            src={asset("media/cpaul-craft.webp")}
+            alt="Indumentaria personalizada: un proyecto de comercio y diseño de producto."
+            width="1122"
+            height="1402"
+            fetchpriority="high"
+          />
+          <span class="hero-photo-label mono">CPAUL / CAMPAÑA DE PRODUCTO</span>
+        </div>
+        <a
+          class="hero-window"
+          href={projectUrl("vigia")}
+          aria-label="Explorar el proyecto Vigía"
+        >
+          <div class="window-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>VIGÍA / ECOSISTEMA DE GESTIÓN</p>
+            <span aria-hidden="true">↗</span>
+          </div>
+          <img
+            src={asset("media/vigia-modules.webp")}
+            alt="Interfaz de Vigía con sus cuatro módulos principales."
+            width="1440"
+            height="1000"
+          />
+          <span class="window-caption">
+            Un sistema. Cuatro áreas conectadas.{" "}
+            <span aria-hidden="true">↗</span>
+          </span>
+        </a>
+        <span class="hero-disc" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <path
+              id="circle-text"
+              d="M50,50m-35,0a35,35 0 1,1 70,0a35,35 0 1,1 -70,0"
+              fill="none"
+            />
+            <text>
+              <textPath href="#circle-text">
+                IDEA · INTERFAZ · SISTEMA ·{" "}
+              </textPath>
+            </text>
+          </svg>
+          <span>↗</span>
+        </span>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <span class="mono">WEB / ANDROID / ESCRITORIO / LINUX</span>
+      <a href="#trabajo" class="scroll-cue">
+        Deslizá para explorar <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="trabajo" class="work-section shell" aria-labelledby="work-title">
+    <div class="section-heading" data-reveal>
+      <p class="eyebrow">01 / UNA SELECCIÓN DE MI TRABAJO</p>
+      <h2 id="work-title">
+        Distintos problemas.
+        <br />
+        <span class="muted">La misma curiosidad.</span>
+      </h2>
+      <p class="section-intro">
+        Productos, herramientas y experiencias.
+        <br />
+        Del primer boceto al sistema que los sostiene.
+      </p>
+    </div>
+    <div class="work-grid">
+      {selectedProjects.map((project, index) => (
+        <article class:list={["work-item", `work-${project.id}`]} data-reveal>
+          <a
+            class="work-image-link"
+            href={projectUrl(project.id)}
+            aria-label={`Ver proyecto ${project.title}`}
+          >
+            <ProjectVisual project={project} />
+            <span class="project-open" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+          <div class="work-caption">
+            <div>
+              <p class="eyebrow">
+                {String(index + 1).padStart(2, "0")} / {project.label}
+              </p>
+              <h3>
+                <a href={projectUrl(project.id)}>{project.title}</a>
+              </h3>
+            </div>
+            <span class="project-state">{project.status}</span>
+          </div>
+          <p class="work-summary">{project.summary}</p>
+        </article>
+      ))}
+    </div>
+    <a class="outline-link" href={asset("proyectos/")}>
+      Explorá el archivo completo <span>{projects.length} proyectos ↗</span>
+    </a>
+  </section>
+
+  <section id="vigia" class="vigia-feature" aria-labelledby="vigia-title">
+    <div class="shell">
+      <div class="vigia-heading" data-reveal>
+        <p class="eyebrow">CASO EN FOCO / WEB + ANDROID + API</p>
+        <h2 id="vigia-title">
+          El trabajo en campo.
+          <br />
+          <span>La visión del conjunto.</span>
+        </h2>
+        <p>
+          Vigía conecta la operación de un hotel con sus equipos. Desde una
+          reserva hasta una ronda, cada área tiene su lugar.
+        </p>
+      </div>
+      <div class="vigia-story">
+        <div class="vigia-screen" data-reveal>
+          <div class="scene-images" id="vigia-scenes">
+            {scenes.map((scene, index) => (
+              <img
+                class:list={["scene-image", { "is-active": index === 0 }]}
+                src={asset(`media/${scene.image}`)}
+                alt={scene.alt}
+                width="1440"
+                height={index === 0 ? 1200 : 1000}
+                loading="lazy"
+                aria-hidden={index !== 0}
+              />
+            ))}
+          </div>
+          <p class="image-caption">INTERFAZ REAL / DATOS DE DEMOSTRACIÓN</p>
+          <div
+            class="scene-controls"
+            role="group"
+            aria-label="Explorar las pantallas de Vigía"
+            hidden
+          >
+            {scenes.map((scene, index) => (
+              <button
+                type="button"
+                data-scene-select={index}
+                aria-pressed={index === 0}
+                aria-controls="vigia-scenes"
+              >
+                <span class="mono">0{index + 1}</span>
+                {scene.name}
+              </button>
+            ))}
+          </div>
+          <p class="scene-attribution">
+            Mapa de la captura: ©{" "}
+            <a href="https://www.openstreetmap.org/copyright">
+              OpenStreetMap contributors
+            </a>
+            .
+          </p>
+        </div>
+        <div class="module-list">
+          {[
+            {
+              n: "01",
+              title: "Seguridad",
+              body: "Rondas, checkpoints, evidencias y seguimiento de ubicaciones GPS recibidas durante el turno.",
+            },
+            {
+              n: "02",
+              title: "Personal",
+              body: "Legajos, asistencia y fichajes. Herramientas de identificación y sincronización.",
+            },
+            {
+              n: "03",
+              title: "Hotel",
+              body: "Habitaciones, reservas, huéspedes, tarifas, caja y tareas de operación.",
+            },
+            {
+              n: "04",
+              title: "Administración",
+              body: "Compras, stock, accesos y gestión por sede. Licencias según el alcance del proyecto.",
+            },
+          ].map((module, index) => (
+            <article class="module" data-reveal data-scene={index}>
+              <span class="mono">{module.n}</span>
+              <div>
+                <h3>{module.title}</h3>
+                <p>{module.body}</p>
+              </div>
+              <span class="module-cross" aria-hidden="true">
+                +
+              </span>
+            </article>
+          ))}
+        </div>
+      </div>
+      <div class="vigia-end">
+        <p>React · NestJS · PostgreSQL · React Native / Expo · Linux</p>
+        <a class="light-link" href={projectUrl(vigia.id)}>
+          Conocé el ecosistema <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="perfil"
+    class="profile-section shell"
+    aria-labelledby="profile-title"
+  >
+    <div class="profile-label">
+      <p class="eyebrow">02 / DETRÁS DEL CÓDIGO</p>
+      <div class="profile-monogram" aria-hidden="true">
+        s<span>↗</span>
+      </div>
+      <span class="mono">SKULL / SKUUIll</span>
+    </div>
+    <div class="profile-main">
+      <h2 id="profile-title" data-reveal>
+        Me interesa cómo
+        <br />
+        funciona <span class="accent">todo.</span>
+      </h2>
+      <p class="profile-lead" data-reveal>
+        La pantalla que alguien usa. La API que la conecta. El sistema que hace
+        que todo siga andando.
+      </p>
+      <div class="profile-prose">
+        <p>
+          Soy {profile.name}, aunque en mis proyectos me encontrás como Skull.
+          Desarrollo software de forma independiente desde {profile.since},
+          desde Charata, Chaco.
+        </p>
+        <p>
+          Trabajo entre web, Android, escritorio y Linux. Esa variedad me
+          permite conectar las partes de un producto y elegir las herramientas
+          según el problema, las personas que lo usan y el mantenimiento que
+          necesita.
+        </p>
+      </div>
+      <a class="inline-link" href={asset("cv/")}>
+        Mi experiencia y formación <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="skills-section shell" aria-labelledby="skills-title">
+    <div class="section-heading compact" data-reveal>
+      <p class="eyebrow">03 / QUÉ PUEDO APORTAR</p>
+      <h2 id="skills-title">
+        De la interfaz
+        <br />
+        <span class="muted">al sistema.</span>
+      </h2>
+    </div>
+    <div class="skills-list">
+      {profile.skills.map((skill, index) => (
+        <article data-reveal>
+          <span class="mono">0{index + 1}</span>
+          <h3>{skill.name}</h3>
+          <p>{skill.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section
+    id="contacto"
+    class="contact-section shell"
+    aria-labelledby="contact-title"
+  >
+    <p class="eyebrow" data-reveal>
+      04 / LO PRÓXIMO PUEDE EMPEZAR ACÁ
+    </p>
+    <div class="contact-heading">
+      <h2 id="contact-title" data-reveal>
+        ¿Qué tenés
+        <br />
+        <span class="muted">en mente?</span>
+      </h2>
+      <a
+        class="contact-arrow"
+        href={`mailto:${profile.email}`}
+        aria-label={`Escribime a ${profile.email}`}
+      >
+        ↗
+      </a>
+    </div>
+    <div class="contact-bottom">
+      <p>
+        Una aplicación, una integración o una herramienta
+        <br />
+        que simplifique el trabajo. Contame la idea.
+      </p>
+      <a class="email-link" href={`mailto:${profile.email}`}>
+        {profile.email} <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <details class="inquiry-details" hidden>
+      <summary>
+        Prefiero preparar una consulta <span aria-hidden="true">+</span>
+      </summary>
+      <form id="inquiry-form" novalidate>
+        <div class="form-grid">
+          <label>
+            Tu nombre
+            <input name="name" autocomplete="name" required maxlength="100" />
+          </label>
+          <label>
+            Tu email
+            <input
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              maxlength="200"
+            />
+          </label>
+          <label>
+            <span id="inquiry-service-label">¿Qué necesitás?</span>
+            <select name="service" required aria-labelledby="inquiry-service-label">
+              <option value="">Elegí una opción</option>
+              <option>Aplicación web</option>
+              <option>Android o escritorio</option>
+              <option>Hotelería, GPS y personal</option>
+              <option>Linux y automatización</option>
+              <option>Otro proyecto</option>
+            </select>
+          </label>
+          <label>
+            Proyecto de referencia
+            <input name="reference" maxlength="120" />
+          </label>
+          <label class="full-field">
+            Contame tu idea
+            <textarea
+              name="idea"
+              rows="4"
+              required
+              minlength="15"
+              maxlength="5000"
+            ></textarea>
+          </label>
+        </div>
+        <p id="form-error" role="alert" hidden></p>
+        <button class="solid-button" type="submit">
+          Preparar consulta <span aria-hidden="true">↗</span>
+        </button>
+        <p class="form-note">
+          Vas a poder revisar el mensaje y abrirlo en tu correo para enviarlo.
+        </p>
+        <div id="inquiry-result" hidden>
+          <label>
+            Mensaje preparado
+            <textarea id="inquiry-message" rows="8" readonly></textarea>
+          </label>
+          <div class="form-actions">
+            <a id="email-draft" class="solid-button">
+              Abrir en mi correo ↗
+            </a>
+            <button id="copy-inquiry" class="outline-button" type="button">
+              Copiar mensaje
+            </button>
+            <button id="download-inquiry" class="outline-button" type="button">
+              Descargar texto
+            </button>
+          </div>
+          <p id="copy-status" role="status"></p>
+        </div>
+      </form>
+    </details>
+  </section>
+</Layout>

@@ -229,9 +229,9 @@ These images are updated by GitHub Actions and reflect the latest workflow run.
 </details>
 
 <details>
-<summary>About this profile and the upcoming website</summary>
+<summary>About this profile and the web portfolio</summary>
 
-This repository contains my GitHub profile, visual assets and the source for a services website in preparation.
+This repository contains my GitHub profile, visual assets and the published web portfolio.
 
 - [Website source](../site/).
 - [Preview and configuration guide](../docs/landing.md).

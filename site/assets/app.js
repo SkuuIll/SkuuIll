@@ -31,10 +31,10 @@ motionButton.addEventListener("click", () => {
 });
 
 const revealGroups = document.querySelectorAll(
-  ".project-grid, .private-grid, .services-grid, .steps, .hotel-modules",
+  ".project-grid, .private-grid, .services-grid, .steps, .hotel-modules, .tech-grid",
 );
 const revealItems = document.querySelectorAll(
-  ".section-heading, .private-heading, .process-section > div, .contact-copy, .contact-section form, .faq-section > div, .signature-section > div, .signature-section > details",
+  ".section-heading, .private-heading, .profile-identity, .profile-copy, .career-content, .process-section > div, .contact-copy, .contact-section form, .faq-section > div, .signature-section > div, .signature-section > details",
 );
 
 revealGroups.forEach((element) => element.classList.add("reveal-stagger"));
@@ -263,4 +263,5 @@ document.querySelector("#year").textContent = String(new Date().getFullYear());
 form.hidden = false;
 document.querySelector("#contact-fallback").hidden = true;
 document.querySelector("#signature-builder").hidden = false;
+
 

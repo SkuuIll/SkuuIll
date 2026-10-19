@@ -9,14 +9,9 @@
 
 Desarrollador Full Stack · Argentina
 
-Creo sitios web, aplicaciones y herramientas con foco en una experiencia clara y código mantenible.
+Desarrollo aplicaciones web y automatizaciones para resolver tareas concretas: gestionar contenido, preparar proyectos y crear herramientas interactivas.
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-terminal-static.svg">
-  <img src="./assets/profile-terminal.svg" alt="Web, móvil, escritorio y automatización — terminal animada" width="100%">
-</picture>
-
-[Contactame por email](mailto:moreappmix@gmail.com) · [Explorá mis proyectos](https://github.com/SkuuIll?tab=repositories) · [Landing en preparación](./site/)
+[Contactame por email](mailto:moreappmix@gmail.com) · [Explorá mis proyectos](https://github.com/SkuuIll?tab=repositories)
 
 **Español** · [English](./translations/README.en.md)
 
@@ -31,18 +26,28 @@ Trabajo con **JavaScript, TypeScript y Python**, desde la interfaz hasta el back
 - **Herramientas:** Git, Linux y Docker.
 - **Colaboraciones:** desarrollo web, mejoras de productos existentes y proyectos freelance.
 
+## Qué puedo desarrollar
+
+- **Sitios y aplicaciones web:** landings, catálogos, paneles de administración y herramientas a medida.
+- **Backend e integraciones:** gestión de datos, autenticación y conexión entre servicios.
+- **Automatización:** scripts y utilidades para reducir pasos manuales en el trabajo diario.
+- **Mejoras sobre proyectos existentes:** nuevas funcionalidades, interfaces y mantenimiento.
+
 ## 🚀 Proyectos seleccionados
 
 | Proyecto | Qué vas a encontrar | Enlaces |
 | :--- | :--- | :--- |
+| **Repo Setup Kit** | Prepara repositorios para trabajar con Codex y agentes de IA. Instaladores para Windows y Linux, contexto del proyecto y verificaciones iniciales. | [Código y guía](https://github.com/SkuuIll/Repo-Setup-Kit) |
+| **PUBG Mortar Tactical Map** | Aplicación web con mapas interactivos, medición de distancias, dibujo táctico y configuraciones compartibles. JavaScript · Leaflet · PWA. | [Código y demo](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map) |
 | **Pipa_arg** | Proyecto web en TypeScript para una identidad del gaming y su comunidad. | [Web](https://skuuill.github.io/Pipa_arg/) · [Código](https://github.com/SkuuIll/Pipa_arg) |
 | **WebBanderasPUBG** | Herramienta web de banderas para PUBG: Battlegrounds, en JavaScript. | [Web](https://skuuill.github.io/WebBanderasPUBG/) · [Código](https://github.com/SkuuIll/WebBanderasPUBG) |
-| **Blog · Informatorio** | Proyecto final de un blog con Django para Informatorio Chaco. | [Código](https://github.com/SkuuIll/Project-Final-Informatorio-25) |
+| **Blog · Informatorio** | Blog con gestión de publicaciones, usuarios e integración con Gemini. Proyecto final de Informatorio Chaco 2025. Python · Django. | [Código](https://github.com/SkuuIll/Project-Final-Informatorio-25) |
 | **Djangoautomatic** | Automatización de proyectos Django. | [Código](https://github.com/SkuuIll/Djangoautomatic) |
 
 [Ver todos los repositorios →](https://github.com/SkuuIll?tab=repositories)
 
-## 🔒 Proyectos con código privado
+<details>
+<summary><strong>Más experiencia: proyectos con código privado</strong></summary>
 
 También desarrollo proyectos cuyo código no es público. Estos resúmenes presentan sus funcionalidades documentadas; podés consultarme para conversar sobre el trabajo.
 
@@ -57,6 +62,8 @@ También desarrollo proyectos cuyo código no es público. Estos resúmenes pres
 
 **Código fuente: privado.** [Consultame por estos proyectos](mailto:moreappmix@gmail.com?subject=Proyectos%20privados).
 
+</details>
+
 ## ✉️ Trabajemos juntos
 
 ¿Necesitás una landing, una aplicación o mejorar tu web? Escribime a **[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** con:
@@ -70,6 +77,9 @@ Con esa información podemos conversar y acordar alcance, entregables, presupues
 Estoy preparando una **landing de servicios y contrataciones**. Su código está en [`site/`](./site/) y se puede revisar localmente; todavía no se anuncia una dirección pública.
 
 ## 📊 Actividad en GitHub
+
+<details>
+<summary>Ver actividad, lenguajes y contribuciones</summary>
 
 Las siguientes imágenes se generan mediante GitHub Actions. Reflejan su última ejecución; no son datos en tiempo real.
 
@@ -95,7 +105,11 @@ Generada a partir de las contribuciones públicas. Abrí o cerrá esta sección 
 
 </details>
 
-## Acerca de este repositorio
+</details>
+
+<details>
+<summary>Acerca de este repositorio y vista previa de la web</summary>
+
 
 Este repositorio contiene mi perfil de GitHub y la landing de mi futura web.
 
@@ -113,6 +127,8 @@ python3 -m http.server 8000
 ```
 
 Abrí **<http://localhost:8000>**. Los pasos de validación están en la [guía de la landing](./docs/landing.md).
+
+</details>
 
 ---
 

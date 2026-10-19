@@ -11,7 +11,7 @@
   ];
   let previous = -1;
   try {
-    const stored = localStorage.getItem("school-portfolio-palette");
+    const stored = localStorage.getItem("skull-portfolio-palette");
     if (stored !== null && /^[0-4]$/.test(stored)) previous = Number(stored);
   } catch { /* Storage can be disabled without disabling the site. */ }
 
@@ -30,10 +30,10 @@
     const label = document.querySelector("#palette-name");
     if (label) label.textContent = palette.name;
     previous = index;
-    try { localStorage.setItem("school-portfolio-palette", String(index)); } catch { /* Optional preference. */ }
+    try { localStorage.setItem("skull-portfolio-palette", String(index)); } catch { /* Optional preference. */ }
     return palette.name;
   }
-  window.schoolAppearance = { changePalette, currentName: () => palettes[previous].name };
+  window.skullAppearance = { changePalette, currentName: () => palettes[previous].name };
   changePalette();
   window.addEventListener("pageshow", event => {
     if (event.persisted) changePalette();

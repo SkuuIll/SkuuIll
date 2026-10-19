@@ -18,9 +18,9 @@ window.addEventListener("scroll", updatePageEffects, { passive: true });
 
 const appearanceControls = document.querySelector(".appearance-controls");
 const paletteName = document.querySelector("#palette-name");
-if (window.schoolAppearance) {
-  paletteName.textContent = window.schoolAppearance.currentName();
-  document.querySelector("#change-palette").addEventListener("click", () => window.schoolAppearance.changePalette());
+if (window.skullAppearance) {
+  paletteName.textContent = window.skullAppearance.currentName();
+  document.querySelector("#change-palette").addEventListener("click", () => window.skullAppearance.changePalette());
   appearanceControls.hidden = false;
 }
 const motionButton = document.querySelector("#toggle-motion");
@@ -89,7 +89,7 @@ let inquiryText = "";
 function buildInquiry(data) {
   const value = (key) => String(data.get(key) || "").trim();
   return [
-    "Hola School, me gustaría conversar sobre un proyecto.",
+    "Hola Skull, me gustaría conversar sobre un proyecto.",
     "",
     `Nombre: ${value("name")}`,
     `Email: ${value("email")}`,
@@ -246,7 +246,7 @@ document.querySelector("#generate-signature").addEventListener("click", () => {
   url.hash = "contacto";
   const link = document.querySelector("#signature-preview");
   link.href = url.href;
-  signatureCode.value = `<a href="${escapeAttribute(url.href)}" target="_blank" rel="noopener noreferrer">Desarrollado por School ↗</a>`;
+  signatureCode.value = `<a href="${escapeAttribute(url.href)}" target="_blank" rel="noopener noreferrer">Desarrollado por Skull ↗</a>`;
   signatureResult.hidden = false;
   signatureStatus.textContent =
     "Firma lista. El enlace abre tu landing con el proyecto de referencia.";

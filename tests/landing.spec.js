@@ -20,7 +20,7 @@ for (const width of [320, 390, 768, 1440]) {
     });
     await page.setViewportSize({ width, height: 900 });
     await page.goto("./");
-    await expect(page).toHaveTitle(/School/);
+    await expect(page).toHaveTitle(/Skull/);
     await expect(page.locator("h1")).toBeVisible();
     expect(
       await page.evaluate(
@@ -300,7 +300,7 @@ test("all color environments retain accessible contrast", async ({ page }) => {
   await page.goto("./");
   for (let index = 0; index < 5; index++) {
     await page.evaluate((previous) => {
-      localStorage.setItem("school-portfolio-palette", String(previous));
+      localStorage.setItem("skull-portfolio-palette", String(previous));
     }, (index + 4) % 5);
     await page.reload();
     await expect(page.locator("html")).toHaveAttribute("data-palette", String(index));

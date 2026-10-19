@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="../assets/profile-cover-en.svg" alt="School / SkuuIll. Software development: web, Android, desktop, Linux and automation." width="100%">
+<img src="../assets/profile-cover-en.svg" alt="Skull / SkuuIll. Software development: web, Android, desktop, Linux and automation." width="100%">
 
-# School · SkuuIll
+# Skull · SkuuIll
 
 Software Developer · Full Stack & Cross-Platform · Argentina
 
@@ -16,7 +16,7 @@ Web, Android and desktop applications. Backends, integrations and Linux environm
 
 ## Software built for the context in which it is used
 
-I'm School, a software developer from Argentina. I work across the layers of a product: the interface people use, the logic that processes their data and the environment where it runs. My work spans **web, Android applications, desktop tools, automation and Linux servers**.
+I'm Skull, a software developer from Argentina. I work across the layers of a product: the interface people use, the logic that processes their data and the environment where it runs. My work spans **web, Android applications, desktop tools, automation and Linux servers**.
 
 I use **Java, Kotlin, Dart, JavaScript, TypeScript, Python, Go, C# and C++**, depending on the project. I enjoy connecting these technologies into complete solutions: an app with its API, a store with its administration tools, a desktop utility with system integration or a workflow that reduces repetitive tasks.
 
@@ -238,5 +238,5 @@ This repository contains my GitHub profile, visual assets and the source for a s
 
 </details>
 
-<p align="center"><sub>School · SkuuIll — Software, systems and tools from Argentina. 🧉</sub></p>
+<p align="center"><sub>Skull · SkuuIll — Software, systems and tools from Argentina. 🧉</sub></p>
 

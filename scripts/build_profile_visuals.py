@@ -14,7 +14,7 @@ def svg(title,w,h,body):
 for lang in ['es','en']:
     body = '<rect x="42" y="42" width="48" height="5" rx="2" fill="#c7f284"/>'
     body += text(105,51,'SOFTWARE DEVELOPER / ARGENTINA',17,MUTED,500, 'letter-spacing="2"')
-    body += text(40,145,'School',76,FG,700,'letter-spacing="-3"')
+    body += text(40,145,'Skull',76,FG,700,'letter-spacing="-3"')
     body += text(43,190,'SkuuIll / Full Stack & Multiplatform',23,GREEN,500)
     lines = ['De la interfaz al sistema.', 'Software para distintos entornos.'] if lang=='es' else ['From interface to system.', 'Software across platforms.']
     for i,line in enumerate(lines): body += text(44,252+34*i,line,25,FG)
@@ -25,7 +25,7 @@ for lang in ['es','en']:
     body += text(816,163,'{ build }',23,GREEN,500)
     for y,w in [(187,150),(205,186),(223,106)]:body+=f'<rect x="817" y="{y}" width="{w}" height="5" rx="2" fill="#4d6352"/>'
     body += '<rect x="1060" y="178" width="55" height="53" rx="6" fill="#c7f284"/><path d="M1074 202L1085 213L1102 191" fill="none" stroke="#203322" stroke-width="4"/>'
-    (OUT/f'profile-cover-{lang}.svg').write_text(svg('School / SkuuIll — Software development',1200,410,body))
+    (OUT/f'profile-cover-{lang}.svg').write_text(svg('Skull / SkuuIll — Software development',1200,410,body))
 
 projects=[('tooling','01 / DEVELOPMENT TOOLS','Repo Setup Kit','PYTHON / SHELL / POWERSHELL'),('map','02 / INTERACTIVE WEB','PUBG Tactical Map','JAVASCRIPT / LEAFLET / PWA'),('web','03 / CONTENT APPLICATION','Informatorio Blog','PYTHON / DJANGO / GEMINI')]
 for key,kicker,title,stack in projects:

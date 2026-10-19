@@ -1,6 +1,6 @@
 # Identidad, ambientes y Vigía
 
-El nombre visible es **School**. La cuenta y los enlaces de GitHub conservan el identificador `SkuuIll`.
+El nombre visible es **Skull**. La cuenta y los enlaces de GitHub conservan el identificador `SkuuIll`.
 
 ## Perfil de GitHub
 

@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="./assets/profile-cover-es.svg" alt="School / SkuuIll. Desarrollo de software: web, Android, escritorio, Linux y automatización." width="100%">
+<img src="./assets/profile-cover-es.svg" alt="Skull / SkuuIll. Desarrollo de software: web, Android, escritorio, Linux y automatización." width="100%">
 
-# School · SkuuIll
+# Skull · SkuuIll
 
 Desarrollador de software · Full Stack & Multiplataforma · Argentina
 
@@ -16,7 +16,7 @@ Aplicaciones web, Android y escritorio. Backend, integraciones y entornos Linux.
 
 ## Software pensado para el contexto en el que se usa
 
-Soy School, desarrollador de software de Argentina. Trabajo en distintas capas de un producto: la interfaz que usa una persona, la lógica que procesa sus datos y el entorno donde se ejecuta. Mi trabajo abarca **web, aplicaciones Android, herramientas de escritorio, automatización y servidores Linux**.
+Soy Skull, desarrollador de software de Argentina. Trabajo en distintas capas de un producto: la interfaz que usa una persona, la lógica que procesa sus datos y el entorno donde se ejecuta. Mi trabajo abarca **web, aplicaciones Android, herramientas de escritorio, automatización y servidores Linux**.
 
 Uso **Java, Kotlin, Dart, JavaScript, TypeScript, Python, Go, C# y C++**, según las necesidades del proyecto. Me interesa conectar esas tecnologías para construir soluciones completas: una app con su API, un comercio con su administración, una herramienta de escritorio con integración al sistema o un flujo de trabajo que reduzca tareas repetitivas.
 
@@ -238,5 +238,5 @@ Este repositorio contiene el perfil de GitHub, sus recursos visuales y el códig
 
 </details>
 
-<p align="center"><sub>School · SkuuIll — Software, sistemas y herramientas desde Argentina. 🧉</sub></p>
+<p align="center"><sub>Skull · SkuuIll — Software, sistemas y herramientas desde Argentina. 🧉</sub></p>
 

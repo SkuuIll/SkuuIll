@@ -35,7 +35,7 @@ for (const width of [320, 390, 768, 1440]) {
           .filter((hash) => !document.getElementById(hash.slice(1))),
       );
     expect(missingTargets).toEqual([]);
-    await page.getByRole("link", { name: "Hablemos" }).click();
+    await page.getByRole("link", { name: "Hablemos", exact: true }).click();
     await expect(page).toHaveURL(/#contacto$/);
     expect(errors).toEqual([]);
     expect(failedRequests).toEqual([]);

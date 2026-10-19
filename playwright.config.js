@@ -7,13 +7,13 @@ module.exports = defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: "list",
   use: {
-    baseURL: "http://127.0.0.1:4179/site/",
+    baseURL: "http://127.0.0.1:4179/SkuuIll/",
     browserName: "chromium",
     trace: "retain-on-failure",
   },
   webServer: {
-    command: "python3 -m http.server 4179 --bind 127.0.0.1",
-    url: "http://127.0.0.1:4179/site/",
+    command: "npm run serve:test",
+    url: "http://127.0.0.1:4179/SkuuIll/",
     reuseExistingServer: !process.env.CI,
   },
 });

@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { asset } from "../data/projects";
+---
+
+<Layout title="Página no encontrada — Skull">
+  <section class="page-heading shell">
+    <p class="eyebrow">404 / ESTE ENLACE NO LLEVA A UN PROYECTO</p>
+    <h1>
+      Podemos volver
+      <br />
+      <span class="muted">a empezar.</span>
+    </h1>
+    <p class="case-lead" style="margin-block:35px">
+      La página que buscás no está disponible. Podés explorar los proyectos o
+      escribirme.
+    </p>
+    <a class="solid-button" href={asset("")}>
+      Volver al inicio ↗
+    </a>
+    <a class="inline-link" style="margin:25px" href={asset("proyectos/")}>
+      Ver proyectos ↗
+    </a>
+  </section>
+</Layout>

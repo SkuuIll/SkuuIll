@@ -1,0 +1,545 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { profile } from "../../data/profile";
+import { projects, projectUrl, asset } from "../../data/projects";
+const cvProjects = [
+  "vigia",
+  "cpaul",
+  "pubg-map",
+  "repo-setup",
+  "showroom",
+  "fluxnet",
+  "devblog",
+  "battlefx",
+].map((id) => projects.find((project) => project.id === id)!);
+---
+
+<Layout
+  title={`${profile.name} — Currículum vitae | Skull`}
+  description="Currículum de Facundo Nahuel Escobedo, Skull. Desarrollo de software web, Android y escritorio, APIs, Linux y automatización."
+>
+  <div class="cv-actions shell">
+    <a class="breadcrumb" href={asset("#perfil")}>
+      ← Volver al perfil
+    </a>
+    <div>
+      <a
+        class="solid-button"
+        href={asset("cv/Facundo-Escobedo-CV.pdf")}
+        download
+      >
+        Descargar CV en PDF ↗
+      </a>
+      <a
+        class="outline-button"
+        href={asset("cv/Facundo-Escobedo-CV-ATS.pdf")}
+        download
+      >
+        Versión ATS ↗
+      </a>
+      <a
+        class="outline-button"
+        href={asset("cv/Facundo-Escobedo-CV-Editable.html")}
+        download
+      >
+        HTML editable ↗
+      </a>
+    </div>
+  </div>
+  <article class="cv-document shell">
+    <header class="cv-header">
+      <p class="eyebrow">CURRÍCULUM VITAE / SOFTWARE DEVELOPER</p>
+      <h1>{profile.name}</h1>
+      <p class="cv-role">
+        Desarrollador de software <span>Skull / SkuuIll</span>
+      </p>
+      <div class="cv-contact">
+        <span>{profile.location}</span>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a href={profile.github}>github.com/SkuuIll</a>
+        <a href="https://skuuill.github.io/SkuuIll/">Portafolio web ↗</a>
+      </div>
+    </header>
+    <div class="cv-columns">
+      <aside class="cv-sidebar">
+        <section>
+          <h2>Formación</h2>
+          {profile.education.map((education) => (
+            <div class="cv-education">
+              <h3>{education.title}</h3>
+              <p>{education.institution}</p>
+              <p class="cv-small">{education.detail}</p>
+            </div>
+          ))}
+        </section>
+        <section>
+          <h2>Formación complementaria</h2>
+          <div class="cv-education">
+            <h3>Automatización industrial y programación de PLC</h3>
+            <p>Red Nacional de Aulas Talleres Móviles / INET</p>
+            <p class="cv-small">2018 · Capacitación técnica</p>
+          </div>
+        </section>
+        <section>
+          <h2>Modalidad</h2>
+          <p>Trabajo independiente y remoto desde Argentina.</p>
+        </section>
+      </aside>
+      <div class="cv-body">
+        <section>
+          <h2>Perfil profesional</h2>
+          <p>
+            {profile.summary} Trabajo de forma independiente desde 2022, con
+            foco en sistemas de gestión, comercio, herramientas técnicas e
+            integración entre plataformas.
+          </p>
+        </section>
+        <section>
+          <h2>Experiencia</h2>
+          <div class="cv-experience">
+            <p class="cv-date">2022 — ACTUALIDAD</p>
+            <h3>Desarrollador de software independiente</h3>
+            <p>
+              Desarrollo de aplicaciones web y móviles, APIs, modelos de datos y
+              herramientas de escritorio. Integración de funcionalidades,
+              automatización y preparación de entornos Linux/VPS.
+            </p>
+            <ul>
+              <li>
+                Sistemas de gestión con roles, permisos y organización por sede.
+              </li>
+              <li>
+                Comercio digital, catálogos y experiencias de personalización.
+              </li>
+              <li>
+                Aplicaciones Android, herramientas Windows y servicios
+                conectados.
+              </li>
+            </ul>
+          </div>
+          <div class="cv-experience">
+            <p class="cv-date">2018 — 2020</p>
+            <h3>Subadministración de plataforma digital</h3>
+            <p>
+              Operación de una plataforma de servidores privados y creación de
+              sitios web, con coordinación del servicio y atención a necesidades
+              de clientes.
+            </p>
+          </div>
+          <div class="cv-experience">
+            <p class="cv-date">2017</p>
+            <h3>Pasantía técnico-profesional</h3>
+            <p>
+              Prácticas formativas en Predate, Charata, durante la educación
+              secundaria técnica.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <section class="cv-project-page">
+      <div class="cv-page-heading">
+        <p class="eyebrow">SKULL / FACUNDO NAHUEL ESCOBEDO</p>
+        <h2>Proyectos seleccionados</h2>
+        <p>
+          Productos y herramientas desarrollados entre web, Android, escritorio
+          y Linux. Los casos completos están disponibles en el portafolio.
+        </p>
+      </div>
+      <div class="cv-projects">
+        {cvProjects.map((project) => (
+          <div class="cv-project">
+            <h3>
+              <a
+                href={
+                  new URL(projectUrl(project.id), "https://skuuill.github.io")
+                }
+              >
+                {project.title} ↗
+              </a>
+            </h3>
+            <p>{project.summary}</p>
+            <p class="cv-small">{project.stack.slice(0, 4).join(" · ")}</p>
+            {project.id === "vigia" && (
+              <p class="cv-small">
+                Seguridad · Personal · Hotel · Administración
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+      <section class="cv-technologies">
+        <h2>Tecnologías y herramientas</h2>
+        <div>
+          {profile.skills.map((skill) => (
+            <div class="cv-skill">
+              <h3>{skill.name}</h3>
+              <p>{skill.detail.split(". ")[0]}.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </section>
+    <footer class="cv-note">
+      <p>
+        Portafolio y casos completos:{" "}
+        <a href="https://skuuill.github.io/SkuuIll/">
+          skuuill.github.io/SkuuIll/
+        </a>
+      </p>
+    </footer>
+  </article>
+</Layout>
+<style is:global>
+  .cv-actions {
+    padding-block: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    align-items: center;
+  }
+  .cv-actions .breadcrumb {
+    margin: 0;
+  }
+  .cv-actions > div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .cv-actions a {
+    font-size: 11px;
+  }
+  .cv-document {
+    background: #fff;
+    padding: 60px;
+    max-width: 1120px;
+    margin-bottom: 70px;
+  }
+  .cv-header {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddcd3;
+  }
+  .cv-header > .eyebrow {
+    color: var(--accent);
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+  .cv-header h1 {
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.1;
+    max-width: 17ch;
+  }
+  .cv-role {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  .cv-role > span {
+    color: var(--muted);
+    font-size: 13px;
+    margin-left: 20px;
+  }
+  .cv-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 22px;
+  }
+  .cv-contact > a {
+    border-bottom: 1px solid #ddd;
+  }
+  .cv-columns {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    margin-top: 35px;
+  }
+  .cv-document h2 {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+  .cv-document h3 {
+    font-size: 14px;
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+  .cv-document p,
+  .cv-document li {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .cv-document section {
+    margin-bottom: 30px;
+  }
+  .cv-education,
+  .cv-skill,
+  .cv-experience {
+    margin-bottom: 22px;
+  }
+  .cv-document .cv-small {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 7px;
+  }
+  .cv-document .cv-date {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    margin-bottom: 7px;
+  }
+  .cv-document ul {
+    padding-left: 18px;
+    margin-top: 10px;
+  }
+  .cv-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .cv-project-page {
+    border-top: 1px solid var(--line);
+    padding-top: 35px;
+    margin-top: 25px;
+  }
+  .cv-page-heading {
+    margin-bottom: 30px;
+  }
+  .cv-page-heading > .eyebrow {
+    font-size: 9px;
+    color: var(--muted);
+    margin-bottom: 15px;
+  }
+  .cv-page-heading h2 {
+    font-family: var(--sans);
+    font-size: 30px;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    margin-bottom: 15px;
+    color: var(--ink);
+  }
+  .cv-page-heading > p:last-child {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .cv-projects {
+    gap: 30px;
+  }
+  .cv-project h3 {
+    font-size: 16px;
+  }
+  .cv-project p {
+    font-size: 12px;
+  }
+  .cv-project .cv-small {
+    font-size: 10px;
+  }
+  .cv-technologies {
+    margin-top: 35px;
+  }
+  .cv-technologies > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+  }
+  .cv-project h3 {
+    font-size: 13px;
+  }
+  .cv-project p {
+    font-size: 11px;
+  }
+  .cv-project .cv-small {
+    font-size: 9px;
+  }
+  .cv-note {
+    border-top: 1px solid #ddd;
+    padding-top: 18px;
+    margin-top: 10px;
+  }
+  .cv-note p {
+    font-size: 10px;
+    color: var(--muted);
+  }
+  @media (max-width: 767px) {
+    .cv-actions {
+      display: block;
+      padding-block: 30px;
+    }
+    .cv-actions > div {
+      margin-top: 22px;
+      gap: 8px;
+    }
+    .cv-actions a {
+      font-size: 10px;
+      padding: 10px;
+    }
+    .cv-actions .breadcrumb {
+      padding: 0;
+    }
+    .cv-document {
+      padding: 25px;
+      width: calc(100% - 30px);
+    }
+    .cv-header h1 {
+      font-size: 34px;
+    }
+    .cv-role {
+      font-size: 16px;
+    }
+    .cv-role > span {
+      display: block;
+      margin: 8px 0 0;
+    }
+    .cv-columns {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 27px;
+    }
+    .cv-sidebar {
+      order: 2;
+    }
+    .cv-body {
+      order: 1;
+    }
+    .cv-projects {
+      grid-template-columns: 1fr;
+    }
+    .cv-contact {
+      gap: 8px 15px;
+    }
+  }
+  @media print {
+    @page {
+      size: letter;
+      margin: 15mm 14mm;
+    }
+    html,
+    body {
+      background: #fff !important;
+      color: #252720 !important;
+    }
+    .site-header,
+    .site-footer,
+    .cv-actions,
+    .reading-progress,
+    .skip-link {
+      display: none !important;
+    }
+    .cv-document {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: none;
+    }
+    .cv-header h1 {
+      font-size: 28pt;
+      max-width: none;
+    }
+    .cv-header {
+      padding-bottom: 16px;
+    }
+    .cv-header > .eyebrow {
+      margin-bottom: 12px;
+    }
+    .cv-role {
+      font-size: 12pt;
+      margin-top: 10px;
+    }
+    .cv-contact {
+      font-size: 8.5pt;
+      margin-top: 14px;
+      gap: 5px 14px;
+    }
+    .cv-columns {
+      grid-template-columns: 1fr 2.1fr;
+      gap: 25px;
+      margin-top: 22px;
+    }
+    .cv-document h2 {
+      font-size: 10pt;
+      margin-bottom: 12px;
+    }
+    .cv-document h3 {
+      font-size: 10.5pt;
+      margin-bottom: 5px;
+    }
+    .cv-document p,
+    .cv-document li {
+      font-size: 10.3pt;
+      line-height: 1.55;
+    }
+    .cv-document section {
+      margin-bottom: 20px;
+    }
+    .cv-education,
+    .cv-skill,
+    .cv-experience {
+      margin-bottom: 16px;
+    }
+    .cv-document .cv-small {
+      font-size: 8.5pt;
+      margin-top: 5px;
+    }
+    .cv-document .cv-date {
+      font-size: 8pt;
+    }
+    .cv-projects {
+      gap: 15px 18px;
+    }
+    .cv-project h3 {
+      font-size: 11.5pt;
+    }
+    .cv-project p {
+      font-size: 10pt;
+    }
+    .cv-project .cv-small {
+      font-size: 8pt;
+    }
+    .cv-project,
+    .cv-education,
+    .cv-experience,
+    .cv-skill {
+      break-inside: avoid;
+    }
+    .cv-document h2,
+    .cv-document h3 {
+      break-after: avoid;
+    }
+    .cv-note p {
+      font-size: 8pt;
+    }
+    .cv-project-page {
+      break-before: page;
+      border: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .cv-page-heading h2 {
+      font-size: 24pt;
+      margin-bottom: 15px;
+    }
+    .cv-page-heading > p:last-child {
+      font-size: 10pt;
+    }
+    .cv-page-heading > .eyebrow {
+      font-size: 8pt;
+    }
+    .cv-technologies {
+      margin-top: 25px;
+    }
+    .cv-technologies .cv-skill p {
+      font-size: 9pt;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+</style>

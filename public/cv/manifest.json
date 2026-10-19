@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "src/data/profile.ts": "c1e8b605be07d9d3e66476b37774833d1f97a5c4f45c6b83d193a5adb4a7931b",
+    "src/data/projects.json": "b6217a0746185920a108e8799ed0ea97b16ad04490084962be07e4d1fe64aadb",
+    "src/data/projects.ts": "1e648a61fbe47a5b629c493fe2c854a14872809af6dfbcd7a452854b88835fa2",
+    "src/pages/cv/index.astro": "5aaac11d1290c8427c869732b6b549f699bb83567676a8df9741010fd951efbf",
+    "src/styles/global.css": "52895359562d18530fdcf3dc4885d9b6fa742cf507f8ca97ce1009b607e06e78",
+    "scripts/export-cv.mjs": "2eb9f3de28a3e7ca6550395c9e1480b098c3c96a7f87f97eb39ad56e8fdab1b8"
+  },
+  "files": {
+    "Facundo-Escobedo-CV.pdf": "032d89bc508740dad5ecac6f5fddf2932ded1fa28506a6ba1430194946ad293f",
+    "Facundo-Escobedo-CV-ATS.pdf": "c58ea6724ecca3658dd1d09098aeba2f9a96610fd4f5bd1bb83f7154a0b1899d",
+    "Facundo-Escobedo-CV-Editable.html": "31547f46a15b0e5dcf864070921331176849e94c2d702f91e82db2c0991858bb",
+    "Facundo-Escobedo-CV-ATS.html": "4f70e2ea3bf3569a65db58aa2023478ee1f368173d22798ab428963d634ffafe"
+  }
+}

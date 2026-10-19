@@ -1,0 +1,162 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectVisual from "../../components/ProjectVisual.astro";
+import { projects, projectUrl, asset } from "../../data/projects";
+export function getStaticPaths() {
+  return projects.map((project, index) => ({
+    params: { slug: project.id },
+    props: { project, next: projects[(index + 1) % projects.length] },
+  }));
+}
+const { project, next } = Astro.props;
+---
+
+<Layout
+  title={`${project.title} — Proyecto de Skull`}
+  description={project.summary}
+>
+  <section class="page-heading shell">
+    <a class="breadcrumb" href={asset("proyectos/")}>
+      ← Todos los proyectos
+    </a>
+    <p class="eyebrow">{project.label}</p>
+    <h1>
+      {project.title}
+      <span class="accent">.</span>
+    </h1>
+    <div class="case-intro-row">
+      <p class="case-lead">{project.summary}</p>
+      <dl class="case-meta">
+        <div>
+          <dt>Estado</dt>
+          <dd>{project.status}</dd>
+        </div>
+        <div>
+          <dt>Tecnologías</dt>
+          <dd>{project.stack.join(" · ")}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+  <figure class="case-visual shell">
+    <ProjectVisual project={project} hero />
+    <figcaption class="image-caption">
+      {project.caption ||
+        "Identidad visual del proyecto · Consultá el caso para conocer su alcance."}
+    </figcaption>
+  </figure>
+  <div class="case-content shell">
+    <aside class="case-side" aria-label="Enlaces del proyecto">
+      <p class="eyebrow">EXPLORÁ EL PROYECTO</p>
+      {project.links.map((link) => (
+        <a href={link.href}>{link.label} ↗</a>
+      ))}
+      <a
+        class="solid-button case-cta"
+        href={`${asset("")}?proyecto=${encodeURIComponent(project.title)}#contacto`}
+      >
+        Consultar por este trabajo ↗
+      </a>
+    </aside>
+    <div>
+      {project.sections
+        .filter((section) => section.title !== "Tecnologías")
+        .map((section) => (
+          <section class="case-section" data-reveal>
+            <h2>{section.title}</h2>
+            <p>{section.body}</p>
+          </section>
+        ))}
+      {project.id === "vigia" && (
+        <section class="case-section">
+          <h2>Cuatro áreas, un ecosistema</h2>
+          <p>
+            <strong>Seguridad:</strong> rondas, checkpoints, GPS y novedades.{" "}
+            <strong>Personal:</strong> legajos, asistencia y fichajes.{" "}
+            <strong>Hotel:</strong> habitaciones, reservas, huéspedes y
+            operación. <strong>Administración:</strong> compras, stock, accesos
+            y herramientas de gestión.
+          </p>
+          <p>
+            La app Android acompaña al sereno durante un turno con
+            consentimiento GPS. El panel diferencia muestras recientes e
+            históricas y evita unir tramos sin datos. Los módulos, permisos y
+            licencias definen el alcance de cada instalación.
+          </p>
+        </section>
+      )}
+      {project.id === "cpaul" && (
+        <section class="case-section">
+          <h2>Diseño de producto y comercio</h2>
+          <p>
+            El Atelier 3D permite trabajar la personalización visual de
+            indumentaria. El proyecto conecta esa experiencia con catálogo,
+            pedidos, administración y persistencia de datos. La imagen de esta
+            página pertenece a la campaña del proyecto; el configurador es una
+            funcionalidad diferenciada.
+          </p>
+        </section>
+      )}
+    </div>
+  </div>
+  {project.id === "vigia" && (
+    <div class="case-gallery shell">
+      <figure>
+        <img
+          src={asset("media/vigia-gps.webp")}
+          alt="Supervisión GPS de Vigía, con datos de demostración."
+          width="1440"
+          height="1000"
+          loading="lazy"
+        />
+        <figcaption>
+          Supervisión GPS · Datos de demostración · Mapa ©{" "}
+          <a href="https://www.openstreetmap.org/copyright">
+            OpenStreetMap contributors
+          </a>
+        </figcaption>
+      </figure>
+      <figure>
+        <img
+          src={asset("media/vigia-modules.webp")}
+          alt="Los cuatro módulos de Vigía: Seguridad, Personal, Hotel y Administración."
+          width="1440"
+          height="1000"
+          loading="lazy"
+        />
+        <figcaption>
+          Entrada a los cuatro módulos · Entorno de demostración
+        </figcaption>
+      </figure>
+      {[
+        {
+          file: "vigia-personal.webp",
+          label: "Personal: jornada y asistencia",
+        },
+        { file: "vigia-hotel.webp", label: "Hotel: estado de habitaciones" },
+        {
+          file: "vigia-admin.webp",
+          label: "Administración: compras y proveedores",
+        },
+      ].map((screen) => (
+        <figure>
+          <img
+            src={asset(`media/${screen.file}`)}
+            alt={`${screen.label}, interfaz de Vigía con datos de demostración.`}
+            width="1440"
+            height="1000"
+            loading="lazy"
+          />
+          <figcaption>{screen.label} · Datos de demostración</figcaption>
+        </figure>
+      ))}
+    </div>
+  )}
+  <a class="case-next shell" href={projectUrl(next.id)}>
+    <div>
+      <p class="eyebrow">SIGUIENTE PROYECTO</p>
+      <p>{next.title}</p>
+    </div>
+    <span aria-hidden="true">↗</span>
+  </a>
+</Layout>

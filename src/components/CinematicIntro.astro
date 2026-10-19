@@ -1,0 +1,66 @@
+---
+import { asset } from "../data/projects";
+---
+
+<section class="hero cinema-hero" aria-labelledby="hero-title">
+  <div class="cinema-media" aria-hidden="true">
+    <img
+      src={asset("media/product-film-poster.webp")}
+      width="1280"
+      height="800"
+      alt=""
+      fetchpriority="high"
+    />
+    <video
+      class="cinema-film"
+      data-src={asset("media/product-film.webm")}
+      muted
+      loop
+      playsinline
+      preload="none"
+      tabindex="-1"
+    ></video>
+  </div>
+  <div class="cinema-shade" aria-hidden="true"></div>
+  <div class="cinema-content shell">
+    <div class="cinema-kicker mono">
+      <span>SKULL / DESARROLLO DE SOFTWARE</span>
+      <div class="cinema-preferences" hidden>
+        <span class="cinema-status" aria-live="polite">
+          Movimiento activo
+        </span>
+        <button type="button" id="cinema-toggle" aria-pressed="false">
+          Pausar experiencia
+        </button>
+        <button type="button" id="film-play" hidden>
+          Reproducir fondo
+        </button>
+      </div>
+    </div>
+    <div class="cinema-copy">
+      <p class="eyebrow">DE LA IDEA A LA EXPERIENCIA</p>
+      <h1 id="hero-title">
+        <span data-hero-line>Software</span>
+        <span data-hero-line>
+          en movimiento<span class="cinema-dot">.</span>
+        </span>
+      </h1>
+      <p class="cinema-description">
+        Soy Skull. Diseño y desarrollo productos digitales que conectan
+        personas, procesos y plataformas.
+      </p>
+      <a href="#trabajo" class="cinema-cta">
+        Explorá mi trabajo <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="cinema-bottom">
+      <a class="cinema-scroll" href="#trabajo">
+        <span aria-hidden="true">↓</span> DESLIZÁ PARA EXPLORAR
+      </a>
+      <span class="cinema-credit mono">ATELIER + VIGÍA / SECUENCIA VISUAL</span>
+    </div>
+  </div>
+  <div class="cinema-coordinate" aria-hidden="true">
+    DISEÑO / CÓDIGO / INTERACCIÓN
+  </div>
+</section>

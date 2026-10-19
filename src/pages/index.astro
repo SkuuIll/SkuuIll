@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AtelierFeature from "../components/AtelierFeature.astro";
+import CinematicIntro from "../components/CinematicIntro.astro";
 import { projects, projectUrl, asset } from "../data/projects";
 import { profile } from "../data/profile";
 const vigia = projects.find((project) => project.id === "vigia")!;
@@ -39,118 +40,33 @@ const scenes = [
 ---
 
 <Layout>
-  <section class="hero shell" aria-labelledby="hero-title">
-    <div class="hero-top">
-      <p class="eyebrow">
-        <span class="availability-dot"></span> SOFTWARE DEVELOPER / ARGENTINA
-      </p>
-      <p class="mono hero-coordinate">CHARATA, CHACO</p>
-    </div>
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <h1 id="hero-title" data-hero-line>
-          Ideas claras.
-          <br />
-          <span class="hero-second">Software</span>
-          <br />
-          <span class="hero-last">
-            con intención<span class="accent">.</span>
+  <CinematicIntro />
+  <div class="cinema-cover">
+    <div class="product-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        {[0, 1].map(() => (
+          <span>
+            INTERFACES <b>↗</b> EXPERIENCIAS 3D <b>↗</b> APLICACIONES <b>↗</b>{" "}
+            SISTEMAS CONECTADOS <b>↗</b>
           </span>
-        </h1>
-        <div class="hero-summary">
-          <span class="hero-asterisk" aria-hidden="true">
-            ✳
-          </span>
-          <div>
-            <p>
-              Hola, soy <strong>Skull</strong>. Desarrollo productos digitales
-              que conectan personas, procesos y plataformas.
-            </p>
-            <a class="inline-link" href="#trabajo">
-              Conocé mi trabajo <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div
-        class="hero-composition"
-        aria-label="Una muestra del trabajo de Skull"
-      >
-        <div class="hero-art" data-depth>
-          <img
-            src={asset("media/skull-sculpture-3d.webp")}
-            alt="Ilustración 3D: una cinta de cerámica conecta formas y construye una S escultórica."
-            width="1024"
-            height="1024"
-            fetchpriority="high"
-          />
-        </div>
-        <span class="hero-art-note">
-          IDEA → INTERFAZ → SISTEMA / ILUSTRACIÓN 3D
-        </span>
-        <a
-          class="hero-window"
-          href={projectUrl("vigia")}
-          aria-label="Explorar el proyecto Vigía"
-        >
-          <div class="window-bar">
-            <span></span>
-            <span></span>
-            <span></span>
-            <p>VIGÍA / ECOSISTEMA DE GESTIÓN</p>
-            <span aria-hidden="true">↗</span>
-          </div>
-          <img
-            src={asset("media/vigia-modules.webp")}
-            srcset={`${asset("media/vigia-modules-600.webp")} 600w, ${asset("media/vigia-modules-900.webp")} 900w, ${asset("media/vigia-modules.webp")} 1440w`}
-            sizes="(max-width: 767px) 90vw, 40vw"
-            alt="Interfaz de Vigía con sus cuatro módulos principales."
-            width="1440"
-            height="1000"
-          />
-          <span class="window-caption">
-            Un sistema. Cuatro áreas conectadas.{" "}
-            <span aria-hidden="true">↗</span>
-          </span>
-        </a>
-        <span class="hero-disc" aria-hidden="true">
-          <svg viewBox="0 0 100 100">
-            <path
-              id="circle-text"
-              d="M50,50m-35,0a35,35 0 1,1 70,0a35,35 0 1,1 -70,0"
-              fill="none"
-            />
-            <text>
-              <textPath href="#circle-text">
-                IDEA · INTERFAZ · SISTEMA ·{" "}
-              </textPath>
-            </text>
-          </svg>
-          <span>↗</span>
-        </span>
+        ))}
       </div>
     </div>
-    <div class="hero-bottom">
-      <span class="mono">WEB / ANDROID / ESCRITORIO / LINUX</span>
-      <a href="#trabajo" class="scroll-cue">
-        Deslizá para explorar <span aria-hidden="true">↓</span>
+
+    <div id="trabajo"></div>
+    <nav class="cinema-chapters shell" aria-label="Capítulos del trabajo">
+      <a href="#atelier">
+        <span>01 / EXPERIENCIA</span>Atelier 3D ↗
       </a>
-    </div>
-  </section>
-
-  <div class="product-ticker" aria-hidden="true">
-    <div class="ticker-track">
-      {[0, 1].map(() => (
-        <span>
-          INTERFACES <b>↗</b> EXPERIENCIAS 3D <b>↗</b> APLICACIONES <b>↗</b>{" "}
-          SISTEMAS CONECTADOS <b>↗</b>
-        </span>
-      ))}
-    </div>
+      <a href="#vigia">
+        <span>02 / ECOSISTEMA</span>Vigía ↗
+      </a>
+      <a href="#aplicaciones">
+        <span>03 / EXPLORACIÓN</span>Aplicaciones ↗
+      </a>
+    </nav>
+    <AtelierFeature />
   </div>
-
-  <div id="trabajo"></div>
-  <AtelierFeature />
 
   <section id="vigia" class="vigia-feature" aria-labelledby="vigia-title">
     <div class="shell">
@@ -176,7 +92,7 @@ const scenes = [
           loading="lazy"
           data-parallax
         />
-        <div class="hotel-device" data-depth>
+        <div class="hotel-device">
           <img
             src={asset("media/vigia-hotel.webp")}
             alt="Captura real del tablero de habitaciones de Vigía, con datos de demostración."

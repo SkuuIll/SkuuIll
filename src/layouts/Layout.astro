@@ -80,9 +80,6 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       <nav class="desktop-nav" aria-label="Navegación principal">
         <a href={asset("#trabajo")}>Trabajo</a>
         <a href={asset("#perfil")}>Sobre mí</a>
-        <a href={asset("cv/")}>
-          CV <span aria-hidden="true">↗</span>
-        </a>
       </nav>
       <a class="header-contact" href={asset("#contacto")}>
         Conversemos <span aria-hidden="true">↗</span>
@@ -106,7 +103,6 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       >
         <a href={asset("#trabajo")}>Trabajo</a>
         <a href={asset("#perfil")}>Sobre mí</a>
-        <a href={asset("cv/")}>Currículum</a>
         <a href={asset("#contacto")}>Contacto</a>
       </nav>
     </header>
@@ -124,7 +120,6 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       <div class="footer-links">
         <a href={profile.github}>GitHub ↗</a>
         <a href={`mailto:${profile.email}`}>Email ↗</a>
-        <a href={asset("cv/")}>Currículum ↗</a>
       </div>
       <div class="preferences" hidden>
         <button id="palette-toggle" type="button">

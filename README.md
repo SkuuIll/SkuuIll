@@ -6,7 +6,7 @@ Desarrollador de software · Full Stack y multiplataforma · Argentina
 
 Construyo aplicaciones web, Android y escritorio. Conecto interfaces, APIs y datos, y trabajo con Linux y automatización para llevar los proyectos a su entorno de uso.
 
-**[Explorá mi portafolio →](https://skuuill.github.io/SkuuIll/)** · [Currículum](https://skuuill.github.io/SkuuIll/cv/) · [Contacto](mailto:moreappmix@gmail.com) · [English](./translations/README.en.md)
+**[Explorá mi portafolio →](https://skuuill.github.io/SkuuIll/)** · [Contacto](mailto:moreappmix@gmail.com) · [English](./translations/README.en.md)
 
 ## Trabajo seleccionado
 
@@ -58,7 +58,7 @@ Trabajo también sobre software abierto. [NFile-es](https://github.com/SkuuIll/N
 
 ¿Necesitás una aplicación, una integración o mejorar una herramienta existente? Contame el problema, las plataformas involucradas y qué tenés construido.
 
-**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [Portafolio](https://skuuill.github.io/SkuuIll/) · [CV en PDF](https://skuuill.github.io/SkuuIll/cv/Facundo-Escobedo-CV.pdf)
+**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [Portafolio](https://skuuill.github.io/SkuuIll/)
 
 <details>
 <summary>Actividad y código abierto</summary>

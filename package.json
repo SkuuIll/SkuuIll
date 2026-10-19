@@ -13,9 +13,8 @@
     "check": "astro check",
     "format": "prettier --plugin prettier-plugin-astro --write src scripts tests astro.config.mjs",
     "branding": "node scripts/build-branding.mjs",
-    "cv": "npm run build && node scripts/export-cv.mjs && npm run build",
-    "check:cv": "node scripts/check-cv.mjs",
-    "review:visual": "node scripts/review-portfolio.mjs"
+    "review:visual": "node scripts/review-portfolio.mjs",
+    "check:privacy": "node scripts/check-privacy.mjs"
   },
   "engines": {
     "node": ">=22.22.0"

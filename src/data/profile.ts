@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Facundo Nahuel Escobedo",
+  name: "Skull",
   alias: "Skull",
   location: "Charata, Chaco · Argentina",
   email: "moreappmix@gmail.com",
@@ -8,24 +8,6 @@ export const profile = {
   since: "2022",
   summary:
     "Desarrollo aplicaciones web, Android y escritorio. Conecto interfaces, APIs, datos y entornos Linux para construir herramientas que respondan a un problema concreto.",
-  education: [
-    {
-      title: "Técnico Electromecánico",
-      institution: "E.E.T. N.º 29 «Domingo Carlisi»",
-      detail: "Educación secundaria técnica · Egreso 2017",
-    },
-    {
-      title:
-        "Profesorado de Educación Secundaria en Tecnologías de la Información y la Comunicación",
-      institution: "UEGP N.º 57 «Fray Mamerto Esquiú»",
-      detail: "Inicio 2019 · Estudios incompletos, cursado hasta segundo año",
-    },
-    {
-      title: "Programación y desarrollo web",
-      institution: "Informatorio Chaco",
-      detail: "2025 · Proyecto final con Python y Django",
-    },
-  ],
   skills: [
     {
       name: "Web & interfaces",

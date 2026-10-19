@@ -301,9 +301,8 @@ const scenes = [
       </p>
       <div class="profile-prose">
         <p>
-          Soy {profile.name}, aunque en mis proyectos me encontrás como Skull.
-          Desarrollo software de forma independiente desde {profile.since},
-          desde Charata, Chaco.
+          Soy Skull. Desarrollo software de forma independiente desde{" "}
+          {profile.since}, desde Charata, Chaco.
         </p>
         <p>
           Trabajo entre web, Android, escritorio y Linux. Esa variedad me
@@ -312,9 +311,6 @@ const scenes = [
           necesita.
         </p>
       </div>
-      <a class="inline-link" href={asset("cv/")}>
-        Mi experiencia y formación <span aria-hidden="true">↗</span>
-      </a>
     </div>
   </section>
 
@@ -392,7 +388,11 @@ const scenes = [
           </label>
           <label>
             <span id="inquiry-service-label">¿Qué necesitás?</span>
-            <select name="service" required aria-labelledby="inquiry-service-label">
+            <select
+              name="service"
+              required
+              aria-labelledby="inquiry-service-label"
+            >
               <option value="">Elegí una opción</option>
               <option>Aplicación web</option>
               <option>Android o escritorio</option>

@@ -20,12 +20,12 @@ const presentation: Record<
     caption: "Interfaz de Vigía · Entorno de demostración",
   },
   cpaul: {
-    title: "Indumentaria a medida",
+    title: "Atelier de indumentaria 3D",
     label: "Comercio & personalización 3D",
     tone: "sand",
-    image: "cpaul-campaign.webp",
-    alt: "Indumentaria personalizada de la campaña visual de CPAUL.",
-    caption: "Campaña visual de CPAUL · Imagen del proyecto",
+    image: "atelier-colors.webp",
+    alt: "Interfaz real del Atelier de CPAUL, con una prenda tridimensional y controles de personalización.",
+    caption: "Atelier de CPAUL · Captura real en entorno local de demostración",
   },
   "repo-setup": { label: "Herramientas para desarrollar", tone: "ink" },
   "pubg-map": {

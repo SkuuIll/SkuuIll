@@ -2,6 +2,7 @@
 import "@fontsource-variable/manrope";
 import "@fontsource-variable/geist-mono";
 import "../styles/global.css";
+import "../styles/experience.css";
 import { asset } from "../data/projects";
 import { profile } from "../data/profile";
 interface Props {
@@ -35,8 +36,16 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       content="https://skuuill.github.io/SkuuIll/media/social-cover.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <script is:inline>
+      let theme = matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+      try {
+        const savedTheme = localStorage.getItem("skull-theme");
+        if (["light", "dark"].includes(savedTheme)) theme = savedTheme;
+      } catch {}
+      document.documentElement.dataset.theme = theme;
       try {
         if (sessionStorage.getItem("skull-motion") === "paused")
           document.documentElement.dataset.motion = "paused";
@@ -79,8 +88,29 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       </a>
       <nav class="desktop-nav" aria-label="Navegación principal">
         <a href={asset("#trabajo")}>Trabajo</a>
+        <a href={asset("#atelier")}>Atelier 3D</a>
         <a href={asset("#perfil")}>Sobre mí</a>
       </nav>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Activar modo oscuro"
+        aria-pressed="false"
+        hidden
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="5" />
+          <path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2" />
+        </svg>
+        <span>Oscuro</span>
+      </button>
       <a class="header-contact" href={asset("#contacto")}>
         Conversemos <span aria-hidden="true">↗</span>
       </a>
@@ -102,6 +132,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         hidden
       >
         <a href={asset("#trabajo")}>Trabajo</a>
+        <a href={asset("#atelier")}>Atelier 3D</a>
         <a href={asset("#perfil")}>Sobre mí</a>
         <a href={asset("#contacto")}>Contacto</a>
       </nav>

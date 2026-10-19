@@ -13,7 +13,7 @@ I build web, Android and desktop applications, connecting interfaces, APIs and d
 | Project | Purpose | Technologies and links |
 | :--- | :--- | :--- |
 | **Vigía** | Connect hotel operations, GPS patrols, staff and administration across web and Android. | React · NestJS · PostgreSQL · React Native / Expo · [Case study](https://skuuill.github.io/SkuuIll/proyectos/vigia/) |
-| **Apparel commerce and customization** | Product catalog, orders and an Atelier 3D customization experience. | Next.js · TypeScript · Prisma · [Case study](https://skuuill.github.io/SkuuIll/proyectos/cpaul/) |
+| **3D apparel Atelier** | Garments, colors, materials and embroidery connected to the commercial workflow. | Next.js · Three.js · TypeScript · Prisma · [Screenshots and 3D sample](https://skuuill.github.io/SkuuIll/proyectos/cpaul/) |
 | **Tactical Map** | Interactive mapping, measurement and planning for the PUBG video game. | JavaScript · Leaflet · PWA · [Application](https://skuuill.github.io/PUBG-Mortar-Tactical-Map/) · [Source](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map) |
 | **Repo Setup Kit** | Reproducible repository setup and tooling for development with agents. | Python · PowerShell · Shell · [Source and installation](https://github.com/SkuuIll/Repo-Setup-Kit) |
 

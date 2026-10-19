@@ -1,14 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProjectVisual from "../components/ProjectVisual.astro";
-import {
-  projects,
-  selectedProjects,
-  projectUrl,
-  asset,
-} from "../data/projects";
+import AtelierFeature from "../components/AtelierFeature.astro";
+import { projects, projectUrl, asset } from "../data/projects";
 import { profile } from "../data/profile";
 const vigia = projects.find((project) => project.id === "vigia")!;
+const otherApps = [
+  "mi-taller",
+  "showroom",
+  "fluxnet",
+  "pubg-map",
+  "devblog",
+  "battlefx",
+  "pipa",
+  "repo-setup",
+].map((id) => projects.find((project) => project.id === id)!);
 const scenes = [
   {
     name: "Seguridad",
@@ -71,16 +76,18 @@ const scenes = [
         class="hero-composition"
         aria-label="Una muestra del trabajo de Skull"
       >
-        <div class="hero-photo">
+        <div class="hero-art" data-depth>
           <img
-            src={asset("media/cpaul-craft.webp")}
-            alt="Indumentaria personalizada: un proyecto de comercio y diseño de producto."
-            width="1122"
-            height="1402"
+            src={asset("media/skull-sculpture-3d.webp")}
+            alt="Ilustración 3D: una cinta de cerámica conecta formas y construye una S escultórica."
+            width="1024"
+            height="1024"
             fetchpriority="high"
           />
-          <span class="hero-photo-label mono">CPAUL / CAMPAÑA DE PRODUCTO</span>
         </div>
+        <span class="hero-art-note">
+          IDEA → INTERFAZ → SISTEMA / ILUSTRACIÓN 3D
+        </span>
         <a
           class="hero-window"
           href={projectUrl("vigia")}
@@ -95,6 +102,8 @@ const scenes = [
           </div>
           <img
             src={asset("media/vigia-modules.webp")}
+            srcset={`${asset("media/vigia-modules-600.webp")} 600w, ${asset("media/vigia-modules-900.webp")} 900w, ${asset("media/vigia-modules.webp")} 1440w`}
+            sizes="(max-width: 767px) 90vw, 40vw"
             alt="Interfaz de Vigía con sus cuatro módulos principales."
             width="1440"
             height="1000"
@@ -129,52 +138,19 @@ const scenes = [
     </div>
   </section>
 
-  <section id="trabajo" class="work-section shell" aria-labelledby="work-title">
-    <div class="section-heading" data-reveal>
-      <p class="eyebrow">01 / UNA SELECCIÓN DE MI TRABAJO</p>
-      <h2 id="work-title">
-        Distintos problemas.
-        <br />
-        <span class="muted">La misma curiosidad.</span>
-      </h2>
-      <p class="section-intro">
-        Productos, herramientas y experiencias.
-        <br />
-        Del primer boceto al sistema que los sostiene.
-      </p>
-    </div>
-    <div class="work-grid">
-      {selectedProjects.map((project, index) => (
-        <article class:list={["work-item", `work-${project.id}`]} data-reveal>
-          <a
-            class="work-image-link"
-            href={projectUrl(project.id)}
-            aria-label={`Ver proyecto ${project.title}`}
-          >
-            <ProjectVisual project={project} />
-            <span class="project-open" aria-hidden="true">
-              ↗
-            </span>
-          </a>
-          <div class="work-caption">
-            <div>
-              <p class="eyebrow">
-                {String(index + 1).padStart(2, "0")} / {project.label}
-              </p>
-              <h3>
-                <a href={projectUrl(project.id)}>{project.title}</a>
-              </h3>
-            </div>
-            <span class="project-state">{project.status}</span>
-          </div>
-          <p class="work-summary">{project.summary}</p>
-        </article>
+  <div class="product-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      {[0, 1].map(() => (
+        <span>
+          INTERFACES <b>↗</b> EXPERIENCIAS 3D <b>↗</b> APLICACIONES <b>↗</b>{" "}
+          SISTEMAS CONECTADOS <b>↗</b>
+        </span>
       ))}
     </div>
-    <a class="outline-link" href={asset("proyectos/")}>
-      Explorá el archivo completo <span>{projects.length} proyectos ↗</span>
-    </a>
-  </section>
+  </div>
+
+  <div id="trabajo"></div>
+  <AtelierFeature />
 
   <section id="vigia" class="vigia-feature" aria-labelledby="vigia-title">
     <div class="shell">
@@ -190,6 +166,30 @@ const scenes = [
           reserva hasta una ronda, cada área tiene su lugar.
         </p>
       </div>
+      <figure class="hotel-composition" data-reveal>
+        <img
+          class="hotel-environment"
+          src={asset("media/hotel-environment-3d.webp")}
+          alt="Ilustración 3D de un hotel boutique, con recepción y habitaciones abiertas en corte arquitectónico."
+          width="1536"
+          height="1024"
+          loading="lazy"
+          data-parallax
+        />
+        <div class="hotel-device" data-depth>
+          <img
+            src={asset("media/vigia-hotel.webp")}
+            alt="Captura real del tablero de habitaciones de Vigía, con datos de demostración."
+            width="1440"
+            height="1000"
+            loading="lazy"
+          />
+        </div>
+        <figcaption class="hotel-caption">
+          ENTORNO HOTELERO ILUSTRATIVO GENERADO · INTERFAZ REAL CON DATOS DE
+          DEMOSTRACIÓN
+        </figcaption>
+      </figure>
       <div class="vigia-story">
         <div class="vigia-screen" data-reveal>
           <div class="scene-images" id="vigia-scenes">
@@ -274,6 +274,82 @@ const scenes = [
           Conocé el ecosistema <span aria-hidden="true">↗</span>
         </a>
       </div>
+    </div>
+  </section>
+
+  <section
+    id="aplicaciones"
+    class="applications-section shell"
+    aria-labelledby="applications-title"
+  >
+    <div class="exhibition-heading" data-reveal>
+      <p class="eyebrow">OTRAS APLICACIONES REALIZADAS</p>
+      <h2 id="applications-title">
+        Más formas de
+        <br />
+        <span class="muted">resolver.</span>
+      </h2>
+      <p>
+        Herramientas construidas para distintos contextos. Cada caso identifica
+        su alcance, acceso y estado de desarrollo.
+      </p>
+    </div>
+    <div class="applications-list">
+      {otherApps.map((project, i) => (
+        <a class="application-row" href={projectUrl(project.id)} data-reveal>
+          <span class="mono">0{i + 1}</span>
+          <div>
+            <h3>{project.title}</h3>
+            <p>{project.stack.slice(0, 2).join(" / ")}</p>
+          </div>
+          <p class="application-summary">{project.summary}</p>
+          <span class="mono application-state">{project.status}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+    <a class="outline-link" href={asset("proyectos/")}>
+      Explorá el archivo completo <span>{projects.length} proyectos ↗</span>
+    </a>
+  </section>
+  <section class="services-section" aria-labelledby="services-title">
+    <div class="shell">
+      <p class="eyebrow">SOLUCIONES QUE PODEMOS DESARROLLAR</p>
+      <h2 id="services-title" style="margin-top: 24px">
+        Tu próximo producto.
+      </h2>
+      <p style="margin-top: 24px; color: var(--muted)">
+        Propuestas de servicios, para definir según tu necesidad y el alcance
+        del proyecto.
+      </p>
+      <div class="services-list">
+        {[
+          [
+            "Reservas y operación",
+            "Sistemas de turnos, disponibilidad, reservas y organización de equipos.",
+          ],
+          [
+            "Comercio y catálogos",
+            "Productos, variantes, consultas, presupuestos y recorridos de compra.",
+          ],
+          [
+            "Apps web y móviles",
+            "Interfaces para clientes, personal en campo y tareas de operación.",
+          ],
+          [
+            "Automatización e integraciones",
+            "Conectar APIs y datos, reducir tareas repetitivas y preparar entornos.",
+          ],
+        ].map(([title, body]) => (
+          <article data-reveal>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+      <a class="inline-link" href="#contacto">
+        Conversemos sobre tu idea <span aria-hidden="true">↗</span>
+      </a>
     </div>
   </section>
 

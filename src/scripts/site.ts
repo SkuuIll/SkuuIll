@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./cinema";
+import "./cyber";
 gsap.registerPlugin(ScrollTrigger);
 
 const root = document.documentElement;
@@ -18,7 +19,7 @@ function applyTheme(theme: string) {
   if (label) label.textContent = theme === "dark" ? "Claro" : "Oscuro";
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute("content", theme === "dark" ? "#161a19" : "#f4f2ec");
+    ?.setAttribute("content", theme === "dark" ? "#080e13" : "#edf3f5");
 }
 if (themeButton) themeButton.hidden = false;
 applyTheme(root.dataset.theme || (systemTheme.matches ? "dark" : "light"));
@@ -62,36 +63,81 @@ if (sceneImages.length) {
   activateScene(0);
 }
 const menu = document.querySelector<HTMLButtonElement>(".menu-toggle");
-const mobileNav = document.querySelector<HTMLElement>("#mobile-nav");
+const mobileNav = document.querySelector<HTMLDialogElement>("#mobile-nav");
+const chapterToggle =
+  document.querySelector<HTMLButtonElement>("#chapters-toggle");
 if (menu && mobileNav) {
   menu.hidden = false;
+  if (chapterToggle) chapterToggle.hidden = false;
+  let opener: HTMLElement = menu;
   const closeMenu = () => {
+    mobileNav.getAnimations().forEach((animation) => animation.cancel());
+    mobileNav.close();
     menu.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-label", "Abrir menú");
     mobileNav.hidden = true;
+    chapterToggle?.setAttribute("aria-expanded", "false");
+    opener.focus({ preventScroll: true });
   };
-  menu.addEventListener("click", () => {
-    const open = menu.getAttribute("aria-expanded") !== "true";
-    menu.setAttribute("aria-expanded", String(open));
-    menu.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-    mobileNav.hidden = !open;
+  const openMenu = (button: HTMLButtonElement) => {
+    if (mobileNav.open) {
+      closeMenu();
+      return;
+    }
+    opener = button;
+    mobileNav.hidden = false;
+    mobileNav.showModal();
+    menu.setAttribute("aria-expanded", "true");
+    menu.setAttribute("aria-label", "Cerrar menú");
+    chapterToggle?.setAttribute("aria-expanded", "true");
+    if (
+      !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+      root.dataset.motion !== "paused"
+    )
+      mobileNav.querySelector(".chapter-menu-content")?.animate(
+        [
+          { opacity: 0, transform: "translateY(28px)" },
+          { opacity: 1, transform: "translateY(0)" },
+        ],
+        { duration: 450, easing: "cubic-bezier(.16,1,.3,1)" },
+      );
+  };
+  menu.addEventListener("click", () => openMenu(menu));
+  chapterToggle?.addEventListener("click", () => openMenu(chapterToggle));
+  mobileNav
+    .querySelector("#chapters-close")
+    ?.addEventListener("click", closeMenu);
+  mobileNav.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeMenu();
+  });
+  mobileNav.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+    const focusable = [
+      ...mobileNav.querySelectorAll<HTMLElement>(
+        "button:not([disabled]), a[href]",
+      ),
+    ];
+    const first = focusable[0],
+      last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
   });
   mobileNav
     .querySelectorAll("a")
     .forEach((link) => link.addEventListener("click", closeMenu));
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !mobileNav.hidden) {
-      closeMenu();
-      menu.focus();
-    }
-  });
   matchMedia("(min-width: 768px)").addEventListener("change", (event) => {
-    if (event.matches) closeMenu();
+    if (event.matches && mobileNav.open) closeMenu();
   });
 }
 
-const palettes = ["clay", "forest", "blue"];
-const paletteNames = ["Arcilla", "Bosque", "Azul"];
+const palettes = ["forest", "blue", "clay"];
+const paletteNames = ["Matrix", "Ion", "Pulse"];
 const paletteButton =
   document.querySelector<HTMLButtonElement>("#palette-toggle");
 const motionButton =
@@ -133,9 +179,32 @@ function setupMotion() {
         },
       });
       timeline
-        .to(".cinema-media", { scale: 1.18, yPercent: -8, ease: "none" }, 0)
-        .to(".cinema-copy", { yPercent: -18, opacity: 0, ease: "none" }, 0)
+        .to(
+          ".cinema-media",
+          { scale: 1.28, yPercent: -8, rotation: 2, ease: "none" },
+          0,
+        )
+        .to(
+          ".cinema-copy",
+          { yPercent: -18, xPercent: -8, opacity: 0, ease: "none" },
+          0,
+        )
         .to(".cinema-bottom", { opacity: 0, ease: "none", duration: 0.25 }, 0);
+      gsap.fromTo(
+        ".deck-art",
+        { scale: 1.12, yPercent: 3 },
+        {
+          scale: 1,
+          yPercent: -5,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".cyber-deck",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        },
+      );
       gsap.fromTo(
         ".cinema-cover .atelier-stage",
         { scale: 0.88, rotate: 3 },

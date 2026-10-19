@@ -1,48 +1,36 @@
 # Portafolio web de Skull
 
-Sitio público: <https://skuuill.github.io/SkuuIll/>.
+Sitio público: <https://skuuill.github.io/SkuuIll/>. El proyecto usa Astro y genera archivos estáticos para GitHub Pages.
 
-## Estructura
+## Estructura actual
 
-- `index.html`: entrada corta que redirige a `site/`, conservando parámetros y ancla.
-- `site/index.html`: contenido estático, catálogo y plantillas de las fichas.
-- `site/assets/styles.css`: diseño base y animaciones del sitio.
-- `site/assets/portfolio.css`: catálogo, perfil, trayectoria y diálogos.
-- `site/assets/palette.js`: cinco ambientes de color, con alternancia entre visitas.
-- `site/assets/app.js`: consulta, firma, movimiento y efectos base.
-- `site/assets/portfolio.js`: búsqueda, filtros, fichas y consulta contextual.
-- `site/assets/social-cover.svg`: fuente editable de la portada para compartir.
-- `site/assets/social-cover.png`: versión raster para Open Graph.
+- `src/pages/index.astro`: portada, trabajo seleccionado, aplicaciones y contacto.
+- `src/pages/proyectos/index.astro`: archivo con búsqueda y filtros.
+- `src/pages/proyectos/[slug].astro`: páginas de casos generadas desde el catálogo.
+- `src/layouts/Layout.astro`: documento, preferencias y navegación por capítulos.
+- `src/data/projects.json` y `projects.ts`: catálogo y presentación de cada caso.
+- `src/components/CinematicIntro.astro`, `BootIntro.astro` y `CyberDeck.astro`: apertura y selector de universos.
+- `src/components/AtelierFeature.astro`: galería real y muestra 3D bajo demanda.
+- `src/scripts/site.ts`, `cinema.ts` y `cyber.ts`: controles, scroll, reproducción y paneles.
+- `src/styles/`: estilos base, exposiciones, cine e identidad cyberpunk.
+- `public/media/` y `public/models/`: recursos locales publicados.
+
+`/site/` y los enlaces antiguos con `?caso=` conservan compatibilidad. El contenido actual se mantiene en las fuentes de Astro.
 
 ## Actualizar proyectos
 
-Cada tarjeta tiene un `data-id`, categorías en `data-category` y un botón
-`data-case`. Su ficha está en un elemento `template` con identificador
-`case-IDENTIFICADOR`. Mantener esos identificadores sincronizados.
+Editar el catálogo en `src/data/projects.json` y sus recursos de presentación en `projects.ts`. Mantener identificadores únicos y enlaces válidos. Las fichas distinguen proyectos propios, código privado, forks y prototipos; conservar las atribuciones y evitar detalles internos de proyectos privados.
 
-Los seis proyectos destacados usan `data-featured="true"`. La búsqueda ignora
-mayúsculas y acentos. Los enlaces `?caso=IDENTIFICADOR` abren una ficha específica.
-Actualizar también el total estático y la prueba del catálogo si cambia su tamaño.
+El selector de universos presenta tres entradas al trabajo; las fichas completas siguen siendo páginas con URL propia. La búsqueda del archivo ignora mayúsculas y acentos. Revisar las pruebas de catálogo cuando cambie el número de proyectos.
 
-Las ilustraciones de tarjetas son conceptuales, no capturas de productos. Las
-fichas distinguen código público, privado, forks y prototipos. Mantener la
-atribución de NFile y no publicar detalles internos de proyectos privados.
+## Contacto, accesibilidad y privacidad
 
-## Contacto y accesibilidad
+La consulta prepara un borrador local para abrir desde el correo del visitante; también permite copiar o descargar el texto. No envía mensajes desde un servidor.
 
-La consulta prepara un correo para abrir en el cliente del visitante; no envía
-mensajes desde un servidor. También permite copiar o descargar el texto.
+Sin JavaScript permanecen contenido, enlaces y todos los paneles del selector. El menú modal cierra con Escape y devuelve el foco al control que lo abrió. Los tabs admiten flechas, Inicio y Fin. El movimiento reducido y la pausa se respetan; el video tiene póster y alternativas ante bloqueo o error. El CV no forma parte del sitio público.
 
-Sin JavaScript, el contenido y los enlaces siguen disponibles, se muestran todos
-los proyectos y se conserva el contacto alternativo. Las fichas interactivas usan
-un diálogo nativo con cierre por Escape y retorno del foco al botón de origen.
+## Verificación y publicación
 
-El sitio respeta `prefers-reduced-motion` y permite pausar animaciones. La paleta
-funciona aunque el almacenamiento local esté bloqueado.
+`npm run lint`, `npm run check:privacy` y `npm test` validan tipos, documentación, privacidad, recursos, interacción y accesibilidad. El workflow **Portfolio Quality and Pages** ejecuta los controles y publica `dist/` desde `main`. La evidencia local se guarda en `.qa/`, fuera de los archivos publicados.
 
-## Verificación
-
-El workflow Landing Quality ejecuta las pruebas de Playwright y axe: cuatro anchos
-de pantalla, navegación, teclado, formularios, cinco paletas, catálogo y fichas.
-También conserva capturas de escritorio y móvil en el artefacto de la ejecución.
-GitHub Pages publica desde la raíz de la rama principal.
+Ver [apariencia](appearance.md), [movimiento](motion.md) y [procedencia de medios](media.md).

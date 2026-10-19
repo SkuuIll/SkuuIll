@@ -41,7 +41,7 @@ for (const width of [360, 390, 768, 1440, 1920]) {
     });
     await page.goto("./");
     await readyImages(page);
-    await expect(page.locator("h1")).toContainText("Software");
+    await expect(page.locator("h1")).toContainText("SKULL");
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,

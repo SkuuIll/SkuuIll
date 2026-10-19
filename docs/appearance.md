@@ -1,27 +1,21 @@
-# Identidad, ambientes y Vigía
+# Identidad y apariencia
 
-El nombre visible es **Skull**. La cuenta y los enlaces de GitHub conservan el identificador `SkuuIll`.
+El nombre visible es **Skull**. La cuenta y los enlaces de GitHub conservan `SkuuIll`. La dirección **Skull Signal** combina negro, verde eléctrico y azul con una escena secundaria roja y negra. El arte y sus prompts están documentados en [arte cyberpunk](cyberpunk-art.md).
 
-## Perfil de GitHub
+## Temas y ambientes
 
-Los README en español e inglés incluyen el caso Vigía, con hotelería, GPS, rondas, personal, operación y licencias. Los enlaces públicos apuntan al repositorio de distribución; el código y los datos operativos siguen privados.
+La primera entrada usa modo oscuro. El botón de apariencia permite elegir claro u oscuro y guarda la elección en `localStorage`. El sitio conserva una alternativa funcional si el navegador bloquea ese almacenamiento.
 
-Los SVG usan un fondo multicolor y animaciones breves. El movimiento termina a los cuatro segundos y se desactiva con `prefers-reduced-motion`. GitHub no ejecuta el JavaScript del repositorio dentro del README, por lo que la selección de ambientes corresponde a la web en `site/`.
+Los tres ambientes son **Matrix** (verde), **Ion** (azul) y **Pulse** (rojo). Se guardan durante la sesión y cambian entre nuevas entradas a la portada; los identificadores internos `forest`, `blue` y `clay` mantienen compatibilidad con preferencias anteriores. El botón del pie permite recorrerlos.
 
-## Web del portafolio
+Los colores se definen en `src/styles/cyber.css`; los detalles de exposiciones y componentes permanecen en `experience.css`. La inicialización de preferencias está en `Layout.astro` y sus controles en `src/scripts/site.ts`.
 
-`site/assets/palette.js` selecciona uno de cinco ambientes: Lima, Océano, Aurora, Coral y Ámbar. Se carga antes del CSS para aplicar el color inicial.
+## Movimiento
 
-- Se guarda únicamente el índice de la última paleta en `localStorage`.
-- La siguiente visita elige una paleta diferente a la anterior cuando ese almacenamiento está disponible.
-- Si el navegador bloquea el almacenamiento, el sitio sigue funcionando y selecciona una paleta al azar.
-- Volver desde la caché de navegación también cambia el ambiente.
-- El botón **Cambiar ambiente** permite elegir otra combinación sin recargar.
-- **Pausar animaciones** detiene el movimiento decorativo y evita el efecto de inclinación.
-- La preferencia de movimiento reducido del sistema se respeta siempre.
+La presentación inicial es breve y se puede saltar. El menú de capítulos ocupa la pantalla completa y los paneles de proyectos admiten mouse y teclado. El video de identidad tiene una alternativa estática; no se utiliza como prueba de un producto real. Las capturas del trabajo se mantienen en sus secciones correspondientes.
 
-La ilustración de GPS es decorativa: no contiene ubicaciones, recorridos ni información de personas reales. El formulario permite consultar por hotelería/GPS, Android/escritorio y Linux/automatización. Prepara un borrador local para enviar desde el correo del visitante.
+El control **Pausar movimiento** comparte su estado con la portada y persiste durante la sesión. La preferencia del sistema de reducir movimiento tiene prioridad. El video se detiene fuera de pantalla, al ocultar la pestaña y detrás del menú; el ahorro de datos requiere reproducción manual. Ver [dirección de movimiento](motion.md).
 
 ## Verificación
 
-La suite `tests/landing.spec.js` comprueba navegación responsive, formularios, accesibilidad, cambios de paleta, pausa de animaciones y funcionamiento con almacenamiento bloqueado. Las cinco paletas se revisan con la regla de contraste de axe.
+Las suites de Playwright y axe revisan ambos temas, los tres ambientes, navegación, formularios, teclado, paneles y funcionamiento sin JavaScript. `scripts/review-edge.mjs` comprueba además la experiencia en la instalación local de Microsoft Edge.

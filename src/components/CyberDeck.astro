@@ -1,0 +1,80 @@
+---
+import { asset, projectUrl } from "../data/projects";
+const chapters = [
+  {
+    id: "atelier",
+    name: "Atelier 3D",
+    tag: "01 / DISEÑO EN TRES DIMENSIONES",
+    title: "Tu idea.\nOtra dimensión.",
+    description:
+      "Color, material y personalización. Un espacio para convertir decisiones de diseño en una prenda tridimensional.",
+    href: projectUrl("cpaul"),
+    cta: "Entrá al caso Atelier",
+  },
+  {
+    id: "vigia",
+    name: "Vigía",
+    tag: "02 / UN ECOSISTEMA CONECTADO",
+    title: "Del campo\nal control.",
+    description:
+      "Hotelería, personal, seguridad y administración. Distintas áreas de una operación, conectadas en un mismo sistema.",
+    href: projectUrl("vigia"),
+    cta: "Entrá al caso Vigía",
+  },
+  {
+    id: "apps",
+    name: "Aplicaciones",
+    tag: "03 / MÁS ALLÁ DE UNA PANTALLA",
+    title: "Distintas ideas.\nMás posibilidades.",
+    description:
+      "Aplicaciones para Android, escritorio y web. Herramientas, mapas y sistemas que resuelven problemas concretos.",
+    href: asset("proyectos/"),
+    cta: "Entrá al archivo de proyectos",
+  },
+];
+---
+
+<section class="cyber-deck" aria-labelledby="cyber-deck-title">
+  <img
+    class="deck-art"
+    src={asset("media/skull-cyber-atelier.webp")}
+    alt=""
+    width="1600"
+    height="900"
+    loading="lazy"
+  />
+  <div class="deck-inner shell">
+    <div class="deck-heading">
+      <h2 id="cyber-deck-title">
+        Elegí tu próximo universo<span>_</span>
+      </h2>
+      <span class="mono">TRABAJO SELECCIONADO / 01—03</span>
+    </div>
+    <div class="deck-tabs" aria-label="Universos del trabajo" hidden>
+      {chapters.map((chapter, i) => (
+        <button type="button" id={`deck-tab-${i}`} data-deck-tab={i}>
+          <span>0{i + 1}</span>
+          {chapter.name}
+          <span aria-hidden="true">↗</span>
+        </button>
+      ))}
+    </div>
+    <div class="deck-panels">
+      {chapters.map((chapter, i) => (
+        <article class="deck-panel" id={`deck-panel-${i}`} data-deck-panel={i}>
+          <p class="eyebrow">{chapter.tag}</p>
+          <h3>
+            {chapter.title.split("\n").map((line) => (
+              <span>{line}</span>
+            ))}
+          </h3>
+          <p class="deck-description">{chapter.description}</p>
+          <a class="deck-link" href={chapter.href}>
+            {chapter.cta} <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      ))}
+    </div>
+    <span class="deck-credit mono">ARTE CONCEPTUAL / SKULL</span>
+  </div>
+</section>

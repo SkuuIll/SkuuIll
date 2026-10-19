@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import AtelierFeature from "../components/AtelierFeature.astro";
 import CinematicIntro from "../components/CinematicIntro.astro";
+import CyberDeck from "../components/CyberDeck.astro";
 import { projects, projectUrl, asset } from "../data/projects";
 import { profile } from "../data/profile";
 const vigia = projects.find((project) => project.id === "vigia")!;
@@ -54,6 +55,7 @@ const scenes = [
     </div>
 
     <div id="trabajo"></div>
+    <CyberDeck />
     <nav class="cinema-chapters shell" aria-label="Capítulos del trabajo">
       <a href="#atelier">
         <span>01 / EXPERIENCIA</span>Atelier 3D ↗

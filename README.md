@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="./assets/profile-cover-es.svg" alt="Facundo / SkuuIll. Desarrollo de software: web, Android, escritorio, Linux y automatización." width="100%">
+<img src="./assets/profile-cover-es.svg" alt="School / SkuuIll. Desarrollo de software: web, Android, escritorio, Linux y automatización." width="100%">
 
-# Facundo · SkuuIll
+# School · SkuuIll
 
 Desarrollador de software · Full Stack & Multiplataforma · Argentina
 
@@ -16,7 +16,7 @@ Aplicaciones web, Android y escritorio. Backend, integraciones y entornos Linux.
 
 ## Software pensado para el contexto en el que se usa
 
-Soy Facundo, desarrollador de software de Argentina. Trabajo en distintas capas de un producto: la interfaz que usa una persona, la lógica que procesa sus datos y el entorno donde se ejecuta. Mi trabajo abarca **web, aplicaciones Android, herramientas de escritorio, automatización y servidores Linux**.
+Soy School, desarrollador de software de Argentina. Trabajo en distintas capas de un producto: la interfaz que usa una persona, la lógica que procesa sus datos y el entorno donde se ejecuta. Mi trabajo abarca **web, aplicaciones Android, herramientas de escritorio, automatización y servidores Linux**.
 
 Uso **Java, Kotlin, Dart, JavaScript, TypeScript, Python, Go, C# y C++**, según las necesidades del proyecto. Me interesa conectar esas tecnologías para construir soluciones completas: una app con su API, un comercio con su administración, una herramienta de escritorio con integración al sistema o un flujo de trabajo que reduzca tareas repetitivas.
 
@@ -25,6 +25,7 @@ En este perfil reúno proyectos públicos, trabajo con código privado y adaptac
 <p align="center">
   <a href="#especialidades">Especialidades</a> ·
   <a href="#tecnologías">Tecnologías</a> ·
+  <a href="#vigía--hotelería-seguridad-y-personal">Vigía &amp; GPS</a> ·
   <a href="#proyectos-públicos">Proyectos</a> ·
   <a href="#productos-con-código-privado">Otros productos</a> ·
   <a href="#contacto">Contacto</a>
@@ -49,14 +50,45 @@ Mi trabajo no está limitado a un único lenguaje o sistema operativo. Elijo las
 | :--- | :--- |
 | **Lenguajes** | Java · Kotlin · Dart · JavaScript · TypeScript · Python · Go · C# · C++ |
 | **Web e interfaces** | React · Next.js · HTML · CSS · Leaflet |
-| **Backend** | Node.js · Django · Go · APIs e integraciones |
-| **Android** | Flutter · Dart · Kotlin · Java |
+| **Backend** | Node.js · NestJS · Django · Go · APIs e integraciones |
+| **Android** | Flutter · React Native · Expo · Dart · Kotlin · Java |
 | **Escritorio** | .NET · WPF · C# · C++ |
-| **Datos y persistencia** | SQL · SQLite · Prisma · Redis |
+| **Datos y persistencia** | PostgreSQL · SQL · SQLite · Prisma · Redis |
 | **Sistemas y entrega** | Linux · Windows · Android · Git · GitHub Actions · Docker · VPS |
 | **Automatización y contenido** | Python · Shell · PowerShell · Batch · Telegram · Remotion · integración de IA |
 
 Los proyectos de abajo muestran cómo se combinan estas tecnologías. Las estadísticas de GitHub reflejan código alojado en repositorios; no representan por sí solas toda mi experiencia.
+
+## Vigía · Hotelería, seguridad y personal
+
+<img src="./assets/project-vigia.svg" alt="Vigía: gestión hotelera, monitoreo GPS, rondas y control de personal." width="100%">
+
+Un ecosistema de software que conecta **panel web, API y aplicación Android** para la operación hotelera y la supervisión de equipos. El proyecto reúne cuatro áreas: Seguridad, Personal, Hotel y Administración.
+
+| Área | Funciones del proyecto |
+| :--- | :--- |
+| **Hotelería** | Habitaciones y estados, tarifas, reservas, huéspedes, check-in/check-out, cargos, pagos y caja. |
+| **Rastreo y monitoreo GPS** | Última ubicación recibida y precisión, personas en servicio, consulta de sesiones históricas y reproducción de muestras sobre el mapa. |
+| **Rondas y seguridad** | Circuitos, checkpoints, marcas de recorrido, novedades y evidencias desde la app del sereno. |
+| **Control de personal** | Legajos, fichajes, calendario de asistencia y terminales de identificación con PIN/NFC y cola offline. |
+| **Operación y administración** | Limpieza, mantenimiento, compras, stock y gestión de accesos por sede. |
+| **Licencias y distribución** | Activación por instalación y módulos, herramientas de gestión de licencias y distribución de paquetes y APK compilados. |
+
+### GPS vinculado al turno de trabajo
+
+El flujo de campo comienza con la apertura de un turno y consentimiento GPS. La app registra posiciones, puntos de ronda y novedades; el panel permite supervisar lo recibido y revisar el historial. Una posición antigua se distingue de una ubicación actual, y los tramos sin datos no se presentan como un recorrido confirmado.
+
+### Una solución entre varias plataformas
+
+- **Panel web:** React y Vite para administración y supervisión.
+- **API y datos:** NestJS, TypeScript, PostgreSQL y Prisma.
+- **Android:** React Native y Expo para serenos, evidencias y sincronización.
+- **Instalación:** Linux/VPS y Docker, con procedimientos de actualización y recuperación.
+- **Herramientas complementarias:** aplicación Windows de licencias con .NET y portal comercial sobre Cloudflare Workers.
+
+El alcance se configura por sede, permisos y licencia. Las funciones se validan según el módulo contratado; el catálogo no implica que todos los circuitos estén certificados para producción.
+
+**Código fuente privado.** [Distribución pública de Vigía](https://github.com/SkuuIll/Vigia-Hotel-Descargas) · [Consultar por hotelería, GPS o personal](mailto:moreappmix@gmail.com?subject=Consulta%20Vigia%20Hotel)
 
 ## Proyectos públicos
 
@@ -206,4 +238,5 @@ Este repositorio contiene el perfil de GitHub, sus recursos visuales y el códig
 
 </details>
 
-<p align="center"><sub>Facundo · SkuuIll — Software, sistemas y herramientas desde Argentina. 🧉</sub></p>
+<p align="center"><sub>School · SkuuIll — Software, sistemas y herramientas desde Argentina. 🧉</sub></p>
+

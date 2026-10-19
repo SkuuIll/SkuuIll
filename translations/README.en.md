@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="../assets/profile-cover-en.svg" alt="Facundo / SkuuIll. Software development: web, Android, desktop, Linux and automation." width="100%">
+<img src="../assets/profile-cover-en.svg" alt="School / SkuuIll. Software development: web, Android, desktop, Linux and automation." width="100%">
 
-# Facundo · SkuuIll
+# School · SkuuIll
 
 Software Developer · Full Stack & Cross-Platform · Argentina
 
@@ -16,7 +16,7 @@ Web, Android and desktop applications. Backends, integrations and Linux environm
 
 ## Software built for the context in which it is used
 
-I'm Facundo, a software developer from Argentina. I work across the layers of a product: the interface people use, the logic that processes their data and the environment where it runs. My work spans **web, Android applications, desktop tools, automation and Linux servers**.
+I'm School, a software developer from Argentina. I work across the layers of a product: the interface people use, the logic that processes their data and the environment where it runs. My work spans **web, Android applications, desktop tools, automation and Linux servers**.
 
 I use **Java, Kotlin, Dart, JavaScript, TypeScript, Python, Go, C# and C++**, depending on the project. I enjoy connecting these technologies into complete solutions: an app with its API, a store with its administration tools, a desktop utility with system integration or a workflow that reduces repetitive tasks.
 
@@ -25,6 +25,7 @@ This profile brings together public projects, work with private source code and 
 <p align="center">
   <a href="#specialties">Specialties</a> ·
   <a href="#technologies">Technologies</a> ·
+  <a href="#vigía--hospitality-security-and-workforce">Vigía &amp; GPS</a> ·
   <a href="#public-projects">Projects</a> ·
   <a href="#products-with-private-source-code">Other products</a> ·
   <a href="#contact">Contact</a>
@@ -49,14 +50,45 @@ My work is not limited to a single language or operating system. I choose tools 
 | :--- | :--- |
 | **Languages** | Java · Kotlin · Dart · JavaScript · TypeScript · Python · Go · C# · C++ |
 | **Web and interfaces** | React · Next.js · HTML · CSS · Leaflet |
-| **Backends** | Node.js · Django · Go · APIs and integrations |
-| **Android** | Flutter · Dart · Kotlin · Java |
+| **Backends** | Node.js · NestJS · Django · Go · APIs and integrations |
+| **Android** | Flutter · React Native · Expo · Dart · Kotlin · Java |
 | **Desktop** | .NET · WPF · C# · C++ |
-| **Data and persistence** | SQL · SQLite · Prisma · Redis |
+| **Data and persistence** | PostgreSQL · SQL · SQLite · Prisma · Redis |
 | **Systems and delivery** | Linux · Windows · Android · Git · GitHub Actions · Docker · VPS |
 | **Automation and content** | Python · Shell · PowerShell · Batch · Telegram · Remotion · AI integration |
 
 The projects below show how these technologies fit together. GitHub statistics describe code hosted in repositories; they do not represent my entire experience on their own.
+
+## Vigía · Hospitality, security and workforce
+
+<img src="../assets/project-vigia.svg" alt="Vigía: hotel operations, GPS monitoring, patrols and workforce management." width="100%">
+
+A software ecosystem connecting a **web dashboard, API and Android application** for hotel operations and team supervision. It brings together four areas: Security, Workforce, Hotel and Administration.
+
+| Area | Project functionality |
+| :--- | :--- |
+| **Hotel operations** | Rooms and statuses, rates, reservations, guests, check-in/check-out, charges, payments and cash operations. |
+| **GPS tracking and monitoring** | Latest received location and accuracy, staff on duty, historical sessions and sample playback on a map. |
+| **Patrols and security** | Circuits, checkpoints, patrol records, incident reports and evidence from the guard's app. |
+| **Workforce management** | Employee records, clock-in/out, attendance calendar and PIN/NFC terminals with offline queues. |
+| **Operations and administration** | Housekeeping, maintenance, purchasing, inventory and site-scoped access. |
+| **Licensing and distribution** | Activation by installation and modules, licensing tools and distribution of compiled packages and APKs. |
+
+### GPS linked to the work shift
+
+The field workflow starts with opening a shift and GPS consent. The app records positions, patrol checkpoints and incident reports; the dashboard supports supervision of received data and history review. Older positions are distinguished from current locations, and gaps are not displayed as confirmed routes.
+
+### A solution across platforms
+
+- **Web dashboard:** React and Vite for administration and supervision.
+- **API and data:** NestJS, TypeScript, PostgreSQL and Prisma.
+- **Android:** React Native and Expo for guards, evidence and synchronization.
+- **Installation:** Linux/VPS and Docker, with update and recovery procedures.
+- **Companion tools:** a Windows licensing application with .NET and a commercial portal on Cloudflare Workers.
+
+Scope depends on the site, permissions and license. Features are validated for the contracted modules; catalog inclusion does not imply that all workflows are certified for production.
+
+**Private source code.** [Vigía public distribution](https://github.com/SkuuIll/Vigia-Hotel-Descargas) · [Discuss hospitality, GPS or workforce software](mailto:moreappmix@gmail.com?subject=Vigia%20Hotel%20inquiry)
 
 ## Public projects
 
@@ -206,4 +238,5 @@ This repository contains my GitHub profile, visual assets and the source for a s
 
 </details>
 
-<p align="center"><sub>Facundo · SkuuIll — Software, systems and tools from Argentina. 🧉</sub></p>
+<p align="center"><sub>School · SkuuIll — Software, systems and tools from Argentina. 🧉</sub></p>
+

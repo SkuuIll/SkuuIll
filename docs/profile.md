@@ -7,7 +7,7 @@ El perfil principal está en `README.md` y su versión en inglés en `translatio
 1. Identidad y presentación: desarrollo de software Full Stack y multiplataforma.
 2. Especialidades: web, Android, escritorio, backend, Linux y automatización.
 3. Tecnologías agrupadas por uso.
-4. Tres casos públicos con propósito, funcionalidades, tecnologías y acceso al repositorio.
+4. Caso destacado de Vigía y tres casos públicos con propósito, funcionalidades, tecnologías y acceso a su distribución o repositorio.
 5. Otros repositorios, con atribución explícita para forks.
 6. Productos privados: únicamente descripciones ya compartidas públicamente.
 7. Propuesta de colaboración y contacto.
@@ -15,7 +15,7 @@ El perfil principal está en `README.md` y su versión en inglés en `translatio
 
 ## Recursos visuales
 
-Los archivos `assets/profile-cover-*.svg` y `assets/project-*.svg` son vectores locales: no dependen de un generador de banners externo. Usan fondo oscuro, acento verde y tipografía del sistema. No contienen scripts, fuentes remotas ni animación.
+Los archivos `assets/profile-cover-*.svg` y `assets/project-*.svg` son vectores locales: no dependen de un generador de banners externo. Usan fondo oscuro, acento verde y tipografía del sistema. No contienen scripts ni fuentes remotas. Usan animaciones breves que respetan la preferencia de movimiento reducido; la web incorpora ambientes de color y un control para pausar el movimiento.
 
 Las piezas de proyectos son ilustraciones de identidad, no capturas de sus interfaces. Los títulos, funcionalidades y enlaces también están presentes como texto en Markdown para no depender de la lectura de una imagen.
 

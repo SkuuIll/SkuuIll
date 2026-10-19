@@ -16,8 +16,22 @@ function updatePageEffects() {
 updatePageEffects();
 window.addEventListener("scroll", updatePageEffects, { passive: true });
 
+const appearanceControls = document.querySelector(".appearance-controls");
+const paletteName = document.querySelector("#palette-name");
+if (window.schoolAppearance) {
+  paletteName.textContent = window.schoolAppearance.currentName();
+  document.querySelector("#change-palette").addEventListener("click", () => window.schoolAppearance.changePalette());
+  appearanceControls.hidden = false;
+}
+const motionButton = document.querySelector("#toggle-motion");
+motionButton.addEventListener("click", () => {
+  const paused = document.documentElement.classList.toggle("motion-paused");
+  motionButton.setAttribute("aria-pressed", String(paused));
+  motionButton.textContent = paused ? "Reanudar animaciones" : "Pausar animaciones";
+});
+
 const revealGroups = document.querySelectorAll(
-  ".project-grid, .private-grid, .services-grid, .steps",
+  ".project-grid, .private-grid, .services-grid, .steps, .hotel-modules",
 );
 const revealItems = document.querySelectorAll(
   ".section-heading, .private-heading, .process-section > div, .contact-copy, .contact-section form, .faq-section > div, .signature-section > div, .signature-section > details",
@@ -46,7 +60,7 @@ const hoverPointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 function attachTilt(element, xName, yName, strength) {
   if (!element) return;
   element.addEventListener("pointermove", (event) => {
-    if (reduceMotion.matches || !hoverPointer.matches) return;
+    if (reduceMotion.matches || document.documentElement.classList.contains("motion-paused") || !hoverPointer.matches) return;
     const rect = element.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
@@ -75,7 +89,7 @@ let inquiryText = "";
 function buildInquiry(data) {
   const value = (key) => String(data.get(key) || "").trim();
   return [
-    "Hola SkuuIll, me gustaría conversar sobre un proyecto.",
+    "Hola School, me gustaría conversar sobre un proyecto.",
     "",
     `Nombre: ${value("name")}`,
     `Email: ${value("email")}`,
@@ -232,7 +246,7 @@ document.querySelector("#generate-signature").addEventListener("click", () => {
   url.hash = "contacto";
   const link = document.querySelector("#signature-preview");
   link.href = url.href;
-  signatureCode.value = `<a href="${escapeAttribute(url.href)}" target="_blank" rel="noopener noreferrer">Desarrollado por SkuuIll ↗</a>`;
+  signatureCode.value = `<a href="${escapeAttribute(url.href)}" target="_blank" rel="noopener noreferrer">Desarrollado por School ↗</a>`;
   signatureResult.hidden = false;
   signatureStatus.textContent =
     "Firma lista. El enlace abre tu landing con el proyecto de referencia.";
@@ -249,3 +263,4 @@ document.querySelector("#year").textContent = String(new Date().getFullYear());
 form.hidden = false;
 document.querySelector("#contact-fallback").hidden = true;
 document.querySelector("#signature-builder").hidden = false;
+

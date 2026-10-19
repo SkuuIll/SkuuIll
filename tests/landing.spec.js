@@ -20,7 +20,7 @@ for (const width of [320, 390, 768, 1440]) {
     });
     await page.setViewportSize({ width, height: 900 });
     await page.goto("./");
-    await expect(page).toHaveTitle(/SkuuIll/);
+    await expect(page).toHaveTitle(/School/);
     await expect(page.locator("h1")).toBeVisible();
     expect(
       await page.evaluate(
@@ -264,3 +264,48 @@ test("accessibility of landing and prepared inquiry", async ({ page }) => {
     .analyze();
   expect(results.violations).toEqual([]);
 });
+
+test("a new visit changes the palette and hotel inquiry retains its context", async ({ page }) => {
+  await page.goto("./");
+  const first = await page.locator("html").getAttribute("data-palette");
+  await page.reload();
+  const second = await page.locator("html").getAttribute("data-palette");
+  expect(second).not.toBe(first);
+  await page.getByRole("button", { name: /Cambiar ambiente/ }).click();
+  expect(await page.locator("html").getAttribute("data-palette")).not.toBe(second);
+  await page.getByRole("button", { name: "Pausar animaciones" }).click();
+  await expect(page.getByRole("button", { name: "Reanudar animaciones" })).toHaveAttribute("aria-pressed", "true");
+  expect(await page.locator(".route-line").evaluate(el => getComputedStyle(el).animationPlayState)).toBe("paused");
+  await page.getByRole("link", { name: "Consultar por Vigía" }).click();
+  await expect(page.getByLabel("¿Qué necesitás?")).toHaveValue("Hotelería, GPS y personal");
+  await expect(page.getByLabel("Proyecto de referencia")).toHaveValue("Vigía · GPS y rondas");
+});
+
+test("blocked preference storage does not break the portfolio", async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(window, "localStorage", { get() { throw new Error("Storage blocked"); } });
+  });
+  await page.goto("./");
+  await expect(page.locator("#inquiry-form")).toBeVisible();
+  await expect(page.locator("#palette-name")).not.toBeEmpty();
+  await page.getByRole("button", { name: /Cambiar ambiente/ }).click();
+  await fillInquiry(page);
+  await page.getByRole("button", { name: "Preparar consulta" }).click();
+  await expect(page.locator("#inquiry-result")).toBeVisible();
+});
+
+test("all color environments retain accessible contrast", async ({ page }) => {
+  const AxeBuilder = require("@axe-core/playwright").default;
+  await page.addInitScript(() => { Math.random = () => 0; });
+  await page.goto("./");
+  for (let index = 0; index < 5; index++) {
+    await page.evaluate((previous) => {
+      localStorage.setItem("school-portfolio-palette", String(previous));
+    }, (index + 4) % 5);
+    await page.reload();
+    await expect(page.locator("html")).toHaveAttribute("data-palette", String(index));
+    const result = await new AxeBuilder({ page }).withRules(["color-contrast"]).analyze();
+    expect(result.violations).toEqual([]);
+  }
+});
+

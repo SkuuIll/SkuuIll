@@ -23,8 +23,9 @@ body {
   overflow-x: hidden;
   color: var(--text);
   background:
-    radial-gradient(circle at 15% -10%, rgba(139, 92, 246, 0.2), transparent 31rem),
-    radial-gradient(circle at 92% 16%, rgba(200, 255, 65, 0.1), transparent 28rem), var(--bg);
+    radial-gradient(ellipse at 8% 4%, rgba(var(--secondary, 139, 92, 246), 0.23), transparent 45rem),
+    radial-gradient(ellipse at 94% 18%, rgba(var(--glow, 200, 255, 65), 0.19), transparent 48rem),
+    radial-gradient(ellipse at 15% 52%, rgba(var(--secondary, 139, 92, 246), 0.16), transparent 50rem), var(--bg);
   font: 16px/1.65 "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -310,3 +311,59 @@ summary::-webkit-details-marker { display: none; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .motion-ready .reveal, .motion-ready .reveal-stagger > * { opacity: 1; transform: none; }
 }
+
+/* Color environments and the featured hospitality case study. */
+.appearance-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.appearance-controls button { padding: 9px 13px; color: var(--text); border: 1px solid var(--line); border-radius: 999px; background: var(--soft); cursor: pointer; font-size: 12px; }
+.appearance-controls button:hover { border-color: var(--accent); }
+#palette-name { color: var(--accent); padding-left: 6px; }
+.hero-art { background: radial-gradient(circle at 80% 10%, rgba(var(--secondary, 139,92,246),.25), transparent 65%), var(--soft); }
+.hero-art::before { background: radial-gradient(circle at 35% 28%, #fff, var(--accent) 22%, rgba(var(--glow,200,255,65),.35) 65%, var(--soft) 100%); }
+.hero-art::after { background: radial-gradient(circle at 60% 65%, rgba(var(--secondary,139,92,246),.65), transparent 64%); }
+.hotel-section { position: relative; }
+.hotel-intro { max-width: 760px; color: var(--muted); font-size: 19px; margin: -12px 0 36px; }
+.hotel-showcase { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: var(--soft); }
+.hotel-visual { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 420px; padding: 32px; overflow: hidden; isolation: isolate; background: linear-gradient(145deg, rgba(var(--glow,200,255,65),.12), transparent 65%); }
+.hotel-visual::before { content: ""; position: absolute; z-index: -1; inset: -40%; background: conic-gradient(from 45deg, transparent, rgba(var(--secondary,139,92,246),.3), transparent, rgba(var(--glow,200,255,65),.22), transparent); animation: hotelAurora 24s linear infinite; }
+.hotel-wordmark { font-size: clamp(70px,9vw,130px); font-weight: 800; line-height: 1.15; letter-spacing: -.065em; }
+.hotel-wordmark span { color: var(--accent); font-size: .6em; display: inline-block; margin-left: 20px; animation: hotelLift 5s ease-in-out infinite; }
+.route-illustration { width: 100%; height: auto; overflow: visible; }
+.route-grid { stroke: var(--text); stroke-opacity: .09; fill: none; }
+.route-line { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 9 8; animation: routeFlow 4s linear infinite; }
+.route-points { fill: var(--accent); }
+.visual-caption { color: var(--muted); font-size: 11px; margin-top: 16px; }
+.hotel-summary { padding: clamp(24px,4vw,48px); display: flex; align-items: flex-start; flex-direction: column; justify-content: center; gap: 20px; }
+.hotel-summary h3 { font-size: clamp(25px,3vw,36px); line-height: 1.2; letter-spacing: -.035em; }
+.hotel-summary > p:not(.eyebrow) { color: var(--muted); font-size: 14px; }
+.hotel-summary .button { margin-top: 4px; }
+.hotel-modules { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; margin-top: 18px; }
+.hotel-modules article { border: 1px solid var(--line); border-top: 2px solid var(--accent); border-radius: 18px; padding: 25px 22px; background: var(--soft); transition: transform .25s, border-color .25s; }
+.hotel-modules article:hover { transform: translateY(-5px); border-color: var(--accent); }
+.hotel-modules article:nth-child(2) { border-top-color: #8edcff; }
+.hotel-modules article:nth-child(3) { border-top-color: #d7b8ff; }
+.hotel-modules article:nth-child(4) { border-top-color: #ffbfca; }
+.module-index { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.hotel-modules h3 { font-size: 19px; line-height: 1.3; margin: 18px 0 12px; }
+.hotel-modules p { color: var(--muted); font-size: 13px; }
+.hotel-stack { margin-top: 24px; font-size: 13px; color: var(--accent); }
+.hotel-scope { margin-top: 10px; max-width: 780px; color: var(--muted); font-size: 12px; }
+@keyframes hotelAurora { to { transform: rotate(360deg); } }
+@keyframes hotelLift { 50% { transform: translate(4px,-7px); } }
+@keyframes routeFlow { to { stroke-dashoffset: -68; } }
+.motion-paused *, .motion-paused *::before, .motion-paused *::after { animation-play-state: paused !important; transition-duration: 0s !important; }
+.motion-paused .reveal, .motion-paused .reveal-stagger > * { opacity: 1; transform: none; }
+.motion-paused .hero-art, .motion-paused .project-card { transform: none !important; }
+@media (max-width: 1000px) { .hotel-modules { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) {
+  .hotel-showcase { grid-template-columns: 1fr; }
+  .hotel-visual { min-height: 360px; padding: 25px; }
+  .hotel-wordmark { font-size: 95px; }
+  .hotel-intro { font-size: 16px; }
+}
+@media (max-width: 480px) {
+  .hotel-modules { grid-template-columns: 1fr; }
+  .hotel-visual { min-height: 320px; }
+  .hotel-summary { padding: 24px; }
+  .hotel-summary .button { width: 100%; justify-content: space-between; }
+}
+

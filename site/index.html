@@ -6,22 +6,23 @@
     <meta name="theme-color" content="#080a0d" />
     <meta
       name="description"
-      content="SkuuIll: desarrollo web desde Argentina. Landing pages, aplicaciones y mejoras para tu web. Explorá mis proyectos y contame el tuyo."
+      content="School: desarrollo de software web, Android y escritorio. Linux, automatización, gestión hotelera y monitoreo GPS desde Argentina."
     />
     <meta
       property="og:title"
-      content="SkuuIll — De una idea a una web que funciona"
+      content="School — Software para distintas plataformas"
     />
     <meta
       property="og:description"
-      content="Desarrollo web con identidad propia. Proyectos, servicios y una forma simple de empezar a trabajar juntos."
+      content="Web, Android, escritorio y Linux. Conocé Vigía: hotelería, rondas GPS y control de personal."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:url" content="https://skuuill.github.io/SkuuIll/" />
     <link rel="canonical" href="https://skuuill.github.io/SkuuIll/" />
-    <title>SkuuIll — Desarrollo web & proyectos digitales</title>
+    <title>School — Software, Android, Linux y hotelería</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script src="assets/palette.js"></script>
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/app.js" defer></script>
   </head>
@@ -29,9 +30,9 @@
     <div class="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="header wrap">
-      <a class="brand" href="#inicio" aria-label="SkuuIll, inicio"
+      <a class="brand" href="#inicio" aria-label="School, inicio"
         ><span class="brand-mark" aria-hidden="true">s<span>↗</span></span>
-        SkuuIll<span class="brand-dot">.</span></a
+        School<span class="brand-dot">.</span></a
       >
       <nav aria-label="Navegación principal">
         <a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a
@@ -46,7 +47,7 @@
         <div class="hero-copy">
           <p class="eyebrow">
             <span class="status-dot" aria-hidden="true"></span> DESARROLLADOR
-            FULL STACK · ARGENTINA
+            FULL STACK &amp; MULTIPLATAFORMA · ARGENTINA
           </p>
           <h1 id="hero-title">
             Tu próxima idea.<br />Mi próximo<br /><span class="serif"
@@ -54,9 +55,9 @@
             >
           </h1>
           <p class="hero-description">
-            Diseño y desarrollo experiencias web con identidad propia. De la
-            primera idea a ese momento de decir:
-            <strong>«ya está online».</strong>
+            Desarrollo software para web, Android, escritorio y Linux.
+            Desde una herramienta a medida hasta un ecosistema como
+            <strong>Vigía: hotelería, GPS y control de personal.</strong>
           </p>
           <div class="actions">
             <a class="button" href="#contacto"
@@ -64,6 +65,10 @@
             ><a class="text-link" href="#proyectos"
               >Explorá mi trabajo <span aria-hidden="true">↓</span></a
             >
+          </div>
+          <div class="appearance-controls" hidden>
+            <button type="button" id="change-palette">Cambiar ambiente <span id="palette-name"></span></button>
+            <button type="button" id="toggle-motion" aria-pressed="false">Pausar animaciones</button>
           </div>
           <p class="hero-note">
             <span aria-hidden="true">✳</span> Trato directo. Un proceso claro.
@@ -93,11 +98,45 @@
         <div class="wrap">
           <span>HERRAMIENTAS, NO LÍMITES</span>
           <p>
-            React <i>✳</i> TypeScript <i>✳</i> Node.js <i>✳</i> Python
-            <i>✳</i> Git
+            Java <i>✳</i> React <i>✳</i> Android <i>✳</i> .NET <i>✳</i> Linux
           </p>
         </div>
       </div>
+      <section id="hoteleria" class="section wrap hotel-section" aria-labelledby="hotel-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">CASO DESTACADO / SOFTWARE PARA OPERACIONES</p>
+            <h2 id="hotel-title">Vigía. <span class="serif">Todo conectado.</span></h2></div>
+          <a class="text-link" href="https://github.com/SkuuIll/Vigia-Hotel-Descargas">Distribución pública ↗</a>
+        </div>
+        <p class="hotel-intro">Un ecosistema con panel web, API y app Android para conectar la gestión hotelera, las rondas de vigilancia y el control de personal.</p>
+        <div class="hotel-showcase">
+          <div class="hotel-visual" aria-hidden="true">
+            <span class="eyebrow">WEB + ANDROID + API</span>
+            <div class="hotel-wordmark">Vigía<span>↗</span></div>
+            <svg viewBox="0 0 420 180" class="route-illustration">
+              <path class="route-grid" d="M0 30H420M0 90H420M0 150H420M60 0V180M180 0V180M300 0V180" />
+              <path class="route-line" d="M40 130L115 65L210 100L290 40L380 75" />
+              <g class="route-points"><circle cx="40" cy="130" r="7"/><circle cx="115" cy="65" r="7"/><circle cx="210" cy="100" r="7"/><circle cx="290" cy="40" r="7"/><circle cx="380" cy="75" r="7"/></g>
+            </svg>
+            <span class="visual-caption">Ilustración del proyecto · Sin datos operativos</span>
+          </div>
+          <div class="hotel-summary">
+            <p class="eyebrow">HOTELERÍA &amp; SEGUIMIENTO GPS</p>
+            <h3>Del recorrido en campo a la supervisión web.</h3>
+            <p>La app del sereno registra posiciones, checkpoints, novedades y evidencias durante el turno. El panel permite revisar la última ubicación recibida, su precisión y el historial de sesiones.</p>
+            <p>El seguimiento comienza con el turno y consentimiento GPS. Los tramos sin datos no se presentan como recorridos confirmados.</p>
+            <a class="button" href="#contacto" data-project="Vigía · GPS y rondas" data-service="Hotelería, GPS y personal">Consultar por Vigía <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hotel-modules">
+          <article><span class="module-index">01 / HOTEL</span><h3>Operación hotelera</h3><p>Habitaciones, tarifas, reservas, huéspedes, check-in/check-out, cargos, pagos y caja. Limpieza y mantenimiento como parte de la operación.</p></article>
+          <article><span class="module-index">02 / SEGURIDAD</span><h3>Rondas &amp; GPS</h3><p>Circuitos, checkpoints, reportes y evidencias. Consulta histórica y reproducción de muestras sobre el mapa desde supervisión.</p></article>
+          <article><span class="module-index">03 / PERSONAL</span><h3>Asistencia &amp; fichajes</h3><p>Legajos, calendario de asistencia y registros de entrada y salida. Terminales PIN/NFC con cola offline.</p></article>
+          <article><span class="module-index">04 / GESTIÓN</span><h3>Administración &amp; licencias</h3><p>Compras, stock, roles y accesos por sede. Activación por instalación y módulos, con herramientas de gestión de licencias.</p></article>
+        </div>
+        <p class="hotel-stack">React · Vite · NestJS · TypeScript · PostgreSQL · Prisma · React Native · Expo · Linux · Docker</p>
+        <p class="hotel-scope">Código fuente privado. Alcance por sede, permisos y licencia; la validación operativa se realiza según los módulos contratados.</p>
+      </section>
       <section
         id="proyectos"
         class="section wrap"
@@ -353,7 +392,7 @@
               </h2>
             </div>
             <p class="heading-description">
-              Una presencia digital que acompañe tu idea,<br />tu marca y tu
+              Software que acompañe tu idea,<br />tu equipo y tu
               manera de trabajar.
             </p>
           </div>
@@ -378,8 +417,8 @@
               <span class="service-icon" aria-hidden="true">⌘</span>
               <h3>Una idea que funciona</h3>
               <p>
-                Aplicaciones y herramientas a medida para resolver una necesidad
-                concreta de tu proyecto.
+                Aplicaciones web, Android y escritorio para resolver una necesidad
+                concreta, con backend e integraciones según el proyecto.
               </p>
               <ul>
                 <li>Interfaces y paneles de gestión</li>
@@ -519,6 +558,9 @@
                 <option value="">Elegí una opción</option>
                 <option>Sitio web o landing</option>
                 <option>Aplicación web</option>
+                <option>Aplicación Android o escritorio</option>
+                <option>Hotelería, GPS y personal</option>
+                <option>Linux, servidores y automatización</option>
                 <option>Mejorar una web existente</option>
                 <option>Otro / Quiero orientación</option>
               </select></label
@@ -645,7 +687,7 @@
       </section>
       <section id="firma" class="signature-section wrap">
         <div>
-          <p class="eyebrow">HECHO POR SkuuIll</p>
+          <p class="eyebrow">HECHO POR School</p>
           <h2>Una firma. <span class="serif">Nuevas conexiones.</span></h2>
           <p>
             Un pequeño crédito en cada proyecto para que la próxima idea
@@ -675,7 +717,7 @@
             <div id="signature-result" hidden>
               <p>
                 Vista previa:
-                <a id="signature-preview">Desarrollado por SkuuIll ↗</a>
+                <a id="signature-preview">Desarrollado por School ↗</a>
               </p>
               <label
                 >HTML para el pie de página<textarea
@@ -694,14 +736,15 @@
     </main>
     <footer class="footer wrap">
       <a class="brand" href="#inicio"
-        >SkuuIll<span class="brand-dot">.</span></a
+        >School<span class="brand-dot">.</span></a
       >
       <p>Ideas con identidad. Código con intención.</p>
       <div>
         <a href="https://github.com/SkuuIll">GitHub ↗</a
         ><a href="mailto:moreappmix@gmail.com">Email ↗</a
-        ><span>© <span id="year">2026</span> SkuuIll</span>
+        ><span>© <span id="year">2026</span> School</span>
       </div>
     </footer>
   </body>
 </html>
+

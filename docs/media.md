@@ -5,6 +5,7 @@ Las imágenes del portafolio son archivos locales. Las capturas de Vigía usan s
 | Recurso | Procedencia | Qué muestra |
 | :--- | :--- | :--- |
 | `vigia-modules.webp` | Interfaz de Gestion-Hotelera del propietario. | Entrada a Seguridad, Personal, Hotel y Administración. |
+| `product-film.webm`, `product-film-poster.webp` | Composición original de `atelier-colors.webp`, `vigia-hotel.webp` y `vigia-gps.webp`, producida por `scripts/render-product-film.mjs`. | Video decorativo VP9 de 12 segundos, 1280 × 800 a 24 fps, sin audio. Anima capturas mediante desplazamientos y fundidos; no es una grabación de interacción ni un video generado con IA. |
 | `vigia-gps.webp` | Misma interfaz, supervisión GPS. | Posiciones de demostración sobre un mapa de OpenStreetMap. |
 | `vigia-personal.webp` | Misma interfaz, Personal. | Jornada y asistencia de equipos de demostración. |
 | `vigia-hotel.webp` | Misma interfaz, habitaciones. | Habitaciones, estados y valores de demostración. |
@@ -40,3 +41,5 @@ npm run branding
 ```
 
 Las capturas de proyectos se actualizan por separado, desde entornos de demostración. Revisar datos visibles y atribuciones antes de reemplazarlas.
+
+Para regenerar la secuencia de fondo, establecer `FFMPEG_PATH` con la ruta de un ejecutable local de FFmpeg que incluya el codificador VP9 y ejecutar `node scripts/render-product-film.mjs`. El navegador de Playwright compone los fotogramas; FFmpeg los codifica sin audio. El video se sirve localmente, se pausa fuera de pantalla y al ocultar la pestaña. Con movimiento reducido, pausa persistida o ahorro de datos no se descarga automáticamente; sin JavaScript queda el póster.

@@ -341,7 +341,7 @@ test("keyboard skip link and motion preference are respected", async ({
   await expect(page).toHaveURL(/#contenido$/);
   expect(
     await page
-      .locator(".hero-disc svg")
+      .locator(".cinema-scroll > span")
       .evaluate((element) => getComputedStyle(element).animationName),
   ).toBe("none");
   await expect(page.locator(".vigia-story")).not.toHaveClass(/has-scenes/);

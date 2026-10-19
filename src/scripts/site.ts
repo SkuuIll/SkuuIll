@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./cinema";
 gsap.registerPlugin(ScrollTrigger);
 
 const root = document.documentElement;
@@ -119,11 +120,70 @@ function setupMotion() {
   motion = gsap.matchMedia();
   motion.add("(prefers-reduced-motion: no-preference)", () => {
     const hoverCleanups: Array<() => void> = [];
+    if (document.querySelector(".cinema-hero")) {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".cinema-hero",
+          start: "top top",
+          end: "bottom top",
+          pin: true,
+          pinSpacing: false,
+          scrub: 0.65,
+          invalidateOnRefresh: true,
+        },
+      });
+      timeline
+        .to(".cinema-media", { scale: 1.18, yPercent: -8, ease: "none" }, 0)
+        .to(".cinema-copy", { yPercent: -18, opacity: 0, ease: "none" }, 0)
+        .to(".cinema-bottom", { opacity: 0, ease: "none", duration: 0.25 }, 0);
+      gsap.fromTo(
+        ".cinema-cover .atelier-stage",
+        { scale: 0.88, rotate: 3 },
+        {
+          scale: 1,
+          rotate: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".cinema-cover .atelier-stage",
+            start: "top bottom",
+            end: "center center",
+            scrub: 0.8,
+          },
+        },
+      );
+      gsap.to(".hotel-environment", {
+        yPercent: -9,
+        scale: 1.12,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hotel-composition",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+      gsap.fromTo(
+        ".hotel-device",
+        { yPercent: 22, rotate: 6 },
+        {
+          yPercent: -8,
+          rotate: -3,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hotel-composition",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.8,
+          },
+        },
+      );
+    }
     document.querySelector(".vigia-story")?.classList.add("has-scenes");
     if (document.querySelector("[data-hero-line]"))
       gsap.from("[data-hero-line]", {
         y: 28,
         duration: 1.15,
+        stagger: 0.12,
         ease: "power3.out",
         clearProps: "all",
       });
@@ -171,7 +231,9 @@ function setupMotion() {
         });
       });
     document
-      .querySelectorAll<HTMLElement>(".atelier-stage")
+      .querySelectorAll<HTMLElement>(
+        ".atelier-section.is-compact .atelier-stage",
+      )
       .forEach((element) => {
         const enter = () => {
           if (matchMedia("(hover: hover)").matches)
@@ -213,6 +275,8 @@ function setupMotion() {
           scrub: 1,
         },
       });
+    }
+    if (matchMedia("(min-width: 768px)").matches) {
       sceneSections.forEach((section, index) =>
         ScrollTrigger.create({
           trigger: section,
@@ -247,6 +311,7 @@ const showMotion = () => {
       : "Pausar movimiento";
     motionButton.setAttribute("aria-pressed", String(paused));
   }
+  document.dispatchEvent(new CustomEvent("skull:motion"));
 };
 motionButton?.addEventListener("click", () => {
   const paused = root.dataset.motion !== "paused";
@@ -264,6 +329,7 @@ motionButton?.addEventListener("click", () => {
 });
 setupMotion();
 showMotion();
+matchMedia("(min-width: 768px)").addEventListener("change", setupMotion);
 window.addEventListener("pagehide", () => motion?.revert(), { once: true });
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) setupMotion();

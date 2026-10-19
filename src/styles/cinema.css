@@ -1,0 +1,325 @@
+.cinema-hero {
+  isolation: isolate;
+  position: relative;
+  min-height: min(920px, calc(100svh - 96px));
+  padding: 0;
+  overflow: hidden;
+  background: #0c181b;
+  color: #f5f5ee;
+  justify-content: stretch;
+}
+.cinema-media,
+.cinema-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.cinema-media {
+  transform-origin: 72% 50%;
+}
+.cinema-media img,
+.cinema-film {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  max-width: none;
+}
+.cinema-film {
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+.cinema-film.is-ready {
+  opacity: 1;
+}
+.cinema-shade {
+  background:
+    linear-gradient(
+      90deg,
+      #071518f5 0%,
+      #071518df 24%,
+      #07151888 67%,
+      #07151810
+    ),
+    linear-gradient(0deg, #071518e6, transparent 32%),
+    linear-gradient(180deg, #071518e6, transparent 25%);
+  z-index: 0;
+}
+.cinema-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: 28px 30px;
+  gap: clamp(20px, 4vh, 58px);
+}
+.cinema-kicker {
+  display: flex;
+  align-items: center;
+  min-height: 31px;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #d1ddd7;
+}
+.cinema-copy {
+  padding-block: 25px;
+  max-width: 1100px;
+}
+.cinema-copy .eyebrow {
+  color: #c4d5cb;
+  margin-bottom: 26px;
+}
+.cinema-hero h1 {
+  font-size: clamp(68px, 8.5vw, 140px);
+  line-height: 0.96;
+  font-weight: 600;
+  letter-spacing: -0.075em;
+}
+.cinema-hero h1 > span {
+  display: block;
+  will-change: transform;
+}
+.cinema-dot {
+  color: #df9678;
+}
+.cinema-description {
+  max-width: 350px;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 30px;
+  color: #e0e7e2;
+}
+.cinema-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  border-bottom: 1px solid #8ba59a;
+  padding-block: 15px 12px;
+  margin-top: 14px;
+  font-size: 13px;
+}
+.cinema-cta span {
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+.cinema-cta:hover span {
+  transform: translate(4px, -4px);
+}
+.cinema-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: #d1ddd7;
+}
+.cinema-scroll {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 9px;
+}
+.cinema-scroll > span {
+  display: grid;
+  place-items: center;
+  border: 1px solid #779185;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  animation: cinema-cue 2.5s infinite;
+}
+.cinema-preferences {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  max-width: 300px;
+  align-items: center;
+}
+.cinema-preferences[hidden] {
+  visibility: hidden;
+}
+.cinema-preferences button[hidden] {
+  display: none;
+}
+.cinema-preferences button {
+  color: #f5f5ee;
+  font-size: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid #789488;
+  cursor: pointer;
+  background: none;
+}
+.cinema-status {
+  font-size: 9px;
+  letter-spacing: 0;
+}
+.cinema-coordinate {
+  position: absolute;
+  right: 18px;
+  top: 45%;
+  writing-mode: vertical-rl;
+  color: #d1ddd7;
+  font: 9px var(--mono);
+  letter-spacing: 0.12em;
+}
+.cinema-cover {
+  position: relative;
+  z-index: 2;
+  background: var(--paper);
+  border-radius: 28px 28px 0 0;
+  overflow: clip;
+  box-shadow: 0 -30px 70px #0002;
+}
+.cinema-cover .product-ticker {
+  margin-top: 0;
+  border-top: 0;
+}
+.cinema-cover .atelier-section {
+  padding-top: 110px;
+}
+.vigia-feature {
+  position: relative;
+  z-index: 3;
+  border-radius: 28px 28px 0 0;
+}
+.scene-image {
+  transform: translateY(8%) scale(1.04);
+  transition:
+    opacity 0.65s,
+    transform 1s cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+.scene-image.is-active {
+  transform: translateY(0) scale(1);
+}
+.cinema-chapters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-block: 32px 0;
+  gap: 25px;
+  margin-top: 65px;
+  border-top: 1px solid var(--line);
+}
+.cinema-chapters a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+.cinema-chapters a:hover {
+  color: var(--accent);
+}
+.cinema-chapters span {
+  font: 10px var(--mono);
+  color: var(--muted);
+}
+@keyframes cinema-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+@media (min-width: 768px) {
+  .cinema-cover .atelier-stage {
+    transform-origin: center 70%;
+  }
+}
+@media (max-width: 767px) {
+  .cinema-hero {
+    min-height: calc(100svh - 86px);
+  }
+  .cinema-content {
+    gap: 32px;
+    padding-block: 22px;
+  }
+  .cinema-kicker {
+    font-size: 8px;
+  }
+  .cinema-kicker {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 58px;
+  }
+  .cinema-hero h1 {
+    font-size: clamp(53px, 12.6vw, 95px);
+    letter-spacing: -0.065em;
+  }
+  .cinema-copy {
+    padding-block: 35px;
+  }
+  .cinema-copy .eyebrow {
+    font-size: 9px;
+  }
+  .cinema-description {
+    max-width: 270px;
+    font-size: 13px;
+    margin-top: 24px;
+  }
+  .cinema-media img,
+  .cinema-film {
+    object-position: 62% center;
+  }
+  .cinema-shade {
+    background:
+      linear-gradient(90deg, #071518ef, #07151885),
+      linear-gradient(0deg, #071518f5, transparent 75%);
+  }
+  .cinema-bottom {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .cinema-credit {
+    display: none;
+  }
+  .cinema-preferences {
+    justify-content: flex-start;
+  }
+  .cinema-coordinate {
+    right: 8px;
+    font-size: 7px;
+  }
+  .cinema-cover {
+    border-radius: 18px 18px 0 0;
+  }
+  .cinema-cover .atelier-section {
+    padding-top: 65px;
+  }
+  .cinema-chapters {
+    gap: 15px;
+    margin-top: 40px;
+  }
+  .cinema-chapters a {
+    font-size: 10px;
+    display: block;
+  }
+  .cinema-chapters span {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinema-scroll > span {
+    animation: none;
+  }
+  .scene-image {
+    transform: none;
+    transition: none;
+  }
+}
+html[data-motion="paused"] .scene-image {
+  transform: none;
+}

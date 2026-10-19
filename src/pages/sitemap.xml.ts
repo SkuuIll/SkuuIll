@@ -3,7 +3,6 @@ export function GET() {
   const paths = [
     "",
     "proyectos/",
-    "cv/",
     ...projects.map((project) => `proyectos/${project.id}/`),
   ];
   return new Response(

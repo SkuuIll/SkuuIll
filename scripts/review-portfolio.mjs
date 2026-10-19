@@ -53,10 +53,6 @@ try {
     await Promise.all([...document.images].map((image) => image.decode()));
   });
   await page.screenshot({ path: `${output}/case-vigia.png`, fullPage: true });
-  await page.goto("http://127.0.0.1:4179/SkuuIll/cv/", {
-    waitUntil: "networkidle",
-  });
-  await page.screenshot({ path: `${output}/cv-web.png`, fullPage: true });
   const moving = await browser.newPage({
     viewport: { width: 1440, height: 1000 },
     reducedMotion: "no-preference",

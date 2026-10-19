@@ -1,8 +1,6 @@
 const { test, expect } = require("@playwright/test");
 const AxeBuilder = require("@axe-core/playwright").default;
 const catalog = require("../src/data/projects.json");
-const { resolve } = require("node:path");
-const { pathToFileURL } = require("node:url");
 
 async function readyImages(page) {
   await page.evaluate(async () => {
@@ -375,7 +373,7 @@ for (const palette of ["clay", "forest", "blue"]) {
 
 test("catalog, case and CV accessibility", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
-  for (const path of ["proyectos/", "proyectos/vigia/", "cv/"]) {
+  for (const path of ["proyectos/", "proyectos/vigia/"]) {
     await page.goto(path);
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -394,54 +392,22 @@ test("catalog, case and CV accessibility", async ({ page }) => {
   }
 });
 
-test("CV downloads deliver real PDF files and an editable HTML file", async ({
-  page,
+test("private CV routes and files are absent from the public build", async ({
   request,
-}) => {
-  await page.goto("cv/");
-  for (const name of [
-    "Facundo-Escobedo-CV.pdf",
-    "Facundo-Escobedo-CV-ATS.pdf",
-  ]) {
-    const response = await request.get(`cv/${name}`);
-    expect(response.status()).toBe(200);
-    expect((await response.body()).subarray(0, 5).toString()).toBe("%PDF-");
-  }
-  const event = page.waitForEvent("download");
-  await page.getByRole("link", { name: "Descargar CV en PDF" }).click();
-  expect((await event).suggestedFilename()).toBe("Facundo-Escobedo-CV.pdf");
-  const editable = await request.get("cv/Facundo-Escobedo-CV-Editable.html");
-  expect(editable.status()).toBe(200);
-  expect(await editable.text()).toContain("Guardar copia HTML");
-});
-
-test("offline CV can be edited and saved without fetching fonts or sending data", async ({
   page,
 }) => {
-  const external = [];
-  await page.route(/^https?:\/\//, (route) => {
-    external.push(route.request().url());
-    return route.abort();
-  });
-  await page.goto(
-    pathToFileURL(resolve("public/cv/Facundo-Escobedo-CV-Editable.html")).href,
+  for (const route of [
+    "cv/",
+    "cv/Facundo-Escobedo-CV.pdf",
+    "cv/Facundo-Escobedo-CV-ATS.pdf",
+    "cv/Facundo-Escobedo-CV-Editable.html",
+    "cv/Facundo-Escobedo-CV-ATS.html",
+  ]) {
+    expect((await request.get(route)).status()).toBe(404);
+  }
+  await page.goto("./");
+  expect(await page.locator('a[href*="/cv/"]').count()).toBe(0);
+  expect(await page.locator("body").innerText()).not.toMatch(
+    /Escobedo|Profesorado|Electromecánico/,
   );
-  await page.evaluate(() => document.fonts.ready);
-  await page.getByRole("button", { name: "Editar texto", exact: true }).click();
-  await expect(page.locator(".cv-document")).toHaveAttribute(
-    "contenteditable",
-    "true",
-  );
-  await page
-    .locator(".cv-header h1")
-    .fill("Facundo Nahuel Escobedo — copia de prueba");
-  const event = page.waitForEvent("download");
-  await page.getByRole("button", { name: "Guardar copia HTML" }).click();
-  const stream = await (await event).createReadStream();
-  const chunks = [];
-  for await (const chunk of stream) chunks.push(chunk);
-  expect(Buffer.concat(chunks).toString("utf8")).toContain(
-    "Escobedo — copia de prueba",
-  );
-  expect(external).toEqual([]);
 });

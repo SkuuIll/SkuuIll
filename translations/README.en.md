@@ -6,7 +6,7 @@ Software developer · Full stack and multiplatform · Argentina
 
 I build web, Android and desktop applications, connecting interfaces, APIs and data. I also work with Linux and automation to prepare the environments where these products run.
 
-**[Explore my portfolio →](https://skuuill.github.io/SkuuIll/)** · [Résumé](https://skuuill.github.io/SkuuIll/cv/) · [Contact](mailto:moreappmix@gmail.com) · [Español](../README.md)
+**[Explore my portfolio →](https://skuuill.github.io/SkuuIll/)** · [Contact](mailto:moreappmix@gmail.com) · [Español](../README.md)
 
 ## Selected work
 
@@ -51,7 +51,7 @@ I also work with open-source software. [NFile-es](https://github.com/SkuuIll/NFi
 
 Tell me about the problem, the platforms involved and what you have already built.
 
-**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [Portfolio](https://skuuill.github.io/SkuuIll/) · [PDF résumé](https://skuuill.github.io/SkuuIll/cv/Facundo-Escobedo-CV.pdf)
+**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [Portfolio](https://skuuill.github.io/SkuuIll/)
 
 <details>
 <summary>GitHub activity</summary>

@@ -1,6 +1,8 @@
 ---
 import "@fontsource-variable/manrope";
 import "@fontsource-variable/geist-mono";
+import manropeLatin from "@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url";
+import geistLatin from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
 import "../styles/global.css";
 import "../styles/experience.css";
 import "../styles/cinema.css";
@@ -22,6 +24,20 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href={manropeLatin}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={geistLatin}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f4f2ec" />

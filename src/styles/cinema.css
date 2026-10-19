@@ -252,6 +252,7 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+    min-height: 58px;
   }
   .cinema-hero h1 {
     font-size: clamp(53px, 12.6vw, 95px);

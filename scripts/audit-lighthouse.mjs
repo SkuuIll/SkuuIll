@@ -2,7 +2,7 @@ import lighthouse from "lighthouse";
 import { launch } from "chrome-launcher";
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
-mkdirSync("test-results", { recursive: true });
+mkdirSync(".qa", { recursive: true });
 const chrome = await launch({
   chromePath: chromium.executablePath(),
   chromeFlags: ["--headless", "--disable-dev-shm-usage"],
@@ -15,7 +15,7 @@ try {
     onlyCategories: ["performance", "accessibility", "best-practices", "seo"],
   });
   writeFileSync(
-    "test-results/lighthouse-mobile.json",
+    ".qa/lighthouse-mobile.json",
     JSON.stringify(lhr, null, 2),
   );
   const summary = {
@@ -43,7 +43,7 @@ try {
       .map((a) => ({ id: a.id, title: a.title, displayValue: a.displayValue })),
   };
   writeFileSync(
-    "test-results/lighthouse-summary.json",
+    ".qa/lighthouse-summary.json",
     JSON.stringify(summary, null, 2),
   );
   console.log(JSON.stringify(summary, null, 2));

@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
-const output = "test-results/visual-review";
+const output = ".qa/visual-review";
 mkdirSync(output, { recursive: true });
 const browser = await chromium.launch({ headless: true });
 const findings = [];

@@ -13,7 +13,7 @@ Construyo aplicaciones web, Android y escritorio. Conecto interfaces, APIs y dat
 | Proyecto | Qué resuelve | Tecnologías y acceso |
 | :--- | :--- | :--- |
 | **Vigía** | Gestión hotelera, rondas GPS, personal y administración conectados entre web y Android. | React · NestJS · PostgreSQL · React Native / Expo · [Ver el caso](https://skuuill.github.io/SkuuIll/proyectos/vigia/) |
-| **Comercio y personalización de indumentaria** | Catálogo, pedidos y experiencia visual Atelier 3D en un mismo producto. | Next.js · TypeScript · Prisma · [Ver el caso](https://skuuill.github.io/SkuuIll/proyectos/cpaul/) |
+| **Atelier de indumentaria 3D** | Configurador de prendas, colores, materiales y bordados conectado al flujo comercial. | Next.js · Three.js · TypeScript · Prisma · [Capturas y muestra 3D](https://skuuill.github.io/SkuuIll/proyectos/cpaul/) |
 | **Tactical Map** | Mapas interactivos, medición, anotaciones y planificación para el videojuego PUBG. | JavaScript · Leaflet · PWA · [Aplicación](https://skuuill.github.io/PUBG-Mortar-Tactical-Map/) · [Código](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map) |
 | **Repo Setup Kit** | Preparación reproducible de repositorios y herramientas para desarrollo con agentes. | Python · PowerShell · Shell · [Código e instalación](https://github.com/SkuuIll/Repo-Setup-Kit) |
 

@@ -4,6 +4,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 const root = document.documentElement;
 const base = import.meta.env.BASE_URL;
+const themeButton = document.querySelector<HTMLButtonElement>("#theme-toggle");
+const systemTheme = matchMedia("(prefers-color-scheme: dark)");
+function applyTheme(theme: string) {
+  root.dataset.theme = theme;
+  themeButton?.setAttribute("aria-pressed", String(theme === "dark"));
+  themeButton?.setAttribute(
+    "aria-label",
+    theme === "dark" ? "Activar modo claro" : "Activar modo oscuro",
+  );
+  const label = themeButton?.querySelector("span");
+  if (label) label.textContent = theme === "dark" ? "Claro" : "Oscuro";
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", theme === "dark" ? "#161a19" : "#f4f2ec");
+}
+if (themeButton) themeButton.hidden = false;
+applyTheme(root.dataset.theme || (systemTheme.matches ? "dark" : "light"));
+themeButton?.addEventListener("click", () => {
+  const theme = root.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(theme);
+  try {
+    localStorage.setItem("skull-theme", theme);
+  } catch {}
+});
+systemTheme.addEventListener("change", (event) => {
+  try {
+    if (localStorage.getItem("skull-theme")) return;
+  } catch {}
+  applyTheme(event.matches ? "dark" : "light");
+});
 const sceneImages = [...document.querySelectorAll<HTMLElement>(".scene-image")];
 const sceneButtons = [
   ...document.querySelectorAll<HTMLButtonElement>("[data-scene-select]"),
@@ -88,6 +118,7 @@ function setupMotion() {
   if (root.dataset.motion === "paused") return;
   motion = gsap.matchMedia();
   motion.add("(prefers-reduced-motion: no-preference)", () => {
+    const hoverCleanups: Array<() => void> = [];
     document.querySelector(".vigia-story")?.classList.add("has-scenes");
     if (document.querySelector("[data-hero-line]"))
       gsap.from("[data-hero-line]", {
@@ -113,6 +144,61 @@ function setupMotion() {
         clearProps: "all",
       });
     });
+    gsap.utils.toArray<HTMLElement>("[data-depth]").forEach((element) => {
+      gsap.to(element, {
+        y: -22,
+        rotation: 2,
+        ease: "none",
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.2,
+        },
+      });
+    });
+    gsap.utils
+      .toArray<HTMLElement>(".exhibition-heading h2")
+      .forEach((element) => {
+        gsap.from(element, {
+          y: 45,
+          rotateX: 12,
+          transformPerspective: 900,
+          duration: 1.15,
+          ease: "power3.out",
+          scrollTrigger: { trigger: element, start: "top 92%", once: true },
+          clearProps: "all",
+        });
+      });
+    document
+      .querySelectorAll<HTMLElement>(".atelier-stage")
+      .forEach((element) => {
+        const enter = () => {
+          if (matchMedia("(hover: hover)").matches)
+            gsap.to(element, {
+              rotateX: -2,
+              rotateY: 3,
+              transformPerspective: 900,
+              duration: 0.6,
+              ease: "power2.out",
+            });
+        };
+        const leave = () =>
+          gsap.to(element, {
+            rotateX: 0,
+            rotateY: 0,
+            duration: 0.7,
+            ease: "power3.out",
+          });
+        element.addEventListener("pointerenter", enter);
+        element.addEventListener("pointerleave", leave);
+        hoverCleanups.push(() => {
+          element.removeEventListener("pointerenter", enter);
+          element.removeEventListener("pointerleave", leave);
+          gsap.killTweensOf(element);
+          gsap.set(element, { clearProps: "transform" });
+        });
+      });
     if (
       matchMedia("(min-width: 768px)").matches &&
       document.querySelector(".hero-composition")
@@ -143,8 +229,10 @@ function setupMotion() {
         ease: "none",
         scrollTrigger: { start: 0, end: "max", scrub: true },
       });
-    return () =>
+    return () => {
+      hoverCleanups.forEach((cleanup) => cleanup());
       document.querySelector(".vigia-story")?.classList.remove("has-scenes");
+    };
   });
 }
 try {
@@ -163,6 +251,11 @@ const showMotion = () => {
 motionButton?.addEventListener("click", () => {
   const paused = root.dataset.motion !== "paused";
   root.dataset.motion = paused ? "paused" : "active";
+  if (paused)
+    document
+      .querySelector("#atelier-shot")
+      ?.getAnimations()
+      .forEach((animation) => animation.cancel());
   try {
     sessionStorage.setItem("skull-motion", paused ? "paused" : "active");
   } catch {}

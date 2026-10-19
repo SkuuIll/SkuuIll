@@ -1,0 +1,182 @@
+---
+import { asset, projectUrl } from "../data/projects";
+const { compact = false } = Astro.props;
+const shots = [
+  {
+    file: "atelier-colors.webp",
+    label: "Color y material",
+    alt: "Atelier de CPAUL: prenda tridimensional y controles de color por zona.",
+  },
+  {
+    file: "atelier-design.webp",
+    label: "Diseño y bordado",
+    alt: "Atelier de CPAUL: incorporación de un texto de demostración sobre la prenda 3D.",
+  },
+  {
+    file: "atelier-placement.webp",
+    label: "Ubicación y detalle",
+    alt: "Atelier de CPAUL: vista lateral y ubicaciones de personalización.",
+  },
+];
+---
+
+<section
+  id="atelier"
+  class:list={["atelier-section", "shell", { "is-compact": compact }]}
+  aria-labelledby="atelier-title"
+>
+  <div class="exhibition-heading" data-reveal>
+    <p class="eyebrow">01 / ATELIER 3D · CPAUL</p>
+    <h2 id="atelier-title">
+      De una idea
+      <br />a una <span class="accent">prenda.</span>
+    </h2>
+    <p>
+      Un configurador que convierte color, material y diseño en una experiencia
+      tridimensional. Una de las piezas más profundas de mi trabajo.
+    </p>
+  </div>
+  <div class="atelier-stage" data-reveal>
+    <div class="atelier-toolbar">
+      <span>CPAUL / PRODUCT DESIGN EXPERIENCE</span>
+      <span>WEB · 3D · PERSONALIZACIÓN</span>
+    </div>
+    <img
+      id="atelier-shot"
+      src={asset(`media/${shots[0].file}`)}
+      alt={shots[0].alt}
+      width="1600"
+      height="1000"
+      loading="lazy"
+    />
+  </div>
+  <div
+    class="atelier-tabs"
+    role="group"
+    aria-label="Pantallas del Atelier"
+    hidden
+  >
+    {shots.map((shot, i) => (
+      <button
+        type="button"
+        data-atelier-shot={asset(`media/${shot.file}`)}
+        data-shot-alt={shot.alt}
+        aria-pressed={i === 0}
+        aria-controls="atelier-shot"
+      >
+        0{i + 1} / {shot.label}
+      </button>
+    ))}
+  </div>
+  <div class="atelier-description">
+    <p>
+      Capturas reales del Atelier ejecutado localmente con un catálogo de
+      demostración. El editor combina prendas, colores por zona, materiales,
+      texto e imágenes, ubicaciones y una vista previa del diseño.
+    </p>
+    <div>
+      <a
+        class="inline-link"
+        href={compact ? "#explorar-3d" : projectUrl("cpaul")}
+      >
+        Explorá el trabajo detrás del Atelier <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+  <div class="atelier-detail-row">
+    <article data-reveal>
+      <span class="eyebrow">01 / CONFIGURAR</span>
+      <h3>La prenda como punto de partida.</h3>
+      <p>
+        Catálogo de bases, selección de materiales y color por zonas del modelo.
+      </p>
+    </article>
+    <article data-reveal>
+      <span class="eyebrow">02 / PERSONALIZAR</span>
+      <h3>Un diseño con intención.</h3>
+      <p>
+        Texto, imágenes y acabados de hilo, con controles de tamaño y ubicación.
+      </p>
+    </article>
+    <article data-reveal>
+      <span class="eyebrow">03 / CONECTAR</span>
+      <h3>Del editor al pedido.</h3>
+      <p>
+        Borrador local, revisión del diseño y preparación de la solicitud de
+        cotización.
+      </p>
+    </article>
+  </div>
+  <div
+    id="explorar-3d"
+    class="viewer-section"
+    data-model-viewer
+    data-model={asset("models/atelier-tshirt/model.gltf")}
+  >
+    <p class="eyebrow">UNA MUESTRA INTERACTIVA / MODELO DEL PROYECTO</p>
+    <h3 style="margin: 16px 0 24px">Probá el volumen. Cambiá el color.</h3>
+    <div class="viewer-shell">
+      <img
+        class="viewer-poster"
+        src={asset("media/atelier-colors.webp")}
+        alt="Vista estática del configurador de indumentaria."
+        width="1600"
+        height="1000"
+        loading="lazy"
+      />
+      <div class="viewer-stage" hidden></div>
+      <div class="viewer-start" hidden>
+        <button class="solid-button" type="button" data-load-model>
+          Activar muestra 3D
+        </button>
+        <p>
+          Se carga solo al activarla. Podés girar la prenda y explorar sus
+          colores; el editor completo se muestra en las capturas.
+        </p>
+      </div>
+    </div>
+    <p class="viewer-status" role="status" aria-live="polite">
+      La imagen estática está disponible sin activar la muestra 3D.
+    </p>
+    <div class="viewer-controls" hidden>
+      <button type="button" data-model-color="#a74c36" aria-pressed="false">
+        Arcilla
+      </button>
+      <button type="button" data-model-color="#d8d0b8" aria-pressed="false">
+        Lino
+      </button>
+      <button type="button" data-model-color="#51664a" aria-pressed="false">
+        Oliva
+      </button>
+      <button type="button" data-model-color="#29363c" aria-pressed="false">
+        Carbón
+      </button>
+      <button
+        type="button"
+        data-model-turn="-1"
+        aria-label="Girar prenda a la izquierda"
+      >
+        ←
+      </button>
+      <button
+        type="button"
+        data-model-turn="1"
+        aria-label="Girar prenda a la derecha"
+      >
+        →
+      </button>
+      <button type="button" data-model-zoom="0.85" aria-label="Acercar prenda">
+        +
+      </button>
+      <button type="button" data-model-zoom="1.15" aria-label="Alejar prenda">
+        −
+      </button>
+      <button type="button" data-close-model>
+        Cerrar 3D
+      </button>
+    </div>
+  </div>
+</section>
+<script>
+  import "../scripts/atelier";
+</script>

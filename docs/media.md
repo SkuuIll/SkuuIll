@@ -9,6 +9,10 @@ Las imágenes del portafolio son archivos locales. Las capturas de Vigía usan s
 | `vigia-personal.webp` | Misma interfaz, Personal. | Jornada y asistencia de equipos de demostración. |
 | `vigia-hotel.webp` | Misma interfaz, habitaciones. | Habitaciones, estados y valores de demostración. |
 | `vigia-admin.webp` | Misma interfaz, compras. | Órdenes y proveedores de demostración. |
+| `hotel-environment-3d.webp` | Generada con la herramienta integrada de imágenes. | Escena hotelera ilustrativa; el dispositivo se compone en HTML con la captura real de Vigía. No representa un cliente ni una instalación. |
+| `skull-sculpture-3d.webp` | Generada con la herramienta integrada de imágenes, con fondo transparente. | Escultura de identidad: cinta cerámica en forma de S. No es una captura de software. |
+| `atelier-colors.webp`, `atelier-design.webp`, `atelier-placement.webp` | CPaul/custom-studio ejecutado localmente desde Studio Pro; API interceptada para usar el catálogo incorporado y sesión anónima. | Editor real con cambios de color, texto de demostración y ubicaciones. No se enviaron pedidos ni se consultaron clientes. |
+| `models/atelier-tshirt/` | Modelo de prenda y dependencias del catálogo de CPaul, cpaul-tshirt-basic; exportación glTF de CLO. | Muestra limitada del modelo con material uniforme, giro y zoom. No sustituye el configurador completo ni acredita autoría de la herramienta CLO. |
 | `tactical-map.webp` | PUBG-Mortar-Tactical-Map ejecutado localmente. | Mapa del videojuego y herramientas de la aplicación. PUBG y sus recursos pertenecen a sus titulares. |
 | `pipa-web.webp` | Portada pública de pipaa.store, vinculada a Pipa_arg. | Presentación de PIPAA y Panza Army. Las personas de la campaña no representan a Skull. |
 | `fluxnet-android-4.9.6.png` | Recurso archivado en FluxNet/master/panel/public/images/mockups/fluxnet-4.9.6-inicio-lite.png. | Interfaz Android 4.9.6 en modo Lite, sin perfil ni servidor activo. Se identifica la versión; no acredita una conexión VPN ni la validación del cliente nativo nuevo. |
@@ -19,11 +23,15 @@ La composición de Repo Setup Kit es un gráfico de identidad. La terminal prese
 
 Las capturas documentan interfaces del código consultado. Los datos de demostración no certifican integración con un servidor productivo ni la validación completa de todos sus flujos.
 
+Las ilustraciones generadas y sus prompts están documentados en [dirección de imágenes](image-prompts.md). Se optimizaron a WebP y se sirven desde el propio sitio. La escena de hotel y el recurso de identidad se mantienen separados de las capturas reales.
+
 El mapa de supervisión contiene datos de [OpenStreetMap contributors](https://www.openstreetmap.org/copyright). El portafolio conserva esa atribución.
 
 Manrope y Geist Mono se sirven localmente desde Fontsource, bajo las licencias incluidas en sus paquetes. El sitio no solicita fuentes a Google Fonts.
 
 [Licencia de Manrope](../public/licenses/Manrope-OFL.txt) · [Licencia de Geist Mono](../public/licenses/Geist-Mono-OFL.txt)
+
+La muestra 3D usa Three.js bajo su [licencia MIT](../public/licenses/Three-MIT.txt).
 
 Para regenerar la identidad y la vista previa social:
 

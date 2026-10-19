@@ -55,7 +55,8 @@ for (const width of [360, 390, 768, 1440, 1920]) {
           .filter((id) => !document.getElementById(id)),
       );
     expect(missingTargets).toEqual([]);
-    await expect(page.locator(".work-item")).toHaveCount(6);
+    await expect(page.locator("#atelier-shot")).toBeVisible();
+    await expect(page.locator(".application-row")).toHaveCount(8);
     expect(errors).toEqual([]);
   });
 }

@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ProjectVisual from "../../components/ProjectVisual.astro";
+import AtelierFeature from "../../components/AtelierFeature.astro";
 import { projects, projectUrl, asset } from "../../data/projects";
 export function getStaticPaths() {
   return projects.map((project, index) => ({
@@ -38,7 +39,8 @@ const { project, next } = Astro.props;
       </dl>
     </div>
   </section>
-  <figure class="case-visual shell">
+  {project.id === "cpaul" && <AtelierFeature compact />}
+  <figure class="case-visual shell" hidden={project.id === "cpaul"}>
     <ProjectVisual project={project} hero />
     <figcaption class="image-caption">
       {(project.id === "fluxnet"
@@ -93,9 +95,11 @@ const { project, next } = Astro.props;
           <p>
             El Atelier 3D permite trabajar la personalización visual de
             indumentaria. El proyecto conecta esa experiencia con catálogo,
-            pedidos, administración y persistencia de datos. La imagen de esta
-            página pertenece a la campaña del proyecto; el configurador es una
-            funcionalidad diferenciada.
+            pedidos, administración y persistencia de datos. Las capturas de
+            esta página muestran el editor ejecutado en un entorno local de
+            demostración. La muestra interactiva es un visor reducido de una
+            prenda del proyecto; el editor completo incluye los controles
+            visibles en las capturas.
           </p>
         </section>
       )}

@@ -93,7 +93,7 @@ test("reduced motion never requests the film and leaves the poster visible", asy
 test("a failed film keeps the static composition and navigation usable", async ({
   page,
 }) => {
-  await page.route("**/product-film.webm", (r) => r.abort());
+  await page.route("**/skull-signal.webm", (r) => r.abort());
   await page.goto("./");
   await expect(page.locator(".cinema-status")).toHaveText("Fondo estático");
   await expect(page.locator(".cinema-film")).not.toHaveClass(/is-ready/);

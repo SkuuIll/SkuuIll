@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
 const AxeBuilder = require("@axe-core/playwright").default;
-test("theme follows the system and a chosen appearance persists across pages", async ({
+test("dark appearance and a chosen light appearance persist across pages", async ({
   page,
 }) => {
   await page.emulateMedia({ colorScheme: "dark", reducedMotion: "reduce" });

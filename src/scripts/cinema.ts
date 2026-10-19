@@ -13,8 +13,10 @@ if (hero && film) {
   ).connection;
   let blocked = Boolean(connection?.saveData);
   let failed = false;
+  let generation = 0;
   const allowed = () => !reduced.matches && root.dataset.motion !== "paused";
   const sync = async () => {
+    const current = ++generation;
     const paused = root.dataset.motion === "paused";
     toggle.textContent = paused ? "Activar experiencia" : "Pausar experiencia";
     toggle.setAttribute("aria-pressed", String(paused));
@@ -28,7 +30,17 @@ if (hero && film) {
             ? "Fondo en pausa"
             : "Movimiento activo";
     play.hidden = !blocked || !allowed() || failed;
-    if (!allowed() || !visible || document.hidden || failed || blocked) {
+    const overlayOpen = [
+      ...document.querySelectorAll<HTMLDialogElement>("dialog"),
+    ].some((dialog) => dialog.open);
+    if (
+      !allowed() ||
+      !visible ||
+      document.hidden ||
+      failed ||
+      blocked ||
+      overlayOpen
+    ) {
       film.pause();
       return;
     }
@@ -38,8 +50,10 @@ if (hero && film) {
     }
     try {
       await film.play();
+      if (current !== generation) return;
       if (!allowed() || !visible || document.hidden) film.pause();
     } catch {
+      if (current !== generation) return;
       if (allowed() && visible && !document.hidden) {
         blocked = true;
         void sync();
@@ -67,10 +81,19 @@ if (hero && film) {
     { threshold: 0.05 },
   );
   observer.observe(hero);
+  const overlays = new MutationObserver(() => void sync());
+  document
+    .querySelectorAll("dialog")
+    .forEach((dialog) =>
+      overlays.observe(dialog, { attributes: true, attributeFilter: ["open"] }),
+    );
   reduced.addEventListener("change", () => void sync());
   document.addEventListener("visibilitychange", () => void sync());
   document.addEventListener("skull:motion", () => void sync());
-  window.addEventListener("pagehide", () => film.pause());
+  window.addEventListener("pagehide", () => {
+    generation++;
+    film.pause();
+  });
   window.addEventListener("pageshow", () => void sync());
   void sync();
 }

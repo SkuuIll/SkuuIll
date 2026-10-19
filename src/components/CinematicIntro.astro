@@ -1,11 +1,13 @@
 ---
 import { asset } from "../data/projects";
+import BootIntro from "./BootIntro.astro";
 ---
 
-<section class="hero cinema-hero" aria-labelledby="hero-title">
+<BootIntro />
+<section id="inicio" class="hero cinema-hero" aria-labelledby="hero-title">
   <div class="cinema-media" aria-hidden="true">
     <img
-      src={asset("media/product-film-poster.webp")}
+      src={asset("media/skull-signal-poster.webp")}
       width="1280"
       height="800"
       alt=""
@@ -13,7 +15,7 @@ import { asset } from "../data/projects";
     />
     <video
       class="cinema-film"
-      data-src={asset("media/product-film.webm")}
+      data-src={asset("media/skull-signal.webm")}
       muted
       loop
       playsinline
@@ -38,13 +40,15 @@ import { asset } from "../data/projects";
       </div>
     </div>
     <div class="cinema-copy">
-      <p class="eyebrow">DE LA IDEA A LA EXPERIENCIA</p>
+      <p class="eyebrow">INDEPENDENT SOFTWARE DEVELOPER / ARGENTINA</p>
       <h1 id="hero-title">
-        <span data-hero-line>Software</span>
         <span data-hero-line>
-          en movimiento<span class="cinema-dot">.</span>
+          SKULL<span class="cinema-dot">.</span>
         </span>
       </h1>
+      <p class="cyber-manifesto" data-hero-line>
+        Código. Carácter. Futuro.
+      </p>
       <p class="cinema-description">
         Soy Skull. Diseño y desarrollo productos digitales que conectan
         personas, procesos y plataformas.
@@ -57,7 +61,9 @@ import { asset } from "../data/projects";
       <a class="cinema-scroll" href="#trabajo">
         <span aria-hidden="true">↓</span> DESLIZÁ PARA EXPLORAR
       </a>
-      <span class="cinema-credit mono">ATELIER + VIGÍA / SECUENCIA VISUAL</span>
+      <span class="cinema-credit mono">
+        SKULL SIGNAL / ARTE DIGITAL EN MOVIMIENTO
+      </span>
     </div>
   </div>
   <div class="cinema-coordinate" aria-hidden="true">

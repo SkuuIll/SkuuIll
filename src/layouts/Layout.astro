@@ -6,6 +6,7 @@ import geistLatin from "@fontsource-variable/geist-mono/files/geist-mono-latin-w
 import "../styles/global.css";
 import "../styles/experience.css";
 import "../styles/cinema.css";
+import "../styles/cyber.css";
 import { asset } from "../data/projects";
 import { profile } from "../data/profile";
 interface Props {
@@ -55,9 +56,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="color-scheme" content="light dark" />
     <script is:inline>
-      let theme = matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+      let theme = "dark";
       try {
         const savedTheme = localStorage.getItem("skull-theme");
         if (["light", "dark"].includes(savedTheme)) theme = savedTheme;
@@ -66,7 +65,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       try {
         if (sessionStorage.getItem("skull-motion") === "paused")
           document.documentElement.dataset.motion = "paused";
-        const colors = ["clay", "forest", "blue"];
+        const colors = ["forest", "blue", "clay"];
         const saved = sessionStorage.getItem("skull-palette");
         const navigation = performance.getEntriesByType("navigation")[0];
         const homeEntry =
@@ -109,6 +108,16 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         <a href={asset("#perfil")}>Sobre mí</a>
       </nav>
       <button
+        id="chapters-toggle"
+        class="chapters-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        hidden
+      >
+        Capítulos <span aria-hidden="true">☰</span>
+      </button>
+      <button
         id="theme-toggle"
         class="theme-toggle"
         type="button"
@@ -142,17 +151,55 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         <span></span>
         <span></span>
       </button>
-      <nav
+      <dialog
         id="mobile-nav"
-        class="mobile-nav"
-        aria-label="Navegación móvil"
+        class="mobile-nav chapter-menu"
+        aria-label="Explorar capítulos"
         hidden
       >
-        <a href={asset("#trabajo")}>Trabajo</a>
-        <a href={asset("#atelier")}>Atelier 3D</a>
-        <a href={asset("#perfil")}>Sobre mí</a>
-        <a href={asset("#contacto")}>Contacto</a>
-      </nav>
+        <img
+          class="chapter-menu-art"
+          src={asset("media/skull-cyber-atelier.webp")}
+          width="1600"
+          height="900"
+          alt=""
+          loading="lazy"
+        />
+        <div class="chapter-menu-content shell">
+          <div class="chapter-menu-top mono">
+            <span>SKULL / EXPLORAR</span>
+            <button type="button" id="chapters-close">
+              Cerrar menú <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <nav aria-label="Navegación por capítulos">
+            <a href={asset("")}>
+              <span>00</span>Inicio
+            </a>
+            <a href={asset("#trabajo")}>
+              <span>01</span>Trabajo
+            </a>
+            <a href={asset("#atelier")}>
+              <span>02</span>Atelier 3D
+            </a>
+            <a href={asset("#vigia")}>
+              <span>03</span>Vigía
+            </a>
+            <a href={asset("proyectos/")} aria-label="Archivo de proyectos">
+              <span>04</span>Archivo
+            </a>
+            <a href={asset("#perfil")}>
+              <span>05</span>Sobre mí
+            </a>
+            <a href={asset("#contacto")}>
+              <span>06</span>Contacto
+            </a>
+          </nav>
+          <p class="mono chapter-menu-bottom">
+            CÓDIGO CON IDENTIDAD. / ARGENTINA
+          </p>
+        </div>
+      </dialog>
     </header>
     <main id="contenido">
       <slot />

@@ -4,7 +4,7 @@
 
 # Facundo · SkuuIll
 
-**Software Developer · Full Stack & Cross-Platform · Argentina**
+Software Developer · Full Stack & Cross-Platform · Argentina
 
 Web, Android and desktop applications. Backends, integrations and Linux environments.
 
@@ -14,7 +14,7 @@ Web, Android and desktop applications. Backends, integrations and Linux environm
 
 ---
 
-### Software built for the context in which it is used
+## Software built for the context in which it is used
 
 I'm Facundo, a software developer from Argentina. I work across the layers of a product: the interface people use, the logic that processes their data and the environment where it runs. My work spans **web, Android applications, desktop tools, automation and Linux servers**.
 
@@ -64,7 +64,7 @@ The projects below show how these technologies fit together. GitHub statistics d
 
 <img src="../assets/project-tooling.svg" alt="Repo Setup Kit: project setup for Windows and Linux." width="100%">
 
-**Development environment automation · Windows + Linux**
+Development environment automation · Windows + Linux
 
 Setting up repositories involves repeated configuration, documentation and checks. Repo Setup Kit brings that preparation into a command-line tool for working with Codex and AI agents.
 
@@ -81,7 +81,7 @@ Setting up repositories involves repeated configuration, documentation and check
 
 <img src="../assets/project-map.svg" alt="PUBG Mortar Tactical Map: interactive maps, measurements and tactical tools for the PUBG video game." width="100%">
 
-**Interactive web application · Maps + PWA**
+Interactive web application · Maps + PWA
 
 A tool for PUBG players combining distance measurement, in-game mortar calculations and planning on interactive maps.
 
@@ -98,7 +98,7 @@ A tool for PUBG players combining distance measurement, in-game mortar calculati
 
 <img src="../assets/project-web.svg" alt="Informatorio Blog: posts, users and AI integration with Django." width="100%">
 
-**Content application · Backend + Administration + AI**
+Content application · Backend + Administration + AI
 
 Final project for Informatorio Chaco 2025: a blog with post management, user accounts and Gemini integration to assist content creation.
 

@@ -4,7 +4,7 @@
 
 # Facundo · SkuuIll
 
-**Desarrollador de software · Full Stack & Multiplataforma · Argentina**
+Desarrollador de software · Full Stack & Multiplataforma · Argentina
 
 Aplicaciones web, Android y escritorio. Backend, integraciones y entornos Linux.
 
@@ -14,7 +14,7 @@ Aplicaciones web, Android y escritorio. Backend, integraciones y entornos Linux.
 
 ---
 
-### Software pensado para el contexto en el que se usa
+## Software pensado para el contexto en el que se usa
 
 Soy Facundo, desarrollador de software de Argentina. Trabajo en distintas capas de un producto: la interfaz que usa una persona, la lógica que procesa sus datos y el entorno donde se ejecuta. Mi trabajo abarca **web, aplicaciones Android, herramientas de escritorio, automatización y servidores Linux**.
 
@@ -64,7 +64,7 @@ Los proyectos de abajo muestran cómo se combinan estas tecnologías. Las estad�
 
 <img src="./assets/project-tooling.svg" alt="Repo Setup Kit: configuración de proyectos para Windows y Linux." width="100%">
 
-**Automatización del entorno de desarrollo · Windows + Linux**
+Automatización del entorno de desarrollo · Windows + Linux
 
 Preparar un repositorio implica repetir configuración, documentación y comprobaciones. Repo Setup Kit reúne ese arranque en una herramienta de línea de comandos para trabajar con Codex y agentes de IA.
 
@@ -81,7 +81,7 @@ Preparar un repositorio implica repetir configuración, documentación y comprob
 
 <img src="./assets/project-map.svg" alt="PUBG Mortar Tactical Map: mapas interactivos, medición y herramientas tácticas para el videojuego PUBG." width="100%">
 
-**Aplicación web interactiva · Mapas + PWA**
+Aplicación web interactiva · Mapas + PWA
 
 Una herramienta para jugadores de PUBG que reúne medición de distancias, cálculo de morteros dentro del juego y planificación sobre mapas interactivos.
 
@@ -98,7 +98,7 @@ Una herramienta para jugadores de PUBG que reúne medición de distancias, cálc
 
 <img src="./assets/project-web.svg" alt="Blog Informatorio: publicaciones, usuarios e integración de inteligencia artificial con Django." width="100%">
 
-**Aplicación de contenido · Backend + Administración + IA**
+Aplicación de contenido · Backend + Administración + IA
 
 Proyecto final del programa Informatorio Chaco 2025: un blog con gestión de publicaciones, usuarios e integración con Gemini para asistir la creación de contenido.
 

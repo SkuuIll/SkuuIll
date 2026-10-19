@@ -87,8 +87,8 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="381.48430227638147" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="381.48430227638147" y="0" width="78.51569772361852" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="380.842413942484" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="380.842413942484" y="0" width="79.15758605751608" height="8" fill="#3572A5"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
@@ -100,8 +100,8 @@
                                 JavaScript
                             </div>
                             <small>
-                                <div>19.6 kB</div>
-                                <div>82.93%</div>
+                                <div>24.8 kB</div>
+                                <div>82.79%</div>
                             </small>
                         </div>
                     </section>
@@ -114,8 +114,8 @@
                                 Python
                             </div>
                             <small>
-                                <div>4.03 kB</div>
-                                <div>17.07%</div>
+                                <div>5.16 kB</div>
+                                <div>17.21%</div>
                             </small>
                         </div>
                     </section>
@@ -123,7 +123,7 @@
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 19 Oct 2026, 12:12:53 (timezone America/Argentina/Buenos_Aires) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 19 Oct 2026, 12:23:19 (timezone America/Argentina/Buenos_Aires) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>

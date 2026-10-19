@@ -1,3 +1,5 @@
+[**↗ Abrir mi portafolio web**](https://skuuill.github.io/SkuuIll/) · Web, Android, Linux y proyectos de software
+
 <div align="center">
 
 <img src="./assets/profile-cover-es.svg" alt="Skull / SkuuIll. Desarrollo de software: web, Android, escritorio, Linux y automatización." width="100%">
@@ -227,10 +229,11 @@ Estas imágenes se actualizan mediante GitHub Actions y reflejan su última ejec
 </details>
 
 <details>
-<summary>Sobre este perfil y la web en preparación</summary>
+<summary>Sobre este perfil y el portafolio web</summary>
 
-Este repositorio contiene el perfil de GitHub, sus recursos visuales y el código de una web de servicios en preparación.
+Este repositorio contiene el perfil de GitHub, sus recursos visuales y el portafolio web publicado.
 
+- [Abrir el portafolio web de Skull](https://skuuill.github.io/SkuuIll/).
 - [Código de la web](./site/).
 - [Guía de vista previa y configuración](./docs/landing.md).
 - [Versión en inglés del perfil](./translations/README.en.md).
@@ -239,4 +242,5 @@ Este repositorio contiene el perfil de GitHub, sus recursos visuales y el códig
 </details>
 
 <p align="center"><sub>Skull · SkuuIll — Software, sistemas y herramientas desde Argentina. 🧉</sub></p>
+
 

@@ -309,3 +309,58 @@ test("all color environments retain accessible contrast", async ({ page }) => {
   }
 });
 
+
+
+test('portfolio catalog searches, filters, and recovers from empty results', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.locator('.portfolio-card:visible')).toHaveCount(6);
+  await page.getByRole('button', { name: 'Todos', exact: true }).click();
+  await expect(page.locator('.portfolio-card:visible')).toHaveCount(21);
+  await page.locator('#project-search').fill('Vigía');
+  await expect(page.locator('.portfolio-card:visible')).toHaveCount(3);
+  await page.locator('#project-search').fill('no-such-project-987');
+  await expect(page.locator('#no-projects')).toBeVisible();
+  await page.locator('#reset-projects').click();
+  await expect(page.locator('.portfolio-card:visible')).toHaveCount(21);
+  await page.locator('[data-filter="mobile"]').click();
+  const categories = await page.locator('.portfolio-card:visible').evaluateAll(cards => cards.map(card => card.dataset.category));
+  expect(categories.length).toBeGreaterThan(0);
+  expect(categories.every(category => category.split(' ').includes('mobile'))).toBe(true);
+});
+
+test('project dialog supports keyboard, accessibility, and inquiry context', async ({ page }) => {
+  await page.goto('./');
+  const opener = page.locator('[data-case="vigia"]');
+  await opener.click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(page.locator('#case-title')).toHaveText('Vigía · Gestión Hotelera');
+  const AxeBuilder = require('@axe-core/playwright').default;
+  const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+  expect(results.violations).toEqual([]);
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  await expect(opener).toBeFocused();
+  await opener.click();
+  await page.locator('[data-inquire="vigia"]').click();
+  await expect(page.getByLabel('¿Qué necesitás?')).toHaveValue('Hotelería, GPS y personal');
+  await expect(page.locator('[name="reference"]')).toHaveValue('Vigía · Gestión Hotelera');
+});
+
+test('root URL redirects and retains project deep link', async ({ page }) => {
+  await page.goto('/?caso=fluxnet');
+  await expect(page).toHaveURL(/\/site\/\?caso=fluxnet/);
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(page.locator('#case-title')).toContainText('FluxNet');
+});
+
+test('portfolio review screenshots', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('./');
+  await page.screenshot({ path: testInfo.outputPath('portfolio-desktop.png') });
+  await page.locator('#proyectos').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: testInfo.outputPath('portfolio-catalog.png') });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('./');
+  await page.screenshot({ path: testInfo.outputPath('portfolio-mobile.png') });
+});

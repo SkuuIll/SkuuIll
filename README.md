@@ -1,135 +1,209 @@
 <div align="center">
 
-# SkuuIll
+<img src="./assets/profile-cover-es.svg" alt="Facundo / SkuuIll. Desarrollo de software: web, Android, escritorio, Linux y automatización." width="100%">
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-banner-static.svg">
-  <img src="./assets/profile-banner.svg" alt="SkuuIll — Desarrollo Full Stack desde Argentina" width="100%">
-</picture>
+# Facundo · SkuuIll
 
-Desarrollador Full Stack · Argentina
+**Desarrollador de software · Full Stack & Multiplataforma · Argentina**
 
-Desarrollo aplicaciones web y automatizaciones para resolver tareas concretas: gestionar contenido, preparar proyectos y crear herramientas interactivas.
+Aplicaciones web, Android y escritorio. Backend, integraciones y entornos Linux.
 
-[Contactame por email](mailto:moreappmix@gmail.com) · [Explorá mis proyectos](https://github.com/SkuuIll?tab=repositories)
-
-**Español** · [English](./translations/README.en.md)
+[Conversemos sobre tu proyecto](mailto:moreappmix@gmail.com) · [Explorá mi código](https://github.com/SkuuIll?tab=repositories) · [English](./translations/README.en.md)
 
 </div>
 
-## 🧑‍💻 Sobre mí
+---
 
-Trabajo con **JavaScript, TypeScript y Python**, desde la interfaz hasta el backend. Mi trabajo también incluye apps móviles, software de escritorio y automatizaciones. Me interesan los productos digitales con identidad propia, la automatización y el desarrollo open source.
+### Software pensado para el contexto en el que se usa
 
-- **Frontend:** React, Next.js, HTML y CSS.
-- **Backend:** Node.js, Python y Django.
-- **Herramientas:** Git, Linux y Docker.
-- **Colaboraciones:** desarrollo web, mejoras de productos existentes y proyectos freelance.
+Soy Facundo, desarrollador de software de Argentina. Trabajo en distintas capas de un producto: la interfaz que usa una persona, la lógica que procesa sus datos y el entorno donde se ejecuta. Mi trabajo abarca **web, aplicaciones Android, herramientas de escritorio, automatización y servidores Linux**.
 
-## Qué puedo desarrollar
+Uso **Java, Kotlin, Dart, JavaScript, TypeScript, Python, Go, C# y C++**, según las necesidades del proyecto. Me interesa conectar esas tecnologías para construir soluciones completas: una app con su API, un comercio con su administración, una herramienta de escritorio con integración al sistema o un flujo de trabajo que reduzca tareas repetitivas.
 
-- **Sitios y aplicaciones web:** landings, catálogos, paneles de administración y herramientas a medida.
-- **Backend e integraciones:** gestión de datos, autenticación y conexión entre servicios.
-- **Automatización:** scripts y utilidades para reducir pasos manuales en el trabajo diario.
-- **Mejoras sobre proyectos existentes:** nuevas funcionalidades, interfaces y mantenimiento.
+En este perfil reúno proyectos públicos, trabajo con código privado y adaptaciones de software abierto. Cada uno muestra una parte distinta de lo que hago.
 
-## 🚀 Proyectos seleccionados
+<p align="center">
+  <a href="#especialidades">Especialidades</a> ·
+  <a href="#tecnologías">Tecnologías</a> ·
+  <a href="#proyectos-públicos">Proyectos</a> ·
+  <a href="#productos-con-código-privado">Otros productos</a> ·
+  <a href="#contacto">Contacto</a>
+</p>
 
-| Proyecto | Qué vas a encontrar | Enlaces |
+## Especialidades
+
+| Área | Qué desarrollo | Qué incluye |
 | :--- | :--- | :--- |
-| **Repo Setup Kit** | Prepara repositorios para trabajar con Codex y agentes de IA. Instaladores para Windows y Linux, contexto del proyecto y verificaciones iniciales. | [Código y guía](https://github.com/SkuuIll/Repo-Setup-Kit) |
-| **PUBG Mortar Tactical Map** | Aplicación web con mapas interactivos, medición de distancias, dibujo táctico y configuraciones compartibles. JavaScript · Leaflet · PWA. | [Código y demo](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map) |
-| **Pipa_arg** | Proyecto web en TypeScript para una identidad del gaming y su comunidad. | [Web](https://skuuill.github.io/Pipa_arg/) · [Código](https://github.com/SkuuIll/Pipa_arg) |
-| **WebBanderasPUBG** | Herramienta web de banderas para PUBG: Battlegrounds, en JavaScript. | [Web](https://skuuill.github.io/WebBanderasPUBG/) · [Código](https://github.com/SkuuIll/WebBanderasPUBG) |
-| **Blog · Informatorio** | Blog con gestión de publicaciones, usuarios e integración con Gemini. Proyecto final de Informatorio Chaco 2025. Python · Django. | [Código](https://github.com/SkuuIll/Project-Final-Informatorio-25) |
-| **Djangoautomatic** | Automatización de proyectos Django. | [Código](https://github.com/SkuuIll/Djangoautomatic) |
+| **01 · Web & Full Stack** | Aplicaciones web, tiendas, catálogos, landings y paneles de gestión. | Interfaz, lógica de negocio, autenticación, datos e integraciones. |
+| **02 · Android & Mobile** | Aplicaciones Android y soluciones móviles con Flutter. | Navegación, archivos, multimedia, permisos y conexión con servicios. |
+| **03 · Escritorio & Sistema** | Herramientas para Windows y utilidades integradas con el sistema. | Interfaces de escritorio, procesamiento de audio y automatización local. |
+| **04 · Backend & APIs** | Servicios que conectan aplicaciones, usuarios y procesos. | APIs, bases de datos, administración y comunicación entre componentes. |
+| **05 · Linux & Infraestructura** | Preparación y operación de entornos de desarrollo y servidores. | Trabajo en distintas distribuciones Linux, VPS, terminal, servicios y contenedores. |
+| **06 · Automatización & IA** | Scripts, bots y herramientas para desarrollo y producción de contenido. | Configuración de proyectos, integración de modelos y flujos de trabajo asistidos. |
 
-[Ver todos los repositorios →](https://github.com/SkuuIll?tab=repositories)
+## Tecnologías
 
-<details>
-<summary><strong>Más experiencia: proyectos con código privado</strong></summary>
+Mi trabajo no está limitado a un único lenguaje o sistema operativo. Elijo las herramientas según la plataforma, las integraciones necesarias y el mantenimiento que va a requerir el producto.
 
-También desarrollo proyectos cuyo código no es público. Estos resúmenes presentan sus funcionalidades documentadas; podés consultarme para conversar sobre el trabajo.
+| Ecosistema | Lenguajes y herramientas |
+| :--- | :--- |
+| **Lenguajes** | Java · Kotlin · Dart · JavaScript · TypeScript · Python · Go · C# · C++ |
+| **Web e interfaces** | React · Next.js · HTML · CSS · Leaflet |
+| **Backend** | Node.js · Django · Go · APIs e integraciones |
+| **Android** | Flutter · Dart · Kotlin · Java |
+| **Escritorio** | .NET · WPF · C# · C++ |
+| **Datos y persistencia** | SQL · SQLite · Prisma · Redis |
+| **Sistemas y entrega** | Linux · Windows · Android · Git · GitHub Actions · Docker · VPS |
+| **Automatización y contenido** | Python · Shell · PowerShell · Batch · Telegram · Remotion · integración de IA |
 
-| Proyecto | Qué hace | Tecnologías |
+Los proyectos de abajo muestran cómo se combinan estas tecnologías. Las estadísticas de GitHub reflejan código alojado en repositorios; no representan por sí solas toda mi experiencia.
+
+## Proyectos públicos
+
+### 01 / Repo Setup Kit
+
+<img src="./assets/project-tooling.svg" alt="Repo Setup Kit: configuración de proyectos para Windows y Linux." width="100%">
+
+**Automatización del entorno de desarrollo · Windows + Linux**
+
+Preparar un repositorio implica repetir configuración, documentación y comprobaciones. Repo Setup Kit reúne ese arranque en una herramienta de línea de comandos para trabajar con Codex y agentes de IA.
+
+- Instaladores para Windows y Linux y comandos de preparación, diagnóstico y previsualización.
+- Generación de contexto del proyecto, instrucciones para agentes y plantillas de trabajo.
+- Integraciones con RTK, GitNexus y Engram, además de configuración inicial de hooks y CI cuando corresponde.
+- Respeto por configuraciones existentes y avisos cuando la preparación queda parcial.
+
+**Tecnologías:** Python · PowerShell · Shell · Git · GitHub Actions.
+
+[Ver código e instalación →](https://github.com/SkuuIll/Repo-Setup-Kit)
+
+### 02 / PUBG Mortar Tactical Map
+
+<img src="./assets/project-map.svg" alt="PUBG Mortar Tactical Map: mapas interactivos, medición y herramientas tácticas para el videojuego PUBG." width="100%">
+
+**Aplicación web interactiva · Mapas + PWA**
+
+Una herramienta para jugadores de PUBG que reúne medición de distancias, cálculo de morteros dentro del juego y planificación sobre mapas interactivos.
+
+- Mapas con herramientas de dibujo y medición.
+- Configuraciones compartibles mediante URL y exportación de la vista como imagen.
+- Instalación como PWA, tema claro/oscuro y atajos de teclado.
+- Organización modular en JavaScript, con servicios separados para compartir, exportar y gestionar el tema.
+
+**Tecnologías:** JavaScript · HTML · CSS · Leaflet · Service Worker.
+
+[Explorar la aplicación →](https://skuuill.github.io/PUBG-Mortar-Tactical-Map/) · [Ver código →](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map)
+
+### 03 / Blog · Informatorio Chaco
+
+<img src="./assets/project-web.svg" alt="Blog Informatorio: publicaciones, usuarios e integración de inteligencia artificial con Django." width="100%">
+
+**Aplicación de contenido · Backend + Administración + IA**
+
+Proyecto final del programa Informatorio Chaco 2025: un blog con gestión de publicaciones, usuarios e integración con Gemini para asistir la creación de contenido.
+
+- CRUD de publicaciones y organización de contenido.
+- Autenticación, autorización y administración con Django.
+- Herramientas de generación de contenido e imágenes integradas al flujo editorial.
+- Interfaz con templates y recursos de frontend.
+
+**Tecnologías:** Python · Django · HTML · Tailwind CSS · Alpine.js · Gemini.
+
+[Explorar el repositorio →](https://github.com/SkuuIll/Project-Final-Informatorio-25)
+
+### Más proyectos y herramientas
+
+| Proyecto | Enfoque | Qué podés explorar |
+| :--- | :--- | :--- |
+| [**Pipa_arg**](https://github.com/SkuuIll/Pipa_arg) | Web e identidad de comunidad | Landing para PIPAA y Panza Army, desarrollada en TypeScript. |
+| [**WebBanderasPUBG**](https://github.com/SkuuIll/WebBanderasPUBG) | Herramienta web | Utilidad de banderas para PUBG desarrollada en JavaScript. |
+| [**Djangoautomatic**](https://github.com/SkuuIll/Djangoautomatic) | Automatización con Python | Creación de proyectos Django, entorno virtual, estructura de carpetas y configuración por entorno. |
+| [**ScriptOptimize**](https://github.com/SkuuIll/ScriptOptimize) | Scripting en Windows | Script Batch con tareas de optimización del sistema. |
+| [**NFile-es**](https://github.com/SkuuIll/NFile-es) | Android y código abierto | Fork de [Senzme/NFile](https://github.com/Senzme/NFile): gestor de archivos y multimedia con Flutter/Dart. |
+
+**Sobre NFile-es:** el proyecto base pertenece a Senzme/NFile. Lo presento como un repositorio derivado, con atribución a su autor original y sujeto a su licencia GPL v3.
+
+[Ver todos mis repositorios públicos →](https://github.com/SkuuIll?tab=repositories&type=public)
+
+## Productos con código privado
+
+Parte de mi trabajo está en repositorios privados. Estas son las descripciones que comparto públicamente; el código fuente no está disponible en este perfil.
+
+### Android, servicios y escritorio
+
+| Producto | Funcionalidad | Tecnologías |
 | :--- | :--- | :--- |
 | **FluxNet** | Plataforma VPN para Android con API, panel de administración y gestión de nodos. | Flutter · Kotlin · Go · React |
-| **CPaul** | Tienda de indumentaria personalizada con Atelier 3D, catálogo, pedidos y checkout. | Next.js · React · TypeScript · Prisma |
-| **BattleFX** | Centro de control para gaming en Windows con procesamiento de audio y un efecto de sistema propio. | C# · .NET · WPF · C++ |
-| **VidAutonomo** | Generador de videos verticales con flujo de guion, voz, subtítulos y render, gestionado desde un panel web. | Remotion · Node.js |
-| **Web-Catalogo** | Catálogo comercial con filtros, administración de productos y consultas por WhatsApp. | Next.js · TypeScript · Prisma · SQLite |
+| **BattleFX** | Centro de control para gaming en Windows, con procesamiento de audio y un efecto de sistema propio. | C# · .NET · WPF · C++ |
 | **BotCheck** | Bot de Telegram con panel administrativo, monitoreo de servicios, diagnóstico y gestión de logs. | Node.js · Telegram · Redis |
 
-**Código fuente: privado.** [Consultame por estos proyectos](mailto:moreappmix@gmail.com?subject=Proyectos%20privados).
+### Comercio y producción de contenido
 
-</details>
+| Producto | Funcionalidad | Tecnologías |
+| :--- | :--- | :--- |
+| **CPaul** | Tienda de indumentaria personalizada con Atelier 3D, catálogo, pedidos y checkout. | Next.js · React · TypeScript · Prisma |
+| **Web-Catalogo** | Catálogo comercial con filtros, administración de productos y consultas por WhatsApp. | Next.js · TypeScript · Prisma · SQLite |
+| **VidAutonomo** | Generación de videos verticales con flujo de guion, voz, subtítulos y render desde un panel web. | Remotion · Node.js |
 
-## ✉️ Trabajemos juntos
+[Consultame por estos proyectos →](mailto:moreappmix@gmail.com?subject=Consulta%20sobre%20proyectos)
 
-¿Necesitás una landing, una aplicación o mejorar tu web? Escribime a **[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** con:
+## Cómo podemos trabajar
 
-1. Qué querés crear o mejorar y para quién.
-2. Las funcionalidades principales y alguna referencia, si tenés.
-3. El plazo ideal y el presupuesto estimado, si ya están definidos.
+Puedo participar en un producto nuevo o en una base de código existente. El alcance puede incluir una aplicación completa, un módulo, una integración o la mejora de una herramienta que ya está en uso.
 
-Con esa información podemos conversar y acordar alcance, entregables, presupuesto y condiciones antes de empezar.
+| Etapa | Qué definimos o revisamos |
+| :--- | :--- |
+| **01 · Entender** | El problema, quién usa el sistema, la plataforma y las restricciones actuales. |
+| **02 · Delimitar** | Funcionalidades, prioridades, entregables, presupuesto y plazos acordados. |
+| **03 · Construir** | Implementación por partes que puedan revisarse y ajustes sobre lo construido. |
+| **04 · Validar** | Comportamiento esperado, integraciones y funcionamiento en los entornos acordados. |
+| **05 · Entregar** | Código, instrucciones y despliegue o instalación, según el alcance del proyecto. |
 
-Estoy preparando una **landing de servicios y contrataciones**. Su código está en [`site/`](./site/) y se puede revisar localmente; todavía no se anuncia una dirección pública.
+El mantenimiento y las mejoras posteriores se acuerdan según las necesidades de cada trabajo.
 
-## 📊 Actividad en GitHub
+## Contacto
+
+**¿Tenés una idea, una aplicación por mejorar o un proceso para automatizar?**
+
+Contame qué necesitás, en qué plataforma debe funcionar —web, Android, Windows o Linux— y qué existe actualmente. Si tenés referencias, funcionalidades prioritarias o una fecha objetivo, también ayudan a definir una propuesta.
+
+**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [GitHub / SkuuIll](https://github.com/SkuuIll)
+
+---
+
+## Actividad y código abierto
 
 <details>
-<summary>Ver actividad, lenguajes y contribuciones</summary>
+<summary>Ver actividad de GitHub y lenguajes en los repositorios</summary>
 
-Las siguientes imágenes se generan mediante GitHub Actions. Reflejan su última ejecución; no son datos en tiempo real.
+Estas imágenes se actualizan mediante GitHub Actions y reflejan su última ejecución.
 
-[![Resumen de actividad y repositorios de SkuuIll](./metrics/github-metrics.svg)](https://github.com/SkuuIll)
-
-<details>
-<summary>Ver lenguajes utilizados</summary>
+![Actividad de SkuuIll en GitHub](./metrics/github-metrics.svg)
 
 ![Lenguajes de los repositorios de SkuuIll](./metrics/github-metrics-languages.svg)
 
 </details>
 
 <details>
-<summary>🐍 Ver animación de contribuciones</summary>
+<summary>Ver animación de contribuciones</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake.svg">
-  <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake.svg" alt="Serpiente animada recorriendo mi cuadrícula de contribuciones de GitHub" width="100%">
+  <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/output/github-snake.svg" alt="Animación de las contribuciones públicas de SkuuIll" width="100%">
 </picture>
-
-Generada a partir de las contribuciones públicas. Abrí o cerrá esta sección para mostrar u ocultar la animación.
-
-</details>
 
 </details>
 
 <details>
-<summary>Acerca de este repositorio y vista previa de la web</summary>
+<summary>Sobre este perfil y la web en preparación</summary>
 
+Este repositorio contiene el perfil de GitHub, sus recursos visuales y el código de una web de servicios en preparación.
 
-Este repositorio contiene mi perfil de GitHub y la landing de mi futura web.
-
-- [`site/`](./site/): web estática en español, adaptable a celulares y sin dependencias de ejecución.
-- [`docs/landing.md`](./docs/landing.md): vista previa, personalización, formulario y firma para proyectos.
-- [`translations/README.en.md`](./translations/README.en.md): versión en inglés del perfil actual.
-- [`translations/`](./translations/): traducciones anteriores, conservadas como archivo y señaladas como desactualizadas.
-- [`metrics/`](./metrics/): imágenes del perfil; las métricas se actualizan con Actions.
-
-Para ver la landing desde la raíz del repositorio:
-
-```bash
-cd site
-python3 -m http.server 8000
-```
-
-Abrí **<http://localhost:8000>**. Los pasos de validación están en la [guía de la landing](./docs/landing.md).
+- [Código de la web](./site/).
+- [Guía de vista previa y configuración](./docs/landing.md).
+- [Versión en inglés del perfil](./translations/README.en.md).
+- Las demás traducciones se conservan como versiones anteriores y pueden estar desactualizadas.
 
 </details>
 
----
-
-Hecho desde Argentina, con mate y ganas de construir. 🧉
+<p align="center"><sub>Facundo · SkuuIll — Software, sistemas y herramientas desde Argentina. 🧉</sub></p>

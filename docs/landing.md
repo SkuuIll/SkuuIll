@@ -30,7 +30,7 @@ La portada es una demostración de diseño e interacción: campo procedural, rel
 
 La escena proyecta geometría tridimensional con Canvas 2D, sin imágenes ni video descargados. Una alternativa SVG permanece si faltan scripts o contexto gráfico. El visor de prenda usa Three.js bajo demanda exclusivamente en su caso; cerrar la vista libera sus recursos.
 
-El tema inicial es oscuro y recuerda la elección clara u oscura. El acento inicial menta es estable entre visitas; azul y coral son opciones manuales. Movimiento automático respeta el sistema y ahorro de datos; completo requiere elección explícita; reducido y pausa desactivan el bucle decorativo. Ver [movimiento](motion.md) y [apariencia](appearance.md).
+El tema inicial es oscuro y recuerda la elección clara u oscura. Cada carga elige una paleta y una composición distintas de las anteriores; el tema claro/oscuro se conserva. Movimiento automático respeta el sistema y ahorro de datos; completo requiere elección explícita; reducido desactiva el bucle decorativo. Ver [movimiento](motion.md) y [apariencia](appearance.md).
 
 src/data/projects.json conserva los casos y projects.ts define su presentación. /site/ redirige las URLs anteriores. El correo funciona sin scripts y el formulario prepara un borrador que el visitante decide enviar.
 

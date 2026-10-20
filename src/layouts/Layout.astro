@@ -22,7 +22,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
 ---
 
 <!doctype html>
-<html lang="es-AR">
+<html lang="es-AR" data-material="glass">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -64,8 +64,19 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       } catch {}
       document.documentElement.dataset.theme = theme;
       try {
-        if (sessionStorage.getItem("skull-motion") === "paused")
-          document.documentElement.dataset.motion = "paused";
+        const material = localStorage.getItem("skull-material");
+        document.documentElement.dataset.material = [
+          "glass",
+          "solid",
+          "auto",
+        ].includes(material)
+          ? material
+          : "glass";
+      } catch {}
+
+      try {
+        // Old pause buttons were removed; the reduced mode remains available.
+        sessionStorage.removeItem("skull-motion");
         const mode =
           localStorage.getItem("skull-motion-mode") ||
           localStorage.getItem("spulp-motion-mode");
@@ -76,14 +87,36 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         ].includes(mode)
           ? mode
           : "auto";
-        const palette = sessionStorage.getItem("skull-palette");
-        document.documentElement.dataset.palette = [
-          "forest",
-          "blue",
-          "clay",
-        ].includes(palette)
-          ? palette
-          : "forest";
+      } catch {}
+      document.documentElement.dataset.motion = "active";
+      const palettes = ["forest", "blue", "clay", "violet", "amber", "ice"];
+      const scenes = ["orb", "ribbon", "helix", "torus", "lattice"];
+      let lastPalette, lastScene;
+      try {
+        lastPalette = sessionStorage.getItem("skull-palette");
+        lastScene = sessionStorage.getItem("skull-scene");
+      } catch {}
+      try {
+        lastPalette ||= localStorage.getItem("skull-last-palette");
+        lastScene ||= localStorage.getItem("skull-last-scene");
+      } catch {}
+      const choose = (values, last) => {
+        const choices = values.filter((value) => value !== last);
+        return choices[Math.floor(Math.random() * choices.length)];
+      };
+      const palette = choose(palettes, lastPalette);
+      const scene = choose(scenes, lastScene);
+      const seed = Math.floor(Math.random() * 1000000);
+      document.documentElement.dataset.palette = palette;
+      document.documentElement.dataset.scene = scene;
+      document.documentElement.dataset.seed = String(seed);
+      try {
+        sessionStorage.setItem("skull-palette", palette);
+        sessionStorage.setItem("skull-scene", scene);
+      } catch {}
+      try {
+        localStorage.setItem("skull-last-palette", palette);
+        localStorage.setItem("skull-last-scene", scene);
       } catch {}
     </script>
   </head>
@@ -216,11 +249,17 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         <a href={`mailto:${profile.email}`}>Email ↗</a>
       </div>
       <div class="preferences" hidden>
+        <label class="material-control">
+          Acabado
+          <select id="material-mode">
+            <option value="glass">Vidrio</option>
+            <option value="solid">Sólido</option>
+            <option value="auto">Del sistema</option>
+          </select>
+        </label>
+
         <button id="palette-toggle" type="button">
           Color: <span>Menta</span>
-        </button>
-        <button id="motion-toggle" type="button" aria-pressed="false">
-          Pausar movimiento
         </button>
       </div>
     </footer>

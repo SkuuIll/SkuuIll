@@ -27,7 +27,7 @@ La landing demuestra habilidades; las fichas del archivo conservan sus páginas 
 
 La consulta prepara un borrador local para abrir desde el correo del visitante; también permite copiar o descargar el texto. No envía mensajes desde un servidor.
 
-Sin JavaScript permanecen contenido, enlaces y los tres experimentos del laboratorio. El menú modal cierra con Escape y devuelve el foco al control que lo abrió. Los tabs admiten flechas, Inicio y Fin. El movimiento reducido y la pausa se respetan; el campo procedural tiene una alternativa SVG. El CV no forma parte del sitio público.
+Sin JavaScript permanecen contenido, enlaces y los tres experimentos del laboratorio. El menú modal cierra con Escape y devuelve el foco al control que lo abrió. Los tabs admiten flechas, Inicio y Fin. El movimiento reducido se respeta; el campo procedural tiene una alternativa SVG. El CV no forma parte del sitio público.
 
 ## Verificación y publicación
 

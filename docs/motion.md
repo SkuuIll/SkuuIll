@@ -13,11 +13,12 @@ GSAP ScrollTrigger anima entradas, el desplazamiento de la firma y la línea de 
 ## Preferencias compartidas
 
 - **Automático:** respeta movimiento reducido del sistema y ahorro de datos.
-- **Completo:** elección manual que habilita efectos, aunque el sistema solicite reducción. No cambia la configuración del sistema.
-- **Reducido:** composición estática y cambios de estado esenciales.
-- **Pausar:** detiene la decoración en cualquier modo y recuerda la pausa durante la sesión. Reanudar conserva el modo elegido.
+- **Completo:** elección manual que habilita efectos aunque el sistema solicite reducción; no cambia la configuración del sistema.
+- **Reducido:** detiene los bucles decorativos y conserva estados estáticos y cambios esenciales.
 
-`site.ts` centraliza la preferencia en `data-effects`, `data-motion-mode` y `data-motion`. El campo, GSAP, CSS y la galería del caso Atelier comparten ese estado. El selector conserva la elección en `localStorage`; funciona también con almacenamiento bloqueado.
+Se retiraron los botones de pausa a pedido del propietario. La antigua pausa de sesión se descarta al cargar, para que no queden visitantes detenidos por un control que ya no existe. Movimiento reducido sigue siendo un modo de detener los efectos desde el selector. El campo se detiene igualmente fuera de pantalla, al ocultar la pestaña y detrás del menú.
+
+`site.ts` centraliza las preferencias y conserva compatibilidad con la antigua clave de movimiento. El aviso **Activar animaciones** permite habilitar completo desde la portada. El acabado Vidrio es independiente del movimiento: puede verse estático con animaciones reducidas; Sólido y Del sistema están disponibles en el pie.
 
 ## Laboratorio
 
@@ -25,8 +26,8 @@ Composición modifica densidad y distribución de una retícula. Movimiento modi
 
 ## Revisión
 
-`tests/landing.spec.js` cubre preferencias, pausa persistente, puntero, salida de pantalla, menú, pérdida/recuperación de contexto, Canvas ausente, controles, teclado, contraste y alternativa sin scripts. Las otras suites conservan formularios, 21 casos, visor de prenda y privacidad.
+`tests/landing.spec.js` cubre preferencias, retiro de pausa, puntero, salida de pantalla, menú, pérdida/recuperación de contexto, Canvas ausente, controles, teclado, contraste y alternativa sin scripts. Las otras suites conservan formularios, 21 casos, visor de prenda y privacidad.
 
 `node scripts/review-edge.mjs` captura seis tamaños y ambos temas con Edge instalado. La variable `REVIEW_URL` permite comprobar la publicación. Registra errores, desbordes, CTA visible, recursos iniciales y tiempos de rAF; estos últimos son una observación de laboratorio, no una garantía de FPS en otros equipos. `node scripts/audit-lighthouse.mjs` mide Lighthouse móvil sobre la vista previa local en 4179.
 
-Si el sistema reduce el movimiento o hay una pausa guardada, un aviso en la portada explica la causa y ofrece **Activar animaciones**. Esa acción selecciona completo y retira la pausa de forma explícita; no modifica preferencias del sistema. La preferencia se guarda en `skull-motion-mode`, con lectura compatible de la clave anterior.
+Si el sistema reduce el movimiento, un aviso en la portada explica la causa y ofrece **Activar animaciones**. Esa acción selecciona completo; no modifica preferencias del sistema. La preferencia se guarda en `skull-motion-mode`, con lectura compatible de la clave anterior.

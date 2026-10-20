@@ -248,13 +248,15 @@ test("content and email stay usable without JavaScript", async ({
   await context.close();
 });
 
-test("palette stays stable on reload and controls tolerate blocked storage", async ({
+test("palette and scene change on reload while blocked storage remains usable", async ({
   page,
 }) => {
   await page.goto("./");
   const first = await page.locator("html").getAttribute("data-palette");
   await page.reload();
-  await expect(page.locator("html")).toHaveAttribute("data-palette", first);
+  expect(await page.locator("html").getAttribute("data-palette")).not.toBe(
+    first,
+  );
   await page.addInitScript(() => {
     Storage.prototype.getItem = () => {
       throw Error("blocked");
@@ -267,7 +269,7 @@ test("palette stays stable on reload and controls tolerate blocked storage", asy
   page.on("pageerror", (error) => errors.push(error.message));
   await page.reload();
   await page.locator("#palette-toggle").click();
-  await page.locator("#motion-toggle").click();
+  await page.locator("#motion-mode").selectOption("reduced");
   expect(errors).toEqual([]);
 });
 
@@ -289,7 +291,7 @@ test("keyboard skip link and motion preference are respected", async ({
   );
 });
 
-for (const palette of ["clay", "forest", "blue"]) {
+for (const palette of ["clay", "forest", "blue", "violet", "amber", "ice"]) {
   test(`home accessibility in ${palette} palette`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("./");

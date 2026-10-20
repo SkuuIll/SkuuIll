@@ -18,7 +18,7 @@ test("dark appearance and a chosen light appearance persist across pages", async
 test("Atelier gallery switches real screenshots with matching alternatives", async ({
   page,
 }) => {
-  await page.goto("./");
+  await page.goto("proyectos/cpaul/");
   await page.getByRole("button", { name: /02 \/ Diseño y bordado/ }).click();
   await expect(page.locator("#atelier-shot")).toHaveAttribute(
     "src",
@@ -41,7 +41,7 @@ test("3D assets are requested on demand and failure preserves the static gallery
   page.on("request", (request) => {
     if (request.url().includes("/models/")) requests.push(request.url());
   });
-  await page.goto("./");
+  await page.goto("proyectos/cpaul/");
   expect(requests).toEqual([]);
   await page.route("**/models/**", (route) => route.abort());
   await page.getByRole("button", { name: "Activar muestra 3D" }).click();
@@ -57,7 +57,7 @@ test("3D model renders, accepts color and keyboard controls, and releases its ca
   page,
 }) => {
   test.setTimeout(60000);
-  await page.goto("./");
+  await page.goto("proyectos/cpaul/");
   await page.getByRole("button", { name: "Activar muestra 3D" }).click();
   await expect(page.locator(".viewer-status")).toContainText("3D lista", {
     timeout: 30000,
@@ -105,15 +105,16 @@ for (const theme of ["light", "dark"])
       ).toEqual([]);
     });
   }
-test("application work and service proposals are labeled separately", async ({
+test("home demonstrates skills and keeps projects in the archive", async ({
   page,
 }) => {
   await page.goto("./");
-  await expect(page.locator("#aplicaciones .application-row")).toHaveCount(8);
-  await expect(page.locator(".services-section")).toContainText(
-    "Propuestas de servicios",
-  );
-  await expect(page.locator(".services-list article")).toHaveCount(4);
+  await expect(page.locator(".lab-panel")).toHaveCount(3);
+  await expect(page.locator(".process-steps article")).toHaveCount(4);
+  await expect(page.locator("#atelier-shot")).toHaveCount(0);
+  await expect(
+    page.getByRole("link", { name: "Explorá el archivo completo" }),
+  ).toHaveAttribute("href", "/SkuuIll/proyectos/");
 });
 for (const theme of ["light", "dark"]) {
   test(`internal pages retain accessible appearance in ${theme} mode`, async ({
@@ -155,7 +156,7 @@ test("static product presentation remains available without JavaScript in dark m
     colorScheme: "dark",
   });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4179/SkuuIll/");
+  await page.goto("http://127.0.0.1:4179/SkuuIll/proyectos/cpaul/");
   await expect(page.locator("#atelier-shot")).toBeVisible();
   await expect(page.locator(".viewer-poster")).toBeVisible();
   expect(

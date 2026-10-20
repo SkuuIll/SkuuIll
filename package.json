@@ -2,7 +2,7 @@
   "name": "skuuill-profile-and-landing",
   "version": "1.0.0",
   "private": true,
-  "description": "Perfil de GitHub y portafolio web de Skull",
+  "description": "Perfil de GitHub y portafolio web de Spulp",
   "scripts": {
     "lint": "markdownlint-cli2 && astro check",
     "test": "playwright test",

@@ -1,22 +1,30 @@
-# Dirección visual y movimiento
+# Movimiento e interacción de Spulp
 
-Referencias consultadas el 19 de octubre de 2026:
+La dirección visual toma como referencia el ritmo editorial y las capas de las webs de [Lando Norris](https://landonorris.com/) y [Charles Leclerc](https://charlesleclerc.com/en/), revisadas en la etapa anterior. La implementación actual utiliza geometría y código originales.
 
-- [Lando Norris](https://landonorris.com/): identidad a pantalla completa, contraste de escala, composición por capas y transiciones que acompañan el recorrido.
-- [Charles Leclerc](https://charlesleclerc.com/en/): apertura audiovisual, tipografía protagonista y navegación por capítulos.
+## Campo procedural
 
-La implementación usa estas ideas de composición con identidad, contenido y recursos propios. No incorpora código, fotografías ni videos de esos sitios.
+`src/scripts/landing.ts` proyecta un campo tridimensional sobre un único Canvas 2D: esfera, onda y conexiones. El desplazamiento transforma la geometría; el puntero modifica su orientación con interpolación suave. La escena se mantiene visible mediante posición sticky durante una secuencia breve, sin interceptar rueda, gestos ni scroll nativo. En móvil el relato es vertical y no fija sus textos.
 
-La dirección actual es **Skull Signal**: negro, verde eléctrico y azul, con una escena secundaria roja y negra. La portada muestra arte propio animado, en lugar de capturas de productos como fondo. El detalle de generación está en [arte cyberpunk](cyberpunk-art.md).
+La escena usa 440 puntos en escritorio y 216 en dispositivos táctiles o ahorro de datos. El DPR se limita a 1,5 y 1,25 respectivamente. Un solo `requestAnimationFrame` dibuja la escena. El bucle se cancela fuera de pantalla, al ocultar la pestaña, durante el menú y al salir de la página. `pagehide` desconecta observadores y cancela animaciones; una restauración desde bfcache vuelve a registrarlos. El SVG queda visible si falla Canvas o se pierde su contexto.
 
-Una presentación de marca de 1,35 segundos aparece una vez por sesión, se puede saltar y se omite con movimiento reducido, pausa o un enlace directo a un capítulo. El menú ocupa la pantalla completa, conserva el foco, cierra con Escape y permite navegar a las páginas reales del archivo. El selector de universos funciona con mouse y flechas del teclado; sin JavaScript todos sus contenidos quedan visibles. Las transiciones entre documentos usan la API nativa View Transitions cuando el navegador la admite, con navegación normal como alternativa.
+GSAP ScrollTrigger anima entradas, el desplazamiento de la firma y la línea de proceso. Se revierte al reducir o pausar el movimiento. Las transiciones entre documentos son nativas, con navegación normal en navegadores sin soporte. La entrada es inmediata: no hay un loader artificial que retrase el contenido.
 
-La portada conserva el desplazamiento nativo. GSAP ScrollTrigger fija temporalmente la apertura y transforma sus capas internas mientras el capítulo del Atelier la cubre. La entrada del configurador cambia escala y rotación; la escena hotelera mueve el entorno y la interfaz a velocidades distintas. Las pantallas de Vigía se relevan con deslizamiento y fundido. Los controles siguen disponibles en móvil.
+## Preferencias compartidas
 
-La pausa se comparte entre portada y pie y persiste durante la sesión. La preferencia del sistema de reducir movimiento desactiva las secuencias; el estado aparece en la portada. El video requiere que la sección esté visible y la pestaña activa. Si se bloquea la reproducción aparece un botón para iniciarla; si falla la carga queda la composición estática. El ahorro de datos requiere iniciar el video manualmente.
+- **Automático:** respeta movimiento reducido del sistema y ahorro de datos.
+- **Completo:** elección manual que habilita efectos, aunque el sistema solicite reducción. No cambia la configuración del sistema.
+- **Reducido:** composición estática y cambios de estado esenciales.
+- **Pausar:** detiene la decoración en cualquier modo y recuerda la pausa durante la sesión. Reanudar conserva el modo elegido.
 
-En la prueba local con Microsoft Edge 155.0.4283.62 el video VP9 se decodificó a 1280 × 800, avanzó su reproducción y el solapamiento funcionó sin errores JavaScript. Esto verifica esa instalación y no determina la configuración de movimiento o ahorro de recursos del navegador personal del visitante.
+`site.ts` centraliza la preferencia en `data-effects`, `data-motion-mode` y `data-motion`. El campo, GSAP, CSS y la galería del caso Atelier comparten ese estado. El selector conserva la elección en `localStorage`; funciona también con almacenamiento bloqueado.
 
-Las pruebas de `tests/cinema.spec.js` cubren reproducción real, pausa, persistencia, salida del área visible, fijación y solapamiento, enlaces de capítulos, movimiento reducido, error de carga y bloqueo de reproducción automática. `tests/cyber.spec.js` verifica entrada, menú modal, teclado, paneles, navegación real, contraste, alternativa sin JavaScript y pausa del video detrás del menú. El resto conserva temas, galería, visor 3D, navegación y privacidad del CV.
+## Laboratorio
 
-Con Edge instalado, `node scripts/review-edge.mjs` verifica cuatro tamaños y ambos temas, guarda capturas y un informe en `.qa/cinema/`. La variable opcional `REVIEW_URL` permite comprobar la publicación. Requiere la vista previa local en el puerto 4179 si no se indica otra URL.
+Composición modifica densidad y distribución de una retícula. Movimiento modifica la amplitud de una onda; el pulso se detiene con la preferencia compartida. Interfaces muestra estados manuales listo/procesando/completado; es una demostración sin envío de datos. Las pestañas admiten flechas, Inicio y Fin. Sin JavaScript las tres composiciones permanecen visibles y los controles inactivos quedan ocultos.
+
+## Revisión
+
+`tests/landing.spec.js` cubre preferencias, pausa persistente, puntero, salida de pantalla, menú, pérdida/recuperación de contexto, Canvas ausente, controles, teclado, contraste y alternativa sin scripts. Las otras suites conservan formularios, 21 casos, visor de prenda y privacidad.
+
+`node scripts/review-edge.mjs` captura seis tamaños y ambos temas con Edge instalado. La variable `REVIEW_URL` permite comprobar la publicación. Registra errores, desbordes, CTA visible, recursos iniciales y tiempos de rAF; estos últimos son una observación de laboratorio, no una garantía de FPS en otros equipos. `node scripts/audit-lighthouse.mjs` mide Lighthouse móvil sobre la vista previa local en 4179.

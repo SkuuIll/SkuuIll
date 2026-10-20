@@ -1,441 +1,391 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import AtelierFeature from "../components/AtelierFeature.astro";
-import CinematicIntro from "../components/CinematicIntro.astro";
-import CyberDeck from "../components/CyberDeck.astro";
-import { projects, projectUrl, asset } from "../data/projects";
-import { profile } from "../data/profile";
-const vigia = projects.find((project) => project.id === "vigia")!;
-const otherApps = [
-  "mi-taller",
-  "showroom",
-  "fluxnet",
-  "pubg-map",
-  "devblog",
-  "battlefx",
-  "pipa",
-  "repo-setup",
-].map((id) => projects.find((project) => project.id === id)!);
-const scenes = [
-  {
-    name: "Seguridad",
-    image: "vigia-gps.webp",
-    alt: "Supervisión GPS con personas de demostración y últimas posiciones recibidas.",
-  },
-  {
-    name: "Personal",
-    image: "vigia-personal.webp",
-    alt: "Tablero real de Personal con asistencia y equipos de demostración.",
-  },
-  {
-    name: "Hotel",
-    image: "vigia-hotel.webp",
-    alt: "Estado de habitaciones de Vigía con unidades y estados de demostración.",
-  },
-  {
-    name: "Administración",
-    image: "vigia-admin.webp",
-    alt: "Compras y proveedores de Vigía con órdenes de demostración.",
-  },
-];
+import Contact from "../components/Contact.astro";
+import { asset, projects } from "../data/projects";
 ---
 
-<Layout>
-  <CinematicIntro />
-  <div class="cinema-cover">
-    <div class="product-ticker" aria-hidden="true">
-      <div class="ticker-track">
-        {[0, 1].map(() => (
-          <span>
-            INTERFACES <b>↗</b> EXPERIENCIAS 3D <b>↗</b> APLICACIONES <b>↗</b>{" "}
-            SISTEMAS CONECTADOS <b>↗</b>
-          </span>
-        ))}
+<Layout
+  title="Spulp — Diseño, código e interacción"
+  description="Interfaces que responden. Un laboratorio de diseño, movimiento y desarrollo de software por Spulp."
+>
+  <div
+    class="signal-world"
+    id="inicio"
+    data-case-ids={projects.map((project) => project.id).join(" ")}
+  >
+    <div class="signal-backdrop" aria-hidden="true">
+      <div class="signal-stage">
+        <svg class="signal-fallback" viewBox="0 0 800 800" fill="none">
+          <defs>
+            <pattern
+              id="signal-grid"
+              width="50"
+              height="50"
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M50 0H0V50" stroke="currentColor" stroke-opacity=".14" />
+            </pattern>
+          </defs>
+          <rect width="800" height="800" fill="url(#signal-grid)" />
+          {Array.from({ length: 14 }, (_, i) => (
+            <ellipse
+              cx="400"
+              cy="400"
+              rx={100 + i * 15}
+              ry={250 - i * 11}
+              transform={`rotate(${i * 13} 400 400)`}
+              stroke="currentColor"
+              stroke-opacity=".4"
+            />
+          ))}
+          <circle
+            cx="400"
+            cy="400"
+            r="300"
+            stroke="currentColor"
+            stroke-dasharray="2 16"
+          />
+        </svg>
+        <canvas id="signal-canvas"></canvas>
+        <span class="signal-coordinate mono">
+          SP / FIELD_001
+          <br />
+          PROCEDURAL SIGNAL
+        </span>
       </div>
     </div>
-
-    <div id="trabajo"></div>
-    <CyberDeck />
-    <nav class="cinema-chapters shell" aria-label="Capítulos del trabajo">
-      <a href="#atelier">
-        <span>01 / EXPERIENCIA</span>Atelier 3D ↗
-      </a>
-      <a href="#vigia">
-        <span>02 / ECOSISTEMA</span>Vigía ↗
-      </a>
-      <a href="#aplicaciones">
-        <span>03 / EXPLORACIÓN</span>Aplicaciones ↗
-      </a>
-    </nav>
-    <AtelierFeature />
-  </div>
-
-  <section id="vigia" class="vigia-feature" aria-labelledby="vigia-title">
-    <div class="shell">
-      <div class="vigia-heading" data-reveal>
-        <p class="eyebrow">CASO EN FOCO / WEB + ANDROID + API</p>
-        <h2 id="vigia-title">
-          El trabajo en campo.
-          <br />
-          <span>La visión del conjunto.</span>
-        </h2>
-        <p>
-          Vigía conecta la operación de un hotel con sus equipos. Desde una
-          reserva hasta una ronda, cada área tiene su lugar.
-        </p>
+    <section class="sp-hero shell" aria-labelledby="hero-title">
+      <div class="hero-topline mono">
+        <span>
+          <i class="status-dot"></i> SPULP / DIGITAL LAB
+        </span>
+        <span>DISEÑO + DESARROLLO</span>
       </div>
-      <figure class="hotel-composition" data-reveal>
-        <img
-          class="hotel-environment"
-          src={asset("media/hotel-environment-3d.webp")}
-          alt="Ilustración 3D de un hotel boutique, con recepción y habitaciones abiertas en corte arquitectónico."
-          width="1536"
-          height="1024"
-          loading="lazy"
-          data-parallax
-        />
-        <div class="hotel-device">
-          <img
-            src={asset("media/vigia-hotel.webp")}
-            alt="Captura real del tablero de habitaciones de Vigía, con datos de demostración."
-            width="1440"
-            height="1000"
-            loading="lazy"
-          />
+      <div class="sp-hero-copy">
+        <p class="eyebrow">IDEAS QUE TOMAN FORMA</p>
+        <h1 id="hero-title">
+          Diseño interfaces
+          <br />
+          que <em>responden.</em>
+        </h1>
+        <p class="sp-lead">
+          Código, movimiento y un poco de curiosidad.
+          <br />
+          Explorá lo que pasa cuando trabajan juntos.
+        </p>
+        <div class="sp-actions">
+          <a class="sp-primary" href="#laboratorio" data-magnetic>
+            Explorar la experiencia <span aria-hidden="true">↘</span>
+          </a>
+          <a class="sp-secondary" href="#contacto">
+            Hablemos <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <figcaption class="hotel-caption">
-          ENTORNO HOTELERO ILUSTRATIVO GENERADO · INTERFAZ REAL CON DATOS DE
-          DEMOSTRACIÓN
-        </figcaption>
-      </figure>
-      <div class="vigia-story">
-        <div class="vigia-screen" data-reveal>
-          <div class="scene-images" id="vigia-scenes">
-            {scenes.map((scene, index) => (
-              <img
-                class:list={["scene-image", { "is-active": index === 0 }]}
-                src={asset(`media/${scene.image}`)}
-                alt={scene.alt}
-                width="1440"
-                height={index === 0 ? 1200 : 1000}
-                loading="lazy"
-                aria-hidden={index !== 0}
-              />
-            ))}
-          </div>
-          <p class="image-caption">INTERFAZ REAL / DATOS DE DEMOSTRACIÓN</p>
-          <div
-            class="scene-controls"
-            role="group"
-            aria-label="Explorar las pantallas de Vigía"
-            hidden
-          >
-            {scenes.map((scene, index) => (
-              <button
-                type="button"
-                data-scene-select={index}
-                aria-pressed={index === 0}
-                aria-controls="vigia-scenes"
-              >
-                <span class="mono">0{index + 1}</span>
-                {scene.name}
-              </button>
-            ))}
-          </div>
-          <p class="scene-attribution">
-            Mapa de la captura: ©{" "}
-            <a href="https://www.openstreetmap.org/copyright">
-              OpenStreetMap contributors
-            </a>
-            .
+      </div>
+      <div class="hero-signature">
+        <span>
+          Spulp<span class="signature-dot">.</span>
+        </span>
+        <div class="mono">
+          INDEPENDIENTE
+          <br />
+          ARGENTINA · DESDE 2022
+        </div>
+      </div>
+      <a class="sp-scroll mono" href="#secuencia">
+        <span aria-hidden="true">↓</span> DESLIZÁ PARA TRANSFORMAR
+      </a>
+      <div class="motion-toolbar" hidden>
+        <label for="motion-mode">Movimiento</label>
+        <select id="motion-mode">
+          <option value="auto">Automático</option>
+          <option value="full">Completo</option>
+          <option value="reduced">Reducido</option>
+        </select>
+        <button id="scene-pause" type="button" aria-pressed="false">
+          Pausar
+        </button>
+        <span id="motion-status" role="status"></span>
+      </div>
+    </section>
+    <section
+      class="sp-sequence shell"
+      id="secuencia"
+      aria-labelledby="sequence-title"
+    >
+      <div class="sequence-heading">
+        <p class="eyebrow">01 / UN SISTEMA, MUCHAS FORMAS</p>
+        <h2 id="sequence-title">
+          Cada gesto.
+          <br />
+          <span>Una respuesta.</span>
+        </h2>
+      </div>
+      <div class="sequence-steps">
+        <article data-phase="0">
+          <span class="mono">01 — ESTRUCTURA</span>
+          <h3>Primero, el orden.</h3>
+          <p>
+            Retículas, proporciones y espacio. La base de una interfaz que se
+            entiende.
           </p>
+        </article>
+        <article data-phase="1">
+          <span class="mono">02 — MOVIMIENTO</span>
+          <h3>Después, el ritmo.</h3>
+          <p>
+            La forma se transforma con el scroll. El movimiento acompaña lo que
+            querés contar.
+          </p>
+        </article>
+        <article data-phase="2">
+          <span class="mono">03 — CONEXIÓN</span>
+          <h3>Todo responde.</h3>
+          <p>
+            Una interacción coherente conecta el diseño, el código y a quien
+            está del otro lado.
+          </p>
+        </article>
+      </div>
+    </section>
+  </div>
+  <section class="sp-lab shell" id="laboratorio" aria-labelledby="lab-title">
+    <div class="lab-heading">
+      <div>
+        <p class="eyebrow">02 / TOCÁ, CAMBIÁ, EXPLORÁ</p>
+        <h2 id="lab-title">
+          Menos promesas.
+          <br />
+          <span>Más interacción.</span>
+        </h2>
+      </div>
+      <p>
+        Este es un pequeño laboratorio de interfaces. Tres experimentos
+        originales para probar el diseño en acción.
+      </p>
+    </div>
+    <div class="lab-console">
+      <div class="lab-tabs" hidden role="tablist" aria-label="Experimentos">
+        <button
+          role="tab"
+          id="tab-composition"
+          aria-controls="panel-composition"
+          aria-selected="true"
+          tabindex="0"
+        >
+          01 Composición
+        </button>
+        <button
+          role="tab"
+          id="tab-motion"
+          aria-controls="panel-motion"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          02 Movimiento
+        </button>
+        <button
+          role="tab"
+          id="tab-interface"
+          aria-controls="panel-interface"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          03 Interfaces
+        </button>
+      </div>
+      <div
+        class="lab-panel"
+        role="tabpanel"
+        id="panel-composition"
+        aria-labelledby="tab-composition"
+        tabindex="0"
+      >
+        <div class="experiment-copy">
+          <span class="mono">EXPERIMENTO_01 / GEOMETRÍA</span>
+          <h3>
+            El orden también
+            <br />
+            se puede jugar.
+          </h3>
+          <p>
+            Modificá la densidad y la distribución. Una misma regla, cientos de
+            composiciones.
+          </p>
+          <div class="lab-controls" hidden>
+            <label for="density">
+              Densidad <output id="density-value">8</output>
+            </label>
+            <input id="density" type="range" min="4" max="12" value="8" />
+            <button type="button" id="layout-shuffle" class="sp-secondary">
+              Cambiar distribución ↗
+            </button>
+          </div>
         </div>
-        <div class="module-list">
-          {[
-            {
-              n: "01",
-              title: "Seguridad",
-              body: "Rondas, checkpoints, evidencias y seguimiento de ubicaciones GPS recibidas durante el turno.",
-            },
-            {
-              n: "02",
-              title: "Personal",
-              body: "Legajos, asistencia y fichajes. Herramientas de identificación y sincronización.",
-            },
-            {
-              n: "03",
-              title: "Hotel",
-              body: "Habitaciones, reservas, huéspedes, tarifas, caja y tareas de operación.",
-            },
-            {
-              n: "04",
-              title: "Administración",
-              body: "Compras, stock, accesos y gestión por sede. Licencias según el alcance del proyecto.",
-            },
-          ].map((module, index) => (
-            <article class="module" data-reveal data-scene={index}>
-              <span class="mono">{module.n}</span>
-              <div>
-                <h3>{module.title}</h3>
-                <p>{module.body}</p>
-              </div>
-              <span class="module-cross" aria-hidden="true">
-                +
-              </span>
-            </article>
+        <div class="composition-art" aria-hidden="true">
+          {Array.from({ length: 64 }, (_, i) => (
+            <span style={`--i:${i};--r:${Math.floor(i / 8)};--c:${i % 8}`} />
           ))}
         </div>
       </div>
-      <div class="vigia-end">
-        <p>React · NestJS · PostgreSQL · React Native / Expo · Linux</p>
-        <a class="light-link" href={projectUrl(vigia.id)}>
-          Conocé el ecosistema <span aria-hidden="true">↗</span>
-        </a>
+      <div
+        class="lab-panel"
+        role="tabpanel"
+        id="panel-motion"
+        aria-labelledby="tab-motion"
+        tabindex="0"
+      >
+        <div class="experiment-copy">
+          <span class="mono">EXPERIMENTO_02 / FRECUENCIA</span>
+          <h3>
+            Encontrá
+            <br />
+            tu frecuencia.
+          </h3>
+          <p>
+            Probá la amplitud de una onda. El pulso se adapta a tus preferencias
+            de movimiento.
+          </p>
+          <div class="lab-controls" hidden>
+            <label for="amplitude">
+              Amplitud <output id="amplitude-value">50</output>
+            </label>
+            <input id="amplitude" type="range" min="10" max="90" value="50" />
+          </div>
+        </div>
+        <div class="wave-art" aria-hidden="true">
+          {Array.from({ length: 35 }, (_, i) => (
+            <span
+              style={`--i:${i};--height:${20 + Math.sin(i * 0.28) ** 2 * 70}%`}
+            />
+          ))}
+          <span class="wave-axis mono">SIGNAL / SINE</span>
+        </div>
+      </div>
+      <div
+        class="lab-panel"
+        role="tabpanel"
+        id="panel-interface"
+        aria-labelledby="tab-interface"
+        tabindex="0"
+      >
+        <div class="experiment-copy">
+          <span class="mono">EXPERIMENTO_03 / ESTADOS</span>
+          <h3>
+            Pequeños detalles.
+            <br />
+            Mejores respuestas.
+          </h3>
+          <p>
+            Cambiá el estado de una interfaz y observá cómo se comunica. Una
+            demostración visual, sin enviar datos.
+          </p>
+          <div class="lab-controls state-controls" hidden>
+            <button type="button" data-demo-state="ready" aria-pressed="true">
+              Listo
+            </button>
+            <button
+              type="button"
+              data-demo-state="working"
+              aria-pressed="false"
+            >
+              Procesando
+            </button>
+            <button type="button" data-demo-state="done" aria-pressed="false">
+              Completado
+            </button>
+          </div>
+        </div>
+        <div class="interface-art" data-state="ready">
+          <div class="interface-top mono">
+            <span>SP / INTERFACE</span>
+            <span>DEMO</span>
+          </div>
+          <div class="interface-symbol" aria-hidden="true">
+            ↗
+          </div>
+          <p id="interface-status" role="status">
+            Todo listo para empezar.
+          </p>
+          <div class="interface-track" aria-hidden="true">
+            <span></span>
+          </div>
+          <span class="mono interface-caption">
+            UN ESTADO. UNA RESPUESTA CLARA.
+          </span>
+        </div>
+      </div>
+      <div class="lab-footer mono">
+        <span>HECHO CON CÓDIGO / INTERACCIÓN REAL</span>
+        <span>SPULP — LAB_2026</span>
       </div>
     </div>
+    <noscript>
+      <p class="lab-note">
+        Podés recorrer las tres composiciones. Activá JavaScript para modificar
+        sus controles.
+      </p>
+    </noscript>
   </section>
-
   <section
-    id="aplicaciones"
-    class="applications-section shell"
-    aria-labelledby="applications-title"
+    class="sp-process shell"
+    id="proceso"
+    aria-labelledby="process-title"
   >
-    <div class="exhibition-heading" data-reveal>
-      <p class="eyebrow">OTRAS APLICACIONES REALIZADAS</p>
-      <h2 id="applications-title">
-        Más formas de
+    <div class="process-heading">
+      <p class="eyebrow">03 / DEL CONCEPTO A LA PANTALLA</p>
+      <h2 id="process-title">
+        La idea es el inicio.
         <br />
-        <span class="muted">resolver.</span>
+        <span>El detalle hace el resto.</span>
       </h2>
       <p>
-        Herramientas construidas para distintos contextos. Cada caso identifica
-        su alcance, acceso y estado de desarrollo.
+        Diseño y desarrollo software independiente desde Argentina. Trabajo
+        desde la interfaz hasta las APIs, los datos y la automatización.
       </p>
     </div>
-    <div class="applications-list">
-      {otherApps.map((project, i) => (
-        <a class="application-row" href={projectUrl(project.id)} data-reveal>
-          <span class="mono">0{i + 1}</span>
-          <div>
-            <h3>{project.title}</h3>
-            <p>{project.stack.slice(0, 2).join(" / ")}</p>
-          </div>
-          <p class="application-summary">{project.summary}</p>
-          <span class="mono application-state">{project.status}</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-      ))}
+    <div class="process-line" aria-hidden="true">
+      <span></span>
     </div>
-    <a class="outline-link" href={asset("proyectos/")}>
-      Explorá el archivo completo <span>{projects.length} proyectos ↗</span>
-    </a>
-  </section>
-  <section class="services-section" aria-labelledby="services-title">
-    <div class="shell">
-      <p class="eyebrow">SOLUCIONES QUE PODEMOS DESARROLLAR</p>
-      <h2 id="services-title" style="margin-top: 24px">
-        Tu próximo producto.
-      </h2>
-      <p style="margin-top: 24px; color: var(--muted)">
-        Propuestas de servicios, para definir según tu necesidad y el alcance
-        del proyecto.
-      </p>
-      <div class="services-list">
-        {[
-          [
-            "Reservas y operación",
-            "Sistemas de turnos, disponibilidad, reservas y organización de equipos.",
-          ],
-          [
-            "Comercio y catálogos",
-            "Productos, variantes, consultas, presupuestos y recorridos de compra.",
-          ],
-          [
-            "Apps web y móviles",
-            "Interfaces para clientes, personal en campo y tareas de operación.",
-          ],
-          [
-            "Automatización e integraciones",
-            "Conectar APIs y datos, reducir tareas repetitivas y preparar entornos.",
-          ],
-        ].map(([title, body]) => (
-          <article data-reveal>
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </article>
-        ))}
-      </div>
-      <a class="inline-link" href="#contacto">
-        Conversemos sobre tu idea <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-  </section>
-
-  <section
-    id="perfil"
-    class="profile-section shell"
-    aria-labelledby="profile-title"
-  >
-    <div class="profile-label">
-      <p class="eyebrow">02 / DETRÁS DEL CÓDIGO</p>
-      <div class="profile-monogram" aria-hidden="true">
-        s<span>↗</span>
-      </div>
-      <span class="mono">SKULL / SKUUIll</span>
-    </div>
-    <div class="profile-main">
-      <h2 id="profile-title" data-reveal>
-        Me interesa cómo
-        <br />
-        funciona <span class="accent">todo.</span>
-      </h2>
-      <p class="profile-lead" data-reveal>
-        La pantalla que alguien usa. La API que la conecta. El sistema que hace
-        que todo siga andando.
-      </p>
-      <div class="profile-prose">
-        <p>
-          Soy Skull. Desarrollo software de forma independiente desde{" "}
-          {profile.since}, desde Charata, Chaco.
-        </p>
-        <p>
-          Trabajo entre web, Android, escritorio y Linux. Esa variedad me
-          permite conectar las partes de un producto y elegir las herramientas
-          según el problema, las personas que lo usan y el mantenimiento que
-          necesita.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="skills-section shell" aria-labelledby="skills-title">
-    <div class="section-heading compact" data-reveal>
-      <p class="eyebrow">03 / QUÉ PUEDO APORTAR</p>
-      <h2 id="skills-title">
-        De la interfaz
-        <br />
-        <span class="muted">al sistema.</span>
-      </h2>
-    </div>
-    <div class="skills-list">
-      {profile.skills.map((skill, index) => (
+    <div class="process-steps">
+      {[
+        {
+          n: "01",
+          title: "Entender",
+          text: "Definir el problema, las personas y el objetivo.",
+        },
+        {
+          n: "02",
+          title: "Dar forma",
+          text: "Explorar la composición y probar la interacción.",
+        },
+        {
+          n: "03",
+          title: "Construir",
+          text: "Conectar interfaces, lógica y datos.",
+        },
+        {
+          n: "04",
+          title: "Afinar",
+          text: "Revisar accesibilidad, rendimiento y detalles.",
+        },
+      ].map((step) => (
         <article data-reveal>
-          <span class="mono">0{index + 1}</span>
-          <h3>{skill.name}</h3>
-          <p>{skill.detail}</p>
+          <span class="mono">{step.n}</span>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
         </article>
       ))}
     </div>
-  </section>
-
-  <section
-    id="contacto"
-    class="contact-section shell"
-    aria-labelledby="contact-title"
-  >
-    <p class="eyebrow" data-reveal>
-      04 / LO PRÓXIMO PUEDE EMPEZAR ACÁ
-    </p>
-    <div class="contact-heading">
-      <h2 id="contact-title" data-reveal>
-        ¿Qué tenés
-        <br />
-        <span class="muted">en mente?</span>
-      </h2>
-      <a
-        class="contact-arrow"
-        href={`mailto:${profile.email}`}
-        aria-label={`Escribime a ${profile.email}`}
-      >
-        ↗
+    <div class="archive-link">
+      <p>¿Querés conocer trabajos anteriores?</p>
+      <a href={asset("proyectos/")}>
+        Explorá el archivo completo <span aria-hidden="true">↗</span>
       </a>
     </div>
-    <div class="contact-bottom">
-      <p>
-        Una aplicación, una integración o una herramienta
-        <br />
-        que simplifique el trabajo. Contame la idea.
-      </p>
-      <a class="email-link" href={`mailto:${profile.email}`}>
-        {profile.email} <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-    <details class="inquiry-details" hidden>
-      <summary>
-        Prefiero preparar una consulta <span aria-hidden="true">+</span>
-      </summary>
-      <form id="inquiry-form" novalidate>
-        <div class="form-grid">
-          <label>
-            Tu nombre
-            <input name="name" autocomplete="name" required maxlength="100" />
-          </label>
-          <label>
-            Tu email
-            <input
-              name="email"
-              type="email"
-              autocomplete="email"
-              required
-              maxlength="200"
-            />
-          </label>
-          <label>
-            <span id="inquiry-service-label">¿Qué necesitás?</span>
-            <select
-              name="service"
-              required
-              aria-labelledby="inquiry-service-label"
-            >
-              <option value="">Elegí una opción</option>
-              <option>Aplicación web</option>
-              <option>Android o escritorio</option>
-              <option>Hotelería, GPS y personal</option>
-              <option>Linux y automatización</option>
-              <option>Otro proyecto</option>
-            </select>
-          </label>
-          <label>
-            Proyecto de referencia
-            <input name="reference" maxlength="120" />
-          </label>
-          <label class="full-field">
-            Contame tu idea
-            <textarea
-              name="idea"
-              rows="4"
-              required
-              minlength="15"
-              maxlength="5000"
-            ></textarea>
-          </label>
-        </div>
-        <p id="form-error" role="alert" hidden></p>
-        <button class="solid-button" type="submit">
-          Preparar consulta <span aria-hidden="true">↗</span>
-        </button>
-        <p class="form-note">
-          Vas a poder revisar el mensaje y abrirlo en tu correo para enviarlo.
-        </p>
-        <div id="inquiry-result" hidden>
-          <label>
-            Mensaje preparado
-            <textarea id="inquiry-message" rows="8" readonly></textarea>
-          </label>
-          <div class="form-actions">
-            <a id="email-draft" class="solid-button">
-              Abrir en mi correo ↗
-            </a>
-            <button id="copy-inquiry" class="outline-button" type="button">
-              Copiar mensaje
-            </button>
-            <button id="download-inquiry" class="outline-button" type="button">
-              Descargar texto
-            </button>
-          </div>
-          <p id="copy-status" role="status"></p>
-        </div>
-      </form>
-    </details>
   </section>
+  <Contact />
+  <script>
+    import "../scripts/landing";
+  </script>
 </Layout>

@@ -1,6 +1,6 @@
 export const profile = {
-  name: "Skull",
-  alias: "Skull",
+  name: "Spulp",
+  alias: "Spulp",
   location: "Charata, Chaco · Argentina",
   email: "moreappmix@gmail.com",
   github: "https://github.com/SkuuIll",

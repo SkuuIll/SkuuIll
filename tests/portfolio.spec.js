@@ -41,7 +41,7 @@ for (const width of [360, 390, 768, 1440, 1920]) {
     });
     await page.goto("./");
     await readyImages(page);
-    await expect(page.locator("h1")).toContainText("SKULL");
+    await expect(page.locator("h1")).toContainText("responden.");
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
@@ -55,8 +55,8 @@ for (const width of [360, 390, 768, 1440, 1920]) {
           .filter((id) => !document.getElementById(id)),
       );
     expect(missingTargets).toEqual([]);
-    await expect(page.locator("#atelier-shot")).toBeVisible();
-    await expect(page.locator(".application-row")).toHaveCount(8);
+    await expect(page.locator(".signal-stage")).toBeVisible();
+    await expect(page.getByRole("tab")).toHaveCount(3);
     expect(errors).toEqual([]);
   });
 }
@@ -75,9 +75,9 @@ test("mobile menu supports keyboard, Escape and following a link", async ({
   await toggle.click();
   await page
     .locator("#mobile-nav")
-    .getByRole("link", { name: "Trabajo" })
+    .getByRole("link", { name: /Laboratorio/ })
     .click();
-  await expect(page).toHaveURL(/#trabajo$/);
+  await expect(page).toHaveURL(/#laboratorio$/);
   await expect(page.locator("#mobile-nav")).toBeHidden();
 });
 
@@ -149,53 +149,6 @@ test("old project links resolve under the repository hosting path", async ({
   await expect(page).toHaveURL(/\/SkuuIll\/proyectos\/#unknown-case$/);
 });
 
-test("Vigía scene selection works on mobile and with reduced motion", async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.goto("./");
-  for (const [index, name] of [
-    "Supervisión GPS",
-    "Personal",
-    "Estado de habitaciones",
-    "Compras",
-  ].entries()) {
-    await page.locator(`[data-scene-select="${index}"]`).click();
-    await expect(
-      page.locator(`[data-scene-select="${index}"]`),
-    ).toHaveAttribute("aria-pressed", "true");
-    await expect(page.locator('.scene-image[aria-hidden="false"]')).toHaveCount(
-      1,
-    );
-    await expect(page.locator(".scene-image.is-active")).toHaveAttribute(
-      "alt",
-      new RegExp(name, "i"),
-    );
-  }
-});
-
-test("desktop scroll advances Vigía scenes and pause removes the long scroll sequence", async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto("./");
-  await page.locator('[data-scene="2"]').scrollIntoViewIfNeeded();
-  await expect(page.locator('[data-scene-select="2"]')).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
-  await page
-    .getByRole("button", { name: "Pausar movimiento", exact: true })
-    .click();
-  await expect(page.locator("html")).toHaveAttribute("data-motion", "paused");
-  await expect(page.locator(".vigia-story")).not.toHaveClass(/has-scenes/);
-  await page.reload();
-  await expect(
-    page.getByRole("button", { name: "Activar movimiento" }),
-  ).toHaveAttribute("aria-pressed", "true");
-});
-
 test("form rejects whitespace and invalidates a prepared message after edits", async ({
   page,
 }) => {
@@ -264,7 +217,7 @@ test("clipboard fallback selects the message and the download contains the draft
   const downloadEvent = page.waitForEvent("download");
   await page.getByRole("button", { name: "Descargar texto" }).click();
   const download = await downloadEvent;
-  expect(download.suggestedFilename()).toBe("consulta-skull.txt");
+  expect(download.suggestedFilename()).toBe("consulta-spulp.txt");
   const stream = await download.createReadStream();
   const chunks = [];
   for await (const chunk of stream) chunks.push(chunk);
@@ -295,29 +248,19 @@ test("content and email stay usable without JavaScript", async ({
   await context.close();
 });
 
-test("palette changes on a new home visit and blocked storage does not break controls", async ({
+test("palette stays stable on reload and controls tolerate blocked storage", async ({
   page,
 }) => {
   await page.goto("./");
   const first = await page.locator("html").getAttribute("data-palette");
-  const firstBackground = await page
-    .locator("body")
-    .evaluate((element) => getComputedStyle(element).backgroundColor);
   await page.reload();
-  expect(await page.locator("html").getAttribute("data-palette")).not.toBe(
-    first,
-  );
-  expect(
-    await page
-      .locator("body")
-      .evaluate((element) => getComputedStyle(element).backgroundColor),
-  ).not.toBe(firstBackground);
+  await expect(page.locator("html")).toHaveAttribute("data-palette", first);
   await page.addInitScript(() => {
     Storage.prototype.getItem = () => {
-      throw new Error("blocked");
+      throw Error("blocked");
     };
     Storage.prototype.setItem = () => {
-      throw new Error("blocked");
+      throw Error("blocked");
     };
   });
   const errors = [];
@@ -339,12 +282,11 @@ test("keyboard skip link and motion preference are respected", async ({
   ).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/#contenido$/);
-  expect(
-    await page
-      .locator(".cinema-scroll > span")
-      .evaluate((element) => getComputedStyle(element).animationName),
-  ).toBe("none");
-  await expect(page.locator(".vigia-story")).not.toHaveClass(/has-scenes/);
+  await expect(page.locator("html")).toHaveAttribute("data-effects", "reduced");
+  await expect(page.locator("#signal-canvas")).toHaveAttribute(
+    "data-running",
+    "false",
+  );
 });
 
 for (const palette of ["clay", "forest", "blue"]) {

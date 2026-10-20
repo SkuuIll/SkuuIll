@@ -9,7 +9,7 @@ shots.forEach((button) =>
     image.src = button.dataset.atelierShot!;
     image.alt = button.dataset.shotAlt!;
     if (
-      !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+      document.documentElement.dataset.effects === "full" &&
       document.documentElement.dataset.motion !== "paused"
     ) {
       image.animate(

@@ -1,0 +1,114 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section
+  id="contacto"
+  class="contact-section shell"
+  aria-labelledby="contact-title"
+>
+  <p class="eyebrow" data-reveal>
+    04 / SIGUIENTE SEÑAL
+  </p>
+  <div class="contact-heading">
+    <h2 id="contact-title" data-reveal>
+      ¿Qué tenés
+      <br />
+      <span class="muted">en mente?</span>
+    </h2>
+    <a
+      class="contact-arrow"
+      href={`mailto:${profile.email}`}
+      aria-label={`Escribime a ${profile.email}`}
+    >
+      ↗
+    </a>
+  </div>
+  <div class="contact-bottom">
+    <p>
+      Una aplicación, una integración o una herramienta
+      <br />
+      que simplifique el trabajo. Contame la idea.
+    </p>
+    <a class="email-link" href={`mailto:${profile.email}`}>
+      {profile.email} <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <details class="inquiry-details" hidden>
+    <summary>
+      Prefiero preparar una consulta <span aria-hidden="true">+</span>
+    </summary>
+    <form id="inquiry-form" novalidate>
+      <div class="form-grid">
+        <label>
+          Tu nombre
+          <input name="name" autocomplete="name" required maxlength="100" />
+        </label>
+        <label>
+          Tu email
+          <input
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            maxlength="200"
+          />
+        </label>
+        <label>
+          <span id="inquiry-service-label">¿Qué necesitás?</span>
+          <select
+            name="service"
+            required
+            aria-labelledby="inquiry-service-label"
+          >
+            <option value="">Elegí una opción</option>
+            <option>Aplicación web</option>
+            <option>Android o escritorio</option>
+            <option>Diseño e interacción</option>
+            <option>Linux y automatización</option>
+            <option>Otro proyecto</option>
+          </select>
+        </label>
+        <label>
+          Proyecto de referencia
+          <input name="reference" maxlength="120" />
+        </label>
+        <label class="full-field">
+          Contame tu idea
+          <textarea
+            name="idea"
+            rows="4"
+            required
+            minlength="15"
+            maxlength="5000"
+          ></textarea>
+        </label>
+      </div>
+      <p id="form-error" role="alert" hidden></p>
+      <button class="solid-button" type="submit">
+        Preparar consulta <span aria-hidden="true">↗</span>
+      </button>
+      <p class="form-note">
+        Vas a poder revisar el mensaje y abrirlo en tu correo para enviarlo.
+      </p>
+      <div id="inquiry-result" hidden>
+        <label>
+          Mensaje preparado
+          <textarea id="inquiry-message" rows="8" readonly></textarea>
+        </label>
+        <div class="form-actions">
+          <a id="email-draft" class="solid-button">
+            Abrir en mi correo ↗
+          </a>
+          <button id="copy-inquiry" class="outline-button" type="button">
+            Copiar mensaje
+          </button>
+          <button id="download-inquiry" class="outline-button" type="button">
+            Descargar texto
+          </button>
+        </div>
+        <p id="copy-status" role="status"></p>
+      </div>
+    </form>
+  </details>
+</section>

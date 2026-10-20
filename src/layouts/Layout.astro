@@ -5,8 +5,9 @@ import manropeLatin from "@fontsource-variable/manrope/files/manrope-latin-wght-
 import geistLatin from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
 import "../styles/global.css";
 import "../styles/experience.css";
-import "../styles/cinema.css";
-import "../styles/cyber.css";
+
+import "../styles/shell.css";
+import "../styles/landing.css";
 import { asset } from "../data/projects";
 import { profile } from "../data/profile";
 interface Props {
@@ -14,7 +15,7 @@ interface Props {
   description?: string;
 }
 const {
-  title = "Skull — Desarrollo de software & productos digitales",
+  title = "Spulp — Diseño, código e interacción",
   description = profile.summary,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
@@ -41,7 +42,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
     />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f4f2ec" />
+    <meta name="theme-color" content="#080d13" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={asset("favicon.svg")} />
     <meta property="og:type" content="website" />
@@ -65,20 +66,22 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       try {
         if (sessionStorage.getItem("skull-motion") === "paused")
           document.documentElement.dataset.motion = "paused";
-        const colors = ["forest", "blue", "clay"];
-        const saved = sessionStorage.getItem("skull-palette");
-        const navigation = performance.getEntriesByType("navigation")[0];
-        const homeEntry =
-          /\/SkuuIll\/?$/.test(location.pathname) &&
-          (!document.referrer.startsWith(location.origin + "/SkuuIll/") ||
-            navigation?.type === "reload");
-        const palette = homeEntry
-          ? colors[(colors.indexOf(saved) + 1) % colors.length]
-          : saved;
-        if (colors.includes(palette)) {
-          document.documentElement.dataset.palette = palette;
-          sessionStorage.setItem("skull-palette", palette);
-        }
+        const mode = localStorage.getItem("spulp-motion-mode");
+        document.documentElement.dataset.motionMode = [
+          "auto",
+          "full",
+          "reduced",
+        ].includes(mode)
+          ? mode
+          : "auto";
+        const palette = sessionStorage.getItem("skull-palette");
+        document.documentElement.dataset.palette = [
+          "forest",
+          "blue",
+          "clay",
+        ].includes(palette)
+          ? palette
+          : "forest";
       } catch {}
     </script>
   </head>
@@ -88,7 +91,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       Saltar al contenido
     </a>
     <header class="site-header shell">
-      <a class="brand" href={asset("")} aria-label="Skull, inicio">
+      <a class="brand" href={asset("")} aria-label="Spulp, inicio">
         <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
           <path
             d="M24 6H11L5 13l21 6-6 7H7"
@@ -99,13 +102,13 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
           <path d="M20 2v8M16 6h8" stroke="currentColor" stroke-width="2" />
         </svg>
         <span>
-          Skull<span class="brand-period">.</span>
+          Spulp<span class="brand-period">.</span>
         </span>
       </a>
       <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href={asset("#trabajo")}>Trabajo</a>
-        <a href={asset("#atelier")}>Atelier 3D</a>
-        <a href={asset("#perfil")}>Sobre mí</a>
+        <a href={asset("#laboratorio")}>Laboratorio</a>
+        <a href={asset("#secuencia")}>Experiencia</a>
+        <a href={asset("#proceso")}>Proceso</a>
       </nav>
       <button
         id="chapters-toggle"
@@ -115,7 +118,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         aria-controls="mobile-nav"
         hidden
       >
-        Capítulos <span aria-hidden="true">☰</span>
+        Explorar <span aria-hidden="true">☰</span>
       </button>
       <button
         id="theme-toggle"
@@ -157,17 +160,9 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         aria-label="Explorar capítulos"
         hidden
       >
-        <img
-          class="chapter-menu-art"
-          src={asset("media/skull-cyber-atelier.webp")}
-          width="1600"
-          height="900"
-          alt=""
-          loading="lazy"
-        />
         <div class="chapter-menu-content shell">
           <div class="chapter-menu-top mono">
-            <span>SKULL / EXPLORAR</span>
+            <span>SPULP / EXPLORAR</span>
             <button type="button" id="chapters-close">
               Cerrar menú <span aria-hidden="true">×</span>
             </button>
@@ -176,20 +171,17 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
             <a href={asset("")}>
               <span>00</span>Inicio
             </a>
-            <a href={asset("#trabajo")}>
-              <span>01</span>Trabajo
+            <a href={asset("#secuencia")}>
+              <span>01</span>Experiencia
             </a>
-            <a href={asset("#atelier")}>
-              <span>02</span>Atelier 3D
+            <a href={asset("#laboratorio")}>
+              <span>02</span>Laboratorio
             </a>
-            <a href={asset("#vigia")}>
-              <span>03</span>Vigía
+            <a href={asset("#proceso")}>
+              <span>03</span>Proceso
             </a>
             <a href={asset("proyectos/")} aria-label="Archivo de proyectos">
               <span>04</span>Archivo
-            </a>
-            <a href={asset("#perfil")}>
-              <span>05</span>Sobre mí
             </a>
             <a href={asset("#contacto")}>
               <span>06</span>Contacto
@@ -206,7 +198,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
     </main>
     <footer class="site-footer shell">
       <a class="footer-name" href={asset("")}>
-        Skull<span>↗</span>
+        Spulp<span>↗</span>
       </a>
       <div>
         <p>Software desde Chaco, Argentina.</p>
@@ -218,7 +210,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       </div>
       <div class="preferences" hidden>
         <button id="palette-toggle" type="button">
-          Color: <span>Arcilla</span>
+          Color: <span>Menta</span>
         </button>
         <button id="motion-toggle" type="button" aria-pressed="false">
           Pausar movimiento

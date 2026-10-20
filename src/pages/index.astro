@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SpatialExperience from "../components/SpatialExperience.astro";
 import Contact from "../components/Contact.astro";
 import { asset, projects } from "../data/projects";
 ---
@@ -110,14 +111,6 @@ import { asset, projects } from "../data/projects";
           <br />
           Explorá lo que pasa cuando trabajan juntos.
         </p>
-        <div class="motion-notice" hidden>
-          <p id="motion-explanation">
-            Las animaciones están reducidas en tu navegador.
-          </p>
-          <button id="enable-effects" type="button">
-            Activar animaciones <span aria-hidden="true">↗</span>
-          </button>
-        </div>
         <div class="sp-actions">
           <a class="sp-primary" href="#laboratorio" data-magnetic>
             Explorar la experiencia <span aria-hidden="true">↘</span>
@@ -140,16 +133,6 @@ import { asset, projects } from "../data/projects";
       <a class="sp-scroll mono" href="#secuencia">
         <span aria-hidden="true">↓</span> DESLIZÁ PARA TRANSFORMAR
       </a>
-      <div class="motion-toolbar" hidden>
-        <label for="motion-mode">Movimiento</label>
-        <select id="motion-mode">
-          <option value="auto">Automático</option>
-          <option value="full">Completo</option>
-          <option value="reduced">Reducido</option>
-        </select>
-
-        <span id="motion-status" role="status"></span>
-      </div>
     </section>
     <section
       class="sp-sequence shell"
@@ -192,6 +175,7 @@ import { asset, projects } from "../data/projects";
       </div>
     </section>
   </div>
+  <SpatialExperience />
   <section class="sp-lab shell" id="laboratorio" aria-labelledby="lab-title">
     <div class="lab-heading">
       <div>
@@ -286,8 +270,8 @@ import { asset, projects } from "../data/projects";
             tu frecuencia.
           </h3>
           <p>
-            Probá la amplitud de una onda. El pulso se adapta a tus preferencias
-            de movimiento.
+            Probá la amplitud de una onda. El pulso responde en tiempo real a
+            cada cambio.
           </p>
           <div class="lab-controls" hidden>
             <label for="amplitude">

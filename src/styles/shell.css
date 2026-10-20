@@ -281,11 +281,16 @@ body {
   font-size: 12px;
 }
 .chapter-menu-top button {
-  background: var(--accent);
-  color: var(--paper);
-  border: 0;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
   padding: 14px 20px;
   min-height: 48px;
+}
+.chapter-menu-top button:hover {
+  background: var(--ink);
+  color: var(--paper);
 }
 .chapter-menu nav {
   display: grid;
@@ -406,8 +411,8 @@ body {
     gap: 0;
   }
   .chapter-menu nav a {
-    font-size: 38px;
-    padding: 12px 0;
+    font-size: 32px;
+    padding: 9px 0;
   }
   .chapter-menu-top {
     font-size: 10px;

@@ -1,33 +1,27 @@
 # Movimiento e interacción de Skull
 
-La dirección visual toma como referencia el ritmo editorial y las capas de las webs de [Lando Norris](https://landonorris.com/) y [Charles Leclerc](https://charlesleclerc.com/en/), revisadas en la etapa anterior. La implementación actual utiliza geometría y código originales.
+## Siempre activo
 
-## Campo procedural
+La landing inicia con todos los efectos activos. Se retiraron el selector, los estados y el aviso de activación a pedido del propietario. Las preferencias antiguas de pausa y reducción se descartan; el sitio no modifica ajustes del sistema operativo. El ahorro de datos limita la calidad gráfica, sin desactivar la experiencia.
 
-`src/scripts/landing.ts` proyecta un campo tridimensional sobre un único Canvas 2D: esfera, onda y conexiones. El desplazamiento transforma la geometría; el puntero modifica su orientación con interpolación suave. La escena se mantiene visible mediante posición sticky durante una secuencia breve, sin interceptar rueda, gestos ni scroll nativo. En móvil el relato es vertical y no fija sus textos.
+El campo de portada proyecta geometría tridimensional sobre Canvas 2D con GSAP ScrollTrigger para entradas y relato. Usa 440 puntos en escritorio y 216 en pantallas táctiles o ahorro de datos. Conserva una alternativa SVG.
 
-La escena usa 440 puntos en escritorio y 216 en dispositivos táctiles o ahorro de datos. El DPR se limita a 1,5 y 1,25 respectivamente. Un solo `requestAnimationFrame` dibuja la escena. El bucle se cancela fuera de pantalla, al ocultar la pestaña, durante el menú y al salir de la página. `pagehide` desconecta observadores y cancela animaciones; una restauración desde bfcache vuelve a registrarlos. El SVG queda visible si falla Canvas o se pierde su contexto.
+## Observatorio espacial
 
-GSAP ScrollTrigger anima entradas, el desplazamiento de la firma y la línea de proceso. Se revierte al reducir o pausar el movimiento. Las transiciones entre documentos son nativas, con navegación normal en navegadores sin soporte. La entrada es inmediata: no hay un loader artificial que retrase el contenido.
+Una ilustración original generada para esta landing se sirve como WebP local de 235 KiB. Un shader WebGL2 aplica paralaje según un campo de profundidad dirigido artísticamente. El cursor y el scroll móvil cambian el punto de vista, y un control permite ajustar su intensidad. Es una experiencia 2.5D: no es una reconstrucción completa de la escena ni Gaussian splatting.
 
-## Preferencias compartidas
+## Umbral
 
-- **Automático:** respeta movimiento reducido del sistema y ahorro de datos.
-- **Completo:** elección manual que habilita efectos aunque el sistema solicite reducción; no cambia la configuración del sistema.
-- **Reducido:** detiene los bucles decorativos y conserva estados estáticos y cambios esenciales.
+Un recorrido geométrico realmente tridimensional usa Three.js: portales, partículas, niebla y una escultura facetada. La cámara avanza y gira con el scroll nativo, sin capturar rueda ni gestos. Tres capítulos cambian según el recorrido. El enlace al laboratorio permite saltarlo.
 
-Se retiraron los botones de pausa a pedido del propietario. La antigua pausa de sesión se descarta al cargar, para que no queden visitantes detenidos por un control que ya no existe. Movimiento reducido sigue siendo un modo de detener los efectos desde el selector. El campo se detiene igualmente fuera de pantalla, al ocultar la pestaña y detrás del menú.
+Three.js se importa dinámicamente al aproximarse a estas secciones. Cada escena renderiza solamente si está visible, la pestaña está activa y el menú está cerrado. DPR máximo 1,5; en móvil y ahorro de datos, 1. Las geometrías, texturas y contextos se liberan al abandonar la página. Sin WebGL o scripts permanecen la ilustración y los portales CSS.
 
-`site.ts` centraliza las preferencias y conserva compatibilidad con la antigua clave de movimiento. El aviso **Activar animaciones** permite habilitar completo desde la portada. El acabado Vidrio es independiente del movimiento: puede verse estático con animaciones reducidas; Sólido y Del sistema están disponibles en el pie.
+## Laboratorio y plataforma web
 
-## Laboratorio
+Los experimentos conservan teclado, controles reales y alternativas sin JavaScript. Las pestañas usan transiciones limitadas al componente cuando existe `Element.startViewTransition`, con fallback mediante Web Animations. Las interacciones se pueden interrumpir. El progreso del recorrido usa una línea de tiempo CSS nativa donde hay soporte y una variable calculada por scroll en los demás navegadores. `corner-shape: squircle` mejora el marco espacial si está disponible.
 
-Composición modifica densidad y distribución de una retícula. Movimiento modifica la amplitud de una onda; el pulso se detiene con la preferencia compartida. Interfaces muestra estados manuales listo/procesando/completado; es una demostración sin envío de datos. Las pestañas admiten flechas, Inicio y Fin. Sin JavaScript las tres composiciones permanecen visibles y los controles inactivos quedan ocultos.
+Estas mejoras se eligieron tras consultar la [actualización oficial de Web UI de julio de 2026](https://developer.chrome.com/blog/new-in-web-ui-io26). Las transiciones por elemento son recientes; el paralaje de profundidad y los recorridos 3D son técnicas conocidas, aplicadas aquí en una composición original.
 
-## Revisión
+## Validación
 
-`tests/landing.spec.js` cubre preferencias, retiro de pausa, puntero, salida de pantalla, menú, pérdida/recuperación de contexto, Canvas ausente, controles, teclado, contraste y alternativa sin scripts. Las otras suites conservan formularios, 21 casos, visor de prenda y privacidad.
-
-`node scripts/review-edge.mjs` captura seis tamaños y ambos temas con Edge instalado. La variable `REVIEW_URL` permite comprobar la publicación. Registra errores, desbordes, CTA visible, recursos iniciales y tiempos de rAF; estos últimos son una observación de laboratorio, no una garantía de FPS en otros equipos. `node scripts/audit-lighthouse.mjs` mide Lighthouse móvil sobre la vista previa local en 4179.
-
-Si el sistema reduce el movimiento, un aviso en la portada explica la causa y ofrece **Activar animaciones**. Esa acción selecciona completo; no modifica preferencias del sistema. La preferencia se guarda en `skull-motion-mode`, con lectura compatible de la clave anterior.
+Las suites de Playwright comprueban activación inmediata, preferencias antiguas, teclado, controles, suspensiones, fallbacks, contraste, formularios, 21 rutas y privacidad. La revisión visual se realiza con Edge instalado en escritorio y móvil. Los bucles se suspenden automáticamente sin introducir nuevamente controles de activación en la portada.

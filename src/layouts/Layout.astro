@@ -75,19 +75,13 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       } catch {}
 
       try {
-        // Old pause buttons were removed; the reduced mode remains available.
+        // The portfolio now always starts with its complete visual experience.
         sessionStorage.removeItem("skull-motion");
-        const mode =
-          localStorage.getItem("skull-motion-mode") ||
-          localStorage.getItem("spulp-motion-mode");
-        document.documentElement.dataset.motionMode = [
-          "auto",
-          "full",
-          "reduced",
-        ].includes(mode)
-          ? mode
-          : "auto";
+        localStorage.removeItem("skull-motion-mode");
+        localStorage.removeItem("spulp-motion-mode");
       } catch {}
+      document.documentElement.dataset.motionMode = "full";
+      document.documentElement.dataset.effects = "full";
       document.documentElement.dataset.motion = "active";
       const palettes = ["forest", "blue", "clay", "violet", "amber", "ice"];
       const scenes = ["orb", "ribbon", "helix", "torus", "lattice"];
@@ -214,17 +208,23 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
             <a href={asset("#secuencia")}>
               <span>01</span>Experiencia
             </a>
+            <a href={asset("#profundidad")}>
+              <span>02</span>Observatorio
+            </a>
+            <a href={asset("#recorrido")}>
+              <span>03</span>Umbral 3D
+            </a>
             <a href={asset("#laboratorio")}>
-              <span>02</span>Laboratorio
+              <span>04</span>Laboratorio
             </a>
             <a href={asset("#proceso")}>
-              <span>03</span>Proceso
+              <span>05</span>Proceso
             </a>
             <a href={asset("proyectos/")} aria-label="Archivo de proyectos">
-              <span>04</span>Archivo
+              <span>06</span>Archivo
             </a>
             <a href={asset("#contacto")}>
-              <span>06</span>Contacto
+              <span>07</span>Contacto
             </a>
           </nav>
           <p class="mono chapter-menu-bottom">

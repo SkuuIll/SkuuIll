@@ -1,35 +1,27 @@
 const { test, expect } = require("@playwright/test");
 const AxeBuilder = require("@axe-core/playwright").default;
 
-test("complete motion explicitly overrides reduced OS preference and persists", async ({
+test("full motion starts automatically without any activation or preference UI", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.addInitScript(() => {
+    localStorage.setItem("skull-motion-mode", "reduced");
+    localStorage.setItem("spulp-motion-mode", "reduced");
+    sessionStorage.setItem("skull-motion", "paused");
+  });
   await page.goto("./");
-  await expect(page.locator("html")).toHaveAttribute("data-effects", "reduced");
-  await expect(page.locator("#signal-canvas")).toHaveAttribute(
-    "data-running",
-    "false",
-  );
-  await page.locator("#motion-mode").selectOption("full");
   await expect(page.locator("html")).toHaveAttribute("data-effects", "full");
   await expect(page.locator("#signal-canvas")).toHaveAttribute(
     "data-running",
     "true",
   );
+  await expect(
+    page.locator(
+      "#motion-mode,#motion-status,#enable-effects,.motion-notice,.motion-toolbar,#scene-pause,#motion-toggle",
+    ),
+  ).toHaveCount(0);
   await page.reload();
-  await expect(page.locator("#motion-mode")).toHaveValue("full");
-  await page.locator("#motion-mode").selectOption("reduced");
-  await expect(page.locator("#signal-canvas")).toHaveAttribute(
-    "data-running",
-    "false",
-  );
-  await expect(page.locator("#motion-status")).toHaveText(
-    "Movimiento reducido",
-  );
-  await page.reload();
-  await expect(page.locator("#motion-mode")).toHaveValue("reduced");
-  await page.locator("#motion-mode").selectOption("full");
   await expect(page.locator("#signal-canvas")).toHaveAttribute(
     "data-running",
     "true",
@@ -44,12 +36,7 @@ test("scene responds to pointer and scroll, and stops offscreen and behind menu"
   await page.goto("./");
   const canvas = page.locator("#signal-canvas");
   await expect(canvas).toHaveAttribute("data-running", "true");
-  await page.locator("#motion-mode").selectOption("reduced");
   const before = await canvas.evaluate((c) => c.toDataURL());
-  await page.mouse.move(1200, 400);
-  await page.waitForTimeout(100);
-  expect(await canvas.evaluate((c) => c.toDataURL())).toBe(before);
-  await page.locator("#motion-mode").selectOption("full");
   await page.mouse.move(1200, 400);
   await page.waitForTimeout(150);
   expect(await canvas.evaluate((c) => c.toDataURL())).not.toBe(before);
@@ -67,7 +54,6 @@ test("context loss preserves vector fallback and recovery restarts the field", a
   page,
 }) => {
   await page.goto("./");
-  await page.locator("#motion-mode").selectOption("full");
   await page
     .locator("#signal-canvas")
     .evaluate((c) =>
@@ -209,6 +195,7 @@ for (const theme of ["dark", "light"])
       ).toEqual([]);
     }
     await page.locator("#chapters-toggle").click();
+    await page.locator("#chapters-close").hover();
     const result = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
       .analyze();
@@ -220,10 +207,9 @@ for (const theme of ["dark", "light"])
     ).toEqual([]);
   });
 
-test("automatic mode honors data saving and explicit full mode can opt in", async ({
+test("data saving caps quality without disabling the experience", async ({
   page,
 }) => {
-  await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.addInitScript(() =>
     Object.defineProperty(navigator, "connection", {
       configurable: true,
@@ -231,12 +217,7 @@ test("automatic mode honors data saving and explicit full mode can opt in", asyn
     }),
   );
   await page.goto("./");
-  await expect(page.locator("#motion-status")).toHaveText("Ahorro de datos");
-  await expect(page.locator("#signal-canvas")).toHaveAttribute(
-    "data-running",
-    "false",
-  );
-  await page.locator("#motion-mode").selectOption("full");
+  await expect(page.locator("html")).toHaveAttribute("data-effects", "full");
   await expect(page.locator("#signal-canvas")).toHaveAttribute(
     "data-running",
     "true",
@@ -247,7 +228,6 @@ test("visibility changes stop and resume rendering without changing the preferen
   page,
 }) => {
   await page.goto("./");
-  await page.locator("#motion-mode").selectOption("full");
   await expect(page.locator("#signal-canvas")).toHaveAttribute(
     "data-running",
     "true",
@@ -274,57 +254,7 @@ test("visibility changes stop and resume rendering without changing the preferen
     "data-running",
     "true",
   );
-  await expect(page.locator("#motion-mode")).toHaveValue("full");
-});
-
-test("removed pause controls cannot leave a legacy session stuck", async ({
-  page,
-}) => {
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.addInitScript(() => {
-    if (!sessionStorage.getItem("test-pause-seeded")) {
-      sessionStorage.setItem("skull-motion", "paused");
-      sessionStorage.setItem("test-pause-seeded", "true");
-    }
-  });
-  await page.goto("./");
-  await expect(page.locator(".motion-notice")).toBeVisible();
-  await expect(page.locator("#scene-pause, #motion-toggle")).toHaveCount(0);
-  await expect(page.locator("#motion-explanation")).toContainText(
-    "movimiento reducido",
-  );
-  await page
-    .getByRole("button", { name: "Activar animaciones", exact: false })
-    .click();
-  await expect(page.locator("#signal-canvas")).toHaveAttribute(
-    "data-running",
-    "true",
-  );
-  await expect(page.locator("#motion-mode")).toHaveValue("full");
-  await expect(page.locator(".motion-notice")).toBeHidden();
-  await page.reload();
-  await expect(page.locator("#signal-canvas")).toHaveAttribute(
-    "data-running",
-    "true",
-  );
-});
-
-test("legacy animation preference migrates without losing the visitor choice", async ({
-  page,
-}) => {
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.addInitScript(() =>
-    localStorage.setItem("spulp-motion-mode", "full"),
-  );
-  await page.goto("./");
-  await expect(page.locator("#motion-mode")).toHaveValue("full");
-  await expect(page.locator("#signal-canvas")).toHaveAttribute(
-    "data-running",
-    "true",
-  );
-  await page.locator("#motion-mode").selectOption("reduced");
-  await page.reload();
-  await expect(page.locator("#motion-mode")).toHaveValue("reduced");
+  await expect(page.locator("html")).toHaveAttribute("data-effects", "full");
 });
 
 test("Skull branding is consistent and navigation remains compact", async ({

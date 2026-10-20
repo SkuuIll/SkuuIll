@@ -37,13 +37,11 @@ try {
     await page.screenshot({ path: `${output}/edge-${width}-${theme}.png` });
     const hero = await page.locator(".sp-actions").boundingBox();
     const initial = await page.evaluate(() =>
-      performance
-        .getEntriesByType("resource")
-        .map((r) => ({
-          url: r.name,
-          bytes: r.decodedBodySize,
-          type: r.initiatorType,
-        })),
+      performance.getEntriesByType("resource").map((r) => ({
+        url: r.name,
+        bytes: r.decodedBodySize,
+        type: r.initiatorType,
+      })),
     );
     const scripts = await page.evaluate(() =>
       [...document.scripts].filter((s) => s.src).map((s) => s.src),
@@ -113,7 +111,6 @@ try {
   const reduced = await browser.newPage({ reducedMotion: "reduce" });
   await reduced.goto(url);
   const before = await reduced.locator("html").getAttribute("data-effects");
-  await reduced.locator("#motion-mode").selectOption("full");
   await reduced.waitForFunction(
     () => document.querySelector("#signal-canvas").dataset.running === "true",
   );

@@ -92,13 +92,12 @@ if (menu && mobileNav) {
       root.dataset.effects === "full" &&
       root.dataset.motion !== "paused"
     )
-      mobileNav.querySelector(".chapter-menu-content")?.animate(
-        [
-          { opacity: 0, transform: "translateY(28px)" },
-          { opacity: 1, transform: "translateY(0)" },
-        ],
-        { duration: 450, easing: "cubic-bezier(.16,1,.3,1)" },
-      );
+      mobileNav
+        .querySelector(".chapter-menu-content")
+        ?.animate(
+          [{ transform: "translateY(28px)" }, { transform: "translateY(0)" }],
+          { duration: 450, easing: "cubic-bezier(.16,1,.3,1)" },
+        );
   };
   menu.addEventListener("click", (event) => openMenu(menu, event.detail > 0));
   chapterToggle?.addEventListener("click", (event) =>
@@ -175,66 +174,11 @@ paletteButton?.addEventListener("click", () => {
 });
 showPalette();
 
-// One motion preference drives the scene, scroll animation and project galleries.
-const modeSelect = document.querySelector<HTMLSelectElement>("#motion-mode");
-const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-function updateMotion() {
-  const mode = root.dataset.motionMode || "auto";
-
-  const saveData = (
-    navigator as Navigator & { connection?: { saveData?: boolean } }
-  ).connection?.saveData;
-  const active =
-    mode !== "reduced" && (mode === "full" || (!reduced.matches && !saveData));
-  root.dataset.effects = active ? "full" : "reduced";
-  if (modeSelect) modeSelect.value = mode;
-  const status = document.querySelector("#motion-status");
-  if (status)
-    status.textContent = active
-      ? "Efectos activos"
-      : mode === "reduced"
-        ? "Movimiento reducido"
-        : saveData
-          ? "Ahorro de datos"
-          : "Reducido por el sistema";
-  const notice = document.querySelector<HTMLElement>(".motion-notice");
-  if (notice) notice.hidden = active;
-  const explanation = document.querySelector("#motion-explanation");
-  if (explanation)
-    explanation.textContent = saveData
-      ? "Tu navegador está ahorrando datos y redujo las animaciones."
-      : mode === "reduced"
-        ? "Elegiste una experiencia con movimiento reducido."
-        : "Tu navegador tiene activado el movimiento reducido.";
-  document
-    .querySelector("#atelier-shot")
-    ?.getAnimations()
-    .forEach((animation) => animation.cancel());
-  document.dispatchEvent(new CustomEvent("skull:motion"));
-}
-modeSelect?.addEventListener("change", () => {
-  root.dataset.motionMode = modeSelect.value;
-  try {
-    localStorage.setItem("skull-motion-mode", modeSelect.value);
-  } catch {}
-  updateMotion();
-});
-document.querySelector("#enable-effects")?.addEventListener("click", () => {
-  root.dataset.motionMode = "full";
-  root.dataset.motion = "active";
-  try {
-    localStorage.setItem("skull-motion-mode", "full");
-  } catch {}
-  updateMotion();
-  document
-    .querySelector<HTMLAnchorElement>(".sp-primary")
-    ?.focus({ preventScroll: true });
-});
-reduced.addEventListener("change", updateMotion);
-updateMotion();
-document
-  .querySelector<HTMLElement>(".motion-toolbar")
-  ?.removeAttribute("hidden");
+// Always enabled; renderers independently suspend when hidden or offscreen.
+root.dataset.motionMode = "full";
+root.dataset.motion = "active";
+root.dataset.effects = "full";
+document.dispatchEvent(new CustomEvent("skull:motion"));
 
 const inquiry = document.querySelector<HTMLFormElement>("#inquiry-form");
 if (inquiry) {

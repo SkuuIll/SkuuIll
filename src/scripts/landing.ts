@@ -80,6 +80,10 @@ if (canvas && ctx && stage && world) {
   let scroll = 0,
     accent = "#4ce1c7",
     blue = "#72a6ff";
+  const scene = root.dataset.scene || "orb";
+  const seed = Number(root.dataset.seed || 0);
+  const phase = ((seed % 1000) / 1000) * Math.PI * 2;
+  const lens = stage.querySelector<HTMLElement>(".glass-lens");
   const coarse = matchMedia("(pointer: coarse)");
   const connection = (
     navigator as Navigator & { connection?: { saveData?: boolean } }
@@ -107,13 +111,14 @@ if (canvas && ctx && stage && world) {
       1,
       Math.max(0, -bounds.top / Math.max(1, bounds.height - innerHeight)),
     );
+    if (lens) lens.style.opacity = String(Math.max(0, 1 - scroll * 2.5));
   };
   function draw() {
     if (lost || !width || !height) return;
     ctx!.clearRect(0, 0, width, height);
     const scale = Math.min(width * 0.34, height * 0.35) * (1 - scroll * 0.22);
     const centerX = width * (0.53 - scroll * (coarse.matches ? 0 : 0.35));
-    const rotation = time * 0.12 + smoothX * 0.24 + scroll * 1.3;
+    const rotation = phase + time * 0.12 + smoothX * 0.24 + scroll * 1.3;
     const tilt = -0.25 + smoothY * 0.2 + scroll * 0.25;
     const dots: Array<{ x: number; y: number; z: number }> = [];
     const shape = Math.min(1, scroll * 2.4);
@@ -131,9 +136,32 @@ if (canvas && ctx && stage && world) {
         const waveY =
           (v - 0.5) * 2 + Math.sin(u * 7 + time * 0.6 + v * 3) * 0.3;
         const waveZ = Math.sin(u * 7 + v * 5 + time * 0.35) * 0.4;
-        let x = sphereX * (1 - shape) + waveX * shape;
-        let y = sphereY * (1 - shape) + waveY * shape;
-        let z = sphereZ * (1 - shape) + waveZ * shape;
+        let baseX = sphereX,
+          baseY = sphereY,
+          baseZ = sphereZ;
+        if (scene === "ribbon") {
+          baseX = (u - 0.5) * 2.7;
+          baseY = (v - 0.5) * 2.1 + Math.sin(u * 8 + phase + time * 0.3) * 0.25;
+          baseZ = Math.sin(u * 8 + v * 4 + phase) * 0.55;
+        } else if (scene === "helix") {
+          const twist = angle + v * Math.PI * 3 + phase;
+          baseX = Math.cos(twist) * (0.5 + u * 0.5);
+          baseY = (v - 0.5) * 2.7;
+          baseZ = Math.sin(twist) * (0.5 + u * 0.5);
+        } else if (scene === "torus") {
+          const loop = v * Math.PI * 2;
+          baseX = (1 + 0.32 * Math.cos(loop)) * Math.cos(angle);
+          baseY = 0.32 * Math.sin(loop);
+          baseZ = (1 + 0.32 * Math.cos(loop)) * Math.sin(angle);
+        } else if (scene === "lattice") {
+          baseX = (u - 0.5) * 2.3;
+          baseY = (v - 0.5) * 2.3;
+          baseZ =
+            Math.cos(u * Math.PI * 4 + phase) * Math.sin(v * Math.PI * 3) * 0.5;
+        }
+        let x = baseX * (1 - shape) + waveX * shape;
+        let y = baseY * (1 - shape) + waveY * shape;
+        let z = baseZ * (1 - shape) + waveZ * shape;
         x =
           x * (1 - connectionShape) +
           Math.cos(angle + v * 5) * (0.4 + v) * connectionShape;
@@ -189,6 +217,8 @@ if (canvas && ctx && stage && world) {
     ctx!.stroke();
     ctx!.setLineDash([]);
     ctx!.globalAlpha = 1;
+    if (lens)
+      lens.style.transform = `perspective(800px) translate3d(${smoothX * 9}px,${smoothY * 9}px,0) rotateX(${-smoothY * 5}deg) rotateY(${smoothX * 7}deg)`;
     stage!.classList.add("is-ready");
   }
   const allowed = () =>

@@ -79,7 +79,7 @@ test("3D model renders, accepts color and keyboard controls, and releases its ca
   ).toBeFocused();
 });
 for (const theme of ["light", "dark"])
-  for (const palette of ["clay", "forest", "blue"]) {
+  for (const palette of ["clay", "forest", "blue", "violet", "amber", "ice"]) {
     test(`appearance accessibility ${theme} ${palette}`, async ({ page }) => {
       await page.emulateMedia({ reducedMotion: "reduce" });
       await page.addInitScript(

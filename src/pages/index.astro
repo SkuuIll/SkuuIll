@@ -13,6 +13,33 @@ import { asset, projects } from "../data/projects";
     id="inicio"
     data-case-ids={projects.map((project) => project.id).join(" ")}
   >
+    <svg class="glass-filter" width="0" height="0" aria-hidden="true">
+      <defs>
+        <filter
+          id="glass-refraction"
+          x="-20%"
+          y="-20%"
+          width="140%"
+          height="140%"
+          color-interpolation-filters="sRGB"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency=".012 .018"
+            numOctaves="2"
+            seed="7"
+            result="noise"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="noise"
+            scale="16"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
+    </svg>
     <div class="signal-backdrop" aria-hidden="true">
       <div class="signal-stage">
         <svg class="signal-fallback" viewBox="0 0 800 800" fill="none">
@@ -47,6 +74,16 @@ import { asset, projects } from "../data/projects";
           />
         </svg>
         <canvas id="signal-canvas"></canvas>
+        <div class="glass-lens">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path
+              d="M24 6H11L5 13l21 6-6 7H7"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
         <span class="signal-coordinate mono">
           SP / FIELD_001
           <br />
@@ -110,9 +147,7 @@ import { asset, projects } from "../data/projects";
           <option value="full">Completo</option>
           <option value="reduced">Reducido</option>
         </select>
-        <button id="scene-pause" type="button" aria-pressed="false">
-          Pausar
-        </button>
+
         <span id="motion-status" role="status"></span>
       </div>
     </section>

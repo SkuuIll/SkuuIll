@@ -13,7 +13,10 @@ function applyTheme(theme: string) {
   if (label) label.textContent = theme === "dark" ? "Claro" : "Oscuro";
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute("content", theme === "dark" ? "#080d13" : "#f2f6f7");
+    ?.setAttribute(
+      "content",
+      getComputedStyle(root).getPropertyValue("--paper").trim(),
+    );
 }
 if (themeButton) themeButton.hidden = false;
 applyTheme(root.dataset.theme || (systemTheme.matches ? "dark" : "light"));
@@ -133,12 +136,21 @@ if (menu && mobileNav) {
   });
 }
 
-const palettes = ["forest", "blue", "clay"];
-const paletteNames = ["Menta", "Azul", "Coral"];
+const materialSelect =
+  document.querySelector<HTMLSelectElement>("#material-mode");
+if (materialSelect) materialSelect.value = root.dataset.material || "glass";
+materialSelect?.addEventListener("change", () => {
+  root.dataset.material = materialSelect.value;
+  try {
+    localStorage.setItem("skull-material", materialSelect.value);
+  } catch {}
+});
+
+const palettes = ["forest", "blue", "clay", "violet", "amber", "ice"];
+const paletteNames = ["Menta", "Azul", "Coral", "Violeta", "Ámbar", "Hielo"];
 const paletteButton =
   document.querySelector<HTMLButtonElement>("#palette-toggle");
-const motionButton =
-  document.querySelector<HTMLButtonElement>("#motion-toggle");
+
 document.querySelector<HTMLElement>(".preferences")?.removeAttribute("hidden");
 const showPalette = () => {
   const index = Math.max(0, palettes.indexOf(root.dataset.palette || "clay"));
@@ -151,64 +163,49 @@ paletteButton?.addEventListener("click", () => {
   root.dataset.palette = palettes[index];
   try {
     sessionStorage.setItem("skull-palette", palettes[index]);
+    localStorage.setItem("skull-last-palette", palettes[index]);
   } catch {}
   showPalette();
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute(
+      "content",
+      getComputedStyle(root).getPropertyValue("--paper").trim(),
+    );
 });
 showPalette();
 
 // One motion preference drives the scene, scroll animation and project galleries.
 const modeSelect = document.querySelector<HTMLSelectElement>("#motion-mode");
-const pauseButtons = [
-  motionButton,
-  document.querySelector<HTMLButtonElement>("#scene-pause"),
-];
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 function updateMotion() {
   const mode = root.dataset.motionMode || "auto";
-  const paused = root.dataset.motion === "paused";
+
   const saveData = (
     navigator as Navigator & { connection?: { saveData?: boolean } }
   ).connection?.saveData;
   const active =
-    !paused &&
-    mode !== "reduced" &&
-    (mode === "full" || (!reduced.matches && !saveData));
+    mode !== "reduced" && (mode === "full" || (!reduced.matches && !saveData));
   root.dataset.effects = active ? "full" : "reduced";
   if (modeSelect) modeSelect.value = mode;
-  pauseButtons.forEach((button) => {
-    if (!button) return;
-    button.textContent =
-      button.id === "scene-pause"
-        ? paused
-          ? "Reanudar"
-          : "Pausar"
-        : paused
-          ? "Activar movimiento"
-          : "Pausar movimiento";
-    button.setAttribute("aria-pressed", String(paused));
-  });
   const status = document.querySelector("#motion-status");
   if (status)
-    status.textContent = paused
-      ? "En pausa"
-      : active
-        ? "Efectos activos"
-        : mode === "reduced"
-          ? "Movimiento reducido"
-          : saveData
-            ? "Ahorro de datos"
-            : "Reducido por el sistema";
+    status.textContent = active
+      ? "Efectos activos"
+      : mode === "reduced"
+        ? "Movimiento reducido"
+        : saveData
+          ? "Ahorro de datos"
+          : "Reducido por el sistema";
   const notice = document.querySelector<HTMLElement>(".motion-notice");
   if (notice) notice.hidden = active;
   const explanation = document.querySelector("#motion-explanation");
   if (explanation)
-    explanation.textContent = paused
-      ? "Las animaciones están en pausa."
-      : saveData
-        ? "Tu navegador está ahorrando datos y redujo las animaciones."
-        : mode === "reduced"
-          ? "Elegiste una experiencia con movimiento reducido."
-          : "Tu navegador tiene activado el movimiento reducido.";
+    explanation.textContent = saveData
+      ? "Tu navegador está ahorrando datos y redujo las animaciones."
+      : mode === "reduced"
+        ? "Elegiste una experiencia con movimiento reducido."
+        : "Tu navegador tiene activado el movimiento reducido.";
   document
     .querySelector("#atelier-shot")
     ?.getAnimations()
@@ -222,22 +219,11 @@ modeSelect?.addEventListener("change", () => {
   } catch {}
   updateMotion();
 });
-pauseButtons.forEach((button) =>
-  button?.addEventListener("click", () => {
-    root.dataset.motion =
-      root.dataset.motion === "paused" ? "active" : "paused";
-    try {
-      sessionStorage.setItem("skull-motion", root.dataset.motion);
-    } catch {}
-    updateMotion();
-  }),
-);
 document.querySelector("#enable-effects")?.addEventListener("click", () => {
   root.dataset.motionMode = "full";
   root.dataset.motion = "active";
   try {
     localStorage.setItem("skull-motion-mode", "full");
-    sessionStorage.setItem("skull-motion", "active");
   } catch {}
   updateMotion();
   document

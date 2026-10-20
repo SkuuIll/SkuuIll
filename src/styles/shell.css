@@ -37,11 +37,100 @@
   --accent: #9d352f;
   --soft: #f4dfda;
 }
+:root {
+  --glass-fill: color-mix(in srgb, var(--paper) 64%, transparent);
+  --glass-edge: #ffffff45;
+  --glass-shine: #ffffff26;
+}
+:root[data-theme="light"] {
+  --glass-fill: color-mix(in srgb, var(--paper) 78%, transparent);
+  --glass-edge: #ffffffdc;
+  --glass-shine: #ffffff85;
+}
+:root[data-theme="dark"][data-palette="forest"] {
+  --paper: #070f12;
+  --surface: #102024;
+  --soft: #123b32;
+}
+:root[data-theme="dark"][data-palette="blue"] {
+  --paper: #080e1d;
+  --surface: #111f35;
+  --soft: #1a3056;
+  --signal-blue: #a7c3ff;
+}
+:root[data-theme="dark"][data-palette="clay"] {
+  --paper: #160c13;
+  --surface: #271822;
+  --soft: #4a2334;
+  --signal-blue: #b89aff;
+}
+:root[data-theme="dark"][data-palette="violet"] {
+  --paper: #100d20;
+  --surface: #201b35;
+  --soft: #34275c;
+  --accent: #c0abff;
+  --signal-blue: #80dfe7;
+}
+:root[data-theme="dark"][data-palette="amber"] {
+  --paper: #15110c;
+  --surface: #282117;
+  --soft: #49391c;
+  --accent: #f5cf79;
+  --signal-blue: #ffa896;
+}
+:root[data-theme="dark"][data-palette="ice"] {
+  --paper: #071519;
+  --surface: #122a30;
+  --soft: #19414b;
+  --accent: #88e1ed;
+  --signal-blue: #a5baff;
+}
+:root[data-theme="light"][data-palette="forest"] {
+  --paper: #f0f7f4;
+}
+:root[data-theme="light"][data-palette="blue"] {
+  --paper: #eff4fd;
+}
+:root[data-theme="light"][data-palette="clay"] {
+  --paper: #fff2ee;
+}
+:root[data-theme="light"][data-palette="violet"] {
+  --paper: #f5f0fd;
+  --surface: #e9e1f5;
+  --soft: #dbcef0;
+  --accent: #6840a3;
+  --signal-blue: #006572;
+}
+:root[data-theme="light"][data-palette="amber"] {
+  --paper: #faf5e9;
+  --surface: #eee4cf;
+  --soft: #ecdbb4;
+  --accent: #785000;
+  --signal-blue: #98432b;
+}
+:root[data-theme="light"][data-palette="ice"] {
+  --paper: #edf8fa;
+  --surface: #d9eef1;
+  --soft: #cee6ed;
+  --accent: #006572;
+  --signal-blue: #4557a5;
+}
 html {
   scrollbar-gutter: stable;
 }
 body {
   overflow-x: clip;
+  background-image:
+    radial-gradient(
+      ellipse at 83% 8%,
+      color-mix(in srgb, var(--accent) 9%, transparent),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 5% 60%,
+      color-mix(in srgb, var(--signal-blue) 5%, transparent),
+      transparent 30%
+    );
 }
 .shell {
   width: min(1440px, calc(100% - 104px));
@@ -55,18 +144,31 @@ body {
   margin-top: 16px;
   padding: 8px 20px;
   gap: 14px;
-  border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  border: 1px solid var(--glass-edge);
   border-radius: 999px;
   background: var(--paper);
   box-shadow:
-    0 12px 40px #00000012,
-    inset 0 1px 0 color-mix(in srgb, var(--ink) 8%, transparent);
+    0 18px 44px #0000001c,
+    inset 0 1px 0 #ffffff65,
+    inset 0 -1px 0 #ffffff12;
 }
 @supports (backdrop-filter: blur(18px)) {
   .site-header {
-    background: color-mix(in srgb, var(--paper) 86%, transparent);
-    -webkit-backdrop-filter: blur(18px) saturate(1.3);
-    backdrop-filter: blur(18px) saturate(1.3);
+    background:
+      radial-gradient(
+        ellipse at var(--glass-x, 25%) 0%,
+        var(--glass-shine),
+        transparent 58%
+      ),
+      linear-gradient(
+        145deg,
+        #ffffff0f,
+        transparent 45%,
+        color-mix(in srgb, var(--accent) 9%, transparent)
+      ),
+      var(--glass-fill);
+    -webkit-backdrop-filter: blur(18px) saturate(1.65);
+    backdrop-filter: blur(18px) saturate(1.65);
   }
 }
 .brand {
@@ -327,9 +429,49 @@ body {
   }
 }
 
-@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+@media (prefers-reduced-transparency: reduce) {
+  :root:not([data-material="glass"]) .site-header {
+    background: var(--paper);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+:root[data-material="solid"] .site-header {
+  background: var(--paper);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+@media (forced-colors: active) {
   .site-header {
     background: var(--paper);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+.material-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: 12px var(--mono);
+  margin: 0;
+}
+.material-control select {
+  width: auto;
+  background: var(--surface);
+  border: 0;
+  border-radius: 999px;
+  color: var(--ink);
+  min-height: 44px;
+  padding: 8px 12px;
+  font: inherit;
+}
+@media (prefers-contrast: more) {
+  .site-header {
+    background: var(--paper);
+    border-color: var(--ink);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }

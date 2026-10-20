@@ -19,18 +19,17 @@ test("complete motion explicitly overrides reduced OS preference and persists", 
   );
   await page.reload();
   await expect(page.locator("#motion-mode")).toHaveValue("full");
-  await page.locator("#scene-pause").click();
+  await page.locator("#motion-mode").selectOption("reduced");
   await expect(page.locator("#signal-canvas")).toHaveAttribute(
     "data-running",
     "false",
   );
-  await expect(page.locator("#motion-status")).toHaveText("En pausa");
-  await page.reload();
-  await expect(page.locator("#scene-pause")).toHaveAttribute(
-    "aria-pressed",
-    "true",
+  await expect(page.locator("#motion-status")).toHaveText(
+    "Movimiento reducido",
   );
-  await page.locator("#scene-pause").click();
+  await page.reload();
+  await expect(page.locator("#motion-mode")).toHaveValue("reduced");
+  await page.locator("#motion-mode").selectOption("full");
   await expect(page.locator("#signal-canvas")).toHaveAttribute(
     "data-running",
     "true",
@@ -45,12 +44,12 @@ test("scene responds to pointer and scroll, and stops offscreen and behind menu"
   await page.goto("./");
   const canvas = page.locator("#signal-canvas");
   await expect(canvas).toHaveAttribute("data-running", "true");
-  await page.locator("#scene-pause").click();
+  await page.locator("#motion-mode").selectOption("reduced");
   const before = await canvas.evaluate((c) => c.toDataURL());
   await page.mouse.move(1200, 400);
   await page.waitForTimeout(100);
   expect(await canvas.evaluate((c) => c.toDataURL())).toBe(before);
-  await page.locator("#scene-pause").click();
+  await page.locator("#motion-mode").selectOption("full");
   await page.mouse.move(1200, 400);
   await page.waitForTimeout(150);
   expect(await canvas.evaluate((c) => c.toDataURL())).not.toBe(before);
@@ -278,7 +277,7 @@ test("visibility changes stop and resume rendering without changing the preferen
   await expect(page.locator("#motion-mode")).toHaveValue("full");
 });
 
-test("reduced motion has an obvious activation action that also clears a saved pause", async ({
+test("removed pause controls cannot leave a legacy session stuck", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -290,7 +289,10 @@ test("reduced motion has an obvious activation action that also clears a saved p
   });
   await page.goto("./");
   await expect(page.locator(".motion-notice")).toBeVisible();
-  await expect(page.locator("#motion-explanation")).toContainText("pausa");
+  await expect(page.locator("#scene-pause, #motion-toggle")).toHaveCount(0);
+  await expect(page.locator("#motion-explanation")).toContainText(
+    "movimiento reducido",
+  );
   await page
     .getByRole("button", { name: "Activar animaciones", exact: false })
     .click();
@@ -342,4 +344,76 @@ test("Skull branding is consistent and navigation remains compact", async ({
     await expect(page).toHaveTitle(/Skull/);
     expect(await page.locator("body").innerText()).not.toMatch(/Spulp/i);
   }
+});
+
+test("every load has a fresh composition and palette but preserves the chosen theme", async ({
+  page,
+}) => {
+  await page.addInitScript(() => localStorage.setItem("skull-theme", "light"));
+  await page.goto("./");
+  let last = await page.locator("html").evaluate((root) => ({
+    palette: root.dataset.palette,
+    scene: root.dataset.scene,
+    seed: root.dataset.seed,
+  }));
+  for (let i = 0; i < 4; i++) {
+    await page.reload();
+    const current = await page.locator("html").evaluate((root) => ({
+      palette: root.dataset.palette,
+      scene: root.dataset.scene,
+      seed: root.dataset.seed,
+    }));
+    expect(current.palette).not.toBe(last.palette);
+    expect(current.scene).not.toBe(last.scene);
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    last = current;
+  }
+  await page.goto("proyectos/");
+  expect(await page.locator("html").getAttribute("data-palette")).not.toBe(
+    last.palette,
+  );
+  await page.goto("./");
+  await expect(page.locator("#scene-pause,#motion-toggle")).toHaveCount(0);
+});
+
+test("glass surfaces have a real material and a solid alternative", async ({
+  page,
+}) => {
+  await page.goto("./");
+  await expect(page.locator(".glass-lens")).toBeVisible();
+  const material = await page.locator(".glass-lens").evaluate((element) => ({
+    filter: getComputedStyle(element).backdropFilter,
+    shadow: getComputedStyle(element).boxShadow,
+  }));
+  expect(material.filter).not.toBe("none");
+  expect(material.shadow).not.toBe("none");
+  await page.locator("#material-mode").selectOption("solid");
+  await expect(page.locator(".glass-lens")).toBeHidden();
+  await page.reload();
+  await expect(page.locator("#material-mode")).toHaveValue("solid");
+  await page.locator("#material-mode").selectOption("glass");
+  await expect(page.locator(".glass-lens")).toBeVisible();
+  await page.emulateMedia({ contrast: "more" });
+  await expect(page.locator(".glass-lens")).toBeHidden();
+  expect(
+    await page
+      .locator(".site-header")
+      .evaluate((element) => getComputedStyle(element).backdropFilter),
+  ).toBe("none");
+});
+
+test("automatic glass honors transparency reduction while explicit glass can opt in", async ({
+  page,
+  context,
+}) => {
+  const devtools = await context.newCDPSession(page);
+  await devtools.send("Emulation.setEmulatedMedia", {
+    features: [{ name: "prefers-reduced-transparency", value: "reduce" }],
+  });
+  await page.goto("./");
+  await expect(page.locator(".glass-lens")).toBeVisible();
+  await page.locator("#material-mode").selectOption("auto");
+  await expect(page.locator(".glass-lens")).toBeHidden();
+  await page.locator("#material-mode").selectOption("glass");
+  await expect(page.locator(".glass-lens")).toBeVisible();
 });

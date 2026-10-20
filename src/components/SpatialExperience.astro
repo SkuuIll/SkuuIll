@@ -1,0 +1,93 @@
+---
+import { asset } from "../data/projects";
+import "../styles/spatial.css";
+---
+
+<section
+  class="spatial-photo shell"
+  id="profundidad"
+  aria-labelledby="spatial-title"
+>
+  <div class="spatial-heading">
+    <p class="eyebrow">Una ventana a otro lugar</p>
+    <h2 id="spatial-title">
+      La pantalla
+      <br />
+      se queda corta.
+    </h2>
+    <p>
+      Una imagen que se abre cuando te movés. Acercate, cambiá el punto de vista
+      y mirá de nuevo.
+    </p>
+  </div>
+  <div class="spatial-frame" data-spatial="photo">
+    <img
+      src={asset("media/spatial-observatory.webp")}
+      width="1536"
+      height="1024"
+      loading="lazy"
+      decoding="async"
+      alt="Observatorio futurista entre estructuras oscuras, anillos de cristal y una esfera luminosa sobre montañas lejanas."
+    />
+    <canvas aria-hidden="true" data-running="false"></canvas>
+    <div class="spatial-image-caption">
+      <span class="mono">SKULL / OBSERVATORIO</span>
+      <span>Arte digital con profundidad</span>
+    </div>
+    <div class="spatial-reticle" aria-hidden="true"></div>
+  </div>
+  <div class="spatial-tools" hidden>
+    <label for="spatial-depth">
+      Profundidad <output id="spatial-depth-value">50</output>
+    </label>
+    <input id="spatial-depth" type="range" min="0" max="100" value="50" />
+    <span>Mové el cursor. En tu teléfono, desplazate.</span>
+  </div>
+</section>
+
+<section class="portal-journey" id="recorrido" aria-labelledby="journey-title">
+  <div class="journey-stage" data-spatial="journey">
+    <div class="journey-fallback" aria-hidden="true">
+      {Array.from({ length: 9 }, (_, i) => (
+        <span style={`--ring:${i}`} />
+      ))}
+    </div>
+    <canvas aria-hidden="true" data-running="false"></canvas>
+    <div class="journey-vignette" aria-hidden="true"></div>
+    <div class="journey-header shell">
+      <span class="mono">SKULL / UMBRAL</span>
+      <a href="#laboratorio">
+        Ir al laboratorio <span aria-hidden="true">↘</span>
+      </a>
+    </div>
+    <div class="journey-copy shell">
+      <p class="eyebrow">Un recorrido, tu ritmo</p>
+      <h2 id="journey-title">
+        No mires
+        <br />
+        desde afuera.
+      </h2>
+      <p class="journey-intro">
+        El scroll es la cámara.
+        <br />
+        Seguí bajando para entrar.
+      </p>
+    </div>
+    <div class="journey-chapter shell" aria-hidden="true">
+      <span class="mono" data-journey-label>
+        01 / ENTRAR
+      </span>
+      <p data-journey-line>Todo empieza con un gesto.</p>
+    </div>
+    <div class="journey-track shell" aria-hidden="true">
+      <span></span>
+    </div>
+    <p class="journey-accessible">
+      Recorré un túnel de portales geométricos: las formas se abren, la cámara
+      avanza y el color acompaña el recorrido. Una escena 3D creada con código.
+    </p>
+  </div>
+</section>
+<script>
+  import "../scripts/spatial";
+</script>

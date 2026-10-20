@@ -269,11 +269,10 @@ test("palette and scene change on reload while blocked storage remains usable", 
   page.on("pageerror", (error) => errors.push(error.message));
   await page.reload();
   await page.locator("#palette-toggle").click();
-  await page.locator("#motion-mode").selectOption("reduced");
   expect(errors).toEqual([]);
 });
 
-test("keyboard skip link and motion preference are respected", async ({
+test("keyboard skip link works with the complete experience enabled", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -284,10 +283,10 @@ test("keyboard skip link and motion preference are respected", async ({
   ).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/#contenido$/);
-  await expect(page.locator("html")).toHaveAttribute("data-effects", "reduced");
+  await expect(page.locator("html")).toHaveAttribute("data-effects", "full");
   await expect(page.locator("#signal-canvas")).toHaveAttribute(
     "data-running",
-    "false",
+    "true",
   );
 });
 

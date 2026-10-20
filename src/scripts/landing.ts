@@ -15,7 +15,6 @@ function setupScroll() {
   scrollContext = gsap.context(() => {
     gsap.from(".sp-hero-copy > *", {
       y: 24,
-      opacity: 0.2,
       stagger: 0.09,
       duration: 0.85,
       ease: "power3.out",
@@ -349,17 +348,53 @@ if (canvas && ctx && stage && world) {
 const tabs = [
   ...document.querySelectorAll<HTMLButtonElement>('.lab-tabs [role="tab"]'),
 ];
-function activateTab(index: number) {
+function applyTab(index: number) {
   tabs.forEach((tab, i) => {
     const selected = i === index;
     tab.setAttribute("aria-selected", String(selected));
     tab.tabIndex = selected ? 0 : -1;
     const panel = document.getElementById(tab.getAttribute("aria-controls")!);
-    if (panel) panel.hidden = !selected;
+    if (panel) {
+      panel.hidden = !selected;
+      panel.style.viewTransitionName = selected ? "lab-experiment" : "none";
+    }
   });
 }
+let tabRevision = 0;
+let tabTransition: { skipTransition(): void; ready: Promise<void> } | undefined;
+function activateTab(index: number, animate = false) {
+  const revision = ++tabRevision;
+  tabTransition?.skipTransition();
+  const console = document.querySelector<HTMLElement>(".lab-console") as
+    | (HTMLElement & {
+        startViewTransition?: (update: () => void) => {
+          skipTransition(): void;
+          ready: Promise<void>;
+        };
+      })
+    | null;
+  const update = () => {
+    if (revision === tabRevision) applyTab(index);
+  };
+  if (animate && console?.startViewTransition) {
+    tabTransition = console.startViewTransition(update);
+    void tabTransition.ready.catch(() => {});
+  } else {
+    update();
+    if (animate)
+      document
+        .getElementById(tabs[index].getAttribute("aria-controls")!)
+        ?.animate(
+          [
+            { opacity: 0.65, transform: "translateY(8px)" },
+            { opacity: 1, transform: "translateY(0)" },
+          ],
+          { duration: 220, easing: "cubic-bezier(.2,.8,.2,1)" },
+        );
+  }
+}
 tabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => activateTab(index));
+  tab.addEventListener("click", () => activateTab(index, true));
   tab.addEventListener("keydown", (event) => {
     const next =
       event.key === "ArrowRight"
@@ -373,7 +408,7 @@ tabs.forEach((tab, index) => {
               : -1;
     if (next < 0) return;
     event.preventDefault();
-    activateTab(next);
+    activateTab(next, true);
     tabs[next].focus();
   });
 });

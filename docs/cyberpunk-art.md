@@ -1,6 +1,6 @@
 # Skull Signal: archivo de la dirección anterior
 
-Estos recursos corresponden a la versión del 19 de octubre. La landing Spulp del 20 de octubre utiliza geometría procedural original y no carga estas imágenes ni este video. Se conserva este documento como registro de procedencia.
+Estos recursos corresponden a la versión del 19 de octubre. La landing Skull del 20 de octubre utiliza geometría procedural original y no carga estas imágenes ni este video. Se conserva este documento como registro de procedencia.
 
 Método: herramienta integrada `image_gen`, sin CLI de generación ni claves API locales. Fecha: 19 de octubre de 2026. Las imágenes se generaron desde descripciones originales y se optimizaron a WebP. Ningún recurso visual de Norris o Leclerc se copió al proyecto.
 

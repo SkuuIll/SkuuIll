@@ -15,7 +15,7 @@ interface Props {
   description?: string;
 }
 const {
-  title = "Spulp — Diseño, código e interacción",
+  title = "Skull — Diseño, código e interacción",
   description = profile.summary,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
@@ -66,7 +66,9 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       try {
         if (sessionStorage.getItem("skull-motion") === "paused")
           document.documentElement.dataset.motion = "paused";
-        const mode = localStorage.getItem("spulp-motion-mode");
+        const mode =
+          localStorage.getItem("skull-motion-mode") ||
+          localStorage.getItem("spulp-motion-mode");
         document.documentElement.dataset.motionMode = [
           "auto",
           "full",
@@ -91,7 +93,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       Saltar al contenido
     </a>
     <header class="site-header shell">
-      <a class="brand" href={asset("")} aria-label="Spulp, inicio">
+      <a class="brand" href={asset("")} aria-label="Skull, inicio">
         <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
           <path
             d="M24 6H11L5 13l21 6-6 7H7"
@@ -102,7 +104,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
           <path d="M20 2v8M16 6h8" stroke="currentColor" stroke-width="2" />
         </svg>
         <span>
-          Spulp<span class="brand-period">.</span>
+          Skull<span class="brand-period">.</span>
         </span>
       </a>
       <nav class="desktop-nav" aria-label="Navegación principal">
@@ -112,13 +114,21 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       </nav>
       <button
         id="chapters-toggle"
+        aria-label="Abrir menú"
         class="chapters-toggle"
         type="button"
         aria-expanded="false"
         aria-controls="mobile-nav"
         hidden
       >
-        Explorar <span aria-hidden="true">☰</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M5 8h14M5 16h14"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
       </button>
       <button
         id="theme-toggle"
@@ -140,9 +150,6 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
         </svg>
         <span>Oscuro</span>
       </button>
-      <a class="header-contact" href={asset("#contacto")}>
-        Conversemos <span aria-hidden="true">↗</span>
-      </a>
       <button
         class="menu-toggle"
         type="button"
@@ -162,7 +169,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
       >
         <div class="chapter-menu-content shell">
           <div class="chapter-menu-top mono">
-            <span>SPULP / EXPLORAR</span>
+            <span>SKULL / EXPLORAR</span>
             <button type="button" id="chapters-close">
               Cerrar menú <span aria-hidden="true">×</span>
             </button>
@@ -198,7 +205,7 @@ const canonical = new URL(Astro.url.pathname, "https://skuuill.github.io");
     </main>
     <footer class="site-footer shell">
       <a class="footer-name" href={asset("")}>
-        Spulp<span>↗</span>
+        Skull<span>↗</span>
       </a>
       <div>
         <p>Software desde Chaco, Argentina.</p>

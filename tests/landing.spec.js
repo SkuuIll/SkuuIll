@@ -277,3 +277,69 @@ test("visibility changes stop and resume rendering without changing the preferen
   );
   await expect(page.locator("#motion-mode")).toHaveValue("full");
 });
+
+test("reduced motion has an obvious activation action that also clears a saved pause", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.addInitScript(() => {
+    if (!sessionStorage.getItem("test-pause-seeded")) {
+      sessionStorage.setItem("skull-motion", "paused");
+      sessionStorage.setItem("test-pause-seeded", "true");
+    }
+  });
+  await page.goto("./");
+  await expect(page.locator(".motion-notice")).toBeVisible();
+  await expect(page.locator("#motion-explanation")).toContainText("pausa");
+  await page
+    .getByRole("button", { name: "Activar animaciones", exact: false })
+    .click();
+  await expect(page.locator("#signal-canvas")).toHaveAttribute(
+    "data-running",
+    "true",
+  );
+  await expect(page.locator("#motion-mode")).toHaveValue("full");
+  await expect(page.locator(".motion-notice")).toBeHidden();
+  await page.reload();
+  await expect(page.locator("#signal-canvas")).toHaveAttribute(
+    "data-running",
+    "true",
+  );
+});
+
+test("legacy animation preference migrates without losing the visitor choice", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.addInitScript(() =>
+    localStorage.setItem("spulp-motion-mode", "full"),
+  );
+  await page.goto("./");
+  await expect(page.locator("#motion-mode")).toHaveValue("full");
+  await expect(page.locator("#signal-canvas")).toHaveAttribute(
+    "data-running",
+    "true",
+  );
+  await page.locator("#motion-mode").selectOption("reduced");
+  await page.reload();
+  await expect(page.locator("#motion-mode")).toHaveValue("reduced");
+});
+
+test("Skull branding is consistent and navigation remains compact", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("./");
+  await expect(page).toHaveTitle(/Skull/);
+  await expect(
+    page.getByRole("link", { name: "Skull, inicio", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".hero-signature")).toContainText("Skull");
+  expect(await page.locator("body").innerText()).not.toMatch(/Spulp/i);
+  await expect(page.locator(".site-header button:visible")).toHaveCount(2);
+  for (const route of ["proyectos/", "proyectos/cpaul/", "proyectos/vigia/"]) {
+    await page.goto(route);
+    await expect(page).toHaveTitle(/Skull/);
+    expect(await page.locator("body").innerText()).not.toMatch(/Spulp/i);
+  }
+});

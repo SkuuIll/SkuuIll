@@ -2,7 +2,7 @@
 
 Las imágenes del portafolio son archivos locales. Las capturas de Vigía usan sede, personas, habitaciones y órdenes de demostración mediante respuestas de API interceptadas localmente.
 
-La landing Spulp actual dibuja geometría propia con Canvas y SVG. Las máscaras y el video Skull Signal de esta tabla son recursos de la versión anterior y no se cargan en la portada actual.
+La landing Skull actual dibuja geometría propia con Canvas y SVG. Las máscaras y el video Skull Signal de esta tabla son recursos de la versión anterior y no se cargan en la portada actual.
 
 | Recurso | Procedencia | Qué muestra |
 | :--- | :--- | :--- |

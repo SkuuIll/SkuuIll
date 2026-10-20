@@ -1,6 +1,6 @@
 # Identidad y apariencia
 
-El nombre visible es **Spulp**; la cuenta y las URLs conservan `SkuuIll`. La landing muestra habilidades de diseño y desarrollo. Los trabajos anteriores tienen su propio archivo.
+El nombre visible es **Skull**; la cuenta y las URLs conservan `SkuuIll`. La landing muestra habilidades de diseño y desarrollo. Los trabajos anteriores tienen su propio archivo.
 
 ## Sistema visual
 
@@ -15,3 +15,5 @@ La navegación presenta experiencia, laboratorio, proceso, contacto y archivo. E
 ## Verificación
 
 Playwright y axe cubren temas, acentos, laboratorios, menú, formularios, archivo, casos, visor de prenda y alternativa sin JavaScript. `node scripts/review-edge.mjs` guarda capturas e informe de la instalación local de Edge en `.qa/spulp/`.
+
+La cabecera usa una cápsula translúcida inspirada en materiales de Apple: blur limitado a 18 px, borde tenue, enlaces simples y dos controles de icono. Tiene fondo opaco si falta backdrop-filter o se solicita reducir transparencia. La apariencia es una interpretación web, no el material nativo de iOS.

@@ -73,7 +73,7 @@ if (menu && mobileNav) {
     chapterToggle?.setAttribute("aria-expanded", "false");
     opener.focus({ preventScroll: true });
   };
-  const openMenu = (button: HTMLButtonElement) => {
+  const openMenu = (button: HTMLButtonElement, animate: boolean) => {
     if (mobileNav.open) {
       closeMenu();
       return;
@@ -84,7 +84,11 @@ if (menu && mobileNav) {
     menu.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-label", "Cerrar menú");
     chapterToggle?.setAttribute("aria-expanded", "true");
-    if (root.dataset.effects === "full" && root.dataset.motion !== "paused")
+    if (
+      animate &&
+      root.dataset.effects === "full" &&
+      root.dataset.motion !== "paused"
+    )
       mobileNav.querySelector(".chapter-menu-content")?.animate(
         [
           { opacity: 0, transform: "translateY(28px)" },
@@ -93,8 +97,10 @@ if (menu && mobileNav) {
         { duration: 450, easing: "cubic-bezier(.16,1,.3,1)" },
       );
   };
-  menu.addEventListener("click", () => openMenu(menu));
-  chapterToggle?.addEventListener("click", () => openMenu(chapterToggle));
+  menu.addEventListener("click", (event) => openMenu(menu, event.detail > 0));
+  chapterToggle?.addEventListener("click", (event) =>
+    openMenu(chapterToggle, event.detail > 0),
+  );
   mobileNav
     .querySelector("#chapters-close")
     ?.addEventListener("click", closeMenu);
@@ -192,6 +198,17 @@ function updateMotion() {
           : saveData
             ? "Ahorro de datos"
             : "Reducido por el sistema";
+  const notice = document.querySelector<HTMLElement>(".motion-notice");
+  if (notice) notice.hidden = active;
+  const explanation = document.querySelector("#motion-explanation");
+  if (explanation)
+    explanation.textContent = paused
+      ? "Las animaciones están en pausa."
+      : saveData
+        ? "Tu navegador está ahorrando datos y redujo las animaciones."
+        : mode === "reduced"
+          ? "Elegiste una experiencia con movimiento reducido."
+          : "Tu navegador tiene activado el movimiento reducido.";
   document
     .querySelector("#atelier-shot")
     ?.getAnimations()
@@ -201,7 +218,7 @@ function updateMotion() {
 modeSelect?.addEventListener("change", () => {
   root.dataset.motionMode = modeSelect.value;
   try {
-    localStorage.setItem("spulp-motion-mode", modeSelect.value);
+    localStorage.setItem("skull-motion-mode", modeSelect.value);
   } catch {}
   updateMotion();
 });
@@ -215,6 +232,18 @@ pauseButtons.forEach((button) =>
     updateMotion();
   }),
 );
+document.querySelector("#enable-effects")?.addEventListener("click", () => {
+  root.dataset.motionMode = "full";
+  root.dataset.motion = "active";
+  try {
+    localStorage.setItem("skull-motion-mode", "full");
+    sessionStorage.setItem("skull-motion", "active");
+  } catch {}
+  updateMotion();
+  document
+    .querySelector<HTMLAnchorElement>(".sp-primary")
+    ?.focus({ preventScroll: true });
+});
 reduced.addEventListener("change", updateMotion);
 updateMotion();
 document
@@ -254,7 +283,7 @@ if (inquiry) {
       return;
     }
     const data = new FormData(inquiry);
-    const text = `Hola, Spulp.\n\nSoy ${data.get("name")} (${data.get("email")}).\nMe interesa: ${data.get("service")}.\n${data.get("reference") ? `Proyecto de referencia: ${data.get("reference")}\n` : ""}\n${data.get("idea")}\n\nEnviado desde el portafolio de Spulp.`;
+    const text = `Hola, Skull.\n\nSoy ${data.get("name")} (${data.get("email")}).\nMe interesa: ${data.get("service")}.\n${data.get("reference") ? `Proyecto de referencia: ${data.get("reference")}\n` : ""}\n${data.get("idea")}\n\nEnviado desde el portafolio de Skull.`;
     message.value = text;
     draft.href = `mailto:moreappmix@gmail.com?subject=${encodeURIComponent(`Consulta: ${data.get("service")}`)}&body=${encodeURIComponent(text)}`;
     error.hidden = true;
@@ -280,7 +309,7 @@ if (inquiry) {
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "consulta-spulp.txt";
+    link.download = "consulta-skull.txt";
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });

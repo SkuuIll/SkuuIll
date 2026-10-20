@@ -217,7 +217,7 @@ test("clipboard fallback selects the message and the download contains the draft
   const downloadEvent = page.waitForEvent("download");
   await page.getByRole("button", { name: "Descargar texto" }).click();
   const download = await downloadEvent;
-  expect(download.suggestedFilename()).toBe("consulta-spulp.txt");
+  expect(download.suggestedFilename()).toBe("consulta-skull.txt");
   const stream = await download.createReadStream();
   const chunks = [];
   for await (const chunk of stream) chunks.push(chunk);

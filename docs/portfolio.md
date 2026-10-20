@@ -1,4 +1,4 @@
-# Portafolio web de Spulp
+# Portafolio web de Skull
 
 Sitio público: <https://skuuill.github.io/SkuuIll/>. El proyecto usa Astro y genera archivos estáticos para GitHub Pages.
 
@@ -12,7 +12,7 @@ Sitio público: <https://skuuill.github.io/SkuuIll/>. El proyecto usa Astro y ge
 - `src/components/Contact.astro`: contacto y formulario de consulta.
 - `src/components/AtelierFeature.astro`: galería real y muestra 3D bajo demanda.
 - `src/scripts/site.ts` y `landing.ts`: preferencias, campo procedural, scroll, laboratorio y formularios.
-- `src/styles/`: base de casos, sistema visual compartido y landing Spulp.
+- `src/styles/`: base de casos, sistema visual compartido y landing Skull.
 - `public/media/` y `public/models/`: recursos locales publicados.
 
 `/site/` y los enlaces antiguos con `?caso=` conservan compatibilidad. El contenido actual se mantiene en las fuentes de Astro.

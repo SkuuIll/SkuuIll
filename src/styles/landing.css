@@ -1,4 +1,4 @@
-/* Spulp: one visual system, a procedural field and three working experiments. */
+/* Skull: one visual system, a procedural field and three working experiments. */
 .signal-world {
   position: relative;
   isolation: isolate;
@@ -115,8 +115,9 @@
   justify-content: space-between;
   gap: 28px;
   min-height: 48px;
-  font: 12px var(--mono);
-  padding: 16px 20px;
+  font: 600 13px var(--sans);
+  padding: 16px 23px;
+  border-radius: 999px;
   border: 1px solid var(--accent);
   transition:
     background 0.2s,
@@ -193,7 +194,7 @@
   background: var(--paper);
   border: 1px solid var(--line);
   color: var(--ink);
-  border-radius: 0;
+  border-radius: 999px;
 }
 .motion-toolbar #motion-status {
   margin-left: 4px;
@@ -275,6 +276,8 @@
 }
 .lab-console {
   border: 1px solid var(--line);
+  border-radius: 28px;
+  overflow: clip;
   background: var(--surface);
 }
 .lab-tabs {
@@ -866,4 +869,91 @@
 }
 :root[data-effects="full"] .wave-art > span:not(.wave-axis) {
   animation-name: sp-wave;
+}
+
+.motion-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-width: 480px;
+}
+.motion-notice p {
+  color: var(--muted);
+  font: 12px/1.6 var(--sans);
+}
+.motion-notice button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font: 600 12px var(--sans);
+}
+.motion-notice button:active {
+  transform: scale(0.97);
+}
+.motion-toolbar {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+}
+.motion-toolbar select,
+.motion-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--paper);
+}
+.sp-secondary {
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+}
+.interface-art {
+  border-radius: 24px;
+}
+.lab-tabs button {
+  border-bottom: 0;
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 11px 18px;
+  margin-block: 10px;
+}
+.lab-tabs button[aria-selected="true"] {
+  background: var(--paper);
+  box-shadow: 0 1px 6px #00000010;
+}
+.lab-tabs {
+  gap: 8px;
+}
+@media (max-width: 767px) {
+  .lab-tabs {
+    padding-inline: 10px;
+    gap: 3px;
+  }
+  .lab-tabs button {
+    padding-inline: 10px;
+  }
+  .motion-toolbar {
+    gap: 5px;
+    padding: 5px 8px;
+  }
+  .motion-toolbar #motion-status {
+    width: 100%;
+    padding-left: 5px;
+  }
+  .motion-notice {
+    margin-top: 16px;
+    gap: 6px;
+  }
+  .sp-hero-copy {
+    padding-top: 38px;
+  }
+  .hero-signature > span {
+    font-size: 26vw;
+  }
 }

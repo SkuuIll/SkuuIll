@@ -1,4 +1,4 @@
-# Portafolio de Spulp
+# Portafolio de Skull
 
 Sitio estático con Astro, TypeScript y GSAP. Fuentes en src/, recursos en public/ y salida en dist/. Pages publica únicamente dist/ mediante GitHub Actions, bajo /SkuuIll/.
 

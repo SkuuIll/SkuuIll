@@ -1,9 +1,3 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./cinema";
-import "./cyber";
-gsap.registerPlugin(ScrollTrigger);
-
 const root = document.documentElement;
 const base = import.meta.env.BASE_URL;
 const themeButton = document.querySelector<HTMLButtonElement>("#theme-toggle");
@@ -19,7 +13,7 @@ function applyTheme(theme: string) {
   if (label) label.textContent = theme === "dark" ? "Claro" : "Oscuro";
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute("content", theme === "dark" ? "#080e13" : "#edf3f5");
+    ?.setAttribute("content", theme === "dark" ? "#080d13" : "#f2f6f7");
 }
 if (themeButton) themeButton.hidden = false;
 applyTheme(root.dataset.theme || (systemTheme.matches ? "dark" : "light"));
@@ -90,10 +84,7 @@ if (menu && mobileNav) {
     menu.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-label", "Cerrar menú");
     chapterToggle?.setAttribute("aria-expanded", "true");
-    if (
-      !matchMedia("(prefers-reduced-motion: reduce)").matches &&
-      root.dataset.motion !== "paused"
-    )
+    if (root.dataset.effects === "full" && root.dataset.motion !== "paused")
       mobileNav.querySelector(".chapter-menu-content")?.animate(
         [
           { opacity: 0, transform: "translateY(28px)" },
@@ -137,7 +128,7 @@ if (menu && mobileNav) {
 }
 
 const palettes = ["forest", "blue", "clay"];
-const paletteNames = ["Matrix", "Ion", "Pulse"];
+const paletteNames = ["Menta", "Azul", "Coral"];
 const paletteButton =
   document.querySelector<HTMLButtonElement>("#palette-toggle");
 const motionButton =
@@ -159,250 +150,76 @@ paletteButton?.addEventListener("click", () => {
 });
 showPalette();
 
-let motion: gsap.MatchMedia | undefined;
-function setupMotion() {
-  motion?.revert();
-  if (root.dataset.motion === "paused") return;
-  motion = gsap.matchMedia();
-  motion.add("(prefers-reduced-motion: no-preference)", () => {
-    const hoverCleanups: Array<() => void> = [];
-    if (document.querySelector(".cinema-hero")) {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".cinema-hero",
-          start: "top top",
-          end: "bottom top",
-          pin: true,
-          pinSpacing: false,
-          scrub: 0.65,
-          invalidateOnRefresh: true,
-        },
-      });
-      timeline
-        .to(
-          ".cinema-media",
-          { scale: 1.28, yPercent: -8, rotation: 2, ease: "none" },
-          0,
-        )
-        .to(
-          ".cinema-copy",
-          { yPercent: -18, xPercent: -8, opacity: 0, ease: "none" },
-          0,
-        )
-        .to(".cinema-bottom", { opacity: 0, ease: "none", duration: 0.25 }, 0);
-      gsap.fromTo(
-        ".deck-art",
-        { scale: 1.12, yPercent: 3 },
-        {
-          scale: 1,
-          yPercent: -5,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".cyber-deck",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-          },
-        },
-      );
-      gsap.fromTo(
-        ".cinema-cover .atelier-stage",
-        { scale: 0.88, rotate: 3 },
-        {
-          scale: 1,
-          rotate: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".cinema-cover .atelier-stage",
-            start: "top bottom",
-            end: "center center",
-            scrub: 0.8,
-          },
-        },
-      );
-      gsap.to(".hotel-environment", {
-        yPercent: -9,
-        scale: 1.12,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hotel-composition",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
-      gsap.fromTo(
-        ".hotel-device",
-        { yPercent: 22, rotate: 6 },
-        {
-          yPercent: -8,
-          rotate: -3,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".hotel-composition",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 0.8,
-          },
-        },
-      );
-    }
-    document.querySelector(".vigia-story")?.classList.add("has-scenes");
-    if (document.querySelector("[data-hero-line]"))
-      gsap.from("[data-hero-line]", {
-        y: 28,
-        duration: 1.15,
-        stagger: 0.12,
-        ease: "power3.out",
-        clearProps: "all",
-      });
-    if (document.querySelector(".hero-composition"))
-      gsap.from(".hero-composition", {
-        y: 45,
-        duration: 1.3,
-        delay: 0.14,
-        ease: "power3.out",
-        clearProps: "transform",
-      });
-    gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
-      gsap.from(element, {
-        y: 32,
-        duration: 0.9,
-        ease: "power3.out",
-        scrollTrigger: { trigger: element, start: "top 94%", once: true },
-        clearProps: "all",
-      });
-    });
-    gsap.utils.toArray<HTMLElement>("[data-depth]").forEach((element) => {
-      gsap.to(element, {
-        y: -22,
-        rotation: 2,
-        ease: "none",
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.2,
-        },
-      });
-    });
-    gsap.utils
-      .toArray<HTMLElement>(".exhibition-heading h2")
-      .forEach((element) => {
-        gsap.from(element, {
-          y: 45,
-          rotateX: 12,
-          transformPerspective: 900,
-          duration: 1.15,
-          ease: "power3.out",
-          scrollTrigger: { trigger: element, start: "top 92%", once: true },
-          clearProps: "all",
-        });
-      });
-    document
-      .querySelectorAll<HTMLElement>(
-        ".atelier-section.is-compact .atelier-stage",
-      )
-      .forEach((element) => {
-        const enter = () => {
-          if (matchMedia("(hover: hover)").matches)
-            gsap.to(element, {
-              rotateX: -2,
-              rotateY: 3,
-              transformPerspective: 900,
-              duration: 0.6,
-              ease: "power2.out",
-            });
-        };
-        const leave = () =>
-          gsap.to(element, {
-            rotateX: 0,
-            rotateY: 0,
-            duration: 0.7,
-            ease: "power3.out",
-          });
-        element.addEventListener("pointerenter", enter);
-        element.addEventListener("pointerleave", leave);
-        hoverCleanups.push(() => {
-          element.removeEventListener("pointerenter", enter);
-          element.removeEventListener("pointerleave", leave);
-          gsap.killTweensOf(element);
-          gsap.set(element, { clearProps: "transform" });
-        });
-      });
-    if (
-      matchMedia("(min-width: 768px)").matches &&
-      document.querySelector(".hero-composition")
-    ) {
-      gsap.to(".hero-composition", {
-        y: -40,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
-    }
-    if (matchMedia("(min-width: 768px)").matches) {
-      sceneSections.forEach((section, index) =>
-        ScrollTrigger.create({
-          trigger: section,
-          start: "top 60%",
-          end: "bottom 40%",
-          onEnter: () => activateScene(index),
-          onEnterBack: () => activateScene(index),
-        }),
-      );
-    }
-    if (!CSS.supports("animation-timeline", "scroll()"))
-      gsap.to(".reading-progress", {
-        scaleX: 1,
-        ease: "none",
-        scrollTrigger: { start: 0, end: "max", scrub: true },
-      });
-    return () => {
-      hoverCleanups.forEach((cleanup) => cleanup());
-      document.querySelector(".vigia-story")?.classList.remove("has-scenes");
-    };
-  });
-}
-try {
-  if (sessionStorage.getItem("skull-motion") === "paused")
-    root.dataset.motion = "paused";
-} catch {}
-const showMotion = () => {
+// One motion preference drives the scene, scroll animation and project galleries.
+const modeSelect = document.querySelector<HTMLSelectElement>("#motion-mode");
+const pauseButtons = [
+  motionButton,
+  document.querySelector<HTMLButtonElement>("#scene-pause"),
+];
+const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+function updateMotion() {
+  const mode = root.dataset.motionMode || "auto";
   const paused = root.dataset.motion === "paused";
-  if (motionButton) {
-    motionButton.textContent = paused
-      ? "Activar movimiento"
-      : "Pausar movimiento";
-    motionButton.setAttribute("aria-pressed", String(paused));
-  }
+  const saveData = (
+    navigator as Navigator & { connection?: { saveData?: boolean } }
+  ).connection?.saveData;
+  const active =
+    !paused &&
+    mode !== "reduced" &&
+    (mode === "full" || (!reduced.matches && !saveData));
+  root.dataset.effects = active ? "full" : "reduced";
+  if (modeSelect) modeSelect.value = mode;
+  pauseButtons.forEach((button) => {
+    if (!button) return;
+    button.textContent =
+      button.id === "scene-pause"
+        ? paused
+          ? "Reanudar"
+          : "Pausar"
+        : paused
+          ? "Activar movimiento"
+          : "Pausar movimiento";
+    button.setAttribute("aria-pressed", String(paused));
+  });
+  const status = document.querySelector("#motion-status");
+  if (status)
+    status.textContent = paused
+      ? "En pausa"
+      : active
+        ? "Efectos activos"
+        : mode === "reduced"
+          ? "Movimiento reducido"
+          : saveData
+            ? "Ahorro de datos"
+            : "Reducido por el sistema";
+  document
+    .querySelector("#atelier-shot")
+    ?.getAnimations()
+    .forEach((animation) => animation.cancel());
   document.dispatchEvent(new CustomEvent("skull:motion"));
-};
-motionButton?.addEventListener("click", () => {
-  const paused = root.dataset.motion !== "paused";
-  root.dataset.motion = paused ? "paused" : "active";
-  if (paused)
-    document
-      .querySelector("#atelier-shot")
-      ?.getAnimations()
-      .forEach((animation) => animation.cancel());
+}
+modeSelect?.addEventListener("change", () => {
+  root.dataset.motionMode = modeSelect.value;
   try {
-    sessionStorage.setItem("skull-motion", paused ? "paused" : "active");
+    localStorage.setItem("spulp-motion-mode", modeSelect.value);
   } catch {}
-  setupMotion();
-  showMotion();
+  updateMotion();
 });
-setupMotion();
-showMotion();
-matchMedia("(min-width: 768px)").addEventListener("change", setupMotion);
-window.addEventListener("pagehide", () => motion?.revert(), { once: true });
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) setupMotion();
-});
+pauseButtons.forEach((button) =>
+  button?.addEventListener("click", () => {
+    root.dataset.motion =
+      root.dataset.motion === "paused" ? "active" : "paused";
+    try {
+      sessionStorage.setItem("skull-motion", root.dataset.motion);
+    } catch {}
+    updateMotion();
+  }),
+);
+reduced.addEventListener("change", updateMotion);
+updateMotion();
+document
+  .querySelector<HTMLElement>(".motion-toolbar")
+  ?.removeAttribute("hidden");
 
 const inquiry = document.querySelector<HTMLFormElement>("#inquiry-form");
 if (inquiry) {
@@ -437,7 +254,7 @@ if (inquiry) {
       return;
     }
     const data = new FormData(inquiry);
-    const text = `Hola, Skull.\n\nSoy ${data.get("name")} (${data.get("email")}).\nMe interesa: ${data.get("service")}.\n${data.get("reference") ? `Proyecto de referencia: ${data.get("reference")}\n` : ""}\n${data.get("idea")}\n\nEnviado desde el portafolio de Skull.`;
+    const text = `Hola, Spulp.\n\nSoy ${data.get("name")} (${data.get("email")}).\nMe interesa: ${data.get("service")}.\n${data.get("reference") ? `Proyecto de referencia: ${data.get("reference")}\n` : ""}\n${data.get("idea")}\n\nEnviado desde el portafolio de Spulp.`;
     message.value = text;
     draft.href = `mailto:moreappmix@gmail.com?subject=${encodeURIComponent(`Consulta: ${data.get("service")}`)}&body=${encodeURIComponent(text)}`;
     error.hidden = true;
@@ -463,7 +280,7 @@ if (inquiry) {
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "consulta-skull.txt";
+    link.download = "consulta-spulp.txt";
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
@@ -521,12 +338,19 @@ if (search) {
 }
 
 const oldCase = new URLSearchParams(location.search).get("caso");
-if (oldCase && document.querySelector(".hero")) {
+if (oldCase && document.querySelector(".sp-hero")) {
   const links = [...document.querySelectorAll<HTMLAnchorElement>("a[href]")];
   const target = links.find(
     (link) => link.pathname === `${base}proyectos/${oldCase}/`,
   );
   if (target) location.replace(target.href);
+  else if (
+    document
+      .querySelector<HTMLElement>(".signal-world")
+      ?.dataset.caseIds?.split(" ")
+      .includes(oldCase)
+  )
+    location.replace(`${base}proyectos/${oldCase}/`);
   else if (/^[a-z0-9-]+$/.test(oldCase))
     location.replace(`${base}proyectos/#${encodeURIComponent(oldCase)}`);
 }

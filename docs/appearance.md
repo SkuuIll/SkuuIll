@@ -1,21 +1,17 @@
 # Identidad y apariencia
 
-El nombre visible es **Skull**. La cuenta y los enlaces de GitHub conservan `SkuuIll`. La dirección **Skull Signal** combina negro, verde eléctrico y azul con una escena secundaria roja y negra. El arte y sus prompts están documentados en [arte cyberpunk](cyberpunk-art.md).
+El nombre visible es **Spulp**; la cuenta y las URLs conservan `SkuuIll`. La landing muestra habilidades de diseño y desarrollo. Los trabajos anteriores tienen su propio archivo.
 
-## Temas y ambientes
+## Sistema visual
 
-La primera entrada usa modo oscuro. El botón de apariencia permite elegir claro u oscuro y guarda la elección en `localStorage`. El sitio conserva una alternativa funcional si el navegador bloquea ese almacenamiento.
+`shell.css` define tokens y navegación compartida; `landing.css` contiene el campo de señales, la secuencia, los experimentos y el proceso. `global.css` y `experience.css` mantienen los estilos de casos y archivo. Se retiraron las capas antiguas `cinema.css` y `cyber.css`.
 
-Los tres ambientes son **Matrix** (verde), **Ion** (azul) y **Pulse** (rojo). Se guardan durante la sesión y cambian entre nuevas entradas a la portada; los identificadores internos `forest`, `blue` y `clay` mantienen compatibilidad con preferencias anteriores. El botón del pie permite recorrerlos.
+Grafito `#080D13`, superficie `#101B25`, texto `#EDF5F7`, secundario `#A0B4BF`, menta `#4CE1C7` y azul de apoyo `#72A6FF`. El modo claro usa fondo `#F2F6F7` y acentos oscuros legibles. Manrope y Geist Mono se sirven localmente.
 
-Los colores se definen en `src/styles/cyber.css`; los detalles de exposiciones y componentes permanecen en `experience.css`. La inicialización de preferencias está en `Layout.astro` y sus controles en `src/scripts/site.ts`.
+La primera entrada usa modo oscuro. El visitante puede guardar claro/oscuro en `localStorage`. El acento inicial es menta y permanece estable. El pie permite cambiar manualmente a azul o coral durante la sesión. Los identificadores internos `forest`, `blue` y `clay` conservan compatibilidad.
 
-## Movimiento
-
-La presentación inicial es breve y se puede saltar. El menú de capítulos ocupa la pantalla completa y los paneles de proyectos admiten mouse y teclado. El video de identidad tiene una alternativa estática; no se utiliza como prueba de un producto real. Las capturas del trabajo se mantienen en sus secciones correspondientes.
-
-El control **Pausar movimiento** comparte su estado con la portada y persiste durante la sesión. La preferencia del sistema de reducir movimiento tiene prioridad. El video se detiene fuera de pantalla, al ocultar la pestaña y detrás del menú; el ahorro de datos requiere reproducción manual. Ver [dirección de movimiento](motion.md).
+La navegación presenta experiencia, laboratorio, proceso, contacto y archivo. El menú modal ocupa la pantalla completa, contiene el foco y devuelve el foco al cerrarse. La portada nunca esconde el cursor nativo ni publica datos del CV.
 
 ## Verificación
 
-Las suites de Playwright y axe revisan ambos temas, los tres ambientes, navegación, formularios, teclado, paneles y funcionamiento sin JavaScript. `scripts/review-edge.mjs` comprueba además la experiencia en la instalación local de Microsoft Edge.
+Playwright y axe cubren temas, acentos, laboratorios, menú, formularios, archivo, casos, visor de prenda y alternativa sin JavaScript. `node scripts/review-edge.mjs` guarda capturas e informe de la instalación local de Edge en `.qa/spulp/`.

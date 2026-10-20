@@ -1,4 +1,4 @@
-# Portafolio de Skull
+# Portafolio de Spulp
 
 Sitio estático con Astro, TypeScript y GSAP. Fuentes en src/, recursos en public/ y salida en dist/. Pages publica únicamente dist/ mediante GitHub Actions, bajo /SkuuIll/.
 
@@ -26,11 +26,11 @@ El retiro actual no elimina revisiones históricas ni copias descargadas. La aud
 
 ## Contenido y publicación
 
-La portada prioriza Atelier 3D y el ecosistema Vigía, seguidos de un listado de aplicaciones realizadas y otro de servicios propuestos. El archivo conserva 21 casos. El tema claro/oscuro sigue inicialmente al sistema y recuerda la elección explícita en localStorage; las paletas de acento y la pausa se conservan por sesión.
+La portada es una demostración de diseño e interacción: campo procedural, relato de scroll, laboratorio y proceso. El archivo conserva sus 21 casos. Atelier 3D permanece en `/proyectos/cpaul/` y Vigía en `/proyectos/vigia/`.
 
-La muestra de prenda usa Three.js y se importa al activarla. No descarga modelos antes de esa acción; renderiza al cambiar la cámara, el tamaño o un control, sin bucle permanente. Cerrar 3D libera geometrías, materiales, texturas y contexto. Si falla WebGL, se conserva la presentación estática. El visor reducido no incluye edición de bordados: las capturas muestran el editor completo.
+La escena proyecta geometría tridimensional con Canvas 2D, sin imágenes ni video descargados. Una alternativa SVG permanece si faltan scripts o contexto gráfico. El visor de prenda usa Three.js bajo demanda exclusivamente en su caso; cerrar la vista libera sus recursos.
 
-GSAP añade entradas, profundidad de scroll y estados de galería. La cinta de texto y los efectos respetan movimiento reducido y pausa manual. La galería usa Web Animations API cuando se permite movimiento. No hay secuestro del scroll del navegador.
+El tema inicial es oscuro y recuerda la elección clara u oscura. El acento inicial menta es estable entre visitas; azul y coral son opciones manuales. Movimiento automático respeta el sistema y ahorro de datos; completo requiere elección explícita; reducido y pausa desactivan el bucle decorativo. Ver [movimiento](motion.md) y [apariencia](appearance.md).
 
 src/data/projects.json conserva los casos y projects.ts define su presentación. /site/ redirige las URLs anteriores. El correo funciona sin scripts y el formulario prepara un borrador que el visitante decide enviar.
 

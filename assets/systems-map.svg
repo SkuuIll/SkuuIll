@@ -8,7 +8,7 @@
 <text x="37" y="33" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#bed3dc">ENGINEERING / WHAT I BUILD</text>
 <g font-family="Arial, sans-serif"><rect x="38" y="75" width="198" height="133" rx="15" fill="#152534" stroke="#375163"/>
 <circle cx="59" cy="96" r="5" fill="#4ce1c7"/><text x="74" y="101" font-size="12" fill="#9eb9c5">01</text>
-<text x="56" y="150" font-weight="bold" font-size="21" fill="#f0f8fc">WEB & UI</text>
+<text x="56" y="150" font-weight="bold" font-size="21" fill="#f0f8fc">WEB &amp; UI</text>
 <text x="56" y="176" font-size="12" fill="#adbecb">React · Next.js · Astro</text>
 <rect x="297" y="75" width="198" height="133" rx="15" fill="#152534" stroke="#375163"/>
 <circle cx="318" cy="96" r="5" fill="#4ce1c7"/><text x="333" y="101" font-size="12" fill="#9eb9c5">02</text>

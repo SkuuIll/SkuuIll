@@ -2,7 +2,7 @@
 
 # Skull / SkuuIll
 
-**Desarrollador de software freelance · Full Stack y multiplataforma · Chaco, Argentina**
+Desarrollador de software freelance · Full Stack y multiplataforma · Chaco, Argentina
 
 Desarrollo productos digitales de principio a fin: interfaces web, aplicaciones Android, APIs, bases de datos y automatizaciones. Me interesa resolver problemas concretos con software mantenible, interfaces cuidadas y despliegues reproducibles.
 

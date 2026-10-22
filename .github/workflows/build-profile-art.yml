@@ -1,0 +1,50 @@
+name: Build Profile Artwork
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate_profile_art.py'
+      - '.github/workflows/build-profile-art.yml'
+permissions:
+  contents: write
+concurrency:
+  group: profile-art
+  cancel-in-progress: true
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deterministic renderer dependencies
+        run: python -m pip install 'Pillow==11.3.0' 'numpy==2.3.3'
+      - name: Generate optimized profile animations
+        run: python scripts/generate_profile_art.py
+      - name: Validate exported images
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          for name in ['hero-kinetic-v2.gif', 'terminal-v2.gif']:
+              path=Path('assets')/name
+              with Image.open(path) as image:
+                  assert image.is_animated and image.n_frames >= 12, name
+                  assert path.stat().st_size < 5_000_000, name
+                  print(name, image.size, image.n_frames, path.stat().st_size)
+          PY
+      - name: Publish profile artwork
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/hero-kinetic-v2.gif assets/terminal-v2.gif
+          if ! git diff --cached --quiet; then
+            git commit -m 'art: render animated profile identity [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 570" width="1100" height="570" role="img" aria-labelledby="title desc">
+<title id="title">Tactical Map illustration</title><desc id="desc">Stylized tactical route planning, distance nodes and topographic contours, without application screenshots.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08111b"/><stop offset=".55" stop-color="#0a1a2a"/><stop offset="1" stop-color="#112a3f"/></linearGradient>
+<linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#437bba"/><stop offset=".5" stop-color="#92c4ff"/><stop offset="1" stop-color="#6b69fc"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#346caa" stop-opacity=".33"/><stop offset="1" stop-color="#103354" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0H0V46" fill="none" stroke="#7ca0bf" stroke-opacity=".09"/></pattern>
+</defs>
+<rect width="1100" height="570" rx="24" fill="url(#bg)"/><rect width="1100" height="570" rx="24" fill="url(#grid)"/>
+<ellipse cx="864" cy="286" rx="300" ry="240" fill="url(#halo)"/>
+<g fill="#a9c8dd" font-family="DejaVu Sans, Arial, sans-serif"><text x="56" y="58" font-size="16" letter-spacing="4" fill="#98b6cb">SKULL / OPEN SOURCE</text>
+<text x="58" y="485" font-size="14" letter-spacing="3" fill="#9db9d0">DESIGNED &amp; BUILT</text></g>
+<path d="M55 75H1045M55 510H1045" stroke="#8eb5cd" stroke-opacity=".20"/>
+<rect x="56" y="530" width="78" height="4" rx="2" fill="#78b5ff"/>
+
+<text x="56" y="245" font-size="79" font-weight="700" fill="#f2f8fc" font-family="DejaVu Sans, Arial, sans-serif" letter-spacing="-5">Tactical</text>
+<text x="56" y="328" font-size="79" font-weight="700" fill="#94b8ff" font-family="DejaVu Sans, Arial, sans-serif" letter-spacing="-5">Map.</text>
+<text x="60" y="378" font-size="23" fill="#aec5d5" font-family="DejaVu Sans, Arial, sans-serif">Interactive PUBG planning</text>
+<text x="58" y="410" font-size="20" fill="#739ab5" font-family="DejaVu Sans, Arial, sans-serif">PWA  /  Mapping  /  Measurement</text>
+<g fill="none" stroke="#89b6df" stroke-width="1.2" opacity=".28">
+<path d="M650 190C730 98,810 270,949 155"/><path d="M666 200C746 108,826 280,965 165"/><path d="M682 210C762 118,842 290,981 175"/><path d="M698 220C778 128,858 300,997 185"/><path d="M714 230C794 138,874 310,1013 195"/><path d="M730 240C810 148,890 320,1029 205"/><path d="M746 250C826 158,906 330,1045 215"/><path d="M762 260C842 168,922 340,1061 225"/><path d="M778 270C858 178,938 350,1077 235"/><path d="M794 280C874 188,954 360,1093 245"/><path d="M810 290C890 198,970 370,1109 255"/><path d="M826 300C906 208,986 380,1125 265"/>
+</g>
+<g stroke="#a3c7eb" stroke-opacity=".33" stroke-width="1" fill="none"><circle cx="841" cy="302" r="148"/><circle cx="841" cy="302" r="106"/><circle cx="841" cy="302" r="64"/><path d="M841 124V477M657 302H1031"/></g>
+<path d="M686 394Q782 161 960 286" stroke="#8dc1ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 12" fill="none"/>
+<path d="M957 271L966 286L946 286" stroke="#8dc1ff" stroke-width="4" stroke-linejoin="round" fill="none"/>
+<g fill="#dcefff" stroke="#7fbaff" stroke-width="6"><circle cx="686" cy="394" r="13" fill="#0b1928"/><circle cx="960" cy="286" r="13" fill="#0b1928"/></g>
+<circle cx="841" cy="302" r="14" fill="#7cbcff"/><circle cx="841" cy="302" r="35" stroke="#8bc9ff" stroke-opacity=".6" stroke-width="2" fill="none"/>
+<g fill="#9bc3e0" font-family="monospace" font-size="14"><text x="638" y="426">POINT A</text><text x="938" y="320">POINT B</text><text x="733" y="151">TRAJECTORY</text></g>
+<g fill="#a9cadd"><circle cx="1038" cy="42" r="4"/><circle cx="1022" cy="42" r="4" opacity=".5"/><circle cx="1006" cy="42" r="4" opacity=".28"/></g></svg>

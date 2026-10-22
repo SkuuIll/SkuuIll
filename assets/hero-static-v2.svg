@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="348" viewBox="0 0 1050 348" role="img" aria-labelledby="t d">
+<title id="t">Skull — desarrollador de software</title><desc id="d">Portada oscura con geometría azul y verde menta a la derecha. Software that moves ideas forward.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#080e16"/><stop offset=".6" stop-color="#122932"/><stop offset="1" stop-color="#142035"/></linearGradient></defs>
+<rect width="1050" height="348" fill="url(#bg)"/>
+<g stroke="#b0cbd9" stroke-opacity=".08"><path d="M28 20V328"/><path d="M74 20V328"/><path d="M120 20V328"/><path d="M166 20V328"/><path d="M212 20V328"/><path d="M258 20V328"/><path d="M304 20V328"/><path d="M350 20V328"/><path d="M396 20V328"/><path d="M442 20V328"/><path d="M488 20V328"/><path d="M534 20V328"/><path d="M580 20V328"/><path d="M626 20V328"/><path d="M672 20V328"/><path d="M718 20V328"/><path d="M764 20V328"/><path d="M810 20V328"/><path d="M856 20V328"/><path d="M902 20V328"/><path d="M948 20V328"/><path d="M994 20V328"/><path d="M1040 20V328"/><path d="M28 30H1020"/><path d="M28 76H1020"/><path d="M28 122H1020"/><path d="M28 168H1020"/><path d="M28 214H1020"/><path d="M28 260H1020"/><path d="M28 306H1020"/></g>
+<g stroke="#adbbc5" stroke-opacity=".2"><path d="M30 61H1020M30 293H1020"/></g><ellipse cx="834" cy="175" rx="80" ry="105" transform="rotate(0 834 175)" fill="none" stroke="#4ce1c7" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="89" ry="101" transform="rotate(11 834 175)" fill="none" stroke="#8b9fff" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="98" ry="97" transform="rotate(22 834 175)" fill="none" stroke="#4ce1c7" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="107" ry="93" transform="rotate(33 834 175)" fill="none" stroke="#8b9fff" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="116" ry="89" transform="rotate(44 834 175)" fill="none" stroke="#4ce1c7" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="125" ry="85" transform="rotate(55 834 175)" fill="none" stroke="#8b9fff" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="134" ry="81" transform="rotate(66 834 175)" fill="none" stroke="#4ce1c7" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="143" ry="77" transform="rotate(77 834 175)" fill="none" stroke="#8b9fff" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="152" ry="73" transform="rotate(88 834 175)" fill="none" stroke="#4ce1c7" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="161" ry="69" transform="rotate(99 834 175)" fill="none" stroke="#8b9fff" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="170" ry="65" transform="rotate(110 834 175)" fill="none" stroke="#4ce1c7" stroke-opacity=".4" stroke-width="1.4"/>
+<ellipse cx="834" cy="175" rx="179" ry="61" transform="rotate(121 834 175)" fill="none" stroke="#8b9fff" stroke-opacity=".4" stroke-width="1.4"/>
+<circle cx="834" cy="175" r="18" fill="none" stroke="#9db7ff" stroke-width="2"/><circle cx="834" cy="175" r="5" fill="#4ce1c7"/>
+<g font-family="DejaVu Sans,Arial,sans-serif">
+<text x="45" y="40" font-family="monospace" font-size="12" letter-spacing="3.5" fill="#b6cfd9">S K U U I L L  /  D E V E L O P E R  P R O F I L E</text>
+<text x="38" y="210" font-size="126" font-weight="800" letter-spacing="-7" fill="#f1f8fc">SKULL<tspan fill="#4ce1c7">.</tspan></text>
+<text x="45" y="267" font-size="26" fill="#e5eff4">Software that moves ideas forward.</text>
+<text x="45" y="320" font-family="monospace" font-size="12" fill="#a7bbc8">WEB  /  MOBILE  /  BACKEND  /  AUTOMATION</text>
+<text x="842" y="320" font-family="monospace" font-size="12" fill="#4ce1c7">SK / STATIC</text></g></svg>

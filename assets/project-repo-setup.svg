@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 570" width="1100" height="570" role="img" aria-labelledby="title desc">
+<title id="title">Repo Setup Kit illustration</title><desc id="desc">Conceptual illustration of code and GitHub Actions automation, with branching pipelines and terminal.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08111b"/><stop offset=".55" stop-color="#0a1a2a"/><stop offset="1" stop-color="#112a3f"/></linearGradient>
+<linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#437bba"/><stop offset=".5" stop-color="#92c4ff"/><stop offset="1" stop-color="#6b69fc"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#346caa" stop-opacity=".33"/><stop offset="1" stop-color="#103354" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse"><path d="M46 0H0V46" fill="none" stroke="#7ca0bf" stroke-opacity=".09"/></pattern>
+</defs>
+<rect width="1100" height="570" rx="24" fill="url(#bg)"/><rect width="1100" height="570" rx="24" fill="url(#grid)"/>
+<ellipse cx="864" cy="286" rx="300" ry="240" fill="url(#halo)"/>
+<g fill="#a9c8dd" font-family="DejaVu Sans, Arial, sans-serif"><text x="56" y="58" font-size="16" letter-spacing="4" fill="#98b6cb">SKULL / OPEN SOURCE</text>
+<text x="58" y="485" font-size="14" letter-spacing="3" fill="#9db9d0">DESIGNED &amp; BUILT</text></g>
+<path d="M55 75H1045M55 510H1045" stroke="#8eb5cd" stroke-opacity=".20"/>
+<rect x="56" y="530" width="78" height="4" rx="2" fill="#78b5ff"/>
+
+<text x="56" y="234" font-size="73" font-weight="700" fill="#f2f8fc" font-family="DejaVu Sans, Arial, sans-serif" letter-spacing="-4">Repo Setup</text>
+<text x="56" y="310" font-size="73" font-weight="700" fill="#94b8ff" font-family="DejaVu Sans, Arial, sans-serif" letter-spacing="-4">Kit.</text>
+<text x="58" y="363" font-size="23" fill="#aec5d5" font-family="DejaVu Sans, Arial, sans-serif">Reproducible project setup</text>
+<text x="58" y="398" font-size="20" fill="#739ab5" font-family="DejaVu Sans, Arial, sans-serif">Python  /  CLI  /  Workflows</text>
+<g stroke="url(#line)" stroke-width="3" fill="none" stroke-linejoin="round"><path d="M660 170H766Q785 170 785 190V255H882"/><path d="M660 300H727Q746 300 746 319V355H882"/><path d="M790 190H903Q921 190 921 212V233" stroke-dasharray="8 12" opacity=".52"/></g>
+<rect x="618" y="144" width="185" height="53" rx="12" fill="#152a3b" stroke="#5983a2"/><text x="636" y="177" font-family="monospace" font-size="17" fill="#e4f1fb">$ repo-setup .</text>
+<rect x="841" y="233" width="209" height="67" rx="12" fill="#13283c" stroke="#7195ba"/><text x="866" y="273" font-family="monospace" font-size="19" fill="#cce1f0">validate ✓</text>
+<rect x="839" y="329" width="211" height="67" rx="12" fill="#152d43" stroke="#7195ba"/><text x="858" y="369" font-family="monospace" font-size="18" fill="#cce1f0">workflow ready</text>
+<rect x="610" y="255" width="142" height="91" rx="13" fill="#0a1c2c" stroke="#497398"/><text x="629" y="285" font-family="monospace" font-size="16" fill="#69baff">01 / INIT</text><path d="M633 305H728M633 320H690" stroke="#8fa7c1" stroke-opacity=".45" stroke-width="5"/>
+<g fill="#8fc5ff"><circle cx="785" cy="170" r="6"/><circle cx="747" cy="355" r="6"/><circle cx="883" cy="255" r="6"/></g>
+<path d="M652 415C755 436 841 407 958 445" fill="none" stroke="#8dbaff" stroke-opacity=".26" stroke-width="1.8"/>
+<g fill="#a9cadd"><circle cx="1038" cy="42" r="4"/><circle cx="1022" cy="42" r="4" opacity=".5"/><circle cx="1006" cy="42" r="4" opacity=".28"/></g></svg>

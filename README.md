@@ -1,57 +1,142 @@
-<img src="./assets/profile-cover-2026.svg" alt="Skull — Desarrollo de software, interfaces, sistemas y automatización" width="100%" />
+<p align="center">
+  <a href="https://skuuill.github.io/SkuuIll_Folio/" title="Abrir el portafolio de Skull">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hero-static-v2.svg">
+      <img src="./assets/hero-kinetic-v2.gif" alt="Skull — cabecera geométrica animada con transiciones de color entre menta, azul, violeta y coral." width="100%">
+    </picture>
+  </a>
+</p>
 
-# Skull / SkuuIll
+<h1 align="center">Hola, soy Skull <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/main/assets/terminal-v2.gif" alt="" width="0" height="0"></h1>
 
-Desarrollador de software freelance · Full Stack y multiplataforma · Chaco, Argentina
+<p align="center">
+  <strong>Desarrollador de software Full Stack y multiplataforma.</strong><br>
+  Desde Charata, Chaco, Argentina. Desarrollo productos web, Android y sistemas que resuelven problemas reales.
+</p>
 
-Desarrollo productos digitales de principio a fin: interfaces web, aplicaciones Android, APIs, bases de datos y automatizaciones. Me interesa resolver problemas concretos con software mantenible, interfaces cuidadas y despliegues reproducibles.
+<p align="center">
+  <a href="https://skuuill.github.io/SkuuIll_Folio/"><strong>Portafolio y casos de estudio ↗</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/SkuuIll?tab=repositories">Repositorios</a>
+  &nbsp; · &nbsp;
+  <a href="mailto:moreappmix@gmail.com">Trabajemos juntos</a>
+</p>
 
-**[Explorar mi portafolio profesional →](https://skuuill.github.io/SkuuIll_Folio/)** · **[Ver proyectos en GitHub](https://github.com/SkuuIll?tab=repositories)** · **[Contactarme](mailto:moreappmix@gmail.com)**
+<p align="center">
+  <img src="./assets/terminal-v2.gif" alt="Terminal animada de Skull con referencias a desarrollo, validación y despliegue." width="100%">
+</p>
 
----
+## 01 / Sobre mí
 
-## Proyectos destacados
+No me limito a construir pantallas: trabajo sobre el **producto completo**, desde el diseño de la experiencia hasta APIs, bases de datos, aplicaciones y despliegues en Linux.
 
-| Proyecto | Qué hace | Acceso |
-| :--- | :--- | :--- |
-| **Vigía · Gestión hotelera** | Ecosistema para seguridad y rondas GPS, personal, hotel y administración. Panel web, backend y app móvil. | [Caso de estudio](https://skuuill.github.io/SkuuIll_Folio/proyectos/vigia/) |
-| **Atelier de indumentaria 3D** | Experiencia de personalización de prendas y flujo comercial con visualización 3D. | [Ver el proyecto](https://skuuill.github.io/SkuuIll_Folio/proyectos/cpaul/) |
-| **Tactical Map** | Cartografía interactiva, anotaciones y medición para PUBG; aplicación web instalable. | [Usar la app](https://skuuill.github.io/PUBG-Mortar-Tactical-Map/) · [Código](https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map) |
-| **Repo Setup Kit** | Configuración reproducible de repositorios, automatización y trabajo con agentes de IA. | [Código y documentación](https://github.com/SkuuIll/Repo-Setup-Kit) |
-| **Mi Taller · Gestión textil** | Presupuestos, producción, clientes e inventario para un flujo de trabajo de indumentaria. | [Ver el proyecto](https://skuuill.github.io/SkuuIll_Folio/proyectos/mi-taller/) |
-| **FluxNet** | Plataforma en desarrollo para cliente Android, API, administración y nodos VPS. | [Ver el proyecto](https://skuuill.github.io/SkuuIll_Folio/proyectos/fluxnet/) |
+Soy desarrollador independiente. Me interesan la **automatización**, las interfaces cuidadas, los sistemas mantenibles y la integración entre tecnologías. En este perfil muestro una selección de proyectos propios, trabajos privados documentados mediante casos y herramientas de código abierto.
 
-Los casos identifican el estado de cada proyecto y diferencian código abierto, desarrollos privados y demostraciones.
+**Mi enfoque:** entender el problema → diseñar → desarrollar → probar → publicar → mejorar.
 
-## Tecnologías con las que trabajo
+## 02 / Proyectos que construí
 
-| Área | Tecnologías |
+<table>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://skuuill.github.io/SkuuIll_Folio/proyectos/vigia/">
+    <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll_Folio/main/public/media/vigia-modules.webp" alt="Vista del sistema Vigía: módulos de seguridad, personal, hotel y administración" width="100%">
+  </a>
+  <h3>Vigía · Ecosistema hotelero</h3>
+  <p>Gestión de seguridad y rondas GPS, personal, operaciones hoteleras y administración. Panel web, API y aplicación Android conectados.</p>
+  <p><code>React</code> <code>NestJS</code> <code>PostgreSQL</code> <code>Expo</code></p>
+  <a href="https://skuuill.github.io/SkuuIll_Folio/proyectos/vigia/">Explorar el caso →</a>
+</td>
+<td width="50%" valign="top">
+  <a href="https://skuuill.github.io/SkuuIll_Folio/proyectos/cpaul/">
+    <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll_Folio/main/public/media/atelier-colors.webp" alt="Atelier de indumentaria 3D con prenda personalizable y selección de colores" width="100%">
+  </a>
+  <h3>Atelier · Indumentaria 3D</h3>
+  <p>Configurador interactivo de prendas integrado a un flujo de catálogo, personalización y ventas.</p>
+  <p><code>Next.js</code> <code>TypeScript</code> <code>Three.js</code> <code>Prisma</code></p>
+  <a href="https://skuuill.github.io/SkuuIll_Folio/proyectos/cpaul/">Ver la experiencia →</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://github.com/SkuuIll/PUBG-Mortar-Tactical-Map">
+    <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll_Folio/main/public/media/tactical-map.webp" alt="Mapa táctico interactivo para PUBG con herramientas cartográficas" width="100%">
+  </a>
+  <h3>Tactical Map · Cartografía PWA</h3>
+  <p>Mapas, medidas, marcadores y herramientas de planificación para PUBG, accesibles desde el navegador.</p>
+  <p><code>JavaScript</code> <code>Leaflet</code> <code>PWA</code></p>
+  <a href="https://skuuill.github.io/PUBG-Mortar-Tactical-Map/">Abrir la aplicación →</a>
+</td>
+<td width="50%" valign="top">
+  <a href="https://skuuill.github.io/SkuuIll_Folio/proyectos/fluxnet/">
+    <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll_Folio/main/public/media/fluxnet-android-4.9.6.png" alt="Captura de la aplicación Android FluxNet" width="100%">
+  </a>
+  <h3>FluxNet · Android y redes</h3>
+  <p>Proyecto en desarrollo con cliente Android, API, administración y nodos VPS para una plataforma VPN.</p>
+  <p><code>Kotlin</code> <code>Flutter</code> <code>Go</code> <code>Linux</code></p>
+  <a href="https://skuuill.github.io/SkuuIll_Folio/proyectos/fluxnet/">Conocer el proyecto →</a>
+</td>
+</tr>
+</table>
+
+**También desarrollé:**
+[Repo Setup Kit](https://github.com/SkuuIll/Repo-Setup-Kit), un entorno reproducible para desarrollo con agentes y automatización;
+[Mi Taller](https://skuuill.github.io/SkuuIll_Folio/proyectos/mi-taller/), gestión de presupuestos y producción textil;
+[Catálogo comercial](https://skuuill.github.io/SkuuIll_Folio/proyectos/showroom/), productos y ventas;
+y [otros proyectos de software](https://skuuill.github.io/SkuuIll_Folio/proyectos/).
+
+<sub>Las capturas proceden de los casos publicados en el repositorio del portafolio. Los proyectos con código privado se muestran mediante descripciones y demostraciones; no se presentan como código público.</sub>
+
+## 03 / Del frontend a la infraestructura
+
+<p align="center">
+  <img src="./assets/systems-map.svg" alt="Mapa de especialidades: frontend, aplicaciones, backend e infraestructura, conectadas de diseño a despliegue." width="100%">
+</p>
+
+| Especialidad | Tecnologías y herramientas |
 | :--- | :--- |
-| **Frontend** | HTML, CSS, JavaScript, TypeScript, React, Vue, Next.js, Astro |
-| **Backend y datos** | Python, Node.js, NestJS, Django, PostgreSQL, MySQL, SQLite, Redis, Prisma |
-| **Android y escritorio** | Kotlin, Java, Flutter, React Native, .NET |
-| **Infraestructura** | Linux, VPS, Docker, Git, GitHub Actions, CI/CD, Shell, PowerShell |
-| **Diseño interactivo** | UI/UX, GSAP, Three.js, animación web, accesibilidad y rendimiento |
+| **Web y experiencia** | React, Vue, Next.js, Astro, HTML, CSS, JavaScript, TypeScript, UI/UX |
+| **Backend y bases de datos** | Python, Django, Node.js, NestJS, PostgreSQL, MySQL, SQLite, Prisma, Redis |
+| **Mobile y escritorio** | Kotlin, Java, Flutter, React Native, .NET, herramientas Windows |
+| **Servidores y DevOps** | Linux, VPS, Docker, Git, GitHub Actions, Shell, PowerShell, CI/CD |
+| **Diseño técnico y automatización** | Three.js, GSAP, Canvas, Python, scripts, integraciones y agentes de IA |
 
-## Mi forma de trabajar
+No se trata de una lista de tecnologías aisladas: me interesa **conectarlas en productos funcionales**, con código que pueda mantenerse y evolucionar.
 
-**Entender el problema → Diseñar la experiencia → Construir la solución → Probar → Publicar y mejorar.**
+## 04 / Código y actividad
 
-Trabajo con productos propios, desarrollos a medida y proyectos de automatización. En el [portafolio](https://skuuill.github.io/SkuuIll_Folio/) encontrarás capturas, explicaciones técnicas, decisiones de diseño y enlaces a los proyectos que pueden compartirse públicamente.
-
-## Contacto
-
-**[moreappmix@gmail.com](mailto:moreappmix@gmail.com)** · [GitHub](https://github.com/SkuuIll) · [Portafolio](https://skuuill.github.io/SkuuIll_Folio/)
+<p align="center">
+  <a href="https://github.com/SkuuIll?tab=repositories">Explorar todos mis repositorios ↗</a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/SkuuIll/Repo-Setup-Kit">Herramientas de automatización ↗</a>
+</p>
 
 <details>
-<summary>Actividad pública de GitHub</summary>
+<summary><strong>Ver métricas de GitHub y lenguajes</strong></summary>
 
-Las métricas reflejan exclusivamente la actividad pública disponible al momento de su generación.
+Las métricas se actualizan mediante GitHub Actions y reflejan datos públicos de los repositorios, no la totalidad del trabajo profesional.
 
-![Actividad de GitHub](./metrics/github-metrics.svg)
-
-![Lenguajes utilizados](./metrics/github-metrics-languages.svg)
+<p align="center">
+  <img src="./metrics/github-metrics.svg" alt="Métricas públicas de actividad de GitHub de SkuuIll" width="100%">
+  <img src="./metrics/github-metrics-languages.svg" alt="Distribución de lenguajes en los repositorios públicos" width="100%">
+</p>
 
 </details>
 
-<sub>Este repositorio contiene únicamente el perfil de GitHub. El código y los recursos del sitio web se mantienen de forma independiente en <a href="https://github.com/SkuuIll/SkuuIll_Folio">SkuuIll_Folio</a>.</sub>
+## 05 / ¿Hacemos algo juntos?
+
+Desarrollo sistemas de gestión, aplicaciones, herramientas de productividad, interfaces y automatizaciones. Si tenés un producto para construir o un proceso para mejorar, podemos conversar sobre el problema, la tecnología y el alcance.
+
+<p align="center">
+  <a href="mailto:moreappmix@gmail.com"><strong>Enviar un correo ↗</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://skuuill.github.io/SkuuIll_Folio/"><strong>Ver mi portafolio ↗</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/SkuuIll"><strong>GitHub ↗</strong></a>
+</p>
+
+---
+
+<p align="center">
+  <sub>SKULL / SkuuIll · Perfil de GitHub independiente · El sitio web y sus componentes viven en <a href="https://github.com/SkuuIll/SkuuIll_Folio">SkuuIll_Folio</a>.</sub>
+</p>

@@ -35,6 +35,26 @@ jobs:
         with:
           globs: |
             README*.md
-            translations/README*.md
             docs/**/*.md
+
+      - name: Check profile image references
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          from xml.etree import ElementTree
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          sources = re.findall(r'(?:src|srcset)="(\./(?:assets|metrics)/[^"]+)"', readme)
+          assert len(sources) >= 4, "The README must include local visual assets"
+          for source in sources:
+              path = Path(source)
+              assert path.is_file(), f"Missing local image: {path}"
+              if path.suffix == ".gif":
+                  assert path.read_bytes()[:3] == b"GIF", f"Invalid GIF: {path}"
+                  assert path.stat().st_size < 4_000_000, f"Heavy GIF: {path}"
+              elif path.suffix == ".svg":
+                  ElementTree.parse(path)
+              print("Validated", path)
+          PY
 

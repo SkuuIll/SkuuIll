@@ -7,7 +7,7 @@
   </a>
 </p>
 
-<h1 align="center">Hola, soy Skull <img src="https://raw.githubusercontent.com/SkuuIll/SkuuIll/main/assets/terminal-v2.gif" alt="" width="0" height="0"></h1>
+<h1 align="center">Hola, soy Skull.</h1>
 
 <p align="center">
   <strong>Desarrollador de software Full Stack y multiplataforma.</strong><br>

@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="https://skuuill.pages.dev/">Portfolio ↗</a>
+  <a href="https://skuull.pages.dev/">Portfolio ↗</a>
   &nbsp;·&nbsp;
   <a href="https://github.com/SkuuIll?tab=repositories">Repositories ↗</a>
   &nbsp;·&nbsp;
@@ -106,7 +106,7 @@ For portfolio work I document design-system decisions, accessibility checks, foc
 
 I work on custom applications, interfaces and automation for practical problems.
 
-**[View the portfolio](https://skuuill.pages.dev/)** · **[Email me](mailto:moreappmix@gmail.com)** · **[Explore GitHub](https://github.com/SkuuIll?tab=repositories)**
+**[View the portfolio](https://skuull.pages.dev/)** · **[Email me](mailto:moreappmix@gmail.com)** · **[Explore GitHub](https://github.com/SkuuIll?tab=repositories)**
 
 <p align="right"><a href="#espanol">Leer en español ↓</a></p>
 
@@ -184,7 +184,7 @@ Para el portafolio documento criterios de diseño, accesibilidad, revisión visu
 
 Desarrollo aplicaciones a medida, interfaces y automatizaciones para resolver necesidades reales.
 
-**[Ver portafolio](https://skuuill.pages.dev/)** · **[Enviar correo](mailto:moreappmix@gmail.com)** · **[Explorar GitHub](https://github.com/SkuuIll?tab=repositories)**
+**[Ver portafolio](https://skuull.pages.dev/)** · **[Enviar correo](mailto:moreappmix@gmail.com)** · **[Explorar GitHub](https://github.com/SkuuIll?tab=repositories)**
 
 <p align="right"><a href="#english">↑ Back to English</a></p>
 

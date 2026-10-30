@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="https://skuuill.github.io/SkuuIll_Folio/">Portfolio ↗</a>
+  <a href="https://skuuill.pages.dev/">Portfolio ↗</a>
   &nbsp;·&nbsp;
   <a href="https://github.com/SkuuIll?tab=repositories">Repositories ↗</a>
   &nbsp;·&nbsp;
@@ -92,11 +92,21 @@ Private implementations are presented in text only.
 | **Mobile & systems** | Kotlin, Flutter, Android, Linux |
 | **Delivery & automation** | Docker, GitHub Actions, CI/CD, Shell, Python |
 
+### Design & engineering workflow
+
+For portfolio work I document design-system decisions, accessibility checks, focused reviews and verification before release. These **community tools are references, not projects I authored**:
+
+- [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — design systems and UX guidelines.
+- [Impeccable](https://github.com/pbakaus/impeccable) — interface critique and design-quality audits.
+- [Superpowers](https://github.com/obra/superpowers) — structured development, testing and code review.
+
+[See the portfolio's workflow guide](https://github.com/SkuuIll/SkuuIll_Folio/blob/main/docs/agent-toolkit.md).
+
 ### Let's connect
 
 I work on custom applications, interfaces and automation for practical problems.
 
-**[View the portfolio](https://skuuill.github.io/SkuuIll_Folio/)** · **[Email me](mailto:moreappmix@gmail.com)** · **[Explore GitHub](https://github.com/SkuuIll?tab=repositories)**
+**[View the portfolio](https://skuuill.pages.dev/)** · **[Email me](mailto:moreappmix@gmail.com)** · **[Explore GitHub](https://github.com/SkuuIll?tab=repositories)**
 
 <p align="right"><a href="#espanol">Leer en español ↓</a></p>
 
@@ -160,11 +170,21 @@ Estos proyectos se presentan solamente con texto.
 | **Android y sistemas** | Kotlin, Flutter, Android, Linux |
 | **Despliegue y automatización** | Docker, GitHub Actions, CI/CD, Shell, Python |
 
+### Diseño y desarrollo con procesos claros
+
+Para el portafolio documento criterios de diseño, accesibilidad, revisión visual y verificación antes de publicar. Estas son **herramientas comunitarias de referencia; no son proyectos de mi autoría**:
+
+- [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — sistemas de diseño y buenas prácticas UX.
+- [Impeccable](https://github.com/pbakaus/impeccable) — crítica y auditoría de calidad visual.
+- [Superpowers](https://github.com/obra/superpowers) — planificación, pruebas y revisión de código.
+
+[Ver el flujo de trabajo documentado](https://github.com/SkuuIll/SkuuIll_Folio/blob/main/docs/agent-toolkit.md).
+
 ### Contacto
 
 Desarrollo aplicaciones a medida, interfaces y automatizaciones para resolver necesidades reales.
 
-**[Ver portafolio](https://skuuill.github.io/SkuuIll_Folio/)** · **[Enviar correo](mailto:moreappmix@gmail.com)** · **[Explorar GitHub](https://github.com/SkuuIll?tab=repositories)**
+**[Ver portafolio](https://skuuill.pages.dev/)** · **[Enviar correo](mailto:moreappmix@gmail.com)** · **[Explorar GitHub](https://github.com/SkuuIll?tab=repositories)**
 
 <p align="right"><a href="#english">↑ Back to English</a></p>
 
